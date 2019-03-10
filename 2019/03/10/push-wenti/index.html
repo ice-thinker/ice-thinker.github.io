@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="生活,感悟,反思,">
+  <meta name="keywords" content="工程,技术,">
 
 
 
@@ -79,18 +79,24 @@
 
 
 
-<meta name="description" content="互联网是否存在所谓的善良我为什么会写这样的文章？其实，我跟大家一样也是一个屌丝，天天刷着手机，在互联网度过每天的闲暇时光。 在闲暇的时间里，我看各种新闻、看各种网络书、玩着荣耀。 这样的时光持续一段时间，突然间，我反思起来：这种新闻软件，我是否真的看到我需要的信息么？是否真的看到我需要的知识么？我怎么脾气变得越来越暴躁。 于是，不满足的我，新闻客户端删了一个、换了一个、又删了这个、换那个。如此折腾">
-<meta name="keywords" content="生活,感悟,反思">
+<meta name="description" content="PUSH 链路分析系统链路先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：  转化根因 统计口径 链路的关键点   关键点 统计数据 策略 可落地     发送失败 1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关） 针对1的解决方法1：调用批量的接口2：扩大带宽3：限流4：负载均衡式发送针对2的解决方法：1：限流2：了解相关系统的特殊">
+<meta name="keywords" content="工程,技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="喧嚣的互联网">
-<meta property="og:url" content="https://ice-thinker.github.io/2019/01/13/hlwxx/index.html">
+<meta property="og:title" content="PUSH 问题">
+<meta property="og:url" content="https://ice-thinker.github.io/2019/03/10/push-wenti/index.html">
 <meta property="og:site_name" content="知、行——人生">
-<meta property="og:description" content="互联网是否存在所谓的善良我为什么会写这样的文章？其实，我跟大家一样也是一个屌丝，天天刷着手机，在互联网度过每天的闲暇时光。 在闲暇的时间里，我看各种新闻、看各种网络书、玩着荣耀。 这样的时光持续一段时间，突然间，我反思起来：这种新闻软件，我是否真的看到我需要的信息么？是否真的看到我需要的知识么？我怎么脾气变得越来越暴躁。 于是，不满足的我，新闻客户端删了一个、换了一个、又删了这个、换那个。如此折腾">
+<meta property="og:description" content="PUSH 链路分析系统链路先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：  转化根因 统计口径 链路的关键点   关键点 统计数据 策略 可落地     发送失败 1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关） 针对1的解决方法1：调用批量的接口2：扩大带宽3：限流4：负载均衡式发送针对2的解决方法：1：限流2：了解相关系统的特殊">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-13T05:59:44.883Z">
+<meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/发送链路.png">
+<meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/Push转化率根因.png">
+<meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/Push统计口径.png">
+<meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/nat.png">
+<meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/网络保活.png">
+<meta property="og:updated_time" content="2019-03-10T11:04:34.868Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="喧嚣的互联网">
-<meta name="twitter:description" content="互联网是否存在所谓的善良我为什么会写这样的文章？其实，我跟大家一样也是一个屌丝，天天刷着手机，在互联网度过每天的闲暇时光。 在闲暇的时间里，我看各种新闻、看各种网络书、玩着荣耀。 这样的时光持续一段时间，突然间，我反思起来：这种新闻软件，我是否真的看到我需要的信息么？是否真的看到我需要的知识么？我怎么脾气变得越来越暴躁。 于是，不满足的我，新闻客户端删了一个、换了一个、又删了这个、换那个。如此折腾">
+<meta name="twitter:title" content="PUSH 问题">
+<meta name="twitter:description" content="PUSH 链路分析系统链路先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：  转化根因 统计口径 链路的关键点   关键点 统计数据 策略 可落地     发送失败 1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关） 针对1的解决方法1：调用批量的接口2：扩大带宽3：限流4：负载均衡式发送针对2的解决方法：1：限流2：了解相关系统的特殊">
+<meta name="twitter:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/发送链路.png">
 
 
 
@@ -120,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://ice-thinker.github.io/2019/01/13/hlwxx/">
+  <link rel="canonical" href="https://ice-thinker.github.io/2019/03/10/push-wenti/">
 
 
 
 
 
-  <title>喧嚣的互联网 | 知、行——人生</title>
+  <title>PUSH 问题 | 知、行——人生</title>
   
 
 
@@ -314,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/01/13/hlwxx/">
+    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/03/10/push-wenti/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
@@ -331,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">喧嚣的互联网</h1>
+          <h1 class="post-title" itemprop="name headline">PUSH 问题</h1>
         
 
         <div class="post-meta">
@@ -343,8 +349,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-13T10:11:51+08:00">
-                2019-01-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-10T09:53:56+08:00">
+                2019-03-10
               </time>
             
 
@@ -366,19 +372,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/哲思/" itemprop="url" rel="index">
-                    <span itemprop="name">哲思</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/哲思/现实/" itemprop="url" rel="index">
-                    <span itemprop="name">现实</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -414,135 +409,290 @@
       
 
       
-        <h2 id="互联网是否存在所谓的善良"><a href="#互联网是否存在所谓的善良" class="headerlink" title="互联网是否存在所谓的善良"></a>互联网是否存在所谓的善良</h2><p>我为什么会写这样的文章？其实，我跟大家一样也是一个屌丝，天天刷着手机，在互联网度过每天的闲暇时光。</p>
-<p>在闲暇的时间里，我看各种新闻、看各种网络书、玩着荣耀。</p>
-<p>这样的时光持续一段时间，突然间，我反思起来：这种新闻软件，我是否真的看到我需要的信息么？是否真的看到我需要的知识么？我怎么脾气变得越来越暴躁。</p>
-<p>于是，不满足的我，新闻客户端删了一个、换了一个、又删了这个、换那个。如此折腾一段时间，我还是没有办法得到我想要的新闻客户端，于是我就把所有的新闻客户端都删除掉。</p>
-<p>我为什么会删除新闻客户端，因为新闻客户端充斥的内容，不是我想要的内容。接下来，我给大家列举：今日头条、网易、腾讯新闻、微信新闻、搜狐新闻的内容。</p>
-<h3 id="新闻客户端内容分析"><a href="#新闻客户端内容分析" class="headerlink" title="新闻客户端内容分析"></a>新闻客户端内容分析</h3><p>  在分析之前，我想问大家一个书呆子气的问题，那到底什么才是真正的新闻呢？</p>
-<p>  <a href="https://baike.baidu.com/item/新闻/289002?fr=aladdin" target="_blank" rel="noopener">新闻</a>：</p>
-<p>从表达方式上看，新闻以记叙为主，十分讲究真实性。<br>新闻六要素（也就是记叙要素）：时间、地点、人物、事件的起因、经过、结果。即五个“W”和一个“H”　<br>即Who（何人） 、What（何事） 、When（何时）、Where（何地） 、Why（何因）、How（如何）。<br>一篇新闻报道，无论是消息还是通讯、特写，一般都包含这6个因素。“麻雀虽小，五脏俱全”，比如下面这条新闻，六要素交代得非常清楚。<br>“经过多年艰苦训练，中国运动员刘翔终于在2004年8月27日，雅典奥运会上获得男子110米栏冠军，被媒体称为‘亚洲飞人’。”<br>特点：公开性、真实性、针对性、时效性、准确性、显著性、接近性、开放性、广泛性、变动性。</p>
-<h4 id="今日头条"><a href="#今日头条" class="headerlink" title="今日头条"></a>今日头条</h4><p>打开今日头条，我看到如下的新闻：</p>
+        <h2 id="PUSH-链路分析"><a href="#PUSH-链路分析" class="headerlink" title="PUSH 链路分析"></a>PUSH 链路分析</h2><h3 id="系统链路"><a href="#系统链路" class="headerlink" title="系统链路"></a>系统链路</h3><p>先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：</p>
+<p><img src="/2019/03/10/push-wenti/./push-wenti/发送链路.png" alt=""></p>
+<h3 id="转化根因"><a href="#转化根因" class="headerlink" title="转化根因"></a>转化根因</h3><p><img src="/2019/03/10/push-wenti/./push-wenti/Push转化率根因.png" alt=""></p>
+<h3 id="统计口径"><a href="#统计口径" class="headerlink" title="统计口径"></a>统计口径</h3><p><img src="/2019/03/10/push-wenti/./push-wenti/Push统计口径.png" alt=""></p>
+<h3 id="链路的关键点"><a href="#链路的关键点" class="headerlink" title="链路的关键点"></a>链路的关键点</h3><table>
+<thead>
+<tr>
+<th>关键点</th>
+<th>统计数据</th>
+<th>策略</th>
+<th>可落地</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发送失败</td>
+<td>1、连接异常(数据可获取)<br>2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关）</td>
+<td>针对1的解决方法<br>1：调用批量的接口<br>2：扩大带宽<br>3：限流<br>4：负载均衡式发送<br>针对2的解决方法：<br>1：限流<br>2：了解相关系统的特殊(坑)</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>失效Token</td>
+<td>1、卸载App（数据可取性差）<br>2、长连接断开(App在，数据可取性差)</td>
+<td>针对2的解决方法<br>1：保活长连接</td>
+<td>M（待验证）</td>
+</tr>
+<tr>
+<td>FCM（Apns）到App链路异常</td>
+<td>App 的网络质量差(数据可取性差)</td>
+<td>N/A<br>取决于FCM/Apns的重试机制以及在重试的时候token 是否还有效</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>注：</p>
+<p>   如果我们要完整地了解为何到达率低，那么要获取完整的数据，存在一定的工作量问题。</p>
+<p>  对于业界的到达率，感觉没有一个准数，从相关的资料了解到，有人说：</p>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>真实到达率</th>
+<th>乘上牛逼系数(1.5~N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>安卓</td>
+<td>&lt;=50%</td>
+<td>&gt;= 80%</td>
+</tr>
+<tr>
+<td>IOS</td>
+<td>&lt;=70%</td>
+<td>&gt;= 90%</td>
+</tr>
+</tbody>
+</table>
+<p>以上数据的真伪，由于没有相关的实践数据，也就无法根据自己的时间数据进行证伪，但是通过整个链路的分析，可以系统地认识到影响到达率的因素、以及可以实施的方案和待验证的方案。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="可落地的方案"><a href="#可落地的方案" class="headerlink" title="可落地的方案"></a>可落地的方案</h3><h4 id="限流"><a href="#限流" class="headerlink" title="限流"></a>限流</h4><p> 通过对发送机制的优化，采用限流的策略进行发送。</p>
+<h4 id="尽量批量的接口"><a href="#尽量批量的接口" class="headerlink" title="尽量批量的接口"></a>尽量批量的接口</h4><p>FCM： 提供基于Topic 的接口，动态将广播推送的token 订阅到某一个topic，然后基于topic 方式进行发送，解决推送服务到FCM服务端链路异常(带宽问题、socket 超时、被FCM流控)。 </p>
+<p>Apns：目前采用第三方的库没有FCM基于topic 发送的功能，可行的方案：可以用FCM来发送IOS推送，或者<strong>了解Apns topic 功能</strong>。</p>
+<p>国内推送：阿里推送、腾讯信鸽都有该功能。</p>
+<h4 id="扩大带宽"><a href="#扩大带宽" class="headerlink" title="扩大带宽"></a>扩大带宽</h4><p>扩大机房的出口带宽</p>
+<h4 id="负载均衡式发送"><a href="#负载均衡式发送" class="headerlink" title="负载均衡式发送"></a>负载均衡式发送</h4><p>该方案 只解决单节点 网卡流量问题。</p>
+<h4 id="保活长连接"><a href="#保活长连接" class="headerlink" title="保活长连接"></a>保活长连接</h4><p>方案见下文 &lt;&lt; 保活长连接 &gt;&gt;，通过保活长连接，确保PUSH通道不会因为Nat 超时被断开，通过定时保活长连接，确保IP 可用。</p>
+<h4 id="抱团取暖策略"><a href="#抱团取暖策略" class="headerlink" title="抱团取暖策略"></a>抱团取暖策略</h4><p>​        通过对腾讯信鸽推送介绍文章了解，腾讯信鸽依赖其高频的应用（比如王者荣耀、其他游戏、微信、QQ），来拉活其他的App。其他App推送的时候能及时收到消息。</p>
+<p>​       通过共享保活Service 这样的机制，除了减少手机的连接、能耗、电量的损失，还可以提高到达率。比如如果用户安装了王者荣耀，另外安装了一些使用信鸽的App。如果其他App没有启动，也没有关系。因为王者荣耀相对来说，它的启动时间更长，这样可以通过王者荣耀先接受这些App的信息，然后推送给另外的App。</p>
+<p>​       同时，也集成厂商的一个推送通道，比如华为、魅族、小米、谷歌的TCM、FCM，这些厂商具有一些所谓的系统级别的保活、拉活的机制。</p>
+<blockquote>
+<p>启发： 针对这一点，对于出海的运用，看否可以依靠当地的大腿，比如Facebook、Youtu 来取暖。</p>
+</blockquote>
+<h3 id="保活长连接-1"><a href="#保活长连接-1" class="headerlink" title="保活长连接"></a>保活长连接</h3><h4 id="原因一：-被系统干掉"><a href="#原因一：-被系统干掉" class="headerlink" title="原因一： 被系统干掉"></a>原因一： 被系统干掉</h4><p>现在越来越多的手机厂商为了省电策略考虑，基本上如果一个应用没有被加入白名单，一旦处于后台就会被系统限制甚至干掉。这也是那些<strong>低频的应用</strong> PUSH到达率低的原因之一。 </p>
+<h4 id="原因二-Nat-超时机制"><a href="#原因二-Nat-超时机制" class="headerlink" title="原因二:   Nat 超时机制"></a>原因二:   Nat 超时机制</h4><p>   长连接断连主要是因为NAT断连，因为 IP v4 的 IP 量有限，运营商分配给手机终端的 IP 是运营商内网的 IP，<br>手机要连接 Internet，就需要通过运营商的网关做一个网络地址转换(Network Address Translation，NAT)。<br>简单的说运营商的网关需要维护一个外网 IP、端口到内网 IP、端口的对应关系，以确保内网的手机可以跟 Internet 的服务器通讯。大部分移动无线网络运营商都在链路一段时间没有数据通讯时，会淘汰 NAT 表中的对应项，造成链路中断。下表列出一些已测试过的网络的NAT超时时间(更多数据由于测试条件所限没有测到)：</p>
+<table>
+<thead>
+<tr>
+<th>地区\网络</th>
+<th>NAT断连时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中国移动3G 和2G</td>
+<td>5分钟</td>
+</tr>
+<tr>
+<td>中国联通2G</td>
+<td>5分钟</td>
+</tr>
+<tr>
+<td>中国电信3G</td>
+<td>&gt;=28 分钟</td>
+</tr>
+<tr>
+<td>美国3G</td>
+<td>&gt;=28 分钟</td>
+</tr>
+<tr>
+<td>台湾3G</td>
+<td>&gt;=28 分钟</td>
+</tr>
+</tbody>
+</table>
+<p>注：该数据未经实践证明（只是看了大部分的数据）。</p>
+<p>Nat 超时机制：</p>
+<p><img src="/2019/03/10/push-wenti/./push-wenti/nat.png" alt=""></p>
+<h4 id="原因三：-安卓DHCP的租期（lease-time）问题"><a href="#原因三：-安卓DHCP的租期（lease-time）问题" class="headerlink" title="原因三： 安卓DHCP的租期（lease time）问题"></a>原因三： 安卓DHCP的租期（lease time）问题</h4><p>   安卓系统对DHCP的处理有个BUG:</p>
 <ul>
-<li>[置顶] 新华社评论员——狠刹“四风”、严惩腐败。</li>
-<li>[置顶] 央视新闻移动网——《红色通缉》第三集《出击》</li>
-<li>互联网热点分析——《燃点》导演犀利点评傅盛：真正强大的人，外界伤不了。</li>
-<li>如何看待小米股票解禁市值蒸发3000亿？</li>
-<li>新闻夜航——鸡西法院公开宣判：90后女孩动歪念，骗亲戚、朋友230余万元。</li>
-<li>科技千里眼——矩阵的本质意义究竟是什么？</li>
-<li>悟空问答——为什么余承东的收入和雷军中间不知差距多少个段位，但还是可以把华为做的很出色。</li>
-<li>量子位——国家进步奖出炉，华为拿下一等奖，腾讯、中兴各获二等奖。</li>
-<li>中国网—— 华为回应波兰员工事件：终止雇佣关系</li>
-<li>悟空问答——普通公司员工的编程水平与阿里巴巴有多大差距。</li>
-<li>中国医学博士联络站——华为工程师猝死，36岁，22月无休：2019比挣钱更重要的是活着。</li>
-<li>徐中博士清晨领导课——孟晚舟的清华人才梦又实现了：2018年华为招聘清华学子再次第一。</li>
-<li>每日经济新闻——22天！美国政府关门时间创纪录，华盛顿“一片狼藉”：垃圾无人打扫，结婚证办不了。</li>
-<li>悟空问答——如何理解柳传志和雷军对华为的攻击？</li>
-<li>投行大师兄（优质财经领域创造者）——以半导体行业为例，教你如何快速看懂一个行业 基本情况</li>
-<li>悟空问答——有人说清华大学是为美国培养人才的摇篮，对此你怎么看？</li>
-<li>靶客扒客——日本最大通信运营公司总裁 强硬表示禁售华为包括手机等民用设备</li>
-<li>牛弹琴——波兰到底想干什么？事情越来越不简单</li>
-<li>娱情乐事吧——马云宋小宝爆笑小品，把首富们损了个遍，台下观众都笑趴了。</li>
-<li>悟空问答——如果联想倒闭了，对中国的科技发展会带来什么影响？</li>
-<li>央视新闻移动网——陕西省神木一煤矿发生事故 21人死亡。</li>
-<li>芯智讯——突发！华为美国子公司技术出口被限制。</li>
-<li>覃仕勇说史——清朝皇子最特殊，有性启蒙老师，乾隆最多，曾给其中一位写首诗。</li>
-<li>米赢文化——为何雷军说华为没有互联网思维？什么才是互联网思维？答案都在这。</li>
-<li>悟空问答——小米和华为怎么了？为什么会会出现生死看淡，不服就干的言论？</li>
-<li>每个boss都是hr专家——张小龙暗怼钉钉：创业公司的人才也需要过正常的生活。</li>
-<li>生活报——波兰抓了华为高管王伟晶，事情很不简单。</li>
-<li>道哥道金融——为什么中国的房价比美国还贵？逻辑比真相更重要。</li>
+<li>DHCP租期到了不会主动续约并且继续使用过期IP。这个问题导致的问题表象是，在超过租期的某个时间点（没有规律）会导致IP过期，老的TCP连接不会正常收发数据。并且系统没有网络变化事件，只有等应用判断主动建立新的TCP连接才引起安卓设备重新向DHCP Server 申请IP租用。</li>
+<li>未到租期的一半时间，安卓设备会重新向DHCP Server 申请IP租用。</li>
 </ul>
-<p>精力有限，不再列举内容，看了今日头条推送的消息，你有何感觉呢？</p>
-<p> 我感觉如下：</p>
-<ol>
-<li><p>新闻标题很震撼，但是内容体现不了标题的含义、有的内容烧了好几次饭。</p>
-</li>
-<li><p>各个内容提供者的名称都是牛逼哄哄：道哥道金融、每个boss都是hr专家、靶客扒客、中国医学博士联络站、投行大师兄</p>
-</li>
-<li><p>内容混杂：编程、数学、问答、新闻。</p>
-</li>
-<li>动机复杂：煽情、制造冲突、哗众取宠。</li>
-</ol>
-<h4 id="网易新闻"><a href="#网易新闻" class="headerlink" title="网易新闻"></a>网易新闻</h4><ul>
-<li>热门 网易娱乐——冯绍峰自曝追求赵丽颖不过果敢，成功全靠这两点。</li>
-<li>梨花说社会<strong>#小丈夫</strong>视频——女孩打架进了派出所，警员让她给家人打电话，她对着所长就喊声爸。</li>
-<li>谈资看好戏——王菲带女儿美国手术后现身，李嫣的嘴又变了。</li>
-<li>澎湃新闻——京东下掉iphone8/8p的售价：为苹果官方价差超过千元。</li>
-<li>每日经济新闻——22天！美国政府关门时间创纪录，华盛顿“一片狼藉”：垃圾无人打扫，结婚证办不了。</li>
-<li>释墨轩文化小天地——马未都：送一根绿松石拐杖给冯小刚，看清楚了他释什么样的人。</li>
-<li>会火——《武林外传》学霸邱小东成真！24岁哈佛读博士，帅到认不出！</li>
-<li>谈资看好戏——贾乃亮独自登山，手机屏保上的她才是亮点。</li>
-<li>皮皮电影——徐克导演，张国荣、赵文卓坐阵！可惜，这片却成厨师武侠片的绝唱。</li>
-<li>丁玉的生活——张国立劝成龙尊重历史，成龙反问历史谁写的，冯小刚连忙圆场。</li>
-<li>十点有听说——范冰冰复出受阻，国际代言被“小花”截胡，网友：“爷”已下台？</li>
-<li>旅行宿途者——赵本山女儿演女一号，演技很渣被喷，走路是在太机械。</li>
-<li>科技新傅敏——林志玲一出现，刘强东拿起手机各种拍，网友：说好的脸盲呢</li>
-</ul>
-<p>网易新闻，基本上都是明星八卦，难道我们的互联网生活就应该陷在各种娱乐八卦中么？</p>
-<p>尤其给大家传递那种虽然出了名，但是文化程度不高明星的负面言论，这些明星自认为自己拍戏很牛逼、红了，在其他领域也应该很牛逼，但现实总是很打脸。</p>
-<p>正如：</p>
-<blockquote class="blockquote-center">每个人都把自己视野的极限当作世界的极限 —— 叔本华</blockquote>
-
-<h4 id="腾讯新闻"><a href="#腾讯新闻" class="headerlink" title="腾讯新闻"></a>腾讯新闻</h4><ul>
-<li>[置顶] 新华社新闻——学习贯彻习近平总书记十九届中央纪委三次全会重要讲话精神</li>
-<li>[置顶] 央视网——《红色通缉》第三集 出击</li>
-<li>看看新闻网——破腹产胎儿脸上竟现15厘米刀伤，妇产科名医被告（台湾新闻）</li>
-<li>JS 娱乐——周星驰携王宝强为新片站台宣传，56岁星爷和美女热舞风采依旧</li>
-<li>十一区——气质音乐女老师酒后乱性色诱性侵2名17岁男学生</li>
-<li>专业主义——英国公司破产后传出莫名臭味，仓库里发现大量腐烂尸骨和头颅</li>
-<li>天奇说天地——未来3年房价到底是涨是降？王健林首次给出答案，获网友疯狂点赞</li>
-<li>撩职场——面试官：你会帮女朋友洗内裤吗？90后霸气怒怼，面试官好尴尬。</li>
-<li>搜娱君——王晶近几年培养的晶女郎，拥有相同的特点，他的人品再受争议。</li>
-</ul>
-<h4 id="微信新闻"><a href="#微信新闻" class="headerlink" title="微信新闻"></a>微信新闻</h4><ul>
-<li>[要闻]央视新闻网——习近平总书记在十九届中央纪委三次会议上的重要讲话引起强烈反响。</li>
-<li>圈圈各种盘点——李荣浩坐高铁不慎丢失iPad，发文希望捡到者不要曝光里面短片。</li>
-<li>一点文化情感——对峙升级！南北越或将分裂，中国：闹大了！</li>
-<li>大民生活杂谈——范冰冰案件进展：穆晓光被捕，和范冰冰同居10年，自愿认罪！</li>
-<li>成成笑谈——周星驰《新喜剧之王》口碑炸裂，专家：周星驰历年最好</li>
-<li>学点养眼护肤知识——张柏芝说出为什么没有阻止陈冠希拍照的原因，网友：是在下输</li>
-<li>学神思维——清华退休老教授：往“死”里管住孩子这3点，将来想不成材都难！</li>
-<li>亲宝宝baby——最新消息：穆晓光再被罚“天价”，范冰冰被证实仍在调查中。</li>
-<li>小店铺大老板——马苏登上《男人装》封面，“马苏臀”果然名不虚传。</li>
-<li>小故事大智慧——终身受用的世界顶级思维</li>
-<li>梅之兰——《天龙八部》的八部是哪八部，天龙又指啥？知道的人不多。</li>
-<li>乡俗汇——鬼谷子：梦里出现这五种东西，预示鸿运当头，好事将近！</li>
-<li>女抱金砖——冯提莫13秒视频流出，王思聪想斥资销毁，网友：我们看到了</li>
-<li>袖里乾坤——中国又一巨型企业将“倒下”？市值蒸发超百亿，4万人将失业！</li>
-<li>勿忘忧草——周永康妻子与令计划弟媳的交互人生</li>
-<li>亲宝宝baby——被大师王林干过的12名女星！赵#、李##上榜！在卧室开光</li>
-<li>正能量一——冯小刚电影《芳华》女主曝光不为人知的丑事，世态炎凉。</li>
-<li>每天热点资讯fz——范冰冰或涉洗钱内幕？被证实仍在接受调查，真正问题并不在阴阳合同上。</li>
-<li>小店铺大老板——46岁杨钰莹穿成26岁，可上半身却辣眼睛，网友：非礼勿视。</li>
-<li>雨巷杂谈——为什么有的人从不读书但其远见、思维方式、做事方法却那么卓越？</li>
-<li>聊聊婚姻——下面毛发浓密的人，床上就很厉害么？</li>
-<li>大变革新商机——2019年，这才是我们最大的危机，多少人却还不觉醒！</li>
-<li>数字新媒体——2019年，别做公众号了。</li>
-<li>宠物讲——实拍野生动物交配精彩瞬间：全是技术活？这是“动物界活好的”</li>
-<li>灵点时光——2019年罗振宇的骗局，有没有你？</li>
-<li>今日热点反贪——金庸笔下他是唯一精通九阴、九阳之人，晚年却被活活毒死，很丢脸。</li>
-<li>每日时讯news——被梁朝伟干过的女星名单！蓝洁瑛竟然榜上有名。</li>
-<li>90花旦——被古天乐干过的女星名单！陈乔恩上榜，初恋被兄弟抢走。</li>
-</ul>
-<h4 id="搜狐新闻"><a href="#搜狐新闻" class="headerlink" title="搜狐新闻"></a>搜狐新闻</h4><p>  不想在列举了，大同小异。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
-<li>标题骇人听闻，震撼，语不惊人死不休。</li>
-<li>标题跟内容关系不大，或者结尾随意几句扯下了标题。</li>
-<li>内容提供者和提供的内容不是很搭配。</li>
-<li>内容提供者名称看起来是在广告，有点是一些做微商。</li>
-<li>娱乐八卦新闻居多。</li>
-<li>自己制造、杜撰的新闻。</li>
-<li>换花样抄、炒。</li>
-<li>旧闻居多</li>
-<li>煽情、制造冲突，给人不安、哗众取宠。</li>
-</ul>
-<h3 id="我们该怎么办？"><a href="#我们该怎么办？" class="headerlink" title="我们该怎么办？"></a>我们该怎么办？</h3><p>   网上新闻、消息，可信度极低，我们看了，该怎么做？</p>
-<ul>
-<li>不传朋友圈，以讹传讹，三人成虎。</li>
-<li>看了，呵呵一笑就好了，不要记在心上、轻信。</li>
-<li>学会批判性思维</li>
-</ul>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><h5 id="Line-策略"><a href="#Line-策略" class="headerlink" title="Line 策略"></a>Line 策略</h5><table>
+<thead>
+<tr>
+<th>区域</th>
+<th>策略</th>
+<th>细节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>美国</td>
+<td>FCM(GCM)</td>
+<td>1: 启动时，保持7分钟心跳，维持长连接半小时，之后断开长连接。<br>2: 有消息时，服务器会发送FCM消息，客户端接收FCM小时之后，重新建立长连接，并再次心跳维持半个小时。</td>
+</tr>
+<tr>
+<td>中国</td>
+<td>长连接+心跳策略</td>
+<td>心跳间隔 在WIFI 下是 3分20秒，在手机网络下是7分钟。</td>
+</tr>
+<tr>
+<td>中国</td>
+<td>轮询策略</td>
+<td>1: 客户端在长连接建立之后，也会定时发送消息，Server 会回复并且同时关闭长连接。<br>2: 客户端等待轮询时间$$T_1$$ 后再次建立TCP连接。Line 会根据手机的活跃状态动态调整$$T_1$$ , 范围是从最小1分钟～2小时半。而长连接存活时间比较固定$$T_2 $$ 比较固定，如果在$$T_2 $$ 收到新小时会延长$$T_2 $$ 时间。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="WhatsApp"><a href="#WhatsApp" class="headerlink" title="WhatsApp"></a>WhatsApp</h5><table>
+<thead>
+<tr>
+<th>FCM可用性</th>
+<th>策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>支持FCM的设备</td>
+<td>靠FCM来激活WhatsApp, WhatsApp启动后，会建立一个与服务器的长连接，直接通过此长连接发送PUSH信息，这个长连接10分钟需消息就会主动断掉，且这10分钟内不做心跳，断掉后Whatsapp客户端和它的服务器不再连接。当有消息时候，服务器发现没有长连接会发送FCM消息，手机收到FCM小时后，会重新建立连接来收取消息，10分钟无消息会再断开，如此循环。</td>
+</tr>
+<tr>
+<td>不支持FCM的设备</td>
+<td>长连接+心跳</td>
+</tr>
+</tbody>
+</table>
+<h5 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h5><table>
+<thead>
+<tr>
+<th>公共PUSH通道（信鸽）</th>
+<th>使用FCM Push 作为辅助通道</th>
+<th>自适应心跳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="心跳典型值"><a href="#心跳典型值" class="headerlink" title="心跳典型值"></a>心跳典型值</h5><table>
+<thead>
+<tr>
+<th>网络模式</th>
+<th>FCM</th>
+<th>Line</th>
+<th>WhatsApp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WI-FI</td>
+<td>15分钟</td>
+<td>3分20秒</td>
+<td>4分45秒</td>
+</tr>
+<tr>
+<td>手机网络</td>
+<td>28分钟</td>
+<td>7分钟</td>
+<td>4分45秒</td>
+</tr>
+</tbody>
+</table>
+<p><strong>当前值的测试，跟所属的环境有关，可能值不一样.</strong></p>
+<h5 id="可行的方案"><a href="#可行的方案" class="headerlink" title="可行的方案"></a>可行的方案</h5><p><img src="/2019/03/10/push-wenti/./push-wenti/网络保活.png" alt=""></p>
+<p>方案描述</p>
+<table>
+<thead>
+<tr>
+<th>连接</th>
+<th>周期</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>长连接</td>
+<td>1:  固定周期 $$T_1$$ <br>2:  动态调整的时间间隔</td>
+<td>1: 确保IP是有效，从而重新连接FCM/Apns，确保推送链路是通的。<br>2: 基于TCP 唤醒 App 保活。</td>
+</tr>
+<tr>
+<td>FCM/Apns</td>
+<td>1: 固定周期，$$T_2$$ <br>2: $$T_2$$ &gt; $$3T_1$$</td>
+<td>1: 采用相应的系统默认推送通道，起到系统拉活的效用。<br>2: 该消息要进行特殊处理，用户不可见</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FCM 拉活机制</strong></p>
+<blockquote>
+<p>1: 基于Topic的方式，将设备的token 订阅到某个topic，比如notify。</p>
+<p>2: 订阅topic，可以在客户端App，也可以在服务端。</p>
+<p>3: 定时对这个topic 发送用户不可见的PUSH。</p>
+</blockquote>
+<p><strong>注</strong></p>
+<blockquote>
+<p>可以适当使用高优先级的消息，允许FCM服务在必要时唤醒休眠设备并运行一些有限的处理（包括非常有限的网络访问）。高优先级消息通常应该会使得用户与您的应用或者通知进行互动。但这个要小心处理。</p>
+<p><a href="https://firebase.google.cn/docs/cloud-messaging/concept-options?hl=zh-cn#setting-the-priority-of-a-message" target="_blank" rel="noopener">消息类型</a></p>
+<p><a href="https://developer.android.google.cn/training/monitoring-device-state/doze-standby.html?hl=zh-cn" target="_blank" rel="noopener">对低电耗模式和应用待机模式进行针对性优化</a></p>
+</blockquote>
+<p><strong>Apns</strong></p>
+<blockquote>
+<p>1: 由于目前采用的开源库，不支持服务端动态将token 订阅到topic。</p>
+<p>2: 需要在客户端订阅topic。</p>
+<p>3: 需要研究如何使用基于topic的方式发送。</p>
+<p>4: 替换成FCM(待验证)</p>
+</blockquote>
+<p><strong>不同平台的消息</strong></p>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>FCM 通知消息（Anps 通知）</th>
+<th>FCM 数据消息（Anps 消息）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>安卓</td>
+<td>FCM代表客户端应用自动向最终用户设备显示消息</td>
+<td>客户端应用负责处理，可以处理成用户不可见。</td>
+</tr>
+<tr>
+<td>iOS</td>
+<td>Apns 代表客户端自动向最终用户设备显示消息</td>
+<td>以透传的方式传递给客户端，无显示，需要客户端应用处理，用户才可见。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TCP 唤醒安卓</strong></p>
+<table>
+<thead>
+<tr>
+<th>处理器</th>
+<th>功耗</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AP(Application Processor)</td>
+<td>1: 非休眠 &gt;50mA<br>2: LCD 功耗 100mA<br>3: WIFI 100mA</td>
+<td>AP是ARM架构的处理器：<br>1: 运行App的代码<br>2: 图形运算<br>3:运行Android 系统</td>
+</tr>
+<tr>
+<td>BP(Baseband Processor)</td>
+<td>1:5 mA(非通话时间)</td>
+<td>BP 用于运行实时操作系统（RTOS ）<br>1: 通讯协议栈运行在RTOS</td>
+</tr>
+</tbody>
+</table>
+<p>通讯协议栈运行与BP，在不通话的情况下，能耗低，一旦收到数据包，BP会将AP唤醒，唤醒的时间足够AP执行代码完成对收到的数据包进行处理。</p>
+<p>AlarmManager 是Android 系统封装的用于管理 RTC 的模块，RTC (Real Time Clock) 是一个独立的硬件时钟，可以在 CPU 休眠时正常运行，在预设的时间到达时，通过中断唤醒 CPU。</p>
 
       
     </div>
@@ -560,11 +710,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/生活/" rel="tag"># 生活</a>
+            <a href="/tags/工程/" rel="tag"># 工程</a>
           
-            <a href="/tags/感悟/" rel="tag"># 感悟</a>
-          
-            <a href="/tags/反思/" rel="tag"># 反思</a>
+            <a href="/tags/技术/" rel="tag"># 技术</a>
           
         </div>
       
@@ -577,8 +725,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/12/flq/" rel="next" title="法、理、情">
-                <i class="fa fa-chevron-left"></i> 法、理、情
+              <a href="/2019/03/08/skll/" rel="next" title="思考的力量">
+                <i class="fa fa-chevron-left"></i> 思考的力量
               </a>
             
           </div>
@@ -586,10 +734,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/10/alibbdztxqt/" rel="prev" title="阿里巴巴“大中台、小前台”读后感">
-                阿里巴巴“大中台、小前台”读后感 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -737,7 +881,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网是否存在所谓的善良"><span class="nav-number">1.</span> <span class="nav-text">互联网是否存在所谓的善良</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#新闻客户端内容分析"><span class="nav-number">1.1.</span> <span class="nav-text">新闻客户端内容分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#今日头条"><span class="nav-number">1.1.1.</span> <span class="nav-text">今日头条</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网易新闻"><span class="nav-number">1.1.2.</span> <span class="nav-text">网易新闻</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#腾讯新闻"><span class="nav-number">1.1.3.</span> <span class="nav-text">腾讯新闻</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#微信新闻"><span class="nav-number">1.1.4.</span> <span class="nav-text">微信新闻</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搜狐新闻"><span class="nav-number">1.1.5.</span> <span class="nav-text">搜狐新闻</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们该怎么办？"><span class="nav-number">1.3.</span> <span class="nav-text">我们该怎么办？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PUSH-链路分析"><span class="nav-number">1.</span> <span class="nav-text">PUSH 链路分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统链路"><span class="nav-number">1.1.</span> <span class="nav-text">系统链路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转化根因"><span class="nav-number">1.2.</span> <span class="nav-text">转化根因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计口径"><span class="nav-number">1.3.</span> <span class="nav-text">统计口径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链路的关键点"><span class="nav-number">1.4.</span> <span class="nav-text">链路的关键点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可落地的方案"><span class="nav-number">2.1.</span> <span class="nav-text">可落地的方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#限流"><span class="nav-number">2.1.1.</span> <span class="nav-text">限流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尽量批量的接口"><span class="nav-number">2.1.2.</span> <span class="nav-text">尽量批量的接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩大带宽"><span class="nav-number">2.1.3.</span> <span class="nav-text">扩大带宽</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#负载均衡式发送"><span class="nav-number">2.1.4.</span> <span class="nav-text">负载均衡式发送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保活长连接"><span class="nav-number">2.1.5.</span> <span class="nav-text">保活长连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抱团取暖策略"><span class="nav-number">2.1.6.</span> <span class="nav-text">抱团取暖策略</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保活长连接-1"><span class="nav-number">2.2.</span> <span class="nav-text">保活长连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原因一：-被系统干掉"><span class="nav-number">2.2.1.</span> <span class="nav-text">原因一： 被系统干掉</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原因二-Nat-超时机制"><span class="nav-number">2.2.2.</span> <span class="nav-text">原因二:   Nat 超时机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原因三：-安卓DHCP的租期（lease-time）问题"><span class="nav-number">2.2.3.</span> <span class="nav-text">原因三： 安卓DHCP的租期（lease time）问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原理"><span class="nav-number">2.2.4.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Line-策略"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">Line 策略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#WhatsApp"><span class="nav-number">2.2.4.2.</span> <span class="nav-text">WhatsApp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#微信"><span class="nav-number">2.2.4.3.</span> <span class="nav-text">微信</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#心跳典型值"><span class="nav-number">2.2.4.4.</span> <span class="nav-text">心跳典型值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#可行的方案"><span class="nav-number">2.2.4.5.</span> <span class="nav-text">可行的方案</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -759,7 +903,7 @@
       <div class="footer-inner">
         
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019-03-10 07:05:44</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019-03-10 07:05:45</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
