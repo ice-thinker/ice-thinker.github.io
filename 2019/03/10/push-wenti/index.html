@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="PUSH 链路分析系统链路先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：  转化根因 统计口径 链路的关键点    关键点 统计数据 策略 可落地     发送失败 1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关） 针对1的解决方法1：调用批量的接口2：扩大带宽3：限流4：负载均衡式发送针对2的解决方法：1：限流2：了解相关系统的特">
+<meta name="description" content="PUSH 链路分析系统链路先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：  转化根因 统计口径 链路的关键点   关键点 统计数据 策略 可落地     发送失败 1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关） 针对1的解决方法1：调用批量的接口2：扩大带宽3：限流4：负载均衡式发送针对2的解决方法：1：限流2：了解相关系统的特殊">
 <meta name="keywords" content="工程,技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PUSH 问题">
 <meta property="og:url" content="https://ice-thinker.github.io/2019/03/10/push-wenti/index.html">
 <meta property="og:site_name" content="知、行——人生">
-<meta property="og:description" content="PUSH 链路分析系统链路先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：  转化根因 统计口径 链路的关键点    关键点 统计数据 策略 可落地     发送失败 1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关） 针对1的解决方法1：调用批量的接口2：扩大带宽3：限流4：负载均衡式发送针对2的解决方法：1：限流2：了解相关系统的特">
+<meta property="og:description" content="PUSH 链路分析系统链路先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：  转化根因 统计口径 链路的关键点   关键点 统计数据 策略 可落地     发送失败 1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关） 针对1的解决方法1：调用批量的接口2：扩大带宽3：限流4：负载均衡式发送针对2的解决方法：1：限流2：了解相关系统的特殊">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/发送链路.png">
 <meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/Push转化率根因.png">
@@ -95,7 +95,7 @@
 <meta property="og:updated_time" content="2019-03-10T11:23:59.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PUSH 问题">
-<meta name="twitter:description" content="PUSH 链路分析系统链路先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：  转化根因 统计口径 链路的关键点    关键点 统计数据 策略 可落地     发送失败 1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关） 针对1的解决方法1：调用批量的接口2：扩大带宽3：限流4：负载均衡式发送针对2的解决方法：1：限流2：了解相关系统的特">
+<meta name="twitter:description" content="PUSH 链路分析系统链路先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：  转化根因 统计口径 链路的关键点   关键点 统计数据 策略 可落地     发送失败 1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关） 针对1的解决方法1：调用批量的接口2：扩大带宽3：限流4：负载均衡式发送针对2的解决方法：1：限流2：了解相关系统的特殊">
 <meta name="twitter:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/发送链路.png">
 
 
@@ -413,8 +413,7 @@
 <p><img src="/2019/03/10/push-wenti/发送链路.png" alt=""></p>
 <h3 id="转化根因"><a href="#转化根因" class="headerlink" title="转化根因"></a>转化根因</h3><p><img src="/2019/03/10/push-wenti/Push转化率根因.png" alt=""></p>
 <h3 id="统计口径"><a href="#统计口径" class="headerlink" title="统计口径"></a>统计口径</h3><p><img src="/2019/03/10/push-wenti/Push统计口径.png" alt=""></p>
-<h3 id="链路的关键点"><a href="#链路的关键点" class="headerlink" title="链路的关键点"></a>链路的关键点</h3><div class="table-container">
-<table>
+<h3 id="链路的关键点"><a href="#链路的关键点" class="headerlink" title="链路的关键点"></a>链路的关键点</h3><table>
 <thead>
 <tr>
 <th>关键点</th>
@@ -444,11 +443,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>注：</p>
 <p>   如果我们要完整地了解为何到达率低，那么要获取完整的数据，存在一定的工作量问题。</p>
 <p>  对于业界的到达率，感觉没有一个准数，从相关的资料了解到，有人说：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -470,7 +467,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>以上数据的真伪，由于没有相关的实践数据，也就无法根据自己的时间数据进行证伪，但是通过整个链路的分析，可以系统地认识到影响到达率的因素、以及可以实施的方案和待验证的方案。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="可落地的方案"><a href="#可落地的方案" class="headerlink" title="可落地的方案"></a>可落地的方案</h3><h4 id="限流"><a href="#限流" class="headerlink" title="限流"></a>限流</h4><p> 通过对发送机制的优化，采用限流的策略进行发送。</p>
 <h4 id="尽量批量的接口"><a href="#尽量批量的接口" class="headerlink" title="尽量批量的接口"></a>尽量批量的接口</h4><p>FCM： 提供基于Topic 的接口，动态将广播推送的token 订阅到某一个topic，然后基于topic 方式进行发送，解决推送服务到FCM服务端链路异常(带宽问题、socket 超时、被FCM流控)。 </p>
@@ -487,7 +483,6 @@
 </blockquote>
 <h3 id="保活长连接-1"><a href="#保活长连接-1" class="headerlink" title="保活长连接"></a>保活长连接</h3><h4 id="原因一：-被系统干掉"><a href="#原因一：-被系统干掉" class="headerlink" title="原因一： 被系统干掉"></a>原因一： 被系统干掉</h4><p>现在越来越多的手机厂商为了省电策略考虑，基本上如果一个应用没有被加入白名单，一旦处于后台就会被系统限制甚至干掉。这也是那些<strong>低频的应用</strong> PUSH到达率低的原因之一。 </p>
 <h4 id="原因二-Nat-超时机制"><a href="#原因二-Nat-超时机制" class="headerlink" title="原因二:   Nat 超时机制"></a>原因二:   Nat 超时机制</h4><p>   长连接断连主要是因为NAT断连，因为 IP v4 的 IP 量有限，运营商分配给手机终端的 IP 是运营商内网的 IP，<br>手机要连接 Internet，就需要通过运营商的网关做一个网络地址转换(Network Address Translation，NAT)。<br>简单的说运营商的网关需要维护一个外网 IP、端口到内网 IP、端口的对应关系，以确保内网的手机可以跟 Internet 的服务器通讯。大部分移动无线网络运营商都在链路一段时间没有数据通讯时，会淘汰 NAT 表中的对应项，造成链路中断。下表列出一些已测试过的网络的NAT超时时间(更多数据由于测试条件所限没有测到)：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -518,7 +513,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>注：该数据未经实践证明（只是看了大部分的数据）。</p>
 <p>Nat 超时机制：</p>
 <p><img src="/2019/03/10/push-wenti/nat.png" alt=""></p>
@@ -527,8 +521,7 @@
 <li>DHCP租期到了不会主动续约并且继续使用过期IP。这个问题导致的问题表象是，在超过租期的某个时间点（没有规律）会导致IP过期，老的TCP连接不会正常收发数据。并且系统没有网络变化事件，只有等应用判断主动建立新的TCP连接才引起安卓设备重新向DHCP Server 申请IP租用。</li>
 <li>未到租期的一半时间，安卓设备会重新向DHCP Server 申请IP租用。</li>
 </ul>
-<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><h5 id="Line-策略"><a href="#Line-策略" class="headerlink" title="Line 策略"></a>Line 策略</h5><div class="table-container">
-<table>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><h5 id="Line-策略"><a href="#Line-策略" class="headerlink" title="Line 策略"></a>Line 策略</h5><table>
 <thead>
 <tr>
 <th>区域</th>
@@ -550,13 +543,11 @@
 <tr>
 <td>中国</td>
 <td>轮询策略</td>
-<td>1: 客户端在长连接建立之后，也会定时发送消息，Server 会回复并且同时关闭长连接。<br>2: 客户端等待轮询时间<script type="math/tex">T_1</script> 后再次建立TCP连接。Line 会根据手机的活跃状态动态调整<script type="math/tex">T_1</script> , 范围是从最小1分钟～2小时半。而长连接存活时间比较固定<script type="math/tex">T_2</script> 比较固定，如果在<script type="math/tex">T_2</script> 收到新小时会延长<script type="math/tex">T_2</script> 时间。</td>
+<td>1: 客户端在长连接建立之后，也会定时发送消息，Server 会回复并且同时关闭长连接。<br>2: 客户端等待轮询时间$$T_1$$ 后再次建立TCP连接。Line 会根据手机的活跃状态动态调整$$T_1$$ , 范围是从最小1分钟～2小时半。而长连接存活时间比较固定$$T_2 $$ 比较固定，如果在$$T_2 $$ 收到新小时会延长$$T_2 $$ 时间。</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h5 id="WhatsApp"><a href="#WhatsApp" class="headerlink" title="WhatsApp"></a>WhatsApp</h5><div class="table-container">
-<table>
+<h5 id="WhatsApp"><a href="#WhatsApp" class="headerlink" title="WhatsApp"></a>WhatsApp</h5><table>
 <thead>
 <tr>
 <th>FCM可用性</th>
@@ -574,9 +565,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h5 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h5><div class="table-container">
-<table>
+<h5 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h5><table>
 <thead>
 <tr>
 <th>公共PUSH通道（信鸽）</th>
@@ -591,9 +580,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h5 id="心跳典型值"><a href="#心跳典型值" class="headerlink" title="心跳典型值"></a>心跳典型值</h5><div class="table-container">
-<table>
+<h5 id="心跳典型值"><a href="#心跳典型值" class="headerlink" title="心跳典型值"></a>心跳典型值</h5><table>
 <thead>
 <tr>
 <th>网络模式</th>
@@ -617,11 +604,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p><strong>当前值的测试，跟所属的环境有关，可能值不一样.</strong></p>
 <h5 id="可行的方案"><a href="#可行的方案" class="headerlink" title="可行的方案"></a>可行的方案</h5><p><img src="/2019/03/10/push-wenti/网络保活.png" alt=""></p>
 <p>方案描述</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -633,17 +618,16 @@
 <tbody>
 <tr>
 <td>长连接</td>
-<td>1:  固定周期 <script type="math/tex">T_1</script> <br>2:  动态调整的时间间隔</td>
+<td>1:  固定周期 $$T_1$$ <br>2:  动态调整的时间间隔</td>
 <td>1: 确保IP是有效，从而重新连接FCM/Apns，确保推送链路是通的。<br>2: 基于TCP 唤醒 App 保活。</td>
 </tr>
 <tr>
 <td>FCM/Apns</td>
-<td>1: 固定周期，<script type="math/tex">T_2</script> <br>2: <script type="math/tex">T_2</script> &gt; <script type="math/tex">3T_1</script></td>
+<td>1: 固定周期，$$T_2$$ <br>2: $$T_2$$ &gt; $$3T_1$$</td>
 <td>1: 采用相应的系统默认推送通道，起到系统拉活的效用。<br>2: 该消息要进行特殊处理，用户不可见</td>
 </tr>
 </tbody>
 </table>
-</div>
 <p><strong>FCM 拉活机制</strong></p>
 <blockquote>
 <p>1: 基于Topic的方式，将设备的token 订阅到某个topic，比如notify。</p>
@@ -664,7 +648,6 @@
 <p>4: 替换成FCM(待验证)</p>
 </blockquote>
 <p><strong>不同平台的消息</strong></p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -686,9 +669,7 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p><strong>TCP 唤醒安卓</strong></p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -710,7 +691,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>通讯协议栈运行与BP，在不通话的情况下，能耗低，一旦收到数据包，BP会将AP唤醒，唤醒的时间足够AP执行代码完成对收到的数据包进行处理。</p>
 <p>AlarmManager 是Android 系统封装的用于管理 RTC 的模块，RTC (Real Time Clock) 是一个独立的硬件时钟，可以在 CPU 休眠时正常运行，在预设的时间到达时，通过中断唤醒 CPU。</p>
 <h3 id="如何衡量自己的PUSH已经达到极限"><a href="#如何衡量自己的PUSH已经达到极限" class="headerlink" title="如何衡量自己的PUSH已经达到极限"></a>如何衡量自己的PUSH已经达到极限</h3><p>根据不同的应用类型（高频、中频、低频）以及实践深度，自己却是很难评估自己的到达率已经达到了极限。</p>
@@ -931,7 +911,7 @@
       <div class="footer-inner">
         
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019-03-23 02:21:31</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019-03-23 02:35:17</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
