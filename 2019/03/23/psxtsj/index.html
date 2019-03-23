@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="设计,架构,软件,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="实践总结、分享他人。">
-<meta name="keywords" content="心学 批判 反思 总结。分享 哲学 行业">
-<meta property="og:type" content="website">
-<meta property="og:title" content="知、行——人生">
-<meta property="og:url" content="https://ice-thinker.github.io/tags/细节/index.html">
+<meta name="description" content="系统问题域 吞吐量（瞬时高峰） 到达率 流控 可用性（与第三方推送渠道链路问题、推送系统本身的可用性） 失败重试  设计概要推送渠道选择    区域 Android IOS     中国 信鸽、极光、个推 信鸽、极光、个推、Apns   非中国 FCM Apns     针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FCM。但是">
+<meta name="keywords" content="设计,架构,软件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="推送系统设计">
+<meta property="og:url" content="https://ice-thinker.github.io/2019/03/23/psxtsj/index.html">
 <meta property="og:site_name" content="知、行——人生">
-<meta property="og:description" content="实践总结、分享他人。">
+<meta property="og:description" content="系统问题域 吞吐量（瞬时高峰） 到达率 流控 可用性（与第三方推送渠道链路问题、推送系统本身的可用性） 失败重试  设计概要推送渠道选择    区域 Android IOS     中国 信鸽、极光、个推 信鸽、极光、个推、Apns   非中国 FCM Apns     针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FCM。但是">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-23T06:13:00.998Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="知、行——人生">
-<meta name="twitter:description" content="实践总结、分享他人。">
+<meta name="twitter:title" content="推送系统设计">
+<meta name="twitter:description" content="系统问题域 吞吐量（瞬时高峰） 到达率 流控 可用性（与第三方推送渠道链路问题、推送系统本身的可用性） 失败重试  设计概要推送渠道选择    区域 Android IOS     中国 信鸽、极光、个推 信鸽、极光、个推、Apns   非中国 FCM Apns     针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FCM。但是">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://ice-thinker.github.io/tags/细节/">
+  <link rel="canonical" href="https://ice-thinker.github.io/2019/03/23/psxtsj/">
 
 
 
 
 
-  <title>标签: 细节 | 知、行——人生</title>
+  <title>推送系统设计 | 知、行——人生</title>
   
 
 
@@ -154,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -299,52 +300,203 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>细节<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/03/23/psxtsj/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="知鱼">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知、行——人生">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/01/06/tsdl/" itemprop="url">
-              
-                <span itemprop="name">天时、地利、人和</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">推送系统设计</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-06T18:24:41+08:00" content="2019-01-06">
-          01-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-23T13:50:21+08:00">
+                2019-03-23
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <h2 id="系统问题域"><a href="#系统问题域" class="headerlink" title="系统问题域"></a>系统问题域</h2><ul>
+<li>吞吐量（瞬时高峰）</li>
+<li>到达率</li>
+<li>流控</li>
+<li>可用性（与第三方推送渠道链路问题、推送系统本身的可用性）</li>
+<li>失败重试</li>
+</ul>
+<h2 id="设计概要"><a href="#设计概要" class="headerlink" title="设计概要"></a>设计概要</h2><h3 id="推送渠道选择"><a href="#推送渠道选择" class="headerlink" title="推送渠道选择"></a>推送渠道选择</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th>Android</th>
+<th>IOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中国</td>
+<td>信鸽、极光、个推</td>
+<td>信鸽、极光、个推、Apns</td>
+</tr>
+<tr>
+<td>非中国</td>
+<td>FCM</td>
+<td>Apns</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FCM。但是在国外则建议采用FCM（建议使用Firebase admin SDK，或者XMPP）。</p>
+<h3 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h3><h3 id="设计关键点"><a href="#设计关键点" class="headerlink" title="设计关键点"></a>设计关键点</h3><h2 id="不重复造轮子"><a href="#不重复造轮子" class="headerlink" title="不重复造轮子"></a>不重复造轮子</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/设计/" rel="tag"># 设计</a>
+          
+            <a href="/tags/架构/" rel="tag"># 架构</a>
+          
+            <a href="/tags/软件/" rel="tag"># 软件</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/10/push-wenti/" rel="next" title="PUSH 问题">
+                <i class="fa fa-chevron-left"></i> PUSH 问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -352,6 +504,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -372,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -449,6 +614,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统问题域"><span class="nav-number">1.</span> <span class="nav-text">系统问题域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计概要"><span class="nav-number">2.</span> <span class="nav-text">设计概要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推送渠道选择"><span class="nav-number">2.1.</span> <span class="nav-text">推送渠道选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统架构"><span class="nav-number">2.2.</span> <span class="nav-text">系统架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计关键点"><span class="nav-number">2.3.</span> <span class="nav-text">设计关键点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不重复造轮子"><span class="nav-number">3.</span> <span class="nav-text">不重复造轮子</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -589,6 +770,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
