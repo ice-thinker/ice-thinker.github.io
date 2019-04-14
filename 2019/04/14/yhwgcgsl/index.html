@@ -89,7 +89,9 @@
 <meta property="og:description" content="为什么 ？  技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。 基于JFinal 框架，接口&amp;amp;参数定义不清晰。 代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。 可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。 无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/bgwxtjg.png">
-<meta property="og:updated_time" content="2019-04-14T04:53:58.720Z">
+<meta property="og:image" content="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/dlst.jpg">
+<meta property="og:image" content="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/shiwu.jpg">
+<meta property="og:updated_time" content="2019-04-14T04:59:34.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="支付银行网关重构设计">
 <meta name="twitter:description" content="为什么 ？  技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。 基于JFinal 框架，接口&amp;amp;参数定义不清晰。 代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。 可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。 无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可">
@@ -556,6 +558,7 @@
      end
      end
      end</pre>
+<p><img src="/2019/04/14/yhwgcgsl/dlst.jpg" alt=""></p>
 <p><strong>动力视图说明</strong></p>
 <ul>
 <li>简要画出子系统之间的调用。</li>
@@ -565,6 +568,7 @@
 </ul>
 <h3 id="事务补偿策略"><a class="markdownIt-Anchor" href="#事务补偿策略"></a> 事务补偿策略</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    事务初始化--&gt;|执行原子|初始化</span><br><span class="line">    初始化--&gt;|执行|成功</span><br><span class="line">    初始化--&gt;|执行|失败</span><br><span class="line">    初始化--&gt;|执行|未知</span><br><span class="line">    成功--&gt;|执行|业务成功</span><br><span class="line">    业务成功--&gt;事务终止</span><br><span class="line">    失败--&gt;业务失败</span><br><span class="line">    业务失败--&gt;回滚</span><br><span class="line">    回滚--&gt;回滚成功</span><br><span class="line">    回滚成功--&gt;事务终止</span><br><span class="line">    回滚--&gt;回滚失败</span><br><span class="line">    回滚失败--&gt;Pengding告警</span><br><span class="line">    未知--&gt;|补偿|成功</span><br><span class="line">    未知--&gt;|补偿|失败</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/04/14/yhwgcgsl/shiwu.jpg" alt=""></p>
 <p><strong>关键设计</strong></p>
 <ul>
 <li>状态未知：网络读超时，被调用方返回未知的状态码（该错误码不能说明成功或者失败，对于成功的错误码必须是明确的状态，同时失败的状态码必须）。</li>
@@ -857,7 +861,7 @@ Bank.Front-->B_Bank</pre>
       <div class="footer-inner">
         
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019-04-14 12:54:09</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019-04-14 12:59:51</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
