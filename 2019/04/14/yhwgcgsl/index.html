@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="设计,架构,软件,">
+  <meta name="keywords" content="设计,支付,重构,">
 
 
 
@@ -80,20 +80,20 @@
 
 
 
-<meta name="description" content="系统问题域  吞吐量（瞬时高峰） 到达率 流控 可用性（与第三方推送渠道链路问题、推送系统本身的可用性） 失败重试   设计概要  推送渠道选择    区域 Android IOS     中国 信鸽、极光、个推 信鸽、极光、个推、Apns   非中国 FCM Apns    针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FC">
-<meta name="keywords" content="设计,架构,软件">
+<meta name="description" content="为什么 ？  技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。 基于JFinal 框架，接口&amp;amp;参数定义不清晰。 代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。 可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。 无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可">
+<meta name="keywords" content="设计,支付,重构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="推送系统设计">
-<meta property="og:url" content="https://ice-thinker.github.io/2019/03/23/psxtsj/index.html">
+<meta property="og:title" content="支付银行网关重构设计">
+<meta property="og:url" content="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/index.html">
 <meta property="og:site_name" content="知、行——人生">
-<meta property="og:description" content="系统问题域  吞吐量（瞬时高峰） 到达率 流控 可用性（与第三方推送渠道链路问题、推送系统本身的可用性） 失败重试   设计概要  推送渠道选择    区域 Android IOS     中国 信鸽、极光、个推 信鸽、极光、个推、Apns   非中国 FCM Apns    针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FC">
+<meta property="og:description" content="为什么 ？  技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。 基于JFinal 框架，接口&amp;amp;参数定义不清晰。 代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。 可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。 无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ice-thinker.github.io/2019/03/23/psxtsj/xtjiagou.png">
-<meta property="og:updated_time" content="2019-03-23T07:40:06.132Z">
+<meta property="og:image" content="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/bgwxtjg.png">
+<meta property="og:updated_time" content="2019-04-14T03:53:48.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="推送系统设计">
-<meta name="twitter:description" content="系统问题域  吞吐量（瞬时高峰） 到达率 流控 可用性（与第三方推送渠道链路问题、推送系统本身的可用性） 失败重试   设计概要  推送渠道选择    区域 Android IOS     中国 信鸽、极光、个推 信鸽、极光、个推、Apns   非中国 FCM Apns    针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FC">
-<meta name="twitter:image" content="https://ice-thinker.github.io/2019/03/23/psxtsj/xtjiagou.png">
+<meta name="twitter:title" content="支付银行网关重构设计">
+<meta name="twitter:description" content="为什么 ？  技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。 基于JFinal 框架，接口&amp;amp;参数定义不清晰。 代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。 可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。 无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可">
+<meta name="twitter:image" content="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/bgwxtjg.png">
 
 
 
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://ice-thinker.github.io/2019/03/23/psxtsj/">
+  <link rel="canonical" href="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/">
 
 
 
 
 
-  <title>推送系统设计 | 知、行——人生</title>
+  <title>支付银行网关重构设计 | 知、行——人生</title>
   
 
 
@@ -317,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/03/23/psxtsj/">
+    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
@@ -334,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">推送系统设计</h1>
+          <h1 class="post-title" itemprop="name headline">支付银行网关重构设计</h1>
         
 
         <div class="post-meta">
@@ -346,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-23T13:50:21+08:00">
-                2019-03-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-14T08:02:07+08:00">
+                2019-04-14
               </time>
             
 
@@ -406,145 +406,192 @@
       
 
       
-        <h2 id="系统问题域"><a class="markdownIt-Anchor" href="#系统问题域"></a> 系统问题域</h2>
+        <h2 id="为什么"><a class="markdownIt-Anchor" href="#为什么"></a> 为什么 ？</h2>
 <ul>
-<li>吞吐量（瞬时高峰）</li>
-<li>到达率</li>
-<li>流控</li>
-<li>可用性（与第三方推送渠道链路问题、推送系统本身的可用性）</li>
-<li>失败重试</li>
+<li>技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。</li>
+<li>基于JFinal 框架，接口&amp;参数定义不清晰。</li>
+<li>代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。</li>
+<li>可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。</li>
+<li>无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可用的异常金额熔断机制）。</li>
+<li>日志打印不规范，定位问题麻烦，无法根据日志进行告警设置（所有的日志基本都是INFO），导致出现故障，都是业务方先发现。</li>
 </ul>
-<h2 id="设计概要"><a class="markdownIt-Anchor" href="#设计概要"></a> 设计概要</h2>
-<h3 id="推送渠道选择"><a class="markdownIt-Anchor" href="#推送渠道选择"></a> 推送渠道选择</h3>
+<h2 id="重构目标"><a class="markdownIt-Anchor" href="#重构目标"></a> 重构目标</h2>
+<ul>
+<li>采用基于Maven 的项目，统一管理依赖。</li>
+<li>采用成熟流行的Spring Boot，重新抽象，提供统一的门面接口，对业务方屏蔽细节，代码结构清晰，提高可维护性、可扩展性。</li>
+<li>变化与不变分离，防止每次修改污染到其他功能，导致每次上线，都要回归所有的功能，增加测试的工作量。</li>
+<li>适配可测性需求，可以通过Mock 第三方接口进行异常模拟测试。</li>
+<li>规范日志打印，方便问题定位，并做好异常告警买点，能够及时发现异常。</li>
+<li>增加资损熔断</li>
+<li>能够基于业务进行接口级进行灰度。</li>
+</ul>
+<h2 id="风险与对策"><a class="markdownIt-Anchor" href="#风险与对策"></a> 风险与对策</h2>
+<ul>
+<li>重构、改动大、开发时间短（封闭开发12天，投入人力3.5人）</li>
+<li>测试工作量大，测试投入少（投入人力1人，预计测试5天）</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th>区域</th>
-<th>Android</th>
-<th>IOS</th>
+<th>风险点</th>
+<th>策略</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>中国</td>
-<td>信鸽、极光、个推</td>
-<td>信鸽、极光、个推、Apns</td>
+<td>银行对接</td>
+<td>1、不改变给银行提供的IP.<br>2、不改变给银行提供的url<br>3、开发环境Mock 银行接口，达到可测性、充分测试。</td>
 </tr>
 <tr>
-<td>非中国</td>
-<td>FCM</td>
-<td>Apns</td>
+<td>入侵性</td>
+<td>1、对现有系统上下文，实现0入侵，兼容现有的业务接口。<br>2、可以回滚</td>
+</tr>
+<tr>
+<td>平滑升级</td>
+<td>1、新老银行网关可以共存。<br>2、通过新系统，可以路由到老的银行网关，解决根据银行通道进行灰度的问题。</td>
 </tr>
 </tbody>
 </table>
-<p>针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FCM。但是在国外则建议采用FCM（建议使用Firebase admin SDK，或者XMPP）。</p>
-<h3 id="系统架构"><a class="markdownIt-Anchor" href="#系统架构"></a> 系统架构</h3>
-<p><img src="/2019/03/23/psxtsj/xtjiagou.png" alt=""></p>
-<h3 id="设计关键点"><a class="markdownIt-Anchor" href="#设计关键点"></a> 设计关键点</h3>
+<h2 id="方法论"><a class="markdownIt-Anchor" href="#方法论"></a> 方法论</h2>
 <ul>
-<li>
-<p>消息队列的作用：</p>
-<p>解决瞬时高峰的问题，尤其在推送广播消息的时候，需要对广播消息进行流控，按照固定的速率进行推送，即满足FCM 和Apns 的流控要求，同时为了不对自身系统（比如出口网络带宽、DB、下游Adapter）带来冲击。所以采用消息队列基于pipeline 模式，将实时消息流控和广播推送流控用统一的模式进行处理。</p>
-</li>
-<li>
-<p>Adapter ：</p>
-<p>适配推送渠道，减少引入新的渠道对系统造成的变化。同时根据不同的策略进行路由。路由策略：</p>
+<li>抽象：共性和个性分离，变化与不变分离。</li>
+<li>职责清晰：基于SOA机制，系统之间依赖于接口，系统之间互相屏蔽细节。</li>
+<li>系统等级化原则：原则上底层是不能直接调用上层接口，从而避免循环关系、等到等级化的原则。</li>
+<li>兜底：从资损的角度来看，系统设计必须存在兜底的策略（控制资损为第一原则）。</li>
+<li>敏捷开发：基于银行通道、接口来进行开发（基于Story），持续交付（解决测试工作量峰值），基于Story提测，避免测试等待、突然忙碌。</li>
+</ul>
+<h2 id="工具"><a class="markdownIt-Anchor" href="#工具"></a> 工具</h2>
 <table>
 <thead>
 <tr>
-<th>策略</th>
+<th>工具</th>
 <th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>基于设备模式（安卓或者iOS）</td>
+<td>Mock工具</td>
+<td>1、采用Kong<br>2、模拟正常返回<br>3、模拟异常测试（模拟各种Http状态、超时）<br>4、模拟各种业务异常状态</td>
 </tr>
 <tr>
-<td>2</td>
-<td>基于手机品牌（比如有厂商通道，则优先选择厂商通道）</td>
+<td>开发工具</td>
+<td>1、Maven<br>2、Eclipse<br>3、Git(Github)<br>4、Jenkins<br>5、Sonarqube(代码静态扫描)</td>
 </tr>
 <tr>
-<td>3</td>
-<td>基于区域（中国 或者 非中国）</td>
+<td>技术工具</td>
+<td>1、SpringBoot<br>2、Mybatis<br>3、Redis<br>4、MySQL<br>5、Nginx</td>
 </tr>
 </tbody>
 </table>
-</li>
-<li>
-<p>推送渠道失败尝试机制：</p>
-<p>（1）在推送过程中，如果遇到网络问题则建议采用Exponetial BackOff 进行重试。</p>
-<p>（2）对于无效Token 则放弃尝试。</p>
-<p>（3）对于推送渠道，虽然在Push-Dispatch 有流控，自己本身也要有流控策略（可以采用令牌桶）进行流</p>
-<p>​           控，如果自己本身由于网络异常，对堆积的消息进行超时丢弃，并将结果发送到消息队列中。</p>
-</li>
-<li>
-<p>State-Job：</p>
-<p>消息状态机任务，将消息状态扭转。</p>
+<h2 id="设计"><a class="markdownIt-Anchor" href="#设计"></a> 设计</h2>
+<h3 id="系统架构"><a class="markdownIt-Anchor" href="#系统架构"></a> 系统架构</h3>
+<p><img src="/2019/04/14/yhwgcgsl/bgwxtjg.png" alt=""></p>
+<p><strong>关键设计点</strong></p>
 <table>
 <thead>
 <tr>
-<th>状态</th>
-<th>策略</th>
+<th>关键点</th>
+<th>方案</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>发送成功</td>
-<td>1: 更新消息状态</td>
+<td>抽象</td>
+<td>1、子系统依赖SOA(RESTFul)接口，对其他子系统的细节透明。<br>2、通过统一的门面，对上游业务提供稳定的接口，通用参数和个性参数。<br>3、Bank-Proxy、Bank-Front 具有统一的抽象模型：Bank。Bank-Proxy 采用代理模式。Bank-Front 采用构建模式、复合模式。</td>
 </tr>
 <tr>
-<td>网络异常</td>
-<td>1: 基于Exponetial BackOff 机制 算出下次尝试时间，并将尝试任务写入DB。</td>
+<td>路由</td>
+<td>1、（业务编码、通道名称、接口）—&gt;Bank-Front—&gt;Bank。<br>2、（业务编码、通道名称、接口、资费）—&gt;Bank-Front—&gt;Bank。<br></td>
 </tr>
 <tr>
-<td>到达</td>
-<td>1: 更新消息状态</td>
+<td>反应堆系统</td>
+<td>1、通过队列、异步维护系统原则（等级化、非循环原则）。<br>2、Timer 采用指数退避机制进行补偿（保证性通知）</td>
 </tr>
 <tr>
-<td>未达</td>
-<td>1: 由于推送渠道FCM 或者Apns 具有存储消息等用户在线，再推送到功能。<br>2: 所以没有必要进行未达尝试。</td>
+<td>补偿任务</td>
+<td>1、处理确定的终态，对非终态（不确定的状态）采用补偿（或者Pending）<br>2、兜底（阻损策略，控制资金损失为第一原则）</td>
 </tr>
 </tbody>
 </table>
-</li>
-</ul>
-<h2 id="不重复造轮子"><a class="markdownIt-Anchor" href="#不重复造轮子"></a> 不重复造轮子</h2>
-<p><a href="https://github.com/ZhiYu2018/app.push" target="_blank" rel="noopener">集成推送</a></p>
-<p><strong><a href="https://github.com/ZhiYu2018/app.push" target="_blank" rel="noopener">https://github.com/ZhiYu2018/app.push</a></strong></p>
-<p>使用方法：</p>
+<h3 id="动力视图"><a class="markdownIt-Anchor" href="#动力视图"></a> 动力视图</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">     participant Trade</span><br><span class="line">     participant BankProxy</span><br><span class="line">     participant BankFront</span><br><span class="line">     participant Bank</span><br><span class="line">     participant ReactorGw</span><br><span class="line">     participant Timer</span><br><span class="line">     Trade-&gt;&gt;BankProxy:Pay Order</span><br><span class="line">     BankProxy-&gt;&gt;BankProxy:幂等性、发现路由、资损控制</span><br><span class="line">     BankProxy-&gt;&gt;BankFront: Pay Order</span><br><span class="line">     alt Normal</span><br><span class="line">         BankFront-&gt;&gt;Bank:Pay Order</span><br><span class="line">         Bank-&gt;&gt;BankFront: Status</span><br><span class="line">         BankFront-&gt;&gt;BankProxy:Status</span><br><span class="line">         BankProxy-&gt;&gt;Trade:Status</span><br><span class="line">     else Exception</span><br><span class="line">         BankFront-&gt;&gt;Bank:Pay Order</span><br><span class="line">         BankFront-&gt;BankFront:Exceptions,Unknown state</span><br><span class="line">         BankFront-&gt;&gt;ReactorGw:Timed task</span><br><span class="line">     end</span><br><span class="line">     Bank--&gt;&gt;BankFront:Call back</span><br><span class="line">     BankFront--&gt;&gt;ReactorGw:Notify</span><br><span class="line">     ReactorGw--x Trade:async notify</span><br><span class="line">     ReactorGw-&gt;ReactorGw: Handle Result</span><br><span class="line">     alt Fail</span><br><span class="line">     ReactorGw-&gt;ReactorGw:Save timer task</span><br><span class="line">     end</span><br><span class="line">     loop Loop task</span><br><span class="line">     Timer--&gt;Timer:Find task(补偿)</span><br><span class="line">     Timer--&gt;&gt;BankProxy:Compensation transaction</span><br><span class="line">     alt Success</span><br><span class="line">     BankProxy--&gt;&gt;Timer:Final state</span><br><span class="line">     Timer--&gt;&gt;Trade:async notify</span><br><span class="line">     else Fail</span><br><span class="line">     BankProxy--&gt;&gt;Timer:Non-Final state</span><br><span class="line">     alt Time Out</span><br><span class="line">     Timer--&gt;&gt;BankProxy:Rollback</span><br><span class="line">     else Non-Time Out</span><br><span class="line">     Timer-&gt;Timer:Update next time</span><br><span class="line">     end</span><br><span class="line">     end</span><br><span class="line">     end</span><br></pre></td></tr></table></figure>
+<p><strong>动力视图说明</strong></p>
 <ul>
-<li>自己开发Push-Server，将消息写入DB。</li>
-<li>采用定时任务（脚本）将消息推送给app.push。</li>
-<li>由于app.push 没有做消息路由，则自己要进行任务路由。</li>
-<li>对于Android 消息，建议采用fcm.xmpp 方法。</li>
+<li>简要画出子系统之间的调用。</li>
+<li>Timer：定时任务采用指数退避算法进行重试，到达一定的数次，采用固定的时间去尝试。</li>
+<li>反应堆系统：采用队列、异步调用打破系统循环关系。</li>
+<li>Timer 与BankProxy的调用：BankProxy根据路由关系，路由到相应的BankFront。</li>
 </ul>
-<p>Fcm.xpp关键数据：</p>
+<h3 id="事务补偿策略"><a class="markdownIt-Anchor" href="#事务补偿策略"></a> 事务补偿策略</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    事务初始化--&gt;|执行原子|初始化</span><br><span class="line">    初始化--&gt;|执行|成功</span><br><span class="line">    初始化--&gt;|执行|失败</span><br><span class="line">    初始化--&gt;|执行|未知</span><br><span class="line">    成功--&gt;|执行|业务成功</span><br><span class="line">    业务成功--&gt;事务终止</span><br><span class="line">    失败--&gt;业务失败</span><br><span class="line">    业务失败--&gt;回滚</span><br><span class="line">    回滚--&gt;回滚成功</span><br><span class="line">    回滚成功--&gt;事务终止</span><br><span class="line">    回滚--&gt;回滚失败</span><br><span class="line">    回滚失败--&gt;Pengding告警</span><br><span class="line">    未知--&gt;|补偿|成功</span><br><span class="line">    未知--&gt;|补偿|失败</span><br></pre></td></tr></table></figure>
+<p><strong>关键设计</strong></p>
+<ul>
+<li>状态未知：网络读超时，被调用方返回未知的状态码（该错误码不能说明成功或者失败，对于成功的错误码必须是明确的状态，同时失败的状态码必须）。</li>
+<li>假如成功状态是200，那么失败的状态 禁止：非200的状态，失败的状态，必须列出，比如201，202。其他状态认为非终态，比如203。</li>
+<li>补偿机制：注意幂等性操作，先查询、后补偿（一般是查询对方状态，更新本地状态）。</li>
+<li>通道能力：被依赖的通道具备查询接口，则进行指数退避补偿。被依赖的通道不具备查询接口，则进行资损熔断。</li>
+</ul>
+<h3 id="兜底"><a class="markdownIt-Anchor" href="#兜底"></a> 兜底</h3>
+<p>做最坏的打算，系统设计总会有不尽人意的地方，所以必须做最坏的打算。 系统设计如此，人生亦如此。</p>
+<p><strong>正确认识成功或者失败</strong></p>
+<ul>
+<li>区分业务上的成功 和业务上的失败。</li>
+<li>内部失败：比如写数据库失败。</li>
+<li>如果是业务成功 + 内部失败，则可以返回调用方业务成功或者Pengding。</li>
+<li>如果业务失败，则返回调用方业务失败。</li>
+</ul>
+<p><strong>一个血的案例</strong></p>
+<ul>
+<li>这个例子 由于没有正确识别业务成功 和内部失败，导致资金损失。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">  Actor--&gt;&gt;Trade:提现</span><br><span class="line">  Trade--&gt;&gt;BGW:提现</span><br><span class="line">  BGW--&gt;&gt;Bank:提现</span><br><span class="line">  Bank--&gt;&gt;Bank:增加用户账户余额</span><br><span class="line">  Bank--&gt;&gt;BGW:成功</span><br><span class="line">  Bank--&gt;&gt;用户:银行账户收到xx金额</span><br><span class="line">  BGW--&gt;&gt;BGW:写DB失败</span><br><span class="line">  BGW--&gt;&gt;Trade:失败</span><br><span class="line">  Trade--&gt;&gt;Trade:回滚账户余额</span><br><span class="line">  用户--&gt;&gt;用户:看到账户余额没有变少</span><br><span class="line">  用户--&gt;&gt;Actor:提现</span><br></pre></td></tr></table></figure>
+<h3 id="资损控制策略"><a class="markdownIt-Anchor" href="#资损控制策略"></a> 资损控制策略</h3>
 <table>
 <thead>
 <tr>
-<th>指标</th>
-<th>数据量</th>
-<th>百分比</th>
+<th>问题</th>
+<th>策略</th>
+<th>动作</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Server-FCM 送达率</td>
-<td>66000</td>
-<td>98.2%</td>
+<td>银行通道能力有缺陷</td>
+<td>1、日常异常金额&gt;= X 告警<br>2、日累积异常金额&gt;=Y，通道暂时不可用，并告警</td>
+<td>1、接收告警，要第一时间联系银行。<br>2、提供手工清除不可用标识</td>
 </tr>
 <tr>
-<td>FCM-Device（设备）到达率</td>
-<td>66000</td>
-<td>60%</td>
+<td>银行能力完备</td>
+<td>走完整的事务补偿流程</td>
+<td></td>
+</tr>
+<tr>
+<td>自动退款</td>
+<td>1、自动退款日累积金额，超过日常金额，转手工确认。<br>2、单笔最大超过xx，转手工确认退款</td>
+<td>防止自动退款由于某个异常，造成损失。</td>
+</tr>
+<tr>
+<td>手工退款</td>
+<td>1、提供异常订单查询系统<br>2、提供手工退款功能</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>数据说明：</p>
-<p>1、Server-FCM 送达率：在测试过程中，由于无效Token 占1100，所以送达率是98.2%，如果是有效Token则100%。这只要在设计中 要进行流控、失败尝试。</p>
-<p>2、FCM-Device 到达率： 这个取决于所取测试样本的用户情况。</p>
+<h2 id="平滑升级灰度"><a class="markdownIt-Anchor" href="#平滑升级灰度"></a> 平滑升级（灰度）</h2>
+<p><strong>通过BankProxy 灰度</strong></p>
+<ul>
+<li>通过Proxy 基于银行通道的灰度</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">Trade--&gt;Nginx</span><br><span class="line">Nginx--&gt;Bank.Proxy</span><br><span class="line">Bank.Proxy--&gt;Old_BGW</span><br><span class="line">Old_BGW--&gt;A_Bank</span><br><span class="line">Bank.Proxy--&gt;Bank.Front</span><br><span class="line">Bank.Front--&gt;B_Bank</span><br></pre></td></tr></table></figure>
+<p><strong>通过Nginx 灰度</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">Trade--&gt;Nginx</span><br><span class="line">Nginx--&gt;Old_BGW</span><br><span class="line">Old_BGW--&gt;A_Bank</span><br><span class="line">Nginx--&gt;Bank.Proxy</span><br><span class="line">Bank.Proxy--&gt;Bank.Front</span><br><span class="line">Bank.Front--&gt;B_Bank</span><br></pre></td></tr></table></figure>
+<h2 id="架构优点"><a class="markdownIt-Anchor" href="#架构优点"></a> 架构优点</h2>
+<p><strong>变化与不变的分离</strong></p>
+<ul>
+<li>反应堆系统（Reactor）：依赖于抽象，逻辑是稳定的。</li>
+<li>Bank_Proxy：依赖于抽象，是稳定的。</li>
+<li>Bank_Front：是变化的，可以微服务（模块化），对变化的边界是可控的。</li>
+</ul>
 
       
     </div>
@@ -564,9 +611,9 @@
           
             <a href="/tags/设计/" rel="tag"># 设计</a>
           
-            <a href="/tags/架构/" rel="tag"># 架构</a>
+            <a href="/tags/支付/" rel="tag"># 支付</a>
           
-            <a href="/tags/软件/" rel="tag"># 软件</a>
+            <a href="/tags/重构/" rel="tag"># 重构</a>
           
         </div>
       
@@ -579,8 +626,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/10/push-wenti/" rel="next" title="PUSH 问题">
-                <i class="fa fa-chevron-left"></i> PUSH 问题
+              <a href="/2019/03/23/tjyzl/" rel="next" title="统计与真理">
+                <i class="fa fa-chevron-left"></i> 统计与真理
               </a>
             
           </div>
@@ -588,10 +635,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/23/tjyzl/" rel="prev" title="统计与真理">
-                统计与真理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -739,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统问题域"><span class="nav-number">1.</span> <span class="nav-text"> 系统问题域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计概要"><span class="nav-number">2.</span> <span class="nav-text"> 设计概要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推送渠道选择"><span class="nav-number">2.1.</span> <span class="nav-text"> 推送渠道选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统架构"><span class="nav-number">2.2.</span> <span class="nav-text"> 系统架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计关键点"><span class="nav-number">2.3.</span> <span class="nav-text"> 设计关键点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不重复造轮子"><span class="nav-number">3.</span> <span class="nav-text"> 不重复造轮子</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么"><span class="nav-number">1.</span> <span class="nav-text"> 为什么 ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重构目标"><span class="nav-number">2.</span> <span class="nav-text"> 重构目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#风险与对策"><span class="nav-number">3.</span> <span class="nav-text"> 风险与对策</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法论"><span class="nav-number">4.</span> <span class="nav-text"> 方法论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number">5.</span> <span class="nav-text"> 工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计"><span class="nav-number">6.</span> <span class="nav-text"> 设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统架构"><span class="nav-number">6.1.</span> <span class="nav-text"> 系统架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动力视图"><span class="nav-number">6.2.</span> <span class="nav-text"> 动力视图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务补偿策略"><span class="nav-number">6.3.</span> <span class="nav-text"> 事务补偿策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兜底"><span class="nav-number">6.4.</span> <span class="nav-text"> 兜底</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资损控制策略"><span class="nav-number">6.5.</span> <span class="nav-text"> 资损控制策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平滑升级灰度"><span class="nav-number">7.</span> <span class="nav-text"> 平滑升级（灰度）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构优点"><span class="nav-number">8.</span> <span class="nav-text"> 架构优点</span></a></li></ol></div>
             
 
           </div>
@@ -761,7 +804,7 @@
       <div class="footer-inner">
         
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019-04-14 11:53:59</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019-04-14 11:54:01</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
