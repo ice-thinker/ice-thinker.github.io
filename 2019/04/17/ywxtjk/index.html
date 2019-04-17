@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据   系统设计 12345678graph LR   APP--&amp;gt;|TCP|GateWay   GateWay--&amp;gt;|UD">
+<meta name="description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据   系统设计 12345678graph TD   APP--&amp;gt;|TCP|GateWay   GateWay--&amp;gt;|UD">
 <meta name="keywords" content="架构,软件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="业务监控系统设计">
 <meta property="og:url" content="https://ice-thinker.github.io/2019/04/17/ywxtjk/index.html">
 <meta property="og:site_name" content="知、行——人生">
-<meta property="og:description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据   系统设计 12345678graph LR   APP--&amp;gt;|TCP|GateWay   GateWay--&amp;gt;|UD">
+<meta property="og:description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据   系统设计 12345678graph TD   APP--&amp;gt;|TCP|GateWay   GateWay--&amp;gt;|UD">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-17T13:58:53.259Z">
+<meta property="og:updated_time" content="2019-04-17T14:08:58.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="业务监控系统设计">
-<meta name="twitter:description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据   系统设计 12345678graph LR   APP--&amp;gt;|TCP|GateWay   GateWay--&amp;gt;|UD">
+<meta name="twitter:description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据   系统设计 12345678graph TD   APP--&amp;gt;|TCP|GateWay   GateWay--&amp;gt;|UD">
 
 
 
@@ -418,7 +418,7 @@
 <li>服务治理的数据依据</li>
 </ul>
 <h1 id="系统设计"><a class="markdownIt-Anchor" href="#系统设计"></a> 系统设计</h1>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">   APP--&gt;|TCP|GateWay</span><br><span class="line">   GateWay--&gt;|UDP|MsgFront</span><br><span class="line">   Java-Server--&gt;|UDP|MsgFront</span><br><span class="line">   PHP-Server--&gt;|UDP|MsgFront</span><br><span class="line">   MsgFront--&gt;|RESTFul|MsgCenter</span><br><span class="line">   MsgCenter--&gt;报表平台</span><br><span class="line">   MsgCenter--&gt;告警平台</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">   APP--&gt;|TCP|GateWay</span><br><span class="line">   GateWay--&gt;|UDP|MsgFront</span><br><span class="line">   Java-Server--&gt;|UDP|MsgFront</span><br><span class="line">   PHP-Server--&gt;|UDP|MsgFront</span><br><span class="line">   MsgFront--&gt;|RESTFul|MsgCenter</span><br><span class="line">   MsgCenter--&gt;报表平台</span><br><span class="line">   MsgCenter--&gt;告警平台</span><br></pre></td></tr></table></figure>
 <p><strong>设计说明</strong></p>
 <ul>
 <li>GateWay 可以采用TCP或者RESTFul协议进行交互，建议RESTFul，客户端上报一遍只是上报一些关键的信息。</li>
@@ -434,7 +434,7 @@
 <li>错误影响：SDK 自己消化自己产生的错误、异常，这些异常对调用方不可见，不影响业务的正常处理。</li>
 </ul>
 <h1 id="基于开源的方案"><a class="markdownIt-Anchor" href="#基于开源的方案"></a> 基于开源的方案</h1>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">   APP--&gt;|RESTFul|GateWay</span><br><span class="line">   GateWay--&gt;|UDP|MsgFront</span><br><span class="line">   Java-Server--&gt;|UDP|MsgFront</span><br><span class="line">   PHP-Server--&gt;|UDP|MsgFront</span><br><span class="line">   MsgFront--&gt;|RESTFul|MsgCenter</span><br><span class="line">   MsgCenter--&gt;Prometheus</span><br><span class="line">   Prometheus--&gt;Grafana</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">   APP--&gt;|RESTFul|GateWay</span><br><span class="line">   GateWay--&gt;|UDP|MsgFront</span><br><span class="line">   Java-Server--&gt;|UDP|MsgFront</span><br><span class="line">   PHP-Server--&gt;|UDP|MsgFront</span><br><span class="line">   MsgFront--&gt;|RESTFul|MsgCenter</span><br><span class="line">   MsgCenter--&gt;Prometheus</span><br><span class="line">   Prometheus--&gt;Grafana</span><br></pre></td></tr></table></figure>
 <p><strong>方案说明：</strong></p>
 <ul>
 <li>Prometheus:具有可视化、告警的功能(通过配置指标、告警策略)。</li>
@@ -651,7 +651,7 @@
       <div class="footer-inner">
         
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019-04-17 10:00:17</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019-04-17 10:09:06</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
