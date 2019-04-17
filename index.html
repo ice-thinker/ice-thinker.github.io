@@ -2,23 +2,14 @@
 
 
 
-
-
-
-
-
-
-
-
-
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -29,6 +20,15 @@
 
 
 
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,42 +48,65 @@
 
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
 
 
-<script id="hexo.configurations">
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="实践总结、分享他人。">
+<meta name="keywords" content="心学 批判 反思 总结。分享 哲学 行业">
+<meta property="og:type" content="website">
+<meta property="og:title" content="知、行——人生">
+<meta property="og:url" content="https://zhiyu.space/index.html">
+<meta property="og:site_name" content="知、行——人生">
+<meta property="og:description" content="实践总结、分享他人。">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="知、行——人生">
+<meta name="twitter:description" content="实践总结、分享他人。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    version: '7.1.0',
+    scheme: 'Pisces',
+    version: '5.1.4',
     sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    back2top: ,
-    back2top_sidebar: ,
     fancybox: true,
-    fastclick: ,
-    lazyload: ,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -95,38 +118,12 @@
 </script>
 
 
-  
+
+  <link rel="canonical" href="https://zhiyu.space/">
 
 
 
 
-  <meta name="description" content="实践总结、分享他人。">
-<meta name="keywords" content="心学 批判 反思 总结。分享 哲学 行业">
-<meta property="og:type" content="website">
-<meta property="og:title" content="知、行——人生">
-<meta property="og:url" content="https://ice-thinker.github.io/index.html">
-<meta property="og:site_name" content="知、行——人生">
-<meta property="og:description" content="实践总结、分享他人。">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="知、行——人生">
-<meta name="twitter:description" content="实践总结、分享他人。">
-
-
-
-
-
-  
-  
-  <link rel="canonical" href="https://ice-thinker.github.io/">
-
-
-
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
 
   <title>知、行——人生</title>
   
@@ -138,38 +135,9 @@
 
 
 
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -180,9 +148,9 @@
   page-home">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
@@ -192,16 +160,13 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
       
         <p class="site-subtitle">知行人生：审、慎、度、行。</p>
       
-    
-    
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -209,111 +174,75 @@
   </div>
 </div>
 
-
-
 <nav class="site-nav">
+  
+
   
     <ul id="menu" class="menu">
       
         
-        
-        
-          
-          <li class="menu-item menu-item-home menu-item-active">
-
-    
-    
-    
-
-    
-
-    <a href="/" rel="section">首页</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-
-    
-
-    <a href="/categories/" rel="section">分类</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
-    
-
-    
-
-    <a href="/tags/" rel="section">标签</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-
-    
-
-    <a href="/archives/" rel="section">归档</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-commonweal">
-
-    
-    
-    
-
-    
-
-    <a href="/404/" rel="section">公益 404</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-
-    
-
-    <a href="/about/" rel="section">关于</a>
-
-  </li>
-
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
       
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
       
     </ul>
-  
-
-  
-    
-
   
 
   
@@ -321,20 +250,12 @@
 
 
 
-  
-
-
-
-</div>
+ </div>
     </header>
-
-    
-
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -347,22 +268,20 @@
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/04/17/ywxtjk/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/04/17/ywxtjk/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="知、行——人生">
     </span>
 
@@ -373,33 +292,23 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/04/17/ywxtjk/" class="post-title-link" itemprop="url">业务监控系统设计</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/04/17/ywxtjk/" itemprop="url">业务监控系统设计</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-17T10:03:05+08:00">
+                2019-04-17
+              </time>
+            
 
-              
-                
-              
-
-              <time title="创建时间：2019-04-17 10:03:05" itemprop="dateCreated datePublished" datetime="2019-04-17T10:03:05+08:00">2019-04-17</time>
             
 
             
@@ -414,10 +323,14 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/工程/" itemprop="url" rel="index"><span itemprop="name">工程</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
+                  </a>
+                </span>
 
                 
                 
@@ -426,7 +339,6 @@
           
 
           
-            
             
           
 
@@ -454,42 +366,50 @@
       
         
           
-            <p>
-               为什么要？
-没有监控系统，会咋样？
+            <h1 id="为什么要？"><a href="#为什么要？" class="headerlink" title="为什么要？"></a>为什么要？</h1><p> <strong>没有监控系统，会咋样？</strong></p>
+<ul>
+<li>没有监控系统，如果老板比你先发现问题，你会怎么样？</li>
+<li>没有监控系统，如果发现了问题，你怎么快速定位呢？</li>
+<li>没有监控系统，App 出现卡顿，你知道是什么原因么？</li>
+</ul>
+<p><strong>监控系统的作用</strong></p>
+<ul>
+<li>及时发现问题</li>
+<li>提供全局系统视角</li>
+<li>服务治理的数据依据</li>
+</ul>
+<h1 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">   APP--&gt;|TCP|GateWay</span><br><span class="line">   GateWay--&gt;|UDP|MsgFront</span><br><span class="line">   Java-Server--&gt;|UDP|MsgFront</span><br><span class="line">   PHP-Server--&gt;|UDP|MsgFront</span><br><span class="line">   MsgFront--&gt;|RESTFul|MsgCenter</span><br><span class="line">   MsgCenter--&gt;报表平台</span><br><span class="line">   MsgCenter--&gt;告警平台</span><br></pre></td></tr></table></figure>
+<p><strong>设计说明</strong></p>
+<ul>
+<li>GateWay 可以采用TCP或者RESTFul协议进行交互，建议RESTFul，客户端上报一遍只是上报一些关键的信息。</li>
+<li>MsgFront : 跟相关业务方是属于同一机房，相关业务方通过UDP 快速、及时上报数据，对业务影响较小，简化上报逻辑。</li>
+<li>MsgCenter: 同一收集所有机房的上报数据，并同一处理，推送给相关的平台(可视化平台、告警平台)。</li>
+<li>提供Java SDK，PHP SDK。</li>
+</ul>
+<h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><p><strong>SDK 业务影响</strong></p>
+<ul>
+<li>接近零影响</li>
+<li>业务调用耗时、CPU、内存影响极小，可以忽略</li>
+<li>错误影响：SDK 自己消化自己产生的错误、异常，这些异常对调用方不可见，不影响业务的正常处理。</li>
+</ul>
+<h1 id="基于开源的方案"><a href="#基于开源的方案" class="headerlink" title="基于开源的方案"></a>基于开源的方案</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">   APP--&gt;|RESTFul|GateWay</span><br><span class="line">   GateWay--&gt;|UDP|MsgFront</span><br><span class="line">   Java-Server--&gt;|UDP|MsgFront</span><br><span class="line">   PHP-Server--&gt;|UDP|MsgFront</span><br><span class="line">   MsgFront--&gt;|RESTFul|MsgCenter</span><br><span class="line">   MsgCenter--&gt;Prometheus</span><br><span class="line">   Prometheus--&gt;Grafana</span><br></pre></td></tr></table></figure>
+<p><strong>方案说明：</strong></p>
+<ul>
+<li>Prometheus:具有可视化、告警的功能(通过配置指标、告警策略)。</li>
+<li>Grafana: 可以对接Prometheus，可视化展示更丰富，Grafana 具有基于可视化视图的告警设置。</li>
+<li>调用链日志采用loki:<a href="https://grafana.com/loki#about" target="_blank" rel="noopener">https://grafana.com/loki#about</a></li>
+</ul>
 
-没有监控系统，如果老板比你先发现问题，你会怎么样？
-没有监控系统，如果发现了问题，你怎么快速定位呢？
-没有监控系统，App 出现卡顿，你知道是什么原因么？
-
-监控系统的作用
-
-及时发现问题
-提供全局系统视角
-服务治理的数据依据
-
- 系统设计
-graph LR 
-              ...
-            </p>
-          <!--noindex-->
           
-          <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -522,22 +442,20 @@ graph LR
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/04/14/yhwgcgsl/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="知、行——人生">
     </span>
 
@@ -548,33 +466,23 @@ graph LR
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/04/14/yhwgcgsl/" class="post-title-link" itemprop="url">支付银行网关重构设计</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/04/14/yhwgcgsl/" itemprop="url">支付银行网关重构设计</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-14T08:02:07+08:00">
+                2019-04-14
+              </time>
+            
 
-              
-                
-              
-
-              <time title="创建时间：2019-04-14 08:02:07" itemprop="dateCreated datePublished" datetime="2019-04-14T08:02:07+08:00">2019-04-14</time>
             
 
             
@@ -589,10 +497,14 @@ graph LR
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/工程/" itemprop="url" rel="index"><span itemprop="name">工程</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
+                  </a>
+                </span>
 
                 
                 
@@ -601,7 +513,6 @@ graph LR
           
 
           
-            
             
           
 
@@ -629,33 +540,189 @@ graph LR
       
         
           
-            <p>
-               为什么 ？
+            <h2 id="为什么-？"><a href="#为什么-？" class="headerlink" title="为什么 ？"></a>为什么 ？</h2><ul>
+<li>技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。</li>
+<li>基于JFinal 框架，接口&amp;参数定义不清晰。</li>
+<li>代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。</li>
+<li>可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。</li>
+<li>无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可用的异常金额熔断机制）。</li>
+<li>日志打印不规范，定位问题麻烦，无法根据日志进行告警设置（所有的日志基本都是INFO），导致出现故障，都是业务方先发现。</li>
+</ul>
+<h2 id="重构目标"><a href="#重构目标" class="headerlink" title="重构目标"></a>重构目标</h2><ul>
+<li>采用基于Maven 的项目，统一管理依赖。</li>
+<li>采用成熟流行的Spring Boot，重新抽象，提供统一的门面接口，对业务方屏蔽细节，代码结构清晰，提高可维护性、可扩展性。</li>
+<li>变化与不变分离，防止每次修改污染到其他功能，导致每次上线，都要回归所有的功能，增加测试的工作量。</li>
+<li>适配可测性需求，可以通过Mock 第三方接口进行异常模拟测试。</li>
+<li>规范日志打印，方便问题定位，并做好异常告警买点，能够及时发现异常。</li>
+<li>增加资损熔断</li>
+<li>能够基于业务进行接口级进行灰度。</li>
+</ul>
+<h2 id="风险与对策"><a href="#风险与对策" class="headerlink" title="风险与对策"></a>风险与对策</h2><ul>
+<li>重构、改动大、开发时间短（封闭开发12天，投入人力3.5人）</li>
+<li>测试工作量大，测试投入少（投入人力1人，预计测试5天）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>风险点</th>
+<th>策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>银行对接</td>
+<td>1、不改变给银行提供的IP.<br>2、不改变给银行提供的url<br>3、开发环境Mock 银行接口，达到可测性、充分测试。</td>
+</tr>
+<tr>
+<td>入侵性</td>
+<td>1、对现有系统上下文，实现0入侵，兼容现有的业务接口。<br>2、可以回滚</td>
+</tr>
+<tr>
+<td>平滑升级</td>
+<td>1、新老银行网关可以共存。<br>2、通过新系统，可以路由到老的银行网关，解决根据银行通道进行灰度的问题。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="方法论"><a href="#方法论" class="headerlink" title="方法论"></a>方法论</h2><ul>
+<li>抽象：共性和个性分离，变化与不变分离。</li>
+<li>职责清晰：基于SOA机制，系统之间依赖于接口，系统之间互相屏蔽细节。</li>
+<li>系统等级化原则：原则上底层是不能直接调用上层接口，从而避免循环关系、等到等级化的原则。</li>
+<li>兜底：从资损的角度来看，系统设计必须存在兜底的策略（控制资损为第一原则）。</li>
+<li>敏捷开发：基于银行通道、接口来进行开发（基于Story），持续交付（解决测试工作量峰值），基于Story提测，避免测试等待、突然忙碌。</li>
+</ul>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><table>
+<thead>
+<tr>
+<th>工具</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mock工具</td>
+<td>1、采用Kong<br>2、模拟正常返回<br>3、模拟异常测试（模拟各种Http状态、超时）<br>4、模拟各种业务异常状态</td>
+</tr>
+<tr>
+<td>开发工具</td>
+<td>1、Maven<br>2、Eclipse<br>3、Git(Github)<br>4、Jenkins<br>5、Sonarqube(代码静态扫描)</td>
+</tr>
+<tr>
+<td>技术工具</td>
+<td>1、SpringBoot<br>2、Mybatis<br>3、Redis<br>4、MySQL<br>5、Nginx</td>
+</tr>
+</tbody>
+</table>
+<h2 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h2><h3 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h3><p><img src="yhwgcgsl/bgwxtjg.png" alt></p>
+<p><strong>关键设计点</strong></p>
+<table>
+<thead>
+<tr>
+<th>关键点</th>
+<th>方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抽象</td>
+<td>1、子系统依赖SOA(RESTFul)接口，对其他子系统的细节透明。<br>2、通过统一的门面，对上游业务提供稳定的接口，通用参数和个性参数。<br>3、Bank-Proxy、Bank-Front 具有统一的抽象模型：Bank。Bank-Proxy 采用代理模式。Bank-Front 采用构建模式、复合模式。</td>
+</tr>
+<tr>
+<td>路由</td>
+<td>1、（业务编码、通道名称、接口）—&gt;Bank-Front—&gt;Bank。<br>2、（业务编码、通道名称、接口、资费）—&gt;Bank-Front—&gt;Bank。<br></td>
+</tr>
+<tr>
+<td>反应堆系统</td>
+<td>1、通过队列、异步维护系统原则（等级化、非循环原则）。<br>2、Timer 采用指数退避机制进行补偿（保证性通知）</td>
+</tr>
+<tr>
+<td>补偿任务</td>
+<td>1、处理确定的终态，对非终态（不确定的状态）采用补偿（或者Pending）<br>2、兜底（阻损策略，控制资金损失为第一原则）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="动力视图"><a href="#动力视图" class="headerlink" title="动力视图"></a>动力视图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">     participant Trade</span><br><span class="line">     participant BankProxy</span><br><span class="line">     participant BankFront</span><br><span class="line">     participant Bank</span><br><span class="line">     participant ReactorGw</span><br><span class="line">     participant Timer</span><br><span class="line">     Trade-&gt;&gt;BankProxy:Pay Order</span><br><span class="line">     BankProxy-&gt;&gt;BankProxy:幂等性、发现路由、资损控制</span><br><span class="line">     BankProxy-&gt;&gt;BankFront: Pay Order</span><br><span class="line">     alt Normal</span><br><span class="line">         BankFront-&gt;&gt;Bank:Pay Order</span><br><span class="line">         Bank-&gt;&gt;BankFront: Status</span><br><span class="line">         BankFront-&gt;&gt;BankProxy:Status</span><br><span class="line">         BankProxy-&gt;&gt;Trade:Status</span><br><span class="line">     else Exception</span><br><span class="line">         BankFront-&gt;&gt;Bank:Pay Order</span><br><span class="line">         BankFront-&gt;BankFront:Exceptions,Unknown state</span><br><span class="line">         BankFront-&gt;&gt;ReactorGw:Timed task</span><br><span class="line">     end</span><br><span class="line">     Bank--&gt;&gt;BankFront:Call back</span><br><span class="line">     BankFront--&gt;&gt;ReactorGw:Notify</span><br><span class="line">     ReactorGw--x Trade:async notify</span><br><span class="line">     ReactorGw-&gt;ReactorGw: Handle Result</span><br><span class="line">     alt Fail</span><br><span class="line">     ReactorGw-&gt;ReactorGw:Save timer task</span><br><span class="line">     end</span><br><span class="line">     loop Loop task</span><br><span class="line">     Timer--&gt;Timer:Find task(补偿)</span><br><span class="line">     Timer--&gt;&gt;BankProxy:Compensation transaction</span><br><span class="line">     alt Success</span><br><span class="line">     BankProxy--&gt;&gt;Timer:Final state</span><br><span class="line">     Timer--&gt;&gt;Trade:async notify</span><br><span class="line">     else Fail</span><br><span class="line">     BankProxy--&gt;&gt;Timer:Non-Final state</span><br><span class="line">     alt Time Out</span><br><span class="line">     Timer--&gt;&gt;BankProxy:Rollback</span><br><span class="line">     else Non-Time Out</span><br><span class="line">     Timer-&gt;Timer:Update next time</span><br><span class="line">     end</span><br><span class="line">     end</span><br><span class="line">     end</span><br></pre></td></tr></table></figure>
+<p><strong>动力视图说明</strong></p>
+<ul>
+<li>简要画出子系统之间的调用。</li>
+<li>Timer：定时任务采用指数退避算法进行重试，到达一定的数次，采用固定的时间去尝试。</li>
+<li>反应堆系统：采用队列、异步调用打破系统循环关系。</li>
+<li>Timer 与BankProxy的调用：BankProxy根据路由关系，路由到相应的BankFront。</li>
+</ul>
+<h3 id="事务补偿策略"><a href="#事务补偿策略" class="headerlink" title="事务补偿策略"></a>事务补偿策略</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    事务初始化--&gt;|执行原子|初始化</span><br><span class="line">    初始化--&gt;|执行|成功</span><br><span class="line">    初始化--&gt;|执行|失败</span><br><span class="line">    初始化--&gt;|执行|未知</span><br><span class="line">    成功--&gt;|执行|业务成功</span><br><span class="line">    业务成功--&gt;事务终止</span><br><span class="line">    失败--&gt;业务失败</span><br><span class="line">    业务失败--&gt;回滚</span><br><span class="line">    回滚--&gt;回滚成功</span><br><span class="line">    回滚成功--&gt;事务终止</span><br><span class="line">    回滚--&gt;回滚失败</span><br><span class="line">    回滚失败--&gt;Pengding告警</span><br><span class="line">    未知--&gt;|补偿|成功</span><br><span class="line">    未知--&gt;|补偿|失败</span><br></pre></td></tr></table></figure>
+<p><strong>关键设计</strong></p>
+<ul>
+<li>状态未知：网络读超时，被调用方返回未知的状态码（该错误码不能说明成功或者失败，对于成功的错误码必须是明确的状态，同时失败的状态码必须）。</li>
+<li>假如成功状态是200，那么失败的状态 禁止：非200的状态，失败的状态，必须列出，比如201，202。其他状态认为非终态，比如203。</li>
+<li>补偿机制：注意幂等性操作，先查询、后补偿（一般是查询对方状态，更新本地状态）。</li>
+<li>通道能力：被依赖的通道具备查询接口，则进行指数退避补偿。被依赖的通道不具备查询接口，则进行资损熔断。</li>
+</ul>
+<h3 id="兜底"><a href="#兜底" class="headerlink" title="兜底"></a>兜底</h3><p>   做最坏的打算，系统设计总会有不尽人意的地方，所以必须做最坏的打算。 系统设计如此，人生亦如此。</p>
+<p>  <strong>正确认识成功或者失败</strong></p>
+<ul>
+<li>区分业务上的成功 和业务上的失败。</li>
+<li>内部失败：比如写数据库失败。</li>
+<li>如果是业务成功 + 内部失败，则可以返回调用方业务成功或者Pengding。</li>
+<li>如果业务失败，则返回调用方业务失败。</li>
+</ul>
+<p><strong>一个血的案例</strong></p>
+<ul>
+<li>这个例子 由于没有正确识别业务成功 和内部失败，导致资金损失。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">  Actor--&gt;&gt;Trade:提现</span><br><span class="line">  Trade--&gt;&gt;BGW:提现</span><br><span class="line">  BGW--&gt;&gt;Bank:提现</span><br><span class="line">  Bank--&gt;&gt;Bank:增加用户账户余额</span><br><span class="line">  Bank--&gt;&gt;BGW:成功</span><br><span class="line">  Bank--&gt;&gt;用户:银行账户收到xx金额</span><br><span class="line">  BGW--&gt;&gt;BGW:写DB失败</span><br><span class="line">  BGW--&gt;&gt;Trade:失败</span><br><span class="line">  Trade--&gt;&gt;Trade:回滚账户余额</span><br><span class="line">  用户--&gt;&gt;用户:看到账户余额没有变少</span><br><span class="line">  用户--&gt;&gt;Actor:提现</span><br></pre></td></tr></table></figure>
+<h3 id="资损控制策略"><a href="#资损控制策略" class="headerlink" title="资损控制策略"></a>资损控制策略</h3><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>策略</th>
+<th>动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>银行通道能力有缺陷</td>
+<td>1、日常异常金额&gt;= X 告警<br>2、日累积异常金额&gt;=Y，通道暂时不可用，并告警</td>
+<td>1、接收告警，要第一时间联系银行。<br>2、提供手工清除不可用标识</td>
+</tr>
+<tr>
+<td>银行能力完备</td>
+<td>走完整的事务补偿流程</td>
+<td></td>
+</tr>
+<tr>
+<td>自动退款</td>
+<td>1、自动退款日累积金额，超过日常金额，转手工确认。<br>2、单笔最大超过xx，转手工确认退款</td>
+<td>防止自动退款由于某个异常，造成损失。</td>
+</tr>
+<tr>
+<td>手工退款</td>
+<td>1、提供异常订单查询系统<br>2、提供手工退款功能</td>
+</tr>
+</tbody>
+</table>
+<h2 id="平滑升级（灰度）"><a href="#平滑升级（灰度）" class="headerlink" title="平滑升级（灰度）"></a>平滑升级（灰度）</h2><p><strong>通过BankProxy 灰度</strong></p>
+<ul>
+<li>通过Proxy 基于银行通道的灰度</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">Trade--&gt;Nginx</span><br><span class="line">Nginx--&gt;Bank.Proxy</span><br><span class="line">Bank.Proxy--&gt;Old_BGW</span><br><span class="line">Old_BGW--&gt;A_Bank</span><br><span class="line">Bank.Proxy--&gt;Bank.Front</span><br><span class="line">Bank.Front--&gt;B_Bank</span><br></pre></td></tr></table></figure>
+<p><strong>通过Nginx 灰度</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">Trade--&gt;Nginx</span><br><span class="line">Nginx--&gt;Old_BGW</span><br><span class="line">Old_BGW--&gt;A_Bank</span><br><span class="line">Nginx--&gt;Bank.Proxy</span><br><span class="line">Bank.Proxy--&gt;Bank.Front</span><br><span class="line">Bank.Front--&gt;B_Bank</span><br></pre></td></tr></table></figure>
+<h2 id="架构优点"><a href="#架构优点" class="headerlink" title="架构优点"></a>架构优点</h2><p><strong>变化与不变的分离</strong></p>
+<ul>
+<li>反应堆系统（Reactor）：依赖于抽象，逻辑是稳定的。</li>
+<li>Bank_Proxy：依赖于抽象，是稳定的。</li>
+<li>Bank_Front：是变化的，可以微服务（模块化），对变化的边界是可控的。</li>
+</ul>
 
-技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。
-基于JFinal 框架，接口&amp;参数定义不清晰。
-代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。
-可测性不强（大部分功能，无法通过Mock 第三方
-              ...
-            </p>
-          <!--noindex-->
           
-          <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -688,22 +755,20 @@ graph LR
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/03/23/tjyzl/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/03/23/tjyzl/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="知、行——人生">
     </span>
 
@@ -714,33 +779,23 @@ graph LR
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/03/23/tjyzl/" class="post-title-link" itemprop="url">统计与真理</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/03/23/tjyzl/" itemprop="url">统计与真理</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T15:43:05+08:00">
+                2019-03-23
+              </time>
+            
 
-              
-                
-              
-
-              <time title="创建时间：2019-03-23 15:43:05" itemprop="dateCreated datePublished" datetime="2019-03-23T15:43:05+08:00">2019-03-23</time>
             
 
             
@@ -755,10 +810,14 @@ graph LR
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/思想/" itemprop="url" rel="index"><span itemprop="name">思想</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/思想/" itemprop="url" rel="index">
+                    <span itemprop="name">思想</span>
+                  </a>
+                </span>
 
                 
                 
@@ -767,7 +826,6 @@ graph LR
           
 
           
-            
             
           
 
@@ -795,39 +853,253 @@ graph LR
       
         
           
-            <p>
-               怎样运用偶然性
+            <h1 id="怎样运用偶然性"><a href="#怎样运用偶然性" class="headerlink" title="怎样运用偶然性"></a>怎样运用偶然性</h1><blockquote>
+<p>C.R.劳 《统计与真理》——怎样运用偶然性 读书心得</p>
+</blockquote>
+<h2 id="不确定性、随机性与新知识的创立"><a href="#不确定性、随机性与新知识的创立" class="headerlink" title="不确定性、随机性与新知识的创立"></a>不确定性、随机性与新知识的创立</h2><blockquote class="blockquote-center">不确定性知识  + 所含不确定性量度的知识 = 可用的知识</blockquote>
 
-C.R.劳 《统计与真理》——怎样运用偶然性 读书心得
 
- 不确定性、随机性与新知识的创立
-不确定性知识  + 所含不确定性量度的知识 = 可用的知识
- 随机性与随机数
-随机性 即不确定性，造成不确定性的原因：
 
-缺乏信息
-所得信息中，未被认识到的不准确性
-缺乏一定的技术手段去收
-              ...
-            </p>
-          <!--noindex-->
+<h3 id="随机性与随机数"><a href="#随机性与随机数" class="headerlink" title="随机性与随机数"></a>随机性与随机数</h3><p>随机性 即不确定性，造成不确定性的原因：</p>
+<ul>
+<li>缺乏信息</li>
+<li>所得信息中，未被认识到的不准确性</li>
+<li>缺乏一定的技术手段去收集所需的信息</li>
+<li>不可能进行某些必要的测量</li>
+</ul>
+<p>随机数即随机出现的数字，即某一个事件去可能出现的值。</p>
+<p>比如，我们口袋里中装有标着0，1，2，。。。9的数字，我们一个一个地取出硬币并记录下抽取硬币的数字。每次抽取后，再把硬币放回口袋中并充分混合，然后抽取下一个。这样得到的数列称为随机数列。 这样的随机数列，也无法得到任何启示推测下次抽取的结果。</p>
+<h3 id="随机性应用于解决复杂问题"><a href="#随机性应用于解决复杂问题" class="headerlink" title="随机性应用于解决复杂问题"></a>随机性应用于解决复杂问题</h3><p>假如你有一块不规则的地要买，这时你会遇到一个问题：无法利用现有的面积公式进行面积计算。</p>
+<p>那怎么有效地估算出面积呢？一个可行的方法 采用蒙特卡罗方法进行估算（当然也可以对面积进行切割，化不规则为规则）。</p>
+<p>蒙特卡罗方法：</p>
+<p>1、用一个大长方形（正方形）将该不规则地包起来。</p>
+<p>2、站在某个位置随机仍石头，统计命中不规则地的数次。</p>
+<p>3、根据公式 不规则地面积 = 方形面积 * 命中率</p>
+<p>4、由大数律：当n趋向于大数时，则命中率趋向于 不规则地面积/方形地面积 的比率</p>
+<table>
+<thead>
+<tr>
+<th>总实验数次</th>
+<th>命中数次</th>
+<th>未命中数次</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000</td>
+<td>647</td>
+<td>353</td>
+</tr>
+</tbody>
+</table>
+<p>举这个问题好像也没有办法说明随机性如何解决复杂的问题。</p>
+<p>如何用随机性进行<strong>问题解决</strong>，关键在于<strong>实验设计</strong>（A/B测试）。</p>
+<p> 再讲个利用随机性讨论人生策略选择问题，假如你是一个投资者，手头有100W。那么你是如何经历过众多的投资之后，获得最大的收益呢（假如你的投资数次不少于20次）。 为了简单起见，我们简化每次投资项目特性。</p>
+<table>
+<thead>
+<tr>
+<th>投资类型</th>
+<th>概率</th>
+<th>收益率</th>
+<th>亏损率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>稳健型</td>
+<td>0.6</td>
+<td>20%</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>高风险</td>
+<td>0.2</td>
+<td>100%</td>
+<td>50%</td>
+</tr>
+</tbody>
+</table>
+<p>盈亏期望：</p>
+<table>
+<thead>
+<tr>
+<th>投资类型</th>
+<th>期望（1元）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>稳健型</td>
+<td>0.08</td>
+</tr>
+<tr>
+<td>高风险</td>
+<td>-0.2</td>
+</tr>
+</tbody>
+</table>
+<p>投资策略：</p>
+<table>
+<thead>
+<tr>
+<th>策略</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>稳健型</td>
+<td>这辈子基本不会大富大贵</td>
+</tr>
+<tr>
+<td>高风险</td>
+<td>这辈子听天由命（人生犹如过山车）</td>
+</tr>
+<tr>
+<td>混合</td>
+<td>有可能是最优的（人生有点盼头） 稳健型、高风险适当配比</td>
+</tr>
+</tbody>
+</table>
+<h2 id="统计——驾驭不确定性"><a href="#统计——驾驭不确定性" class="headerlink" title="统计——驾驭不确定性"></a>统计——驾驭不确定性</h2><p>###统计</p>
+<blockquote class="blockquote-center">统计：与人类有关的事实，可以由数量来表示，并且经过大量的累积重复可以导出一般规律。</blockquote>
+
+
+
+<p>假如某个可重复的事件，其可能的结果（A1，A2，A3，A4，A5），统计说白了就是对该类型的事件重复观察，得出其可能的结果频数。比如，我们重复观察了100次。</p>
+<table>
+<thead>
+<tr>
+<th>结果</th>
+<th>频数</th>
+<th>占比（概率）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>1</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>8</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>50</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>30</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>11</td>
+<td>0.11</td>
+</tr>
+</tbody>
+</table>
+<p>基于目前的观察，我们推断：</p>
+<ul>
+<li>A3、A4 是该事件的较大概率事件。</li>
+<li>其可行度 基于观察数次的量。</li>
+<li>基于这个认识，假如在未来的某次观察该事件，其结果是A1，这时要<strong>慎重</strong>，可能有<strong>异常</strong>情况</li>
+</ul>
+<p>###不确定性的驾驭</p>
+<p>####三种逻辑推理方法</p>
+<p>#####演绎法</p>
+<p>假如公理 A1，A2 证明命题P1，A2、A3、A4证明命题P2. P1、P2的真实性完全依赖于A1、A2、A3、A4、A5的真实性。</p>
+<p>演绎法的推理步骤： 公理（前提假设）-&gt;逻辑推理步骤（证明）-&gt;命题（导出结果）。</p>
+<p>这种推断方式的合理方式，基于公理的准确性。 举个例子：</p>
+<blockquote>
+<p>学者： 哈代（英国数学家），如果我说 2+2 = 5，你能证明所给出的任意命题吗？</p>
+<p>哈代：是的，我想可以。</p>
+<p>学者：那么请证明麦克塔格塔就是罗马主教。</p>
+<p>哈代：如果2+2=5，那么5=4，两边减去3，即2=1。麦克塔格塔 和罗马主教是两个人，但因为2=1，因此麦克塔格塔就是罗马主教。</p>
+</blockquote>
+<p>#####归纳法</p>
+<p>通过观察得到的数据D=（d1,d2,d3,….,dn)  推断可能的假设H=（h1,h2,…,hk)。</p>
+<p>假如某人得了经常头疼，到现在得了20次，每次头疼的时候，他要么用泰诺，要么止痛灵，那么下次头疼，你觉得他会用什么药呢？ 如下是观察到的数据：</p>
+<table>
+<thead>
+<tr>
+<th>止疼药</th>
+<th>使用数次</th>
+<th>治愈数次</th>
+<th>概率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>泰诺</td>
+<td>12次</td>
+<td>8次</td>
+<td>0.66</td>
+</tr>
+<tr>
+<td>止痛灵</td>
+<td>8次</td>
+<td>6次</td>
+<td>0.75</td>
+</tr>
+</tbody>
+</table>
+<p> 根据观察的数据，貌似可以推断出：他下次最好使用止痛灵。 但是：</p>
+<ul>
+<li>观察数次较少，会影响推断的准确性。</li>
+<li>从现在的数据来看，也许止痛灵跟泰诺的效果是一样的。</li>
+</ul>
+<p>#####风险管理的逻辑方法</p>
+<blockquote>
+<p>不确定的知识 + 所含不确定性量度的知识 = 可用的知识。</p>
+</blockquote>
+<p>这不是哲学，而是一种新的思维方式。</p>
+<p>#####诱导法</p>
+<p>凭直觉或者瞬间的想法产生新知识。</p>
+<p>#####总结</p>
+<p>知识的发展依赖于以下三个逻辑过程：</p>
+<ul>
+<li>归纳法：基于观察到的数据信息产生新知识。</li>
+<li>诱导法：由直观而不是数据信息产生知识。</li>
+<li>演绎：证明所提出的理论。</li>
+</ul>
+<h5 id="如何度量化不确定性"><a href="#如何度量化不确定性" class="headerlink" title="如何度量化不确定性"></a>如何度量化不确定性</h5><p>最初尝试量化不确定性的是贝叶斯。其方法就是贝叶斯公式：假设h的可信度表为p(h)并且是给定的。同时如果在假设h下数据d的概率分布已知为p(d|h)，就可以使我们得到观测数据信息的边缘概率分布p(d)。于是现在我们能计算在给出数据d，假设h的条件概率分布，即：</p>
+<p>​                                                   p(h|d) = p(h)p(d|h)/p(d)</p>
+<p>这即为后验分布，或是在已知观测结果的条件下关于所选假设的不确定性的分布。</p>
+<p>贝叶斯定理在生活中的使用，假设你是一个医生，上个月已经为100名病人进行诊断。其中的14名病人患流感，20名发烧，11名既感冒也发烧。因此感冒的人群中有发烧的病人的条件概率11/14. 病人发烧的概率20/100，而在感冒的人群中，发烧的概率11/14。病人既发烧又感冒的概率：</p>
+<p>   p(感冒，发烧） = P(感冒）<em>P(发烧|感冒)=14/100 </em> 11/14 = 11/100</p>
+<p>其实人类并不是很擅长贝叶斯推理，假如一个人进行艾滋病检测呈阳性，而且检测的假阳性只有1%，那么这个人得艾滋病的概率是99%？其实从贝叶斯推理，这里是一个条件概率，即</p>
+<p>​              p(HIV|阳性）=P(HIV)*P(阳性|HIV)/P(阳性）</p>
+<p>在美国：</p>
+<p>P(HIV) = 0.003，P(阳性|HIV）=0.99，P(阳性）是化验结果显示是否患有艾滋病的概率，假设为0.01。那么上次的结果为0.297，低于50%。</p>
+<h5 id="贝叶斯推断"><a href="#贝叶斯推断" class="headerlink" title="贝叶斯推断"></a>贝叶斯推断</h5><p>P(假设|数据) = P(假设)*P(数据|假设)/P(数据)</p>
+<p>在生活中，我们观察到某一事件，连续发生了5次A，那么在第六次，我们总感觉是A。但实际上，从常识或者直观概率，这件事结果为A的概率为p，那么结果为非A的概率是1-p。所以我们可以用伯努利分布来说明这个现象：</p>
+<p>​         数据： 5~B(5,p)，假设 6～B(6,P)</p>
+<p>​         则在数据5～B(5,p)的条件下，假设：连续6次为A的概率：</p>
+<p>​        P(6|5）= P(6)*P(5|6)/P(5)， P(5|6) = 1， 则P(6|5) = p。</p>
+<p>贝叶斯推断的前提要准确描述事件。假设描述为连续6次A，是基于当前已经连续5次为A的观察结果的基础上，再一次A的描述。如果不准确描述事件，则很难计算，有时会得出错误的结论。</p>
+<p>其实，这里的贝叶斯推断，是把重复事件的发生概率采用无记忆的模式，即上一次的结果对下一次的结果没有印象。</p>
+<h2 id="统计——格物的工具"><a href="#统计——格物的工具" class="headerlink" title="统计——格物的工具"></a>统计——格物的工具</h2><h3 id="推断"><a href="#推断" class="headerlink" title="推断"></a>推断</h3><p> 如前面描述的，基于贝叶斯的推断。</p>
+<h3 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h3><ul>
+<li>正态检验—区间估计</li>
+<li>卡方检验—统计样本的实际观测值与理论推断值的偏离程度。实际观测值与理论推断值之间的偏离程度就决定了卡方值的大小。</li>
+<li>t检验</li>
+</ul>
+
           
-          <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -860,22 +1132,20 @@ C.R.劳 《统计与真理》——怎样运用偶然性 读书心得
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/03/23/psxtsj/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/03/23/psxtsj/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="知、行——人生">
     </span>
 
@@ -886,33 +1156,23 @@ C.R.劳 《统计与真理》——怎样运用偶然性 读书心得
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/03/23/psxtsj/" class="post-title-link" itemprop="url">推送系统设计</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/03/23/psxtsj/" itemprop="url">推送系统设计</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T13:50:21+08:00">
+                2019-03-23
+              </time>
+            
 
-              
-                
-              
-
-              <time title="创建时间：2019-03-23 13:50:21" itemprop="dateCreated datePublished" datetime="2019-03-23T13:50:21+08:00">2019-03-23</time>
             
 
             
@@ -927,10 +1187,14 @@ C.R.劳 《统计与真理》——怎样运用偶然性 读书心得
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/工程/" itemprop="url" rel="index"><span itemprop="name">工程</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
+                  </a>
+                </span>
 
                 
                 
@@ -939,7 +1203,6 @@ C.R.劳 《统计与真理》——怎样运用偶然性 读书心得
           
 
           
-            
             
           
 
@@ -967,59 +1230,125 @@ C.R.劳 《统计与真理》——怎样运用偶然性 读书心得
       
         
           
-            <p>
-               系统问题域
+            <h2 id="系统问题域"><a href="#系统问题域" class="headerlink" title="系统问题域"></a>系统问题域</h2><ul>
+<li>吞吐量（瞬时高峰）</li>
+<li>到达率</li>
+<li>流控</li>
+<li>可用性（与第三方推送渠道链路问题、推送系统本身的可用性）</li>
+<li>失败重试</li>
+</ul>
+<h2 id="设计概要"><a href="#设计概要" class="headerlink" title="设计概要"></a>设计概要</h2><h3 id="推送渠道选择"><a href="#推送渠道选择" class="headerlink" title="推送渠道选择"></a>推送渠道选择</h3><table>
+<thead>
+<tr>
+<th>区域</th>
+<th>Android</th>
+<th>IOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中国</td>
+<td>信鸽、极光、个推</td>
+<td>信鸽、极光、个推、Apns</td>
+</tr>
+<tr>
+<td>非中国</td>
+<td>FCM</td>
+<td>Apns</td>
+</tr>
+</tbody>
+</table>
+<p>针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FCM。但是在国外则建议采用FCM（建议使用Firebase admin SDK，或者XMPP）。</p>
+<h3 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h3><p><img src="psxtsj/xtjiagou.png" alt></p>
+<h3 id="设计关键点"><a href="#设计关键点" class="headerlink" title="设计关键点"></a>设计关键点</h3><ul>
+<li><p>消息队列的作用：</p>
+<p>解决瞬时高峰的问题，尤其在推送广播消息的时候，需要对广播消息进行流控，按照固定的速率进行推送，即满足FCM 和Apns 的流控要求，同时为了不对自身系统（比如出口网络带宽、DB、下游Adapter）带来冲击。所以采用消息队列基于pipeline 模式，将实时消息流控和广播推送流控用统一的模式进行处理。</p>
+</li>
+<li><p>Adapter ：</p>
+<p>适配推送渠道，减少引入新的渠道对系统造成的变化。同时根据不同的策略进行路由。路由策略：</p>
+<p>| 策略 | 描述                                               |<br>| —- | ————————————————– |<br>| 1    | 基于设备模式（安卓或者iOS）                        |<br>| 2    | 基于手机品牌（比如有厂商通道，则优先选择厂商通道） |<br>| 3    | 基于区域（中国 或者 非中国）                       |</p>
+</li>
+<li><p>推送渠道失败尝试机制：</p>
+<p> （1）在推送过程中，如果遇到网络问题则建议采用Exponetial BackOff 进行重试。</p>
+<p> （2）对于无效Token 则放弃尝试。</p>
+<p> （3）对于推送渠道，虽然在Push-Dispatch 有流控，自己本身也要有流控策略（可以采用令牌桶）进行流</p>
+<p>​           控，如果自己本身由于网络异常，对堆积的消息进行超时丢弃，并将结果发送到消息队列中。</p>
+</li>
+<li><p>State-Job：</p>
+<p>  消息状态机任务，将消息状态扭转。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发送成功</td>
+<td>1: 更新消息状态</td>
+</tr>
+<tr>
+<td>网络异常</td>
+<td>1: 基于Exponetial BackOff 机制 算出下次尝试时间，并将尝试任务写入DB。</td>
+</tr>
+<tr>
+<td>到达</td>
+<td>1: 更新消息状态</td>
+</tr>
+<tr>
+<td>未达</td>
+<td>1: 由于推送渠道FCM 或者Apns 具有存储消息等用户在线，再推送到功能。<br>2: 所以没有必要进行未达尝试。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="不重复造轮子"><a href="#不重复造轮子" class="headerlink" title="不重复造轮子"></a>不重复造轮子</h2><p><a href="https://github.com/ZhiYu2018/app.push" target="_blank" rel="noopener">集成推送</a></p>
+<p><strong><a href="https://github.com/ZhiYu2018/app.push" target="_blank" rel="noopener">https://github.com/ZhiYu2018/app.push</a></strong></p>
+<p>使用方法：</p>
+<ul>
+<li>自己开发Push-Server，将消息写入DB。</li>
+<li>采用定时任务（脚本）将消息推送给app.push。</li>
+<li>由于app.push 没有做消息路由，则自己要进行任务路由。</li>
+<li>对于Android 消息，建议采用fcm.xmpp 方法。</li>
+</ul>
+<p>Fcm.xpp关键数据：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数据量</th>
+<th>百分比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Server-FCM 送达率</td>
+<td>66000</td>
+<td>98.2%</td>
+</tr>
+<tr>
+<td>FCM-Device（设备）到达率</td>
+<td>66000</td>
+<td>60%</td>
+</tr>
+</tbody>
+</table>
+<p>数据说明：</p>
+<p>1、Server-FCM 送达率：在测试过程中，由于无效Token 占1100，所以送达率是98.2%，如果是有效Token则100%。这只要在设计中 要进行流控、失败尝试。</p>
+<p>2、FCM-Device 到达率： 这个取决于所取测试样本的用户情况。</p>
 
-吞吐量（瞬时高峰）
-到达率
-流控
-可用性（与第三方推送渠道链路问题、推送系统本身的可用性）
-失败重试
-
- 设计概要
- 推送渠道选择
-
-
-
-区域
-Android
-IOS
-
-
-
-
-中国
-信鸽、极光、个推
-信鸽、极光、个推、Apns
-
-
-非中国
-FCM
-Apns
-
-
-
-针对Android 
-              ...
-            </p>
-          <!--noindex-->
           
-          <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1052,22 +1381,20 @@ Apns
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/03/10/push-wenti/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/03/10/push-wenti/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="知、行——人生">
     </span>
 
@@ -1078,33 +1405,23 @@ Apns
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/03/10/push-wenti/" class="post-title-link" itemprop="url">PUSH 问题</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/03/10/push-wenti/" itemprop="url">PUSH 问题</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-10T09:53:56+08:00">
+                2019-03-10
+              </time>
+            
 
-              
-                
-              
-
-              <time title="创建时间：2019-03-10 09:53:56" itemprop="dateCreated datePublished" datetime="2019-03-10T09:53:56+08:00">2019-03-10</time>
             
 
             
@@ -1119,10 +1436,14 @@ Apns
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1131,7 +1452,6 @@ Apns
           
 
           
-            
             
           
 
@@ -1159,50 +1479,305 @@ Apns
       
         
           
-            <p>
-               PUSH 链路分析
- 系统链路
-先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：
+            <h2 id="PUSH-链路分析"><a href="#PUSH-链路分析" class="headerlink" title="PUSH 链路分析"></a>PUSH 链路分析</h2><h3 id="系统链路"><a href="#系统链路" class="headerlink" title="系统链路"></a>系统链路</h3><p>先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：</p>
+<p><img src="push-wenti/发送链路.png" alt></p>
+<h3 id="转化根因"><a href="#转化根因" class="headerlink" title="转化根因"></a>转化根因</h3><p><img src="push-wenti/Push转化率根因.png" alt></p>
+<h3 id="统计口径"><a href="#统计口径" class="headerlink" title="统计口径"></a>统计口径</h3><p><img src="push-wenti/Push统计口径.png" alt></p>
+<h3 id="链路的关键点"><a href="#链路的关键点" class="headerlink" title="链路的关键点"></a>链路的关键点</h3><table>
+<thead>
+<tr>
+<th>关键点</th>
+<th>统计数据</th>
+<th>策略</th>
+<th>可落地</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>发送失败</td>
+<td>1、连接异常(数据可获取)<br>2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关）</td>
+<td>针对1的解决方法<br>1：调用批量的接口<br>2：扩大带宽<br>3：限流<br>4：负载均衡式发送<br>针对2的解决方法：<br>1：限流<br>2：了解相关系统的特殊(坑)</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>失效Token</td>
+<td>1、卸载App（数据可取性差）<br>2、长连接断开(App在，数据可取性差)</td>
+<td>针对2的解决方法<br>1：保活长连接</td>
+<td>M（待验证）</td>
+</tr>
+<tr>
+<td>FCM（Apns）到App链路异常</td>
+<td>App 的网络质量差(数据可取性差)</td>
+<td>N/A<br>取决于FCM/Apns的重试机制以及在重试的时候token 是否还有效</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>注：</p>
+<p>   如果我们要完整地了解为何到达率低，那么要获取完整的数据，存在一定的工作量问题。</p>
+<p>  对于业界的到达率，感觉没有一个准数，从相关的资料了解到，有人说：</p>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>真实到达率</th>
+<th>乘上牛逼系数(1.5~N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>安卓</td>
+<td>&lt;=50%</td>
+<td>&gt;= 80%</td>
+</tr>
+<tr>
+<td>IOS</td>
+<td>&lt;=70%</td>
+<td>&gt;= 90%</td>
+</tr>
+</tbody>
+</table>
+<p>以上数据的真伪，由于没有相关的实践数据，也就无法根据自己的时间数据进行证伪，但是通过整个链路的分析，可以系统地认识到影响到达率的因素、以及可以实施的方案和待验证的方案。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="可落地的方案"><a href="#可落地的方案" class="headerlink" title="可落地的方案"></a>可落地的方案</h3><h4 id="限流"><a href="#限流" class="headerlink" title="限流"></a>限流</h4><p> 通过对发送机制的优化，采用限流的策略进行发送。</p>
+<h4 id="尽量批量的接口"><a href="#尽量批量的接口" class="headerlink" title="尽量批量的接口"></a>尽量批量的接口</h4><p>FCM： 提供基于Topic 的接口，动态将广播推送的token 订阅到某一个topic，然后基于topic 方式进行发送，解决推送服务到FCM服务端链路异常(带宽问题、socket 超时、被FCM流控)。 </p>
+<p>Apns：目前采用第三方的库没有FCM基于topic 发送的功能，可行的方案：可以用FCM来发送IOS推送，或者<strong>了解Apns topic 功能</strong>。</p>
+<p>国内推送：阿里推送、腾讯信鸽都有该功能。</p>
+<h4 id="扩大带宽"><a href="#扩大带宽" class="headerlink" title="扩大带宽"></a>扩大带宽</h4><p>扩大机房的出口带宽</p>
+<h4 id="负载均衡式发送"><a href="#负载均衡式发送" class="headerlink" title="负载均衡式发送"></a>负载均衡式发送</h4><p>该方案 只解决单节点 网卡流量问题。</p>
+<h4 id="保活长连接"><a href="#保活长连接" class="headerlink" title="保活长连接"></a>保活长连接</h4><p>方案见下文 &lt;&lt; 保活长连接 &gt;&gt;，通过保活长连接，确保PUSH通道不会因为Nat 超时被断开，通过定时保活长连接，确保IP 可用。</p>
+<h4 id="抱团取暖策略"><a href="#抱团取暖策略" class="headerlink" title="抱团取暖策略"></a>抱团取暖策略</h4><p>​        通过对腾讯信鸽推送介绍文章了解，腾讯信鸽依赖其高频的应用（比如王者荣耀、其他游戏、微信、QQ），来拉活其他的App。其他App推送的时候能及时收到消息。</p>
+<p>​       通过共享保活Service 这样的机制，除了减少手机的连接、能耗、电量的损失，还可以提高到达率。比如如果用户安装了王者荣耀，另外安装了一些使用信鸽的App。如果其他App没有启动，也没有关系。因为王者荣耀相对来说，它的启动时间更长，这样可以通过王者荣耀先接受这些App的信息，然后推送给另外的App。</p>
+<p>​       同时，也集成厂商的一个推送通道，比如华为、魅族、小米、谷歌的TCM、FCM，这些厂商具有一些所谓的系统级别的保活、拉活的机制。</p>
+<blockquote>
+<p>启发： 针对这一点，对于出海的运用，看否可以依靠当地的大腿，比如Facebook、Youtu 来取暖。</p>
+</blockquote>
+<h3 id="保活长连接-1"><a href="#保活长连接-1" class="headerlink" title="保活长连接"></a>保活长连接</h3><h4 id="原因一：-被系统干掉"><a href="#原因一：-被系统干掉" class="headerlink" title="原因一： 被系统干掉"></a>原因一： 被系统干掉</h4><p>现在越来越多的手机厂商为了省电策略考虑，基本上如果一个应用没有被加入白名单，一旦处于后台就会被系统限制甚至干掉。这也是那些<strong>低频的应用</strong> PUSH到达率低的原因之一。 </p>
+<h4 id="原因二-Nat-超时机制"><a href="#原因二-Nat-超时机制" class="headerlink" title="原因二:   Nat 超时机制"></a>原因二:   Nat 超时机制</h4><p>   长连接断连主要是因为NAT断连，因为 IP v4 的 IP 量有限，运营商分配给手机终端的 IP 是运营商内网的 IP，<br>手机要连接 Internet，就需要通过运营商的网关做一个网络地址转换(Network Address Translation，NAT)。<br>简单的说运营商的网关需要维护一个外网 IP、端口到内网 IP、端口的对应关系，以确保内网的手机可以跟 Internet 的服务器通讯。大部分移动无线网络运营商都在链路一段时间没有数据通讯时，会淘汰 NAT 表中的对应项，造成链路中断。下表列出一些已测试过的网络的NAT超时时间(更多数据由于测试条件所限没有测到)：</p>
+<table>
+<thead>
+<tr>
+<th>地区\网络</th>
+<th>NAT断连时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中国移动3G 和2G</td>
+<td>5分钟</td>
+</tr>
+<tr>
+<td>中国联通2G</td>
+<td>5分钟</td>
+</tr>
+<tr>
+<td>中国电信3G</td>
+<td>&gt;=28 分钟</td>
+</tr>
+<tr>
+<td>美国3G</td>
+<td>&gt;=28 分钟</td>
+</tr>
+<tr>
+<td>台湾3G</td>
+<td>&gt;=28 分钟</td>
+</tr>
+</tbody>
+</table>
+<p>注：该数据未经实践证明（只是看了大部分的数据）。</p>
+<p>Nat 超时机制：</p>
+<p><img src="push-wenti/nat.png" alt></p>
+<h4 id="原因三：-安卓DHCP的租期（lease-time）问题"><a href="#原因三：-安卓DHCP的租期（lease-time）问题" class="headerlink" title="原因三： 安卓DHCP的租期（lease time）问题"></a>原因三： 安卓DHCP的租期（lease time）问题</h4><p>   安卓系统对DHCP的处理有个BUG:</p>
+<ul>
+<li>DHCP租期到了不会主动续约并且继续使用过期IP。这个问题导致的问题表象是，在超过租期的某个时间点（没有规律）会导致IP过期，老的TCP连接不会正常收发数据。并且系统没有网络变化事件，只有等应用判断主动建立新的TCP连接才引起安卓设备重新向DHCP Server 申请IP租用。</li>
+<li>未到租期的一半时间，安卓设备会重新向DHCP Server 申请IP租用。</li>
+</ul>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><h5 id="Line-策略"><a href="#Line-策略" class="headerlink" title="Line 策略"></a>Line 策略</h5><table>
+<thead>
+<tr>
+<th>区域</th>
+<th>策略</th>
+<th>细节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>美国</td>
+<td>FCM(GCM)</td>
+<td>1: 启动时，保持7分钟心跳，维持长连接半小时，之后断开长连接。<br>2: 有消息时，服务器会发送FCM消息，客户端接收FCM小时之后，重新建立长连接，并再次心跳维持半个小时。</td>
+</tr>
+<tr>
+<td>中国</td>
+<td>长连接+心跳策略</td>
+<td>心跳间隔 在WIFI 下是 3分20秒，在手机网络下是7分钟。</td>
+</tr>
+<tr>
+<td>中国</td>
+<td>轮询策略</td>
+<td>1: 客户端在长连接建立之后，也会定时发送消息，Server 会回复并且同时关闭长连接。<br>2: 客户端等待轮询时间$$T_1$$ 后再次建立TCP连接。Line 会根据手机的活跃状态动态调整$$T_1$$ , 范围是从最小1分钟～2小时半。而长连接存活时间比较固定$$T_2 $$ 比较固定，如果在$$T_2 $$ 收到新小时会延长$$T_2 $$ 时间。</td>
+</tr>
+</tbody>
+</table>
+<h5 id="WhatsApp"><a href="#WhatsApp" class="headerlink" title="WhatsApp"></a>WhatsApp</h5><table>
+<thead>
+<tr>
+<th>FCM可用性</th>
+<th>策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>支持FCM的设备</td>
+<td>靠FCM来激活WhatsApp, WhatsApp启动后，会建立一个与服务器的长连接，直接通过此长连接发送PUSH信息，这个长连接10分钟需消息就会主动断掉，且这10分钟内不做心跳，断掉后Whatsapp客户端和它的服务器不再连接。当有消息时候，服务器发现没有长连接会发送FCM消息，手机收到FCM小时后，会重新建立连接来收取消息，10分钟无消息会再断开，如此循环。</td>
+</tr>
+<tr>
+<td>不支持FCM的设备</td>
+<td>长连接+心跳</td>
+</tr>
+</tbody>
+</table>
+<h5 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h5><table>
+<thead>
+<tr>
+<th>公共PUSH通道（信鸽）</th>
+<th>使用FCM Push 作为辅助通道</th>
+<th>自适应心跳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="心跳典型值"><a href="#心跳典型值" class="headerlink" title="心跳典型值"></a>心跳典型值</h5><table>
+<thead>
+<tr>
+<th>网络模式</th>
+<th>FCM</th>
+<th>Line</th>
+<th>WhatsApp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WI-FI</td>
+<td>15分钟</td>
+<td>3分20秒</td>
+<td>4分45秒</td>
+</tr>
+<tr>
+<td>手机网络</td>
+<td>28分钟</td>
+<td>7分钟</td>
+<td>4分45秒</td>
+</tr>
+</tbody>
+</table>
+<p><strong>当前值的测试，跟所属的环境有关，可能值不一样.</strong></p>
+<h5 id="可行的方案"><a href="#可行的方案" class="headerlink" title="可行的方案"></a>可行的方案</h5><p><img src="push-wenti/网络保活.png" alt></p>
+<p>方案描述</p>
+<table>
+<thead>
+<tr>
+<th>连接</th>
+<th>周期</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>长连接</td>
+<td>1:  固定周期 $$T_1$$ <br>2:  动态调整的时间间隔</td>
+<td>1: 确保IP是有效，从而重新连接FCM/Apns，确保推送链路是通的。<br>2: 基于TCP 唤醒 App 保活。</td>
+</tr>
+<tr>
+<td>FCM/Apns</td>
+<td>1: 固定周期，$$T_2$$ <br>2: $$T_2$$ &gt; $$3T_1$$</td>
+<td>1: 采用相应的系统默认推送通道，起到系统拉活的效用。<br>2: 该消息要进行特殊处理，用户不可见</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FCM 拉活机制</strong></p>
+<blockquote>
+<p>1: 基于Topic的方式，将设备的token 订阅到某个topic，比如notify。</p>
+<p>2: 订阅topic，可以在客户端App，也可以在服务端。</p>
+<p>3: 定时对这个topic 发送用户不可见的PUSH。</p>
+</blockquote>
+<p><strong>注</strong></p>
+<blockquote>
+<p>可以适当使用高优先级的消息，允许FCM服务在必要时唤醒休眠设备并运行一些有限的处理（包括非常有限的网络访问）。高优先级消息通常应该会使得用户与您的应用或者通知进行互动。但这个要小心处理。</p>
+<p><a href="https://firebase.google.cn/docs/cloud-messaging/concept-options?hl=zh-cn#setting-the-priority-of-a-message" target="_blank" rel="noopener">消息类型</a></p>
+<p><a href="https://developer.android.google.cn/training/monitoring-device-state/doze-standby.html?hl=zh-cn" target="_blank" rel="noopener">对低电耗模式和应用待机模式进行针对性优化</a></p>
+</blockquote>
+<p><strong>Apns</strong></p>
+<blockquote>
+<p>1: 由于目前采用的开源库，不支持服务端动态将token 订阅到topic。</p>
+<p>2: 需要在客户端订阅topic。</p>
+<p>3: 需要研究如何使用基于topic的方式发送。</p>
+<p>4: 替换成FCM(待验证)</p>
+</blockquote>
+<p><strong>不同平台的消息</strong></p>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>FCM 通知消息（Anps 通知）</th>
+<th>FCM 数据消息（Anps 消息）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>安卓</td>
+<td>FCM代表客户端应用自动向最终用户设备显示消息</td>
+<td>客户端应用负责处理，可以处理成用户不可见。</td>
+</tr>
+<tr>
+<td>iOS</td>
+<td>Apns 代表客户端自动向最终用户设备显示消息</td>
+<td>以透传的方式传递给客户端，无显示，需要客户端应用处理，用户才可见。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TCP 唤醒安卓</strong></p>
+<table>
+<thead>
+<tr>
+<th>处理器</th>
+<th>功耗</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AP(Application Processor)</td>
+<td>1: 非休眠 &gt;50mA<br>2: LCD 功耗 100mA<br>3: WIFI 100mA</td>
+<td>AP是ARM架构的处理器：<br>1: 运行App的代码<br>2: 图形运算<br>3:运行Android 系统</td>
+</tr>
+<tr>
+<td>BP(Baseband Processor)</td>
+<td>1:5 mA(非通话时间)</td>
+<td>BP 用于运行实时操作系统（RTOS ）<br>1: 通讯协议栈运行在RTOS</td>
+</tr>
+</tbody>
+</table>
+<p>通讯协议栈运行与BP，在不通话的情况下，能耗低，一旦收到数据包，BP会将AP唤醒，唤醒的时间足够AP执行代码完成对收到的数据包进行处理。</p>
+<p>AlarmManager 是Android 系统封装的用于管理 RTC 的模块，RTC (Real Time Clock) 是一个独立的硬件时钟，可以在 CPU 休眠时正常运行，在预设的时间到达时，通过中断唤醒 CPU。</p>
+<h3 id="如何衡量自己的PUSH已经达到极限"><a href="#如何衡量自己的PUSH已经达到极限" class="headerlink" title="如何衡量自己的PUSH已经达到极限"></a>如何衡量自己的PUSH已经达到极限</h3><p>根据不同的应用类型（高频、中频、低频）以及实践深度，自己却是很难评估自己的到达率已经达到了极限。</p>
+<p>由于自己的实践深度，自己采用浑身解数，到达率也就那么点，然后跟其他相关的同事汇报，我们已经尽力了，到达率确实也就那么点，同事可能会怼你：<strong>XX 公司的到达率 都不止这个数呢</strong></p>
+<p>所以为了让大家一个比较信服的数据，只能采用A/B 测试，比如在自己的App中即成业界技术实践深度比较深的公司，比如阿里、腾讯。</p>
+<p>当然，在做对比测试，自己得把一些错误解决掉（可用性问题）</p>
 
- 转化根因
-
- 统计口径
-
- 链路的关键点
-
-
-
-关键点
-统计数据
-策略
-可落地
-
-
-
-
-发送失败
-1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关）
-
-              ...
-            </p>
-          <!--noindex-->
           
-          <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1235,22 +1810,20 @@ Apns
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/03/08/skll/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/03/08/skll/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="知、行——人生">
     </span>
 
@@ -1261,33 +1834,23 @@ Apns
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/03/08/skll/" class="post-title-link" itemprop="url">思考的力量</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/03/08/skll/" itemprop="url">思考的力量</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-08T21:10:21+08:00">
+                2019-03-08
+              </time>
+            
 
-              
-                
-              
-
-              <time title="创建时间：2019-03-08 21:10:21" itemprop="dateCreated datePublished" datetime="2019-03-08T21:10:21+08:00">2019-03-08</time>
             
 
             
@@ -1302,10 +1865,14 @@ Apns
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/哲思/" itemprop="url" rel="index"><span itemprop="name">哲思</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/哲思/" itemprop="url" rel="index">
+                    <span itemprop="name">哲思</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1314,7 +1881,6 @@ Apns
           
 
           
-            
             
           
 
@@ -1342,36 +1908,25 @@ Apns
       
         
           
-            <p>
-              思考会与否，对人的生活、工作、未来影响甚大。那么如何正确、科学地思考呢？
-思考需要4个基本要素的支持：
+            <p>思考会与否，对人的生活、工作、未来影响甚大。那么如何正确、科学地思考呢？</p>
+<p>思考需要4个基本要素的支持：</p>
+<ol>
+<li>信念：一种驱使你行动的信念。</li>
+<li>方法：一系列有意思或潜意识的内心程序。</li>
+<li>情绪：一种有支持作用的情绪。</li>
+<li>技巧：相关的技巧。</li>
+</ol>
 
-信念：一种驱使你行动的信念。
-方法：一系列有意思或潜意识的内心程序。
-情绪：一种有支持作用的情绪。
-技巧：相关的技巧。
-
-
-              
-            </p>
-          <!--noindex-->
           
-          <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1404,22 +1959,20 @@ Apns
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/02/12/agile/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/02/12/agile/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="知、行——人生">
     </span>
 
@@ -1430,33 +1983,23 @@ Apns
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/02/12/agile/" class="post-title-link" itemprop="url">敏捷研发流程实践</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/02/12/agile/" itemprop="url">敏捷研发流程实践</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-12T22:29:22+08:00">
+                2019-02-12
+              </time>
+            
 
-              
-                
-              
-
-              <time title="创建时间：2019-02-12 22:29:22" itemprop="dateCreated datePublished" datetime="2019-02-12T22:29:22+08:00">2019-02-12</time>
             
 
             
@@ -1471,17 +2014,25 @@ Apns
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
-                  ，
+                  , 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/工程/" itemprop="url" rel="index"><span itemprop="name">工程</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1490,7 +2041,6 @@ Apns
           
 
           
-            
             
           
 
@@ -1518,42 +2068,409 @@ Apns
       
         
           
-            <p>
-               为什么要敏捷
- 敏捷诞生的历史背景
+            <h2 id="为什么要敏捷"><a href="#为什么要敏捷" class="headerlink" title="为什么要敏捷"></a>为什么要敏捷</h2><h3 id="敏捷诞生的历史背景"><a href="#敏捷诞生的历史背景" class="headerlink" title="敏捷诞生的历史背景"></a>敏捷诞生的历史背景</h3><p><img src="agile/mjdsbj.jpg" alt></p>
+<h3 id="业界敏捷浪潮"><a href="#业界敏捷浪潮" class="headerlink" title="业界敏捷浪潮"></a>业界敏捷浪潮</h3><p><img src="agile/lc.jpg" alt></p>
+<h3 id="敏捷更符合软件开发规律"><a href="#敏捷更符合软件开发规律" class="headerlink" title="敏捷更符合软件开发规律"></a>敏捷更符合软件开发规律</h3><p><img src="agile/guilv.jpg" alt></p>
+<h3 id="敏捷对生产率、质量、满意度、成本有名称改进"><a href="#敏捷对生产率、质量、满意度、成本有名称改进" class="headerlink" title="敏捷对生产率、质量、满意度、成本有名称改进"></a>敏捷对生产率、质量、满意度、成本有名称改进</h3><p><img src="agile/haoc.jpg" alt></p>
+<h3 id="敏捷软件开发宣言"><a href="#敏捷软件开发宣言" class="headerlink" title="敏捷软件开发宣言"></a>敏捷软件开发宣言</h3><blockquote>
+<p>我们一直在实践中探寻更好的软件开发方法，<br>身体力行的同时也帮助他人。由此我们建立了如下价值观：</p>
+<p>个体和互动 高于 流程和工具<br>工作的软件 高于 详尽的文档<br>客户合作 高于 合同谈判<br>响应变化 高于 遵循计划</p>
+<p>也就是说，尽管右项有其价值，<br>我们更重视左项的价值。</p>
+</blockquote>
+<h3 id="敏捷宣言遵循的原则"><a href="#敏捷宣言遵循的原则" class="headerlink" title="敏捷宣言遵循的原则"></a>敏捷宣言遵循的原则</h3><blockquote>
+<p><em>我们遵循以下原则：</em></p>
+<p>我们最重要的目标，是通过持续不断地<br><strong>及早交付有价值</strong>的软件使客户满意。</p>
+<p>欣然<strong>面对需求变化</strong>，即使在开发后期也一样。<br>为了客户的竞争优势，敏捷过程掌控变化。</p>
+<p><strong>经常地交付可工作的软件</strong>，<br>相隔几星期或一两个月，倾向于采取<strong>较短</strong>的周期。</p>
+<p>业务人员和开发人员必须相互合作，<br>项目中的每一天都不例外。</p>
+<p>激发个体的斗志，以他们为核心搭建项目。<br>提供所需的环境和支援，辅以信任，从而达成目标。</p>
+<p>不论团队内外，传递信息效果最好效率也最高的方式是<br>面对面的交谈。</p>
+<p>可工作的软件是进度的首要度量标准。</p>
+<p>敏捷过程倡导可持续开发。<br>责任人、开发人员和用户要能够共同维持其步调稳定延续。</p>
+<p>坚持不懈地追求技术卓越和良好设计，敏捷能力由此增强。</p>
+<p>以简洁为本，它是极力减少不必要工作量的艺术。</p>
+<p>最好的架构、需求和设计出自自组织团队。</p>
+<p>团队定期地反思如何能提高成效，<br>并依此调整自身的举止表现。</p>
+</blockquote>
+<h3 id="正确理解敏捷"><a href="#正确理解敏捷" class="headerlink" title="正确理解敏捷"></a>正确理解敏捷</h3><h4 id="敏捷的误解"><a href="#敏捷的误解" class="headerlink" title="敏捷的误解"></a>敏捷的误解</h4><p><img src="agile/mjwj.jpg" alt></p>
+<h4 id="敏捷统一认识"><a href="#敏捷统一认识" class="headerlink" title="敏捷统一认识"></a>敏捷统一认识</h4><h5 id="统一认识"><a href="#统一认识" class="headerlink" title="统一认识"></a>统一认识</h5><p><img src="agile/mjrs.jpg" alt></p>
+<h5 id="聚焦价值"><a href="#聚焦价值" class="headerlink" title="聚焦价值"></a>聚焦价值</h5><p><img src="agile/value.jpg" alt></p>
+<h5 id="团队激发"><a href="#团队激发" class="headerlink" title="团队激发"></a>团队激发</h5><p><img src="agile/team.jpg" alt></p>
+<h5 id="拥抱变化"><a href="#拥抱变化" class="headerlink" title="拥抱变化"></a>拥抱变化</h5><p><img src="agile/adap.jpg" alt></p>
+<h5 id="优秀实践"><a href="#优秀实践" class="headerlink" title="优秀实践"></a>优秀实践</h5><p><img src="agile/sjgl.jpg" alt></p>
+<h5 id="具体应用"><a href="#具体应用" class="headerlink" title="具体应用"></a>具体应用</h5><p><img src="agile/jtyy.jpg" alt></p>
+<h5 id="系统性工程"><a href="#系统性工程" class="headerlink" title="系统性工程"></a>系统性工程</h5><p><img src="agile/xtgc.jpg" alt></p>
+<h4 id="敏捷理念解读"><a href="#敏捷理念解读" class="headerlink" title="敏捷理念解读"></a>敏捷理念解读</h4><h5 id="深入理解敏捷理念"><a href="#深入理解敏捷理念" class="headerlink" title="深入理解敏捷理念"></a>深入理解敏捷理念</h5><ul>
+<li><p>聚焦客户价值</p>
+<blockquote>
+<p>标识和消除软件开发中的浪费</p>
+<p>交付刚刚好的系统</p>
+<p>随时构建质量，不容忍缺陷</p>
+<p>及时消除技术债务，持续保持快速响应</p>
+</blockquote>
+</li>
+<li><p>激发团队</p>
+<blockquote>
+<p>认清团队的基本事实</p>
+<p>敏捷方式下管理者的转变</p>
+<p>敏捷方式下团队成员的转变</p>
+</blockquote>
+</li>
+<li><p>适应变化</p>
+<blockquote>
+<p>认清“客户是逐步发现真正需求”</p>
+<p>小批量是快速交互的关键</p>
+<p>通过迭代计划不断调整以适应需求变化</p>
+<p>应持续保持良好的软件架构</p>
+<p>利用多层次反馈不断调整以逼近目标</p>
+</blockquote>
+</li>
+</ul>
+<p>##### </p>
+<h5 id="标识和消除软件开发中的浪费"><a href="#标识和消除软件开发中的浪费" class="headerlink" title="标识和消除软件开发中的浪费"></a>标识和消除软件开发中的浪费</h5><ul>
+<li><p>部分完成的工作</p>
+<blockquote>
+<p>部分完成但没有最终落地的工作（没有转化成代码的设计文档；未及时合入的代码导致引发后续更多同步工作量）。</p>
+</blockquote>
+</li>
+<li><p>未应用特性</p>
+<blockquote>
+<p>开发完成但没有被客户应用的特性。</p>
+</blockquote>
+</li>
+<li><p>再次学习</p>
+<blockquote>
+<p>人员频繁流动导致经验不能积累，反复重新学习；在多个环节移交时，接收信息者也需要重新学习；拥有某领域的专家，但在开发过程中需要领域经验时，他却没有参与，而是团队重新摸索。</p>
+</blockquote>
+</li>
+<li><p>移交</p>
+<blockquote>
+<p>知识信息的传递时伴随信息丢失，隐形知识尤甚困难，分工过细往往导致过多不必要的移交，比如详细设计和实现分离，造成大量设计信息丢失。</p>
+</blockquote>
+</li>
+<li><p>任务切换</p>
+<blockquote>
+<p>研究表明多任务工作会导致效率下降20%-40%（员工多头工作或者杂事繁多）。</p>
+</blockquote>
+</li>
+<li><p>延迟</p>
+<blockquote>
+<p>因任务或者资源相互依赖而导致工作停滞</p>
+</blockquote>
+</li>
+<li><p>缺陷</p>
+<blockquote>
+<p>解决缺陷活动本身就是浪费，而且缺陷遗留到后端浪费越大。</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="交付刚刚好的系统"><a href="#交付刚刚好的系统" class="headerlink" title="交付刚刚好的系统"></a>交付刚刚好的系统</h5><ul>
+<li><p>在项目明显超负荷时，管理者简单地期望靠团队 work harder 来解决，最终导致：</p>
+<blockquote>
+<p>质量下降</p>
+<p>项目延期</p>
+<p>客户不满意</p>
+<p>团队疲劳</p>
+<p>埋下长期隐患</p>
+</blockquote>
+</li>
+<li><p>当质量、进度、资源冲突时，能改变的只有项目范围，即选择“交付刚刚好的系统”</p>
+<blockquote>
+<p>产品交付前，客户往往期望多而全的功能，产品交付后，客户把稳定的质量放在首位，尤其在电信领域，客户对产品质量要求是Always work，不是Sometimes。</p>
+<p>与其时为了满足多而全的功能导致交付延迟，质量不稳定，不如按时交付刚刚好的系统，保证其高质量运行。</p>
+<p>交付刚刚好的系统，基于对客户需求的深入理解，并花时间了解细节，简化需求（降低复杂性）而不是简单地拒绝需求。</p>
+<p>做到“交付刚刚好的系统”，同时<strong>需要管理者有足够的勇气和果断决策</strong></p>
+</blockquote>
+</li>
+</ul>
+<h5 id="消除技术债务"><a href="#消除技术债务" class="headerlink" title="消除技术债务"></a>消除技术债务</h5><ul>
+<li><p>常见技术债务</p>
+<blockquote>
+<p>日益腐烂的架构、圈复杂度高的代码、低的测试自动化率、不及时清除的静态检查告警等。</p>
+<p>异常处理不完善</p>
+</blockquote>
+</li>
+<li><p>为什么会有技术债务</p>
+<blockquote>
+<p>为了满足短期商业目标，不影响其外部表现的情况下，会在技术方面进行一定的让步，这种让步虽然对当前版本的质量影响甚微，但会严重影响后续版本响应客户需求的能力，从而形成技术债务。</p>
+</blockquote>
+</li>
+<li><p>对待技术债务的态度</p>
+<blockquote>
+<p>技术债务是有成本的，如不及时偿还，会随时间积累利息变高，导致开发效率大幅下降，从而降低客户响应能力。因此对待技术债务的态度是加以管理并及时偿还（比如及时重构、服务治理）。</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="激发团队，认清团队的基本事实"><a href="#激发团队，认清团队的基本事实" class="headerlink" title="激发团队，认清团队的基本事实"></a>激发团队，认清团队的基本事实</h5><p><img src="agile/tdss.jpg" alt></p>
+<h5 id="管理者转变"><a href="#管理者转变" class="headerlink" title="管理者转变"></a>管理者转变</h5><p><img src="agile/glzzb.jpg" alt></p>
+<h5 id="团队成员转变"><a href="#团队成员转变" class="headerlink" title="团队成员转变"></a>团队成员转变</h5><p><img src="agile/tdcyzb.jpg" alt></p>
+<h5 id="调整，拥抱变化"><a href="#调整，拥抱变化" class="headerlink" title="调整，拥抱变化"></a>调整，拥抱变化</h5><p><img src="agile/tdtzsybh.jpg" alt></p>
+<h5 id="持续保持良好的软件架构"><a href="#持续保持良好的软件架构" class="headerlink" title="持续保持良好的软件架构"></a>持续保持良好的软件架构</h5><p><img src="agile/bclhrjjg.jpg" alt></p>
+<h4 id="敏捷实践解读"><a href="#敏捷实践解读" class="headerlink" title="敏捷实践解读"></a>敏捷实践解读</h4><h5 id="敏捷实践概览"><a href="#敏捷实践概览" class="headerlink" title="敏捷实践概览"></a>敏捷实践概览</h5><p><img src="agile/jdmjgl.jpg" alt></p>
+<h5 id="敏捷软件开发典型场景"><a href="#敏捷软件开发典型场景" class="headerlink" title="敏捷软件开发典型场景"></a>敏捷软件开发典型场景</h5><p><img src="agile/jdmjkfcj.jpg" alt></p>
+<h5 id="敏捷开发核心——迭代开发"><a href="#敏捷开发核心——迭代开发" class="headerlink" title="敏捷开发核心——迭代开发"></a>敏捷开发核心——迭代开发</h5><p><img src="agile/jdddkf.jpg" alt></p>
+<h5 id="团队的三个核心角色"><a href="#团队的三个核心角色" class="headerlink" title="团队的三个核心角色"></a>团队的三个核心角色</h5><p><img src="agile/jdmjhxjs.jpg" alt></p>
+<h5 id="角色职责"><a href="#角色职责" class="headerlink" title="角色职责"></a>角色职责</h5><p><img src="agile/jdjszz.jpg" alt></p>
+<h5 id="完整团队"><a href="#完整团队" class="headerlink" title="完整团队"></a>完整团队</h5><p><img src="agile/jdwztd.jpg" alt></p>
+<h5 id="敏捷工作件：产品Backlog"><a href="#敏捷工作件：产品Backlog" class="headerlink" title="敏捷工作件：产品Backlog"></a>敏捷工作件：产品Backlog</h5><p><img src="agile/jdcpblog.jpg" alt></p>
+<h5 id="敏捷工作件：迭代Backlog"><a href="#敏捷工作件：迭代Backlog" class="headerlink" title="敏捷工作件：迭代Backlog"></a>敏捷工作件：迭代Backlog</h5><p><img src="agile/jdddblog.jpg" alt></p>
+<h5 id="敏捷工作件：完成标准"><a href="#敏捷工作件：完成标准" class="headerlink" title="敏捷工作件：完成标准"></a>敏捷工作件：完成标准</h5><p><img src="agile/jdwcbj.jpg" alt></p>
+<h5 id="敏捷管理实践：迭代计划会议"><a href="#敏捷管理实践：迭代计划会议" class="headerlink" title="敏捷管理实践：迭代计划会议"></a>敏捷管理实践：迭代计划会议</h5><p><img src="agile/jdddhyjh.jpg" alt></p>
+<h5 id="敏捷管理实践：每日站立会议"><a href="#敏捷管理实践：每日站立会议" class="headerlink" title="敏捷管理实践：每日站立会议"></a>敏捷管理实践：每日站立会议</h5><p><img src="agile/jdmrzlhy.jpg" alt></p>
+<h5 id="敏捷管理实践：可视化管理"><a href="#敏捷管理实践：可视化管理" class="headerlink" title="敏捷管理实践：可视化管理"></a>敏捷管理实践：可视化管理</h5><p><img src="agile/jdkshgl.jpg" alt></p>
+<h5 id="敏捷管理实践：迭代验收"><a href="#敏捷管理实践：迭代验收" class="headerlink" title="敏捷管理实践：迭代验收"></a>敏捷管理实践：迭代验收</h5><p><img src="agile/jdddys.jpg" alt></p>
+<h5 id="敏捷管理实践：迭代回顾会议"><a href="#敏捷管理实践：迭代回顾会议" class="headerlink" title="敏捷管理实践：迭代回顾会议"></a>敏捷管理实践：迭代回顾会议</h5><p><img src="agile/jdddhghy.jpg" alt></p>
+<h5 id="敏捷工程实践：用户故事"><a href="#敏捷工程实践：用户故事" class="headerlink" title="敏捷工程实践：用户故事"></a>敏捷工程实践：用户故事</h5><p><img src="agile/jdyhgs.jpg" alt></p>
+<p>#####敏捷工程实践：持续集成(CI)</p>
+<p><img src="agile/jdci.jpg" alt></p>
+<h2 id="研发管理流程"><a href="#研发管理流程" class="headerlink" title="研发管理流程"></a>研发管理流程</h2><h3 id="团队角色"><a href="#团队角色" class="headerlink" title="团队角色"></a>团队角色</h3><table>
+<thead>
+<tr>
+<th>角色名称</th>
+<th>职责</th>
+<th>是否必须</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>项目经理</td>
+<td>1、业务目标、进度、成本、质量控制<br>2、团队建设、激发、鼓励和改进团队的效率<br>3、定期向干系人汇报，并作为团队和外部的接口，屏蔽外界对团队的干扰<br>4、确保项目流程被遵循、组织、监督和培训</td>
+<td>必须</td>
+</tr>
+<tr>
+<td>产品策划</td>
+<td>1、确定产品的功能、拆分用户故事<br>2、确定需求优先级<br>3、接受和拒绝开放团队的工作成果<br>4、参与产品开发过程中的有关会议</td>
+<td>必须</td>
+</tr>
+<tr>
+<td>UI</td>
+<td>1、根据用户故事，负责产品的功能交互及界面设计<br>2、组织开展人机交互及用户体验，不断跟踪改进，提高产品表现力<br>3、参与产品开发过程中的有关会议</td>
+<td>非必须</td>
+</tr>
+<tr>
+<td>开发</td>
+<td>1、根据用户故事，负责产品的技术架构设计及功能开发<br>2、评估、设计及维护产品相应模块，确保模块的稳定性、易用性、高效性<br>3、参加产品开发过程中的有关会议</td>
+<td>必须</td>
+</tr>
+<tr>
+<td>测试</td>
+<td>1、根据用户故事，设计产品测试标准，确保产品品质满足市场需求<br>2、合理分配测试资源，组织产品测试并优化测试流程及测试标准，提高测试效率<br>3、编写产品测试用例，提交测试问题，编写测试总结报告，以测试角度来确定产品版本是否发布</td>
+<td>必须</td>
+</tr>
+</tbody>
+</table>
+<h3 id="研发过程"><a href="#研发过程" class="headerlink" title="研发过程"></a>研发过程</h3><h4 id="研发流程阶段"><a href="#研发流程阶段" class="headerlink" title="研发流程阶段"></a>研发流程阶段</h4><p>敏捷管理过程，可以分为：立项过程、规划过程、执行与监控过程、结项过程。</p>
+<p>这里借鉴华为的IPD流程，来描述敏捷管理过程，如图所示：</p>
+<p><img src="agile/流程.png" alt>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </p>
+<p>CP：Check Point</p>
+<table>
+<thead>
+<tr>
+<th>评审点</th>
+<th>功能</th>
+<th>输入</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R0</td>
+<td>评审点：项目启动评审。<br>通过标志：项目任务书被确认和评审通过。<br>目的：确保该项目在前期已经站在组织角度考虑了项目的商业战略符合度，<br>确保以客户为中心，并且考虑了可行性。</td>
+<td>项目立项需求</td>
+<td><em> 待批准的项目任务书<br> </em> 项目状态报告<br><em> 需求规格书<br></em> 汇报ppt</td>
+</tr>
+<tr>
+<td>R1</td>
+<td>评审点：项目概念阶段结束时的评审。<br>通过标志：项目概念与初步项目计划的确认<br>目的：确保该项目的执行策略是建立在业务和技术可行性充分分析的基础之上，<br>项目的进展与组织的业务策略上下对齐。</td>
+<td>被批准的项目任务书</td>
+<td><em> 初步项目集成计划<br></em> 计划阶段详细计划<br><em> 项目状态报告<br> </em> 刷新的需求规格书 <br> <em> 汇报ppt <br> </em> 初步的质量策划方案 <br> <em> 项目预算 <br></em> 细化的目标成本 <br> <em> 备选方案 和资源预算 <br> </em> 风险分析报告</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>评审点：项目计划阶段结束时的项目评审<br>通过标志：最终项目计划被确认和批准<br>目的：保证整个项目的实施计划的系统性和可行性，并与项目的最终目标对齐。</td>
+<td>需求规格书<br> 项目设计方案 <br> 目标 <br> 组织资源使用状态 <br> 相关基线数据 <br> 组织过程资产</td>
+<td>项目：目标、策略、价值、范围<br> 利益干系人分析汇总<br>质量计划<br> 目标成本<br> 进度表和预算 <br> 风险管理计划 <br> 风险响应计划 <br> 人力资源计划 <br> 组织模式 和运作方式<br> 沟通计划 <br> 需求规格书<br> 分解规格书<br> 初步的采购合同<br> 刷新的需求规格书<br> 项目状态报告 <br> 汇报ppt</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>评审点：开发阶段结束时的评审点<br>通过标志：项目开发工作按计划完成，可将交付物提供给接收人/客户验收。<br>目的：确认项目开发交互件的质量和范围与项目目标一致、与组织的业务策略一致。</td>
+<td>需求规格书<br> 项目计划书<br>变更请求<br> 项目状态报告</td>
+<td>待验证的项目交付件<br> 项目状态报告<br> 刷新的需求规格书<br> 修订的供应商合同<br> 修订人力资源计划<br> 经批准的变更请求<br> 待批准的项目验证计划/策略<br> 汇报ppt</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>评审点：项目验证结束时的评审<br>通过标志：输出及交付件通过验收<br>目的：确保项目的交付件已验收且后继项目质量可以得到保证。</td>
+<td>待验证的交付件<br>刷新的项目任务书<br> 确认的需求规格清单<br> 项目计划书<br> 变更请求<br> 项目状态报告</td>
+<td>项目验收报告<br>项目状态报告<br>汇报ppt<br>待发布的交付件<br>汇报ppt</td>
+</tr>
+<tr>
+<td>R5</td>
+<td>评审点：发布阶段结束时的项目评审<br>通过标志：项目结束<br>目的：进行项目经验总结汇报，确认项目按照计划完成，并批准项目关闭。</td>
+<td>验证后的交付件<br> 验收标准<br>项目计划书<br>变更请求<br>项目状态报告</td>
+<td>项目发布通告<br>项目状态报告<br>项目移交报告<br>最终的交付件<br>汇报ppt</td>
+</tr>
+</tbody>
+</table>
+<h4 id="评审要素："><a href="#评审要素：" class="headerlink" title="评审要素："></a>评审要素：</h4><table>
+<thead>
+<tr>
+<th>项目目标对齐</th>
+<th>资源承诺</th>
+<th>项目状态</th>
+<th>项目组合状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em> 商业目标对齐<br></em> 组织要求对齐</td>
+<td>* 资源投入保障</td>
+<td><em> 项目价值<br></em> 进度偏差<br><em> 质量状态<br></em> 项目风险<br><em> 采购准备度<br></em> 计划<br><em> 范围<br></em> 技术准备度<br><em> 费用 和人力<br></em> 目标成本达成度</td>
+<td><em> 项目优先级排序<br></em> 人力投入及使用<br>* 依赖关系</td>
+</tr>
+</tbody>
+</table>
+<h4 id="生命周期模型在版本研发项目中的应用"><a href="#生命周期模型在版本研发项目中的应用" class="headerlink" title="生命周期模型在版本研发项目中的应用"></a>生命周期模型在版本研发项目中的应用</h4><p><img src="agile/关键活动.png" alt></p>
+<blockquote>
+<p>说明：</p>
+<table>
+<thead>
+<tr>
+<th>TRX</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TR1</td>
+<td>产品包需求、设计需求评审</td>
+</tr>
+<tr>
+<td>TR2</td>
+<td>产品整体设计（系统设计规格）</td>
+</tr>
+<tr>
+<td>TR3</td>
+<td>模块概要设计</td>
+</tr>
+<tr>
+<td>TR4</td>
+<td>详细设计、模块测试</td>
+</tr>
+<tr>
+<td>TR4A</td>
+<td>软件产品联调、需求功能全面测试、性能摸底</td>
+</tr>
+<tr>
+<td>TR5</td>
+<td>软件产品性能全面测试</td>
+</tr>
+<tr>
+<td>TR6</td>
+<td>BETA</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h4 id="产品开发V-模型"><a href="#产品开发V-模型" class="headerlink" title="产品开发V 模型"></a>产品开发V 模型</h4><p><img src="agile/V.jpg" alt></p>
+<h4 id="阶段责任人主题"><a href="#阶段责任人主题" class="headerlink" title="阶段责任人主题"></a>阶段责任人主题</h4><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>阶段简介</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Charter</td>
+<td>责任主体：Marketing 团队和SE<br>主要工作：Charter 需要回答这些问题：版本的TOP N 需求和主要竞争需求，主要目标客户，完整的包需求，版本的里程碑时间点，应用的时间窗口以及在版本火车中所处的位置。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Charter-TR1</td>
+<td>责任主体：SE团队，同时Marketing 团队配合完成需求的细化、澄清和修订。<br>主要工作：输出设计需求（包括每个需求的输入、输出参数、并输出低保真界面原型）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CDCP</td>
+<td>责任主体：<br>主要工作：被裁剪，具体作用不明</td>
+</tr>
+<tr>
+<td>4</td>
+<td>TR1-TR2</td>
+<td>责任主体：SE团队<br>主要工作：输出设计规格（接口设计、高保真界面原型）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>PDCP</td>
+<td>责任主体：开发代表<br>主要工作：代码规模、关键时间点和人力需求。质量目标、SOW（工作任务书）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>TR2-TR3</td>
+<td>责任主体：开发组<br>主要工作：需求规格说明书（SRS）、系统测试用例（STC）、概要设计（HLD）、集成测试用例（ITC）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>TR3-TR4</td>
+<td>责任主体：开发组<br>主要工作：详细设计（LLD）、单元测试用例（UTC）、编码（Coding）、及自测阶段（UT/IT/ST/BBIT）</td>
+</tr>
+<tr>
+<td>8</td>
+<td>TR4-TR4A</td>
+<td>责任主体：测试部<br>主要工作：测试部的EVT测试阶段（2+1的测试），验证测试。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>TR4A-TR5</td>
+<td>责任主体：测试部<br>主要工作：DVT，是对设计需求的验证测试。</td>
+</tr>
+<tr>
+<td>10</td>
+<td>TDCP</td>
+<td>责任主体：开发代表<br>主要工作：这个里程碑意味着产品主要开发活动的结束。开发代表需要邀请下游用户、测试等相关干系人参与评审。评审的标准是产品的遗留缺陷。各域的代表会关心这些遗留缺陷是否确实影响用户的使用，有没有规避的方法。</td>
+</tr>
+<tr>
+<td>11</td>
+<td>TR5-TR6</td>
+<td>责任主体：<br>主要工作：TR5到TR6 实验局阶段，也是PVT（对包需求的确认测试）。</td>
+</tr>
+<tr>
+<td>12</td>
+<td>TR6-GA</td>
+<td>责任主体：<br>主要工作：维护阶段</td>
+</tr>
+<tr>
+<td>13</td>
+<td>GA</td>
+<td>责任主体：<br>主要工作：生命周期的结束。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="敏捷实施"><a href="#敏捷实施" class="headerlink" title="敏捷实施"></a>敏捷实施</h3><h4 id="华为敏捷三步走案例"><a href="#华为敏捷三步走案例" class="headerlink" title="华为敏捷三步走案例"></a>华为敏捷三步走案例</h4><p><img src="agile/scsbz.jpg" alt></p>
+<h4 id="三走解读"><a href="#三走解读" class="headerlink" title="三走解读"></a>三走解读</h4><h5 id="项目级敏捷"><a href="#项目级敏捷" class="headerlink" title="项目级敏捷"></a>项目级敏捷</h5><p><img src="agile/sbzxmj.jpg" alt></p>
+<h5 id="版本级敏捷"><a href="#版本级敏捷" class="headerlink" title="版本级敏捷"></a>版本级敏捷</h5><p><img src="agile/sbzbbj.jpg" alt></p>
+<h5 id="产品级敏捷"><a href="#产品级敏捷" class="headerlink" title="产品级敏捷"></a>产品级敏捷</h5><p><img src="agile/sbzcpj.jpg" alt></p>
+<h4 id="八步曲"><a href="#八步曲" class="headerlink" title="八步曲"></a>八步曲</h4><p><img src="agile/bzbbq.jpg" alt></p>
+<h4 id="可能的角色人选"><a href="#可能的角色人选" class="headerlink" title="可能的角色人选"></a>可能的角色人选</h4><p><img src="agile/bzjsrx.jpg" alt></p>
+<h4 id="其他敏捷相关角色在华为对应的角色"><a href="#其他敏捷相关角色在华为对应的角色" class="headerlink" title="其他敏捷相关角色在华为对应的角色"></a>其他敏捷相关角色在华为对应的角色</h4><p><img src="agile/xgjsdyjs.jpg" alt></p>
+<h4 id="项目级敏捷实施场景"><a href="#项目级敏捷实施场景" class="headerlink" title="项目级敏捷实施场景"></a>项目级敏捷实施场景</h4><h5 id="场景1"><a href="#场景1" class="headerlink" title="场景1"></a>场景1</h5><p><img src="agile/sscj1.jpg" alt></p>
+<h5 id="场景2"><a href="#场景2" class="headerlink" title="场景2"></a>场景2</h5><p><img src="agile/sscj2.jpg" alt></p>
+<h5 id="场景3"><a href="#场景3" class="headerlink" title="场景3"></a>场景3</h5><p><img src="agile/sscj3.jpg" alt></p>
+<h4 id="项目级敏捷过程样例（版本中项目全都实施敏捷）"><a href="#项目级敏捷过程样例（版本中项目全都实施敏捷）" class="headerlink" title="项目级敏捷过程样例（版本中项目全都实施敏捷）"></a>项目级敏捷过程样例（版本中项目全都实施敏捷）</h4><p><img src="agile/sscmj.jpg" alt></p>
+<h4 id="项目级敏捷过程说明"><a href="#项目级敏捷过程说明" class="headerlink" title="项目级敏捷过程说明"></a>项目级敏捷过程说明</h4><p><img src="agile/xmjylsm.jpg" alt></p>
 
- 业界敏捷浪潮
-
- 敏捷更符合软件开发规律
-
- 敏捷对生产率、质量、满意度、成本有名称改进
-
- 敏捷软件开发宣言
-
-我们一直在实践中探寻更好的软件开发方法，
-身体力行的同时也帮助他人。由此我们建立了如下价值观：
-个体和互动 高于 流程和工具
-工作的软件 高于 
-              ...
-            </p>
-          <!--noindex-->
           
-          <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1586,22 +2503,20 @@ Apns
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/02/10/alibbdztxqt/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/02/10/alibbdztxqt/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="知、行——人生">
     </span>
 
@@ -1612,33 +2527,23 @@ Apns
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/02/10/alibbdztxqt/" class="post-title-link" itemprop="url">阿里巴巴“大中台、小前台”读后感</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/02/10/alibbdztxqt/" itemprop="url">阿里巴巴“大中台、小前台”读后感</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-10T22:54:03+08:00">
+                2019-02-10
+              </time>
+            
 
-              
-                
-              
-
-              <time title="创建时间：2019-02-10 22:54:03" itemprop="dateCreated datePublished" datetime="2019-02-10T22:54:03+08:00">2019-02-10</time>
             
 
             
@@ -1653,10 +2558,14 @@ Apns
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/管理/" itemprop="url" rel="index"><span itemprop="name">管理</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/管理/" itemprop="url" rel="index">
+                    <span itemprop="name">管理</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1665,7 +2574,6 @@ Apns
           
 
           
-            
             
           
 
@@ -1693,32 +2601,53 @@ Apns
       
         
           
-            <p>
-               阿里巴巴“大中台、小前台”读后感
- 为什么要 “大中台”？
-“中台”化，提炼各个业务条线的共性需求，然后将这些共性需求，形成能力、形成平台。
-对业务进行中台化，形成会员系统、商品系统、订单系统、营销系统、支付系统、账户系统，其他基础系统。
-对硬件进行中台化，硬件使用，形成IAAS，提高利用率、便于
-              ...
-            </p>
-          <!--noindex-->
+            <h1 id="阿里巴巴“大中台、小前台”读后感"><a href="#阿里巴巴“大中台、小前台”读后感" class="headerlink" title="阿里巴巴“大中台、小前台”读后感"></a>阿里巴巴“大中台、小前台”读后感</h1><h2 id="为什么要-“大中台”？"><a href="#为什么要-“大中台”？" class="headerlink" title="为什么要 “大中台”？"></a>为什么要 “大中台”？</h2><p>“中台”化，提炼各个业务条线的共性需求，然后将这些共性需求，形成能力、形成平台。</p>
+<p>对业务进行中台化，形成会员系统、商品系统、订单系统、营销系统、支付系统、账户系统，其他基础系统。</p>
+<p>对硬件进行中台化，硬件使用，形成IAAS，提高利用率、便于采购、易于扩容，降低硬件的维护成本。硬件生产，那就是硬件归一化，比如之前在华为看到的存储硬件归一化，华为存储采用盘古硬件平台，在盘古平台搭上不同的规格的硬盘、CPU、控制器，就形成了中、低、高端的存储产品（这里也包含相应的软件增值业务），对于归一化的硬件平台也降低了客户的学习成本、维护成本、易于客户采购。</p>
+<p>“中台”化的好处：</p>
+<ul>
+<li>提高利用率，减少重复造轮子、重复探索的成本。</li>
+<li>降低维护成本。</li>
+<li>敏捷响应新形势、新挑战。</li>
+<li>践行了以客户为中心。</li>
+</ul>
+<h2 id="“中台”化的关键"><a href="#“中台”化的关键" class="headerlink" title="“中台”化的关键"></a>“中台”化的关键</h2><ul>
+<li>归一化（标准化）：同类问题的处理方案，归一化。</li>
+<li>流程化：采用可复制、可推广、可回溯的流程步骤去解决问题。</li>
+<li>抽象化：采用领域驱动模式去抽象共性。</li>
+</ul>
+<h2 id="那怎么“中台”？"><a href="#那怎么“中台”？" class="headerlink" title="那怎么“中台”？"></a>那怎么“中台”？</h2><p>中台化，我觉得有不同的表现。</p>
+<p>1、对于问题的解决形成规范化、标准化。比如对于订单问题、支付、购买的问题，最常见的问题的是幂等性</p>
+<p>​               问题。对于跟第三方交互的规划化、标准化处理，也就是标准化的异常处理模式（实时返回终态（明确成      </p>
+<p>​               功、失败），对于非终态的采用定时机制去轮询、最近确认状态，对于在文档之外的其他状态（明确成  </p>
+<p>​               功、失败的状态之外）也当作非终态处理）。</p>
+<p>​               如有可能，可以将异常处理，形成差错处理系统，并且统一的差错处理系统（SAAS化）。</p>
+<p>2、 采用SOA服务化，解决系统间的交互（比如不建议A系统直接通过连B系统的数据库）。这里就要对业务能力</p>
+<p>​              服务化，以标准的接口对外提供调用。那怎么业务能力服务化呢？ 我觉得目前我司的业务在业界已经是很    </p>
+<p>​              成熟的业务，业界的业务模型、接口可以供我们参考，比如alipay的服务化接口、接口安全性机制。</p>
+<p>​              这里可以说业务SAAS化。</p>
+<p>3、硬件（基础IT）参数配置标准化，然后再新机器上线，一键配置，可以减少后继服务上线由于参数的问题，而</p>
+<p>​               导致的问题。对于硬件规格进行SET化，根据每个SET的硬件规格、业务承载能力，形成扩容的基本单</p>
+<p>​                位，这样便于扩容、也便于采购。这里也有可能硬件SET化，系统SET化。</p>
+<p>4、对系统（根据不同的级别系统）形成相应的DFX(Design For X ， 可靠性、可用性、性能、可测试性等)基线，</p>
+<p>​             避免形成不同的极端，所有的系统都按照最严的要求，或者所有的系统都没有要求。根据不同的基线制定</p>
+<p>​             不同的测试基线、服务等级、开发流程。这样有利于进行软件研发的实施（升级、容灾、降级）。</p>
+<p>5、基础组件化（服务框架归一化，缓存组件、业务监控组件），这里可以先服务框架归一化，其他组件可以适当</p>
+<p>​            规划。我觉得业务健康监控组件是必须规划的，现在出现了一些很尴尬的问题：一般都不是研发最先知道</p>
+<p>​            线上出现问题，而是客户最先知道问题。研发是服务提供方，用“以客户为中心”的思路来看，我们是要先用</p>
+<p>​            户知道问题，并尽可能在大量用户使用之前把问题解决。</p>
+<p>6、售卖机硬件归一化（可以借鉴华为的盘古思路），硬件归一化方便维护、采购、备件存储。</p>
+
           
-          <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1751,22 +2680,20 @@ Apns
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/01/13/hlwxx/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/01/13/hlwxx/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="知、行——人生">
     </span>
 
@@ -1777,33 +2704,23 @@ Apns
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/01/13/hlwxx/" class="post-title-link" itemprop="url">喧嚣的互联网</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/01/13/hlwxx/" itemprop="url">喧嚣的互联网</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-13T10:11:51+08:00">
+                2019-01-13
+              </time>
+            
 
-              
-                
-              
-
-              <time title="创建时间：2019-01-13 10:11:51" itemprop="dateCreated datePublished" datetime="2019-01-13T10:11:51+08:00">2019-01-13</time>
             
 
             
@@ -1818,17 +2735,25 @@ Apns
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/哲思/" itemprop="url" rel="index"><span itemprop="name">哲思</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/哲思/" itemprop="url" rel="index">
+                    <span itemprop="name">哲思</span>
+                  </a>
+                </span>
 
                 
                 
-                  ，
+                  , 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/哲思/现实/" itemprop="url" rel="index"><span itemprop="name">现实</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/哲思/现实/" itemprop="url" rel="index">
+                    <span itemprop="name">现实</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1837,7 +2762,6 @@ Apns
           
 
           
-            
             
           
 
@@ -1865,31 +2789,146 @@ Apns
       
         
           
-            <p>
-               互联网是否存在所谓的善良
-我为什么会写这样的文章？其实，我跟大家一样也是一个屌丝，天天刷着手机，在互联网度过每天的闲暇时光。
-在闲暇的时间里，我看各种新闻、看各种网络书、玩着荣耀。
-这样的时光持续一段时间，突然间，我反思起来：这种新闻软件，我是否真的看到我需要的信息么？是否真的看到我需要的知识么？
-              ...
-            </p>
-          <!--noindex-->
+            <h2 id="互联网是否存在所谓的善良"><a href="#互联网是否存在所谓的善良" class="headerlink" title="互联网是否存在所谓的善良"></a>互联网是否存在所谓的善良</h2><p>我为什么会写这样的文章？其实，我跟大家一样也是一个屌丝，天天刷着手机，在互联网度过每天的闲暇时光。</p>
+<p>在闲暇的时间里，我看各种新闻、看各种网络书、玩着荣耀。</p>
+<p>这样的时光持续一段时间，突然间，我反思起来：这种新闻软件，我是否真的看到我需要的信息么？是否真的看到我需要的知识么？我怎么脾气变得越来越暴躁。</p>
+<p>于是，不满足的我，新闻客户端删了一个、换了一个、又删了这个、换那个。如此折腾一段时间，我还是没有办法得到我想要的新闻客户端，于是我就把所有的新闻客户端都删除掉。</p>
+<p>我为什么会删除新闻客户端，因为新闻客户端充斥的内容，不是我想要的内容。接下来，我给大家列举：今日头条、网易、腾讯新闻、微信新闻、搜狐新闻的内容。</p>
+<h3 id="新闻客户端内容分析"><a href="#新闻客户端内容分析" class="headerlink" title="新闻客户端内容分析"></a>新闻客户端内容分析</h3><p>  在分析之前，我想问大家一个书呆子气的问题，那到底什么才是真正的新闻呢？</p>
+<p>  <a href="https://baike.baidu.com/item/新闻/289002?fr=aladdin" target="_blank" rel="noopener">新闻</a>：</p>
+<p>从表达方式上看，新闻以记叙为主，十分讲究真实性。<br>新闻六要素（也就是记叙要素）：时间、地点、人物、事件的起因、经过、结果。即五个“W”和一个“H”　<br>即Who（何人） 、What（何事） 、When（何时）、Where（何地） 、Why（何因）、How（如何）。<br>一篇新闻报道，无论是消息还是通讯、特写，一般都包含这6个因素。“麻雀虽小，五脏俱全”，比如下面这条新闻，六要素交代得非常清楚。<br>“经过多年艰苦训练，中国运动员刘翔终于在2004年8月27日，雅典奥运会上获得男子110米栏冠军，被媒体称为‘亚洲飞人’。”<br>特点：公开性、真实性、针对性、时效性、准确性、显著性、接近性、开放性、广泛性、变动性。</p>
+<h4 id="今日头条"><a href="#今日头条" class="headerlink" title="今日头条"></a>今日头条</h4><p>打开今日头条，我看到如下的新闻：</p>
+<ul>
+<li>[置顶] 新华社评论员——狠刹“四风”、严惩腐败。</li>
+<li>[置顶] 央视新闻移动网——《红色通缉》第三集《出击》</li>
+<li>互联网热点分析——《燃点》导演犀利点评傅盛：真正强大的人，外界伤不了。</li>
+<li>如何看待小米股票解禁市值蒸发3000亿？</li>
+<li>新闻夜航——鸡西法院公开宣判：90后女孩动歪念，骗亲戚、朋友230余万元。</li>
+<li>科技千里眼——矩阵的本质意义究竟是什么？</li>
+<li>悟空问答——为什么余承东的收入和雷军中间不知差距多少个段位，但还是可以把华为做的很出色。</li>
+<li>量子位——国家进步奖出炉，华为拿下一等奖，腾讯、中兴各获二等奖。</li>
+<li>中国网—— 华为回应波兰员工事件：终止雇佣关系</li>
+<li>悟空问答——普通公司员工的编程水平与阿里巴巴有多大差距。</li>
+<li>中国医学博士联络站——华为工程师猝死，36岁，22月无休：2019比挣钱更重要的是活着。</li>
+<li>徐中博士清晨领导课——孟晚舟的清华人才梦又实现了：2018年华为招聘清华学子再次第一。</li>
+<li>每日经济新闻——22天！美国政府关门时间创纪录，华盛顿“一片狼藉”：垃圾无人打扫，结婚证办不了。</li>
+<li>悟空问答——如何理解柳传志和雷军对华为的攻击？</li>
+<li>投行大师兄（优质财经领域创造者）——以半导体行业为例，教你如何快速看懂一个行业 基本情况</li>
+<li>悟空问答——有人说清华大学是为美国培养人才的摇篮，对此你怎么看？</li>
+<li>靶客扒客——日本最大通信运营公司总裁 强硬表示禁售华为包括手机等民用设备</li>
+<li>牛弹琴——波兰到底想干什么？事情越来越不简单</li>
+<li>娱情乐事吧——马云宋小宝爆笑小品，把首富们损了个遍，台下观众都笑趴了。</li>
+<li>悟空问答——如果联想倒闭了，对中国的科技发展会带来什么影响？</li>
+<li>央视新闻移动网——陕西省神木一煤矿发生事故 21人死亡。</li>
+<li>芯智讯——突发！华为美国子公司技术出口被限制。</li>
+<li>覃仕勇说史——清朝皇子最特殊，有性启蒙老师，乾隆最多，曾给其中一位写首诗。</li>
+<li>米赢文化——为何雷军说华为没有互联网思维？什么才是互联网思维？答案都在这。</li>
+<li>悟空问答——小米和华为怎么了？为什么会会出现生死看淡，不服就干的言论？</li>
+<li>每个boss都是hr专家——张小龙暗怼钉钉：创业公司的人才也需要过正常的生活。</li>
+<li>生活报——波兰抓了华为高管王伟晶，事情很不简单。</li>
+<li>道哥道金融——为什么中国的房价比美国还贵？逻辑比真相更重要。</li>
+</ul>
+<p>精力有限，不再列举内容，看了今日头条推送的消息，你有何感觉呢？</p>
+<p> 我感觉如下：</p>
+<ol>
+<li><p>新闻标题很震撼，但是内容体现不了标题的含义、有的内容烧了好几次饭。</p>
+</li>
+<li><p>各个内容提供者的名称都是牛逼哄哄：道哥道金融、每个boss都是hr专家、靶客扒客、中国医学博士联络站、投行大师兄</p>
+</li>
+<li><p>内容混杂：编程、数学、问答、新闻。</p>
+</li>
+<li>动机复杂：煽情、制造冲突、哗众取宠。</li>
+</ol>
+<h4 id="网易新闻"><a href="#网易新闻" class="headerlink" title="网易新闻"></a>网易新闻</h4><ul>
+<li>热门 网易娱乐——冯绍峰自曝追求赵丽颖不过果敢，成功全靠这两点。</li>
+<li>梨花说社会<strong>#小丈夫</strong>视频——女孩打架进了派出所，警员让她给家人打电话，她对着所长就喊声爸。</li>
+<li>谈资看好戏——王菲带女儿美国手术后现身，李嫣的嘴又变了。</li>
+<li>澎湃新闻——京东下掉iphone8/8p的售价：为苹果官方价差超过千元。</li>
+<li>每日经济新闻——22天！美国政府关门时间创纪录，华盛顿“一片狼藉”：垃圾无人打扫，结婚证办不了。</li>
+<li>释墨轩文化小天地——马未都：送一根绿松石拐杖给冯小刚，看清楚了他释什么样的人。</li>
+<li>会火——《武林外传》学霸邱小东成真！24岁哈佛读博士，帅到认不出！</li>
+<li>谈资看好戏——贾乃亮独自登山，手机屏保上的她才是亮点。</li>
+<li>皮皮电影——徐克导演，张国荣、赵文卓坐阵！可惜，这片却成厨师武侠片的绝唱。</li>
+<li>丁玉的生活——张国立劝成龙尊重历史，成龙反问历史谁写的，冯小刚连忙圆场。</li>
+<li>十点有听说——范冰冰复出受阻，国际代言被“小花”截胡，网友：“爷”已下台？</li>
+<li>旅行宿途者——赵本山女儿演女一号，演技很渣被喷，走路是在太机械。</li>
+<li>科技新傅敏——林志玲一出现，刘强东拿起手机各种拍，网友：说好的脸盲呢</li>
+</ul>
+<p>网易新闻，基本上都是明星八卦，难道我们的互联网生活就应该陷在各种娱乐八卦中么？</p>
+<p>尤其给大家传递那种虽然出了名，但是文化程度不高明星的负面言论，这些明星自认为自己拍戏很牛逼、红了，在其他领域也应该很牛逼，但现实总是很打脸。</p>
+<p>正如：</p>
+<blockquote class="blockquote-center">每个人都把自己视野的极限当作世界的极限 —— 叔本华</blockquote>
+
+<h4 id="腾讯新闻"><a href="#腾讯新闻" class="headerlink" title="腾讯新闻"></a>腾讯新闻</h4><ul>
+<li>[置顶] 新华社新闻——学习贯彻习近平总书记十九届中央纪委三次全会重要讲话精神</li>
+<li>[置顶] 央视网——《红色通缉》第三集 出击</li>
+<li>看看新闻网——破腹产胎儿脸上竟现15厘米刀伤，妇产科名医被告（台湾新闻）</li>
+<li>JS 娱乐——周星驰携王宝强为新片站台宣传，56岁星爷和美女热舞风采依旧</li>
+<li>十一区——气质音乐女老师酒后乱性色诱性侵2名17岁男学生</li>
+<li>专业主义——英国公司破产后传出莫名臭味，仓库里发现大量腐烂尸骨和头颅</li>
+<li>天奇说天地——未来3年房价到底是涨是降？王健林首次给出答案，获网友疯狂点赞</li>
+<li>撩职场——面试官：你会帮女朋友洗内裤吗？90后霸气怒怼，面试官好尴尬。</li>
+<li>搜娱君——王晶近几年培养的晶女郎，拥有相同的特点，他的人品再受争议。</li>
+</ul>
+<h4 id="微信新闻"><a href="#微信新闻" class="headerlink" title="微信新闻"></a>微信新闻</h4><ul>
+<li>[要闻]央视新闻网——习近平总书记在十九届中央纪委三次会议上的重要讲话引起强烈反响。</li>
+<li>圈圈各种盘点——李荣浩坐高铁不慎丢失iPad，发文希望捡到者不要曝光里面短片。</li>
+<li>一点文化情感——对峙升级！南北越或将分裂，中国：闹大了！</li>
+<li>大民生活杂谈——范冰冰案件进展：穆晓光被捕，和范冰冰同居10年，自愿认罪！</li>
+<li>成成笑谈——周星驰《新喜剧之王》口碑炸裂，专家：周星驰历年最好</li>
+<li>学点养眼护肤知识——张柏芝说出为什么没有阻止陈冠希拍照的原因，网友：是在下输</li>
+<li>学神思维——清华退休老教授：往“死”里管住孩子这3点，将来想不成材都难！</li>
+<li>亲宝宝baby——最新消息：穆晓光再被罚“天价”，范冰冰被证实仍在调查中。</li>
+<li>小店铺大老板——马苏登上《男人装》封面，“马苏臀”果然名不虚传。</li>
+<li>小故事大智慧——终身受用的世界顶级思维</li>
+<li>梅之兰——《天龙八部》的八部是哪八部，天龙又指啥？知道的人不多。</li>
+<li>乡俗汇——鬼谷子：梦里出现这五种东西，预示鸿运当头，好事将近！</li>
+<li>女抱金砖——冯提莫13秒视频流出，王思聪想斥资销毁，网友：我们看到了</li>
+<li>袖里乾坤——中国又一巨型企业将“倒下”？市值蒸发超百亿，4万人将失业！</li>
+<li>勿忘忧草——周永康妻子与令计划弟媳的交互人生</li>
+<li>亲宝宝baby——被大师王林干过的12名女星！赵#、李##上榜！在卧室开光</li>
+<li>正能量一——冯小刚电影《芳华》女主曝光不为人知的丑事，世态炎凉。</li>
+<li>每天热点资讯fz——范冰冰或涉洗钱内幕？被证实仍在接受调查，真正问题并不在阴阳合同上。</li>
+<li>小店铺大老板——46岁杨钰莹穿成26岁，可上半身却辣眼睛，网友：非礼勿视。</li>
+<li>雨巷杂谈——为什么有的人从不读书但其远见、思维方式、做事方法却那么卓越？</li>
+<li>聊聊婚姻——下面毛发浓密的人，床上就很厉害么？</li>
+<li>大变革新商机——2019年，这才是我们最大的危机，多少人却还不觉醒！</li>
+<li>数字新媒体——2019年，别做公众号了。</li>
+<li>宠物讲——实拍野生动物交配精彩瞬间：全是技术活？这是“动物界活好的”</li>
+<li>灵点时光——2019年罗振宇的骗局，有没有你？</li>
+<li>今日热点反贪——金庸笔下他是唯一精通九阴、九阳之人，晚年却被活活毒死，很丢脸。</li>
+<li>每日时讯news——被梁朝伟干过的女星名单！蓝洁瑛竟然榜上有名。</li>
+<li>90花旦——被古天乐干过的女星名单！陈乔恩上榜，初恋被兄弟抢走。</li>
+</ul>
+<h4 id="搜狐新闻"><a href="#搜狐新闻" class="headerlink" title="搜狐新闻"></a>搜狐新闻</h4><p>  不想在列举了，大同小异。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>标题骇人听闻，震撼，语不惊人死不休。</li>
+<li>标题跟内容关系不大，或者结尾随意几句扯下了标题。</li>
+<li>内容提供者和提供的内容不是很搭配。</li>
+<li>内容提供者名称看起来是在广告，有点是一些做微商。</li>
+<li>娱乐八卦新闻居多。</li>
+<li>自己制造、杜撰的新闻。</li>
+<li>换花样抄、炒。</li>
+<li>旧闻居多</li>
+<li>煽情、制造冲突，给人不安、哗众取宠。</li>
+</ul>
+<h3 id="我们该怎么办？"><a href="#我们该怎么办？" class="headerlink" title="我们该怎么办？"></a>我们该怎么办？</h3><p>   网上新闻、消息，可信度极低，我们看了，该怎么做？</p>
+<ul>
+<li>不传朋友圈，以讹传讹，三人成虎。</li>
+<li>看了，呵呵一笑就好了，不要记在心上、轻信。</li>
+<li>学会批判性思维</li>
+</ul>
+
           
-          <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -1922,22 +2961,20 @@ Apns
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/01/12/flq/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/01/12/flq/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="知、行——人生">
     </span>
 
@@ -1948,33 +2985,23 @@ Apns
         
           <h1 class="post-title" itemprop="name headline">
                 
-                
-                <a href="/2019/01/12/flq/" class="post-title-link" itemprop="url">法、理、情</a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/01/12/flq/" itemprop="url">法、理、情</a></h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-12T09:54:03+08:00">
+                2019-01-12
+              </time>
+            
 
-              
-                
-              
-
-              <time title="创建时间：2019-01-12 09:54:03" itemprop="dateCreated datePublished" datetime="2019-01-12T09:54:03+08:00">2019-01-12</time>
             
 
             
@@ -1989,17 +3016,25 @@ Apns
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/哲思/" itemprop="url" rel="index"><span itemprop="name">哲思</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/哲思/" itemprop="url" rel="index">
+                    <span itemprop="name">哲思</span>
+                  </a>
+                </span>
 
                 
                 
-                  ，
+                  , 
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/哲思/批判/" itemprop="url" rel="index"><span itemprop="name">批判</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/哲思/批判/" itemprop="url" rel="index">
+                    <span itemprop="name">批判</span>
+                  </a>
+                </span>
 
                 
                 
@@ -2008,7 +3043,6 @@ Apns
           
 
           
-            
             
           
 
@@ -2036,32 +3070,221 @@ Apns
       
         
           
-            <p>
-               张扣扣事件批判性思考
-我为什么去反思张扣扣的事件呢？作为一个具有一定思考能力的人，作为一个生活在这个世界的人，或多或少会对类似的案件进行思考。
-那我们该怎么样去反思？
-每个人都把自己视野的极限当作世界的极限 —— 叔本华
-思考是一种艺术，它有自己的目的、标准、原理、法则、策略和防范措施。我们所做的
-              ...
-            </p>
-          <!--noindex-->
+            <h2 id="张扣扣事件批判性思考"><a href="#张扣扣事件批判性思考" class="headerlink" title="张扣扣事件批判性思考"></a>张扣扣事件批判性思考</h2><p>我为什么去反思张扣扣的事件呢？作为一个具有一定思考能力的人，作为一个生活在这个世界的人，或多或少会对类似的案件进行思考。</p>
+<p>那我们该怎么样去反思？</p>
+<blockquote class="blockquote-center">每个人都把自己视野的极限当作世界的极限 —— 叔本华</blockquote>
+
+<p>思考是一种艺术，它有自己的目的、标准、原理、法则、策略和防范措施。我们所做的每一件重要的事都受自己思维习惯的影响。</p>
+<p>反思不当，这种行为要么成为愤青的情绪，要么成为怀有目的的行为，要么成为哗众取宠的行为。</p>
+<p>反思得当，这会让我们成为一个明白人，一个可以跟进这个社会文明进程的人。虽然这种明白，或许不能改变什么，或许会被认为一种“作”、矫情的行为，或许会被认为一种书生气的行为，但是不管怎样，记录下来，或许会有人看到，引起共鸣。</p>
+<p>那如何思辨呢？呈现事实过程，在各个过程的关键点，进行批判性思考。</p>
+<h2 id="事实过程"><a href="#事实过程" class="headerlink" title="事实过程"></a>事实过程</h2><p>由于本人没有目睹这一过程，所有的过程事实是从网络上看到的，很抱歉我不能确保完全依据事实。</p>
+<blockquote>
+<ul>
+<li><p>1996/8/27，张扣扣母亲与邻居王正军、王富军发生纠纷，最后被王正军用木棒猛击头部，导致重伤身亡。</p>
+</li>
+<li><p>1996/12/05，南郑县法院以故意伤害罪(致人死亡)，判处王正军有期徒刑7年，并由其父王自新赔偿经济损失9639.3元。法院判决后，王正军及张福如（张扣扣父亲）也均未提起上诉。</p>
+</li>
+<li><p>2018/02/15，张扣扣尾随上坟祭祖的王自新、王校军、王正军伺机作案。在王校军、王正军一行上坟返回途中，张扣扣持刀先后向王正军、王校军连戳数刀，随后张扣扣持刀赶往王自新家，持刀对坐在堂屋门口的王自新连戳数刀，致2人当场死亡、1人重伤抢救无效死亡。然后张扣扣返回自己家中，拿上菜刀和事先装满汽油的酒瓶，将王校军的小轿车玻璃砍破，在车后座及尾部泼洒汽油焚烧，之后张扣扣逃离现场。</p>
+</li>
+<li><p>2018/02/15，南郑区公安局通报该案件，并初步侦查 张扣扣有重大嫌疑，在逃。</p>
+</li>
+<li><p>2018/02/16，张扣扣潜回家中取钱，被巡逻民警、武警发现后翻墙趁夜逃脱。</p>
+</li>
+<li><p>2018/02/17，张扣扣到汉中市公安局南郑分局新集派出所投案自首。</p>
+</li>
+<li><p>2018/02/19，相关负责人表示，南郑区各部门已针对“2·15”案件成立工作组，处理相关后续事宜，案件正由公安机关办理中。</p>
+</li>
+<li><p>2018年3月30日，张扣扣的父亲张福如向汉中市南郑区法院提交刑事申诉状，同时，也提出司法赔偿申请。</p>
+</li>
+<li><p>2018年7月31日上午，南郑法院立案庭法官口头告知张福如和律师，该案的刑事申诉不予立案。</p>
+</li>
+<li><p>2018年9月27日，汉中市人民检察院对<a href="https://baike.baidu.com/item/%E5%BC%A0%E6%89%A3%E6%89%A3/22393180" target="_blank" rel="noopener">张扣扣</a>故意杀人、故意毁坏财物案依法向<a href="https://baike.baidu.com/item/%E6%B1%89%E4%B8%AD%E5%B8%82%E4%B8%AD%E7%BA%A7%E4%BA%BA%E6%B0%91%E6%B3%95%E9%99%A2/4409090" target="_blank" rel="noopener">汉中市中级人民法院</a>提起公诉。</p>
+</li>
+<li><p>2018年10月19日，陕西省<a href="https://baike.baidu.com/item/%E6%B1%89%E4%B8%AD%E5%B8%82%E4%B8%AD%E7%BA%A7%E4%BA%BA%E6%B0%91%E6%B3%95%E9%99%A2/4409090" target="_blank" rel="noopener">汉中市中级人民法院</a>依法驳回申诉人张福如（陕西汉中市“2·15”故意杀人案嫌犯张扣扣之父）对原南郑县人民法院（1996）南刑初字第142号刑事附带民事判决提出的申诉，对其申请国家赔偿不予受理，并向其送达了驳回申诉通知书和不予受理案件决定书。</p>
+</li>
+<li><p>2018年11月15日，张福如以原申诉理由向<a href="https://baike.baidu.com/item/%E9%99%95%E8%A5%BF%E7%9C%81%E9%AB%98%E7%BA%A7%E4%BA%BA%E6%B0%91%E6%B3%95%E9%99%A2/15849928" target="_blank" rel="noopener">陕西省高级人民法院</a>提出申诉。</p>
+</li>
+</ul>
+<p>​      陕西省高级人民法院认为，原审判决认定事实清楚，证据确实充分，定罪准确，量刑适当，附带民事赔偿部   分判决并无不当，故张福如的申诉请求不能成立，依法予以驳回。</p>
+<ul>
+<li><p>2019年1月3日，陕西省高级人民法院依法驳回申诉人张福如对原<a href="https://baike.baidu.com/item/%E5%8D%97%E9%83%91%E5%8E%BF%E4%BA%BA%E6%B0%91%E6%B3%95%E9%99%A2/3580636" target="_blank" rel="noopener">南郑县人民法院</a>（1996）南刑初字第142号刑事附带民事判决提出的申诉，并向其送达了驳回申诉通知书。</p>
+</li>
+<li><p>2019年1月4日，据汉中中院官方微信消息，张扣扣故意杀人、故意毁坏财物一案将于2019年1月8日公开审理。</p>
+</li>
+<li><p>2019年1月8日，陕西省汉中市中级人民法院依法公开开庭审理被告人张扣扣故意杀人、故意毁坏财物一案并当庭宣判，判决张扣扣犯故意杀人罪，判处死刑，剥夺政治权利终身；犯故意毁坏财物罪，判处有期徒刑四年，决定执行死刑，剥夺政治权利终身。</p>
+</li>
+<li><p>2019年1月8日上午9点，在汉中市中级人民法院一审公开开庭审理，下午5点多，法院最终以故意杀人罪、故意毁坏财物罪对张扣扣判处死刑。</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="1996年-相关人身份"><a href="#1996年-相关人身份" class="headerlink" title="1996年 相关人身份"></a>1996年 相关人身份</h2><blockquote>
+<ul>
+<li>王自新，男，49岁(成年)，务农。</li>
+<li>王校军，男，25岁(成年)，国家公职人员。</li>
+<li>王正军，男，17岁（差一岁成年）</li>
+<li>汪秀萍，女，成年。</li>
+<li>张扣扣，男，7岁。</li>
+</ul>
+</blockquote>
+<h2 id="2018-年相关人身份"><a href="#2018-年相关人身份" class="headerlink" title="2018 年相关人身份"></a>2018 年相关人身份</h2><blockquote>
+<ul>
+<li>王自新，男，殁年71岁，务农</li>
+<li>王校军，男，殁年47岁，系王自新长子，<a href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E5%85%AC%E8%81%8C%E4%BA%BA%E5%91%98" target="_blank" rel="noopener">国家公职人员</a>，其工作单位为<a href="https://baike.baidu.com/item/%E5%8D%97%E9%83%91%E5%8C%BA/18776720" target="_blank" rel="noopener">南郑区</a>红寺湖管理处，职务为管理处主任（<a href="https://baike.baidu.com/item/%E6%AD%A3%E7%A7%91%E7%BA%A7/6817149" target="_blank" rel="noopener">正科级</a>）</li>
+<li>王正军，男，殁年39岁，系王自新三子，原在西安打工。</li>
+</ul>
+</blockquote>
+<h2 id="案件背景"><a href="#案件背景" class="headerlink" title="案件背景"></a>案件背景</h2><h3 id="说法一（依据案件判决书）"><a href="#说法一（依据案件判决书）" class="headerlink" title="说法一（依据案件判决书）"></a>说法一（依据案件判决书）</h3><p>该判决书披露，1996年8月27日19时许，被告人王正军的邻居汪秀萍路过王家门前时，因过往与王家有矛盾，汪便朝被告人之兄王富军脸上吐唾沫，遂引起争吵。被告人王正军闻讯赶到现场也同汪争吵，汪秀萍拿一扁铁在王正军的左额部、左脸部各打一下，被告人即从路边捡一木棒朝汪秀萍头部猛击一下，致汪当场倒地于当天22时许死亡。</p>
+<p>经法医鉴定：死者汪秀萍系钝性外力颅脑损伤而死亡。被告人王正军的上述行为，触犯了《中华人民共和国刑法》第一百三十四条第二款之规定，构成故意伤害（致人死亡）罪。</p>
+<p>附带民事诉讼原告人与委托代理人共同诉称：由于被告人王正军的犯罪行为，致使汪秀萍死亡，给被害人家庭造成了极大的损失，要求王正军赔偿汪秀萍死亡的全部丧葬费及赡养、扶养、死亡补偿等经济损失25万元。</p>
+<p>判决书披露，案发时王正军不满18周岁。庭审中，附带民事诉讼原告人张福如（张某某之父）最后要求被告人王正军给其赔偿经济损失24万元人民币。被告人王正军及其法定代理人兼监护人王自新均表示：其家庭经济困难，无力赔偿。经查，被告人王正军家庭困难属实，经南郑县人民法院当庭调解，对附带民事赔偿问题未达成协议。</p>
+<p>最后，被告人王正军犯故意伤害（致人死亡）罪，判处有期徒刑7年（刑期自1996年8月29日起至2003年8月28日止）；由被告人王正军的监护人王自新一次性偿付附带民事诉讼原告人张福如经济损失9639.3元。 [2] </p>
+<p>被害人王自新的次子王富军的陈述与判决书基本相同。</p>
+<h3 id="说法二-被害人家属看法"><a href="#说法二-被害人家属看法" class="headerlink" title="说法二(被害人家属看法)"></a>说法二(被害人家属看法)</h3><p>案发后记者采访时，根据犯罪嫌疑人张某某的父亲和姐姐的陈述，在1996年的案件中，使用木棒打死王秀萍的是王自新的次子王富军，并非法院最终认定的三儿子王正军。张家人称，由于本案被害人之一的王家长子王校军的官员身份（案发时王校军在庙坝乡政府任党政办主任），故不少人为王家做了假证。至于民事赔偿部分，除去王家之前已经支付的8139.3元丧葬费，张家最终只拿到了1500元的赔偿。但是，张家并没有选择上诉或者申诉。</p>
+<h2 id="批判思考"><a href="#批判思考" class="headerlink" title="批判思考"></a>批判思考</h2><blockquote>
+<ul>
+<li>跟人发生一般的纠纷，王家人作出用木棒猛击妇人头部，致其重伤身亡的行径。</li>
+</ul>
+<p>哪怕案件最后披露是17岁的王正军实施这一行为。一个17岁的农村男孩跟一个妇人打架，如果徒手，男孩也不会吃亏，处于弱势，在不属于弱势的情况下，作出用木棒猛击头部的行为。</p>
+<p>这一行为，是否可以定性为“凶残”？</p>
+<ul>
+<li>来自农村的人，对于农村的打架或许会有亲身体验</li>
+</ul>
+<p>农村人打架往往有以下的特点：</p>
+<ol>
+<li><p>比较凶残的家人，一般会喊“往死里打”、“给我打死”等。</p>
+</li>
+<li><p>比较凶残的人，一般会抄起家伙往对方死里打（木棒、锄头、铁锹）等。</p>
+</li>
+<li><p>如果旁边有村民围观，比较善良的村民会劝架。</p>
+</li>
+</ol>
+<ul>
+<li><p>对于一个17岁的人，定性其为凶残是否适当？</p>
+<p>由于没有亲身经历这件事，很抱歉，我只能用的自身经历来说明可能性：</p>
+</li>
+</ul>
+<ol>
+<li><p>90 年代，我们镇上就有不少未满18岁的社会小混混抢劫、斗殴，随意打人。</p>
+</li>
+<li><p>我们村的就有一个15岁的男孩，跟一个成年人由于赌资纠纷，跑到该成年人家里，用力将其两个小女儿头撞向墙壁。该男在上初中的时候，跟其一个亲戚由于打乒乓发生纠纷打架，打人很凶残。</p>
+</li>
+<li><p>试问这些人，如果不凶残，心里有所害怕、顾虑，会做出这种行为么？</p>
+</li>
+<li><p>从个人的经历来看，一般做出如此暴力的行为，其性必残暴，用王阳明的话说：其良知被蒙蔽，支离破碎。</p>
+</li>
+<li><p>王正军是否凶残？很抱歉，这只是推论。</p>
+</li>
+<li>相关案件披露 对未提及王家在当地的口碑。</li>
+</ol>
+<ul>
+<li><p>未经正式披露的情节</p>
+<p>据说死者后来在众人面前，被解剖。解剖一个被木棒猛击头部的死者是否得当？这种行为的影响又是如何？</p>
+</li>
+</ul>
+<ol>
+<li><p>或许这是要得出“被猛击”致死的结论。</p>
+</li>
+<li><p>被害人看到自己的亲人被人用木棒打死之后，还被在众人面前解剖，会是怎样的一个想法，尤其是对一个7岁的小孩，会是一个什么样的影响。</p>
+</li>
+<li><p>在当初的社会环境，没人去关注这个小男孩的内心是很正常的，但在当初的社会环境，解剖一个被木棒打死的死者的行为，肯定是有人指导这一行为的，但这一行为的背后动机又是什么，那只有相关人才知道。</p>
+</li>
+</ol>
+<ul>
+<li><p>过失看法差异</p>
+<p>对于总件事情的起因，双方存在差异：</p>
+</li>
+</ul>
+<ol>
+<li>王家：996年8月27日19时许，被告人王正军的邻居汪秀萍路过王家门前时，因过往与王家有矛盾，汪便朝被告人之兄王富军脸上吐唾沫，遂引起争吵。</li>
+</ol>
+<p><strong>注意这里披露：过往有矛盾，才导致汪秀萍过往王家，往王正军脸上吐唾沫</strong></p>
+<ol start="2">
+<li><p>张家：使用木棒打死王秀萍的是王自新的次子王富军，并非法院最终认定的三儿子王正军。张家人称，<strong>由于本案被害人之一的王家长子王校军的官员身份（案发时王校军在庙坝乡政府任党政办主任），故不少人为王家做了假证</strong>。</p>
+</li>
+<li><p>证据的偏向，决定未来的走向，如果当初认定是<strong>王富军</strong>，那么判刑就不一样。如果是<strong>王富军</strong>，那么以王富军的年龄来看，肯定是被判死刑。如果王富军被判死刑，那么是否会给张扣扣买下所谓<strong>复仇</strong>的种子呢？</p>
+</li>
+<li><p>村民作假证：如果对方有当官的，依据当时社会环境，当时农村村民的认知、意识，作假证是否有可能，这点大家可以反思下；如果对方有当官的，办案人员是否有所倾向选择证人，这点大家也可以反思下。</p>
+</li>
+<li><p>被害人基于自己的利益，选择性忘记、撒谎也是有可能的。</p>
+</li>
+<li><p>王家认为事件的导火线，是因为过往有矛盾，才导致汪秀萍往王正军吐唾沫。但据第三人介绍：在1996年案发之前，张家和王家的关系是非常要好的。<a href="http://news.cctv.com/2018/03/29/ARTIwSnqGVkKogBRh59BxHWj180329.shtml" target="_blank" rel="noopener">请看所谓的央视网独家调查</a></p>
+</li>
+</ol>
+<ul>
+<li>关于判决</li>
+</ul>
+<ol>
+<li>1996年12月5日，当地法院对这起案件作出了一审判决，法院认为，被告人王正军<strong>犯故意伤害致人死亡罪</strong>成立，但鉴于王正军在犯罪时<strong>尚未满十八周岁</strong>，且能<strong>坦白认罪</strong>，其父已代为支付死者<strong>巨额丧葬费用</strong>，加之被害人汪秀萍对引发本案在起因上有<strong>一定过错责任</strong>，应对被告人王正军<strong>从轻处罚</strong>。最终王正军被判处<strong>有期徒刑7年</strong>。</li>
+<li>王正军 因未满18周岁，因此犯了杀人罪没有被判死刑。又因为能<strong>坦白</strong>认罪，其父代为支付<strong>巨额</strong>丧葬费用（但是 1万还不到，在当时1996年是否算作巨额），且王秀萍在起因有<strong>一定过错责任</strong>，王正军被从轻处罚，但是<strong>所谓的坦白</strong>  + <strong>1万不到的赔偿</strong> + 汪秀萍<strong>一定过错责任</strong> ，是否是王正军被从轻处罚的<strong>充分条件</strong>呢？</li>
+<li>对<strong>到底谁打死人</strong>的断定，决定了最后的判定。</li>
+<li>汉中市中级人民法院判定<strong>张扣扣蓄谋报复杀人，选择除夕之日，当众行凶，先后切割、捅刺被害人王正军、王校军和王自新的颈部、胸腹部、背部等要害部位共计数十刀，连杀三人，还烧毁王校军家用车辆，其犯罪动机卑劣，杀人犯意坚决，犯罪手段特别残忍，情节特别恶劣，后果和罪行极其严重，人身危险性和社会危害性极大，应依法惩处并数罪并罚。本案虽然事出有因，张扣扣系初犯且有自首情节，但是依法不足以对其从轻处罚。故依法作出上述判决。</strong></li>
+<li>注意到，法院措辞：<strong>动机卑劣、犯意坚决、残忍、恶劣、罪行严重、社会危害性极大、数罪并罚</strong>，张扣扣虽然有<strong>自首情节</strong>，但<strong>依法不足</strong>，不能从轻处罚。</li>
+<li>注意到杀人，其社会危害性貌似对不同年龄的人而不一样，其社会危害性取决于年龄，就是看你是否满18周岁。满18周岁就社会危害性大， 但事实呢？<strong>未满18周岁，犯故意杀人罪不会被判死刑，其实这个判定社会危害反而大，因为这个往往存在被滥用的风险，而满18周岁，犯故意杀人罪，由于法律一般会被判死刑，这一条具有很强的震慑作用：是否失去生命</strong>。当然对于凶残的人，震慑作用会减弱。</li>
+</ol>
+<ul>
+<li>张扣扣的行为反思</li>
+</ul>
+<ol>
+<li>张扣扣的行为是一种复仇行为，一种内心对坏人逍遥法外的复仇。</li>
+<li>有时，我们看到一些凶残的人，做了伤天害理的事情，仍然没有遭到报应，心里或多或少会愤愤不平。尤其是被害人的家属看到他们内心认定的坏人依然逍遥法外，内心不平衡肯定是会有的，而这种不平衡为未来的复仇埋下了种子。</li>
+<li>张扣扣是否凶残的人？ 张扣扣只杀了王家三人。对于王家妇孺，持有凶器的他，是有机会、容易行凶的，他没有这么做。这是否可以说他还是一个本性善良的人。换作其他人，是否会杀王家全家人？</li>
+<li>张扣扣的行为是否被否定？仁者见仁。持有否定的人，如果换做为你，遇到类似的遭遇是否也会复仇呢？ 为人子，母亲被杀，不复仇是否孝？从心来看，你的内心是否坦然。</li>
+</ol>
+<ul>
+<li>围观者</li>
+</ul>
+<p>刚一开始，我以为1996年的案件，没有围观者。但从双方的论述来看，还是有围观者。那么这些围观者竟然没有一个人出来劝架。这些围观者心态是什么，难道仅仅是看热闹的心态。</p>
+<p>看热闹的围观者，也很可恶。</p>
+<ul>
+<li>法律</li>
+</ul>
+<p>法律在维持社会稳定，人民财产、生命安全起到重要的作用。但是法律是否起到相应的作用，还是取决于以下的因素：</p>
+<ol>
+<li>法律的合理性：未成年人不承担刑事责任，就经常被人诟病。怎么说呢？校园暴力、未成年人故意致人死亡，其行径及其凶残。请问制定这条法律的人，有没有想过谁来为哪些被害的未成年人担责呢？当法律的合理性存在被人诟病、被事实挑战的时候，是否要与时俱进，作出适当修正。</li>
+<li>执行的公平性：法律是由文字描述的，每个人对文字描述的法律解释是不同的，甚至可以依据自己的倾向作出偏向的解释，那么这样的法律是否还存在正面的作用。除了解释之外，有些执法者甚至作出违法的行径，那么这样的法律是否还存在正面的作用。</li>
+<li>法律的执行回溯(监督)：是否有人对一些法律的执行进行公平、正当回溯，对不当、违法的行为进行惩罚，缺少这一步，法律是否发挥到其相应的作用，令人怀疑。</li>
+</ol>
+<p>要采取什么样的机制，才能使依法办事更加得当、公平，个人觉得要有个闭环：</p>
+<ol>
+<li>依据现实，对法律进行适当的修订，比如未成年人不承担刑事责任。</li>
+<li>对重大案件（死刑）等，要有人去回溯，监督是否存在：量刑过重、违法的行为，如果存在类似的行为，就必须对这些办案的法官进行相应惩罚。前些年，总会报告有些案件被重新推翻的事情，而这种案件的数量也不少。</li>
+<li>对最终判决的人，要进行相应的资质考核，而这种考核，要考什么？公平的品质？怎么考呢。以前看过古希腊相关的内容，其中有一条<strong>如果让哲学家来执政，社会更加稳定</strong>之类的话题，当时看到感觉很有意义，但是现在看起来，好像也不是那么有意义。但一个法官的思辨思维是很必须的，但这一切有建立在这个法官是否是有<strong>良知</strong>的基础上。</li>
+</ol>
+<ul>
+<li>理</li>
+</ul>
+<p>法律有时显得不那么有理，比如杀人偿命是否一条具有2000年历史的道理。法律的制定是否依据理，还是依据什么？如果依据理，那么未成年人不承担刑事责任依据那条理？</p>
+<ol>
+<li><p>未成年人不懂事？ 那么对于17岁的人和一个18岁的人，其懂事就不一样？</p>
+</li>
+<li><p>社会稳定？ 这条法律被滥用，带来的是社会不稳定。</p>
+</li>
+</ol>
+<p>​       报仇，是要被否定。这又是依据什么样的理？</p>
+<ol>
+<li>鼓励报仇，带来不良的社会影响，但是如果凶残的行凶人，没有得到法律的制裁，是否会给人民、受害人. 的家属带来不安全的情绪，那这难道不会带来不良的社会影响？</li>
+<li>好人没有好报，坏人不遭天谴，这个意识深入人民的内心，那么好人就没人当，那么在坏人行凶的时候，是否还会有人见义勇为呢？ 难道这不会带来不良的社会影响？</li>
+</ol>
+<p>​     理，到底什么是理？理，在法制进程中，到底起到什么样的作用呢。我想这只能是那些法律专家才能作出回答。</p>
+<p>​    但如果这些法律专家是一些迂腐、书呆子、头脑僵化的人，那么他们的答案，你还会满意吗？</p>
+<ul>
+<li>情</li>
+</ul>
+<p>情：亲情、孝、人性，在法制进程中，又到底起到什么样的作用呢？别跟我说，大家都是理性的人，不讲人情啊。 </p>
+</blockquote>
+<h2 id="逝者如斯"><a href="#逝者如斯" class="headerlink" title="逝者如斯"></a>逝者如斯</h2><p>​     对那些在这个案件过程中的逝者，深表抱歉。</p>
+
           
-          <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -2090,12 +3313,15 @@ Apns
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
 
           </div>
+          
+
+
           
 
         </div>
@@ -2111,66 +3337,72 @@ Apns
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">知鱼</p>
-              <div class="site-description motion-element" itemprop="description">实践总结、分享他人。</div>
+              <p class="site-description motion-element" itemprop="description">实践总结、分享他人。</p>
           </div>
 
-          
+          <nav class="site-state motion-element">
 
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/ZhiYu2018" title="GitHub &rarr; https://github.com/ZhiYu2018" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:ice_mind@yeah.net" title="E-Mail &rarr; mailto:ice_mind@yeah.net" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
             
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
+
+          
+
+          
+          
+
+          
+          
+
           
 
         </div>
-      </div>
+      </section>
 
       
 
@@ -2178,7 +3410,6 @@ Apns
 
     </div>
   </aside>
-  
 
 
         
@@ -2188,28 +3419,29 @@ Apns
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-"></i>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">知鱼</span>
-
-  
 
   
 </div>
 
 
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
+  <span class="post-meta-divider">|</span>
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
 
         
-
 
 
 
@@ -2222,17 +3454,19 @@ Apns
     </footer>
 
     
-
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
     
 
-    
   </div>
 
   
 
-<script>
+<script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -2246,6 +3480,95 @@ Apns
 
 
 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
 
 
 
@@ -2262,58 +3585,8 @@ Apns
 
 
 
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
   
 
-
-  <script src="/js/utils.js?v=7.1.0"></script>
-
-  <script src="/js/motion.js?v=7.1.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
-
-
-
-  
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.0"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-
-  
 
 
 
@@ -2325,39 +3598,6 @@ Apns
   
 
   
-
-  
-<script>
-if ($('body').find('pre.mermaid').length) {
-  $.ajax({
-    type: 'GET',
-    url: '',
-    dataType: 'script',
-    cache: true,
-    success: function() {
-      mermaid.initialize({
-        theme: 'forest',
-        logLevel: 3,
-        flowchart: { curve: 'linear' },
-        gantt: { axisFormat: '%m/%d/%Y' },
-        sequence: { actorMargin: 50 }
-      });
-    }
-  });
-}
-</script>
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   

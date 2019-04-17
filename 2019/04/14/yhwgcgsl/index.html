@@ -2,23 +2,14 @@
 
 
 
-
-
-
-
-
-
-
-
-
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -29,6 +20,15 @@
 
 
 
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,42 +48,68 @@
 
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
 
 
-<script id="hexo.configurations">
+  <meta name="keywords" content="设计,支付,重构,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="为什么 ？ 技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。 基于JFinal 框架，接口&amp;amp;参数定义不清晰。 代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。 可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。 无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可用的">
+<meta name="keywords" content="设计,支付,重构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="支付银行网关重构设计">
+<meta property="og:url" content="https://zhiyu.space/2019/04/14/yhwgcgsl/index.html">
+<meta property="og:site_name" content="知、行——人生">
+<meta property="og:description" content="为什么 ？ 技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。 基于JFinal 框架，接口&amp;amp;参数定义不清晰。 代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。 可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。 无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可用的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zhiyu.space/2019/04/14/yhwgcgsl/yhwgcgsl/bgwxtjg.png">
+<meta property="og:updated_time" content="2019-04-17T17:56:07.502Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="支付银行网关重构设计">
+<meta name="twitter:description" content="为什么 ？ 技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。 基于JFinal 框架，接口&amp;amp;参数定义不清晰。 代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。 可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。 无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可用的">
+<meta name="twitter:image" content="https://zhiyu.space/2019/04/14/yhwgcgsl/yhwgcgsl/bgwxtjg.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    version: '7.1.0',
+    scheme: 'Pisces',
+    version: '5.1.4',
     sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    back2top: ,
-    back2top_sidebar: ,
     fancybox: true,
-    fastclick: ,
-    lazyload: ,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -95,41 +121,12 @@
 </script>
 
 
-  
+
+  <link rel="canonical" href="https://zhiyu.space/2019/04/14/yhwgcgsl/">
 
 
 
 
-  <meta name="description" content="为什么 ？  技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。 基于JFinal 框架，接口&amp;amp;参数定义不清晰。 代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。 可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。 无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可">
-<meta name="keywords" content="设计,支付,重构">
-<meta property="og:type" content="article">
-<meta property="og:title" content="支付银行网关重构设计">
-<meta property="og:url" content="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/index.html">
-<meta property="og:site_name" content="知、行——人生">
-<meta property="og:description" content="为什么 ？  技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。 基于JFinal 框架，接口&amp;amp;参数定义不清晰。 代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。 可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。 无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/bgwxtjg.png">
-<meta property="og:updated_time" content="2019-04-17T15:01:41.990Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="支付银行网关重构设计">
-<meta name="twitter:description" content="为什么 ？  技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。 基于JFinal 框架，接口&amp;amp;参数定义不清晰。 代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。 可测性不强（大部分功能，无法通过Mock 第三方接口来充分测试，尤其是异常流程测试）。 无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可">
-<meta name="twitter:image" content="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/bgwxtjg.png">
-
-
-
-
-
-  
-  
-  <link rel="canonical" href="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/">
-
-
-
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
 
   <title>支付银行网关重构设计 | 知、行——人生</title>
   
@@ -141,38 +138,9 @@
 
 
 
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -182,9 +150,9 @@
   <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
@@ -194,16 +162,13 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
       
         <p class="site-subtitle">知行人生：审、慎、度、行。</p>
       
-    
-    
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -211,111 +176,75 @@
   </div>
 </div>
 
-
-
 <nav class="site-nav">
+  
+
   
     <ul id="menu" class="menu">
       
         
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-
-    
-
-    <a href="/" rel="section">首页</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-
-    
-
-    <a href="/categories/" rel="section">分类</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
-    
-
-    
-
-    <a href="/tags/" rel="section">标签</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-
-    
-
-    <a href="/archives/" rel="section">归档</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-commonweal">
-
-    
-    
-    
-
-    
-
-    <a href="/404/" rel="section">公益 404</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-
-    
-
-    <a href="/about/" rel="section">关于</a>
-
-  </li>
-
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
       
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
       
     </ul>
-  
-
-  
-    
-
   
 
   
@@ -323,20 +252,12 @@
 
 
 
-  
-
-
-
-</div>
+ </div>
     </header>
-
-    
-
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
           <div id="content" class="content">
             
 
@@ -349,22 +270,20 @@
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/04/14/yhwgcgsl/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/04/14/yhwgcgsl/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="知、行——人生">
     </span>
 
@@ -373,33 +292,23 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">支付银行网关重构设计
-
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">支付银行网关重构设计</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-
-            
-            
-            
-
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-14T08:02:07+08:00">
+                2019-04-14
+              </time>
+            
 
-              
-                
-              
-
-              <time title="创建时间：2019-04-14 08:02:07" itemprop="dateCreated datePublished" datetime="2019-04-14T08:02:07+08:00">2019-04-14</time>
             
 
             
@@ -414,10 +323,14 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/工程/" itemprop="url" rel="index"><span itemprop="name">工程</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
+                  </a>
+                </span>
 
                 
                 
@@ -426,7 +339,6 @@
           
 
           
-            
             
           
 
@@ -452,8 +364,7 @@
       
 
       
-        <h2 id="为什么"><a class="markdownIt-Anchor" href="#为什么"></a> 为什么 ？</h2>
-<ul>
+        <h2 id="为什么-？"><a href="#为什么-？" class="headerlink" title="为什么 ？"></a>为什么 ？</h2><ul>
 <li>技术框架采用比较老的框架，项目不是基于Maven，依赖管理复杂。</li>
 <li>基于JFinal 框架，接口&amp;参数定义不清晰。</li>
 <li>代码多人经手，结构混乱，可维护性差。开发该系统的人，基本上都离职光，导致目前团队内没有一个人对该系统的代码熟悉。</li>
@@ -461,8 +372,7 @@
 <li>无资损熔断机制（目前对于能力有缺陷的通道没有基于对方业务不可用的异常金额熔断机制）。</li>
 <li>日志打印不规范，定位问题麻烦，无法根据日志进行告警设置（所有的日志基本都是INFO），导致出现故障，都是业务方先发现。</li>
 </ul>
-<h2 id="重构目标"><a class="markdownIt-Anchor" href="#重构目标"></a> 重构目标</h2>
-<ul>
+<h2 id="重构目标"><a href="#重构目标" class="headerlink" title="重构目标"></a>重构目标</h2><ul>
 <li>采用基于Maven 的项目，统一管理依赖。</li>
 <li>采用成熟流行的Spring Boot，重新抽象，提供统一的门面接口，对业务方屏蔽细节，代码结构清晰，提高可维护性、可扩展性。</li>
 <li>变化与不变分离，防止每次修改污染到其他功能，导致每次上线，都要回归所有的功能，增加测试的工作量。</li>
@@ -471,8 +381,7 @@
 <li>增加资损熔断</li>
 <li>能够基于业务进行接口级进行灰度。</li>
 </ul>
-<h2 id="风险与对策"><a class="markdownIt-Anchor" href="#风险与对策"></a> 风险与对策</h2>
-<ul>
+<h2 id="风险与对策"><a href="#风险与对策" class="headerlink" title="风险与对策"></a>风险与对策</h2><ul>
 <li>重构、改动大、开发时间短（封闭开发12天，投入人力3.5人）</li>
 <li>测试工作量大，测试投入少（投入人力1人，预计测试5天）</li>
 </ul>
@@ -498,16 +407,14 @@
 </tr>
 </tbody>
 </table>
-<h2 id="方法论"><a class="markdownIt-Anchor" href="#方法论"></a> 方法论</h2>
-<ul>
+<h2 id="方法论"><a href="#方法论" class="headerlink" title="方法论"></a>方法论</h2><ul>
 <li>抽象：共性和个性分离，变化与不变分离。</li>
 <li>职责清晰：基于SOA机制，系统之间依赖于接口，系统之间互相屏蔽细节。</li>
 <li>系统等级化原则：原则上底层是不能直接调用上层接口，从而避免循环关系、等到等级化的原则。</li>
 <li>兜底：从资损的角度来看，系统设计必须存在兜底的策略（控制资损为第一原则）。</li>
 <li>敏捷开发：基于银行通道、接口来进行开发（基于Story），持续交付（解决测试工作量峰值），基于Story提测，避免测试等待、突然忙碌。</li>
 </ul>
-<h2 id="工具"><a class="markdownIt-Anchor" href="#工具"></a> 工具</h2>
-<table>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><table>
 <thead>
 <tr>
 <th>工具</th>
@@ -529,9 +436,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="设计"><a class="markdownIt-Anchor" href="#设计"></a> 设计</h2>
-<h3 id="系统架构"><a class="markdownIt-Anchor" href="#系统架构"></a> 系统架构</h3>
-<p><img src="/2019/04/14/yhwgcgsl/bgwxtjg.png" alt=""></p>
+<h2 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h2><h3 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h3><p><img src="yhwgcgsl/bgwxtjg.png" alt></p>
 <p><strong>关键设计点</strong></p>
 <table>
 <thead>
@@ -559,49 +464,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="动力视图"><a class="markdownIt-Anchor" href="#动力视图"></a> 动力视图</h3>
-<pre class="mermaid">sequenceDiagram
-     participant Trade
-     participant BankProxy
-     participant BankFront
-     participant Bank
-     participant ReactorGw
-     participant Timer
-     Trade->>BankProxy:Pay Order
-     BankProxy->>BankProxy:幂等性、发现路由、资损控制
-     BankProxy->>BankFront: Pay Order
-     alt Normal
-         BankFront->>Bank:Pay Order
-         Bank->>BankFront: Status
-         BankFront->>BankProxy:Status
-         BankProxy->>Trade:Status
-     else Exception
-         BankFront->>Bank:Pay Order
-         BankFront->BankFront:Exceptions,Unknown state
-         BankFront->>ReactorGw:Timed task
-     end
-     Bank-->>BankFront:Call back
-     BankFront-->>ReactorGw:Notify
-     ReactorGw--x Trade:async notify
-     ReactorGw->ReactorGw: Handle Result
-     alt Fail
-     ReactorGw->ReactorGw:Save timer task
-     end
-     loop Loop task
-     Timer-->Timer:Find task(补偿)
-     Timer-->>BankProxy:Compensation transaction
-     alt Success
-     BankProxy-->>Timer:Final state
-     Timer-->>Trade:async notify
-     else Fail
-     BankProxy-->>Timer:Non-Final state
-     alt Time Out
-     Timer-->>BankProxy:Rollback
-     else Non-Time Out
-     Timer->Timer:Update next time
-     end
-     end
-     end</pre>
+<h3 id="动力视图"><a href="#动力视图" class="headerlink" title="动力视图"></a>动力视图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">     participant Trade</span><br><span class="line">     participant BankProxy</span><br><span class="line">     participant BankFront</span><br><span class="line">     participant Bank</span><br><span class="line">     participant ReactorGw</span><br><span class="line">     participant Timer</span><br><span class="line">     Trade-&gt;&gt;BankProxy:Pay Order</span><br><span class="line">     BankProxy-&gt;&gt;BankProxy:幂等性、发现路由、资损控制</span><br><span class="line">     BankProxy-&gt;&gt;BankFront: Pay Order</span><br><span class="line">     alt Normal</span><br><span class="line">         BankFront-&gt;&gt;Bank:Pay Order</span><br><span class="line">         Bank-&gt;&gt;BankFront: Status</span><br><span class="line">         BankFront-&gt;&gt;BankProxy:Status</span><br><span class="line">         BankProxy-&gt;&gt;Trade:Status</span><br><span class="line">     else Exception</span><br><span class="line">         BankFront-&gt;&gt;Bank:Pay Order</span><br><span class="line">         BankFront-&gt;BankFront:Exceptions,Unknown state</span><br><span class="line">         BankFront-&gt;&gt;ReactorGw:Timed task</span><br><span class="line">     end</span><br><span class="line">     Bank--&gt;&gt;BankFront:Call back</span><br><span class="line">     BankFront--&gt;&gt;ReactorGw:Notify</span><br><span class="line">     ReactorGw--x Trade:async notify</span><br><span class="line">     ReactorGw-&gt;ReactorGw: Handle Result</span><br><span class="line">     alt Fail</span><br><span class="line">     ReactorGw-&gt;ReactorGw:Save timer task</span><br><span class="line">     end</span><br><span class="line">     loop Loop task</span><br><span class="line">     Timer--&gt;Timer:Find task(补偿)</span><br><span class="line">     Timer--&gt;&gt;BankProxy:Compensation transaction</span><br><span class="line">     alt Success</span><br><span class="line">     BankProxy--&gt;&gt;Timer:Final state</span><br><span class="line">     Timer--&gt;&gt;Trade:async notify</span><br><span class="line">     else Fail</span><br><span class="line">     BankProxy--&gt;&gt;Timer:Non-Final state</span><br><span class="line">     alt Time Out</span><br><span class="line">     Timer--&gt;&gt;BankProxy:Rollback</span><br><span class="line">     else Non-Time Out</span><br><span class="line">     Timer-&gt;Timer:Update next time</span><br><span class="line">     end</span><br><span class="line">     end</span><br><span class="line">     end</span><br></pre></td></tr></table></figure>
 <p><strong>动力视图说明</strong></p>
 <ul>
 <li>简要画出子系统之间的调用。</li>
@@ -609,8 +472,7 @@
 <li>反应堆系统：采用队列、异步调用打破系统循环关系。</li>
 <li>Timer 与BankProxy的调用：BankProxy根据路由关系，路由到相应的BankFront。</li>
 </ul>
-<h3 id="事务补偿策略"><a class="markdownIt-Anchor" href="#事务补偿策略"></a> 事务补偿策略</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    事务初始化--&gt;|执行原子|初始化</span><br><span class="line">    初始化--&gt;|执行|成功</span><br><span class="line">    初始化--&gt;|执行|失败</span><br><span class="line">    初始化--&gt;|执行|未知</span><br><span class="line">    成功--&gt;|执行|业务成功</span><br><span class="line">    业务成功--&gt;事务终止</span><br><span class="line">    失败--&gt;业务失败</span><br><span class="line">    业务失败--&gt;回滚</span><br><span class="line">    回滚--&gt;回滚成功</span><br><span class="line">    回滚成功--&gt;事务终止</span><br><span class="line">    回滚--&gt;回滚失败</span><br><span class="line">    回滚失败--&gt;Pengding告警</span><br><span class="line">    未知--&gt;|补偿|成功</span><br><span class="line">    未知--&gt;|补偿|失败</span><br></pre></td></tr></table></figure>
+<h3 id="事务补偿策略"><a href="#事务补偿策略" class="headerlink" title="事务补偿策略"></a>事务补偿策略</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    事务初始化--&gt;|执行原子|初始化</span><br><span class="line">    初始化--&gt;|执行|成功</span><br><span class="line">    初始化--&gt;|执行|失败</span><br><span class="line">    初始化--&gt;|执行|未知</span><br><span class="line">    成功--&gt;|执行|业务成功</span><br><span class="line">    业务成功--&gt;事务终止</span><br><span class="line">    失败--&gt;业务失败</span><br><span class="line">    业务失败--&gt;回滚</span><br><span class="line">    回滚--&gt;回滚成功</span><br><span class="line">    回滚成功--&gt;事务终止</span><br><span class="line">    回滚--&gt;回滚失败</span><br><span class="line">    回滚失败--&gt;Pengding告警</span><br><span class="line">    未知--&gt;|补偿|成功</span><br><span class="line">    未知--&gt;|补偿|失败</span><br></pre></td></tr></table></figure>
 <p><strong>关键设计</strong></p>
 <ul>
 <li>状态未知：网络读超时，被调用方返回未知的状态码（该错误码不能说明成功或者失败，对于成功的错误码必须是明确的状态，同时失败的状态码必须）。</li>
@@ -618,9 +480,8 @@
 <li>补偿机制：注意幂等性操作，先查询、后补偿（一般是查询对方状态，更新本地状态）。</li>
 <li>通道能力：被依赖的通道具备查询接口，则进行指数退避补偿。被依赖的通道不具备查询接口，则进行资损熔断。</li>
 </ul>
-<h3 id="兜底"><a class="markdownIt-Anchor" href="#兜底"></a> 兜底</h3>
-<p>做最坏的打算，系统设计总会有不尽人意的地方，所以必须做最坏的打算。 系统设计如此，人生亦如此。</p>
-<p><strong>正确认识成功或者失败</strong></p>
+<h3 id="兜底"><a href="#兜底" class="headerlink" title="兜底"></a>兜底</h3><p>   做最坏的打算，系统设计总会有不尽人意的地方，所以必须做最坏的打算。 系统设计如此，人生亦如此。</p>
+<p>  <strong>正确认识成功或者失败</strong></p>
 <ul>
 <li>区分业务上的成功 和业务上的失败。</li>
 <li>内部失败：比如写数据库失败。</li>
@@ -632,8 +493,7 @@
 <li>这个例子 由于没有正确识别业务成功 和内部失败，导致资金损失。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">  Actor--&gt;&gt;Trade:提现</span><br><span class="line">  Trade--&gt;&gt;BGW:提现</span><br><span class="line">  BGW--&gt;&gt;Bank:提现</span><br><span class="line">  Bank--&gt;&gt;Bank:增加用户账户余额</span><br><span class="line">  Bank--&gt;&gt;BGW:成功</span><br><span class="line">  Bank--&gt;&gt;用户:银行账户收到xx金额</span><br><span class="line">  BGW--&gt;&gt;BGW:写DB失败</span><br><span class="line">  BGW--&gt;&gt;Trade:失败</span><br><span class="line">  Trade--&gt;&gt;Trade:回滚账户余额</span><br><span class="line">  用户--&gt;&gt;用户:看到账户余额没有变少</span><br><span class="line">  用户--&gt;&gt;Actor:提现</span><br></pre></td></tr></table></figure>
-<h3 id="资损控制策略"><a class="markdownIt-Anchor" href="#资损控制策略"></a> 资损控制策略</h3>
-<table>
+<h3 id="资损控制策略"><a href="#资损控制策略" class="headerlink" title="资损控制策略"></a>资损控制策略</h3><table>
 <thead>
 <tr>
 <th>问题</th>
@@ -660,32 +520,17 @@
 <tr>
 <td>手工退款</td>
 <td>1、提供异常订单查询系统<br>2、提供手工退款功能</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="平滑升级灰度"><a class="markdownIt-Anchor" href="#平滑升级灰度"></a> 平滑升级（灰度）</h2>
-<p><strong>通过BankProxy 灰度</strong></p>
+<h2 id="平滑升级（灰度）"><a href="#平滑升级（灰度）" class="headerlink" title="平滑升级（灰度）"></a>平滑升级（灰度）</h2><p><strong>通过BankProxy 灰度</strong></p>
 <ul>
 <li>通过Proxy 基于银行通道的灰度</li>
 </ul>
-<pre class="mermaid">graph TD
-Trade-->Nginx
-Nginx-->Bank.Proxy
-Bank.Proxy-->Old_BGW
-Old_BGW-->A_Bank
-Bank.Proxy-->Bank.Front
-Bank.Front-->B_Bank</pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">Trade--&gt;Nginx</span><br><span class="line">Nginx--&gt;Bank.Proxy</span><br><span class="line">Bank.Proxy--&gt;Old_BGW</span><br><span class="line">Old_BGW--&gt;A_Bank</span><br><span class="line">Bank.Proxy--&gt;Bank.Front</span><br><span class="line">Bank.Front--&gt;B_Bank</span><br></pre></td></tr></table></figure>
 <p><strong>通过Nginx 灰度</strong></p>
-<pre class="mermaid">graph TD
-Trade-->Nginx
-Nginx-->Old_BGW
-Old_BGW-->A_Bank
-Nginx-->Bank.Proxy
-Bank.Proxy-->Bank.Front
-Bank.Front-->B_Bank</pre>
-<h2 id="架构优点"><a class="markdownIt-Anchor" href="#架构优点"></a> 架构优点</h2>
-<p><strong>变化与不变的分离</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">Trade--&gt;Nginx</span><br><span class="line">Nginx--&gt;Old_BGW</span><br><span class="line">Old_BGW--&gt;A_Bank</span><br><span class="line">Nginx--&gt;Bank.Proxy</span><br><span class="line">Bank.Proxy--&gt;Bank.Front</span><br><span class="line">Bank.Front--&gt;B_Bank</span><br></pre></td></tr></table></figure>
+<h2 id="架构优点"><a href="#架构优点" class="headerlink" title="架构优点"></a>架构优点</h2><p><strong>变化与不变的分离</strong></p>
 <ul>
 <li>反应堆系统（Reactor）：依赖于抽象，逻辑是稳定的。</li>
 <li>Bank_Proxy：依赖于抽象，是稳定的。</li>
@@ -694,18 +539,12 @@ Bank.Front-->B_Bank</pre>
 
       
     </div>
-
-    
-
     
     
     
 
     
 
-    
-      
-    
     
 
     
@@ -759,10 +598,17 @@ Bank.Front-->B_Bank</pre>
   </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
           </div>
+          
+
+
           
 
   
@@ -782,6 +628,7 @@ Bank.Front-->B_Bank</pre>
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -789,85 +636,89 @@ Bank.Front-->B_Bank</pre>
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            Overview
           </li>
         </ul>
       
 
-      <div class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">知鱼</p>
-              <div class="site-description motion-element" itemprop="description">实践总结、分享他人。</div>
+              <p class="site-description motion-element" itemprop="description">实践总结、分享他人。</p>
           </div>
 
-          
+          <nav class="site-state motion-element">
 
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/ZhiYu2018" title="GitHub &rarr; https://github.com/ZhiYu2018" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:ice_mind@yeah.net" title="E-Mail &rarr; mailto:ice_mind@yeah.net" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
             
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
+
+          
+
+          
+          
+
+          
+          
+
           
 
         </div>
-      </div>
+      </section>
 
       
       <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-            
-            
+              
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么"><span class="nav-number">1.</span> <span class="nav-text"> 为什么 ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重构目标"><span class="nav-number">2.</span> <span class="nav-text"> 重构目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#风险与对策"><span class="nav-number">3.</span> <span class="nav-text"> 风险与对策</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法论"><span class="nav-number">4.</span> <span class="nav-text"> 方法论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number">5.</span> <span class="nav-text"> 工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计"><span class="nav-number">6.</span> <span class="nav-text"> 设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统架构"><span class="nav-number">6.1.</span> <span class="nav-text"> 系统架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动力视图"><span class="nav-number">6.2.</span> <span class="nav-text"> 动力视图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务补偿策略"><span class="nav-number">6.3.</span> <span class="nav-text"> 事务补偿策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兜底"><span class="nav-number">6.4.</span> <span class="nav-text"> 兜底</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资损控制策略"><span class="nav-number">6.5.</span> <span class="nav-text"> 资损控制策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平滑升级灰度"><span class="nav-number">7.</span> <span class="nav-text"> 平滑升级（灰度）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构优点"><span class="nav-number">8.</span> <span class="nav-text"> 架构优点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么-？"><span class="nav-number">1.</span> <span class="nav-text">为什么 ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重构目标"><span class="nav-number">2.</span> <span class="nav-text">重构目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#风险与对策"><span class="nav-number">3.</span> <span class="nav-text">风险与对策</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法论"><span class="nav-number">4.</span> <span class="nav-text">方法论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number">5.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计"><span class="nav-number">6.</span> <span class="nav-text">设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统架构"><span class="nav-number">6.1.</span> <span class="nav-text">系统架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动力视图"><span class="nav-number">6.2.</span> <span class="nav-text">动力视图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务补偿策略"><span class="nav-number">6.3.</span> <span class="nav-text">事务补偿策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兜底"><span class="nav-number">6.4.</span> <span class="nav-text">兜底</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资损控制策略"><span class="nav-number">6.5.</span> <span class="nav-text">资损控制策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平滑升级（灰度）"><span class="nav-number">7.</span> <span class="nav-text">平滑升级（灰度）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构优点"><span class="nav-number">8.</span> <span class="nav-text">架构优点</span></a></li></ol></div>
             
 
           </div>
-        </div>
+        </section>
       <!--/noindex-->
       
 
@@ -875,7 +726,6 @@ Bank.Front-->B_Bank</pre>
 
     </div>
   </aside>
-  
 
 
         
@@ -885,28 +735,29 @@ Bank.Front-->B_Bank</pre>
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-"></i>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">知鱼</span>
-
-  
 
   
 </div>
 
 
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
+  <span class="post-meta-divider">|</span>
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
 
         
-
 
 
 
@@ -919,17 +770,19 @@ Bank.Front-->B_Bank</pre>
     </footer>
 
     
-
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
     
 
-    
   </div>
 
   
 
-<script>
+<script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -943,6 +796,99 @@ Bank.Front-->B_Bank</pre>
 
 
 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
 
 
 
@@ -959,64 +905,8 @@ Bank.Front-->B_Bank</pre>
 
 
 
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
   
 
-
-  <script src="/js/utils.js?v=7.1.0"></script>
-
-  <script src="/js/motion.js?v=7.1.0"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.0"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-
-
-  
 
 
 
@@ -1028,39 +918,6 @@ Bank.Front-->B_Bank</pre>
   
 
   
-
-  
-<script>
-if ($('body').find('pre.mermaid').length) {
-  $.ajax({
-    type: 'GET',
-    url: '',
-    dataType: 'script',
-    cache: true,
-    success: function() {
-      mermaid.initialize({
-        theme: 'forest',
-        logLevel: 3,
-        flowchart: { curve: 'linear' },
-        gantt: { axisFormat: '%m/%d/%Y' },
-        sequence: { actorMargin: 50 }
-      });
-    }
-  });
-}
-</script>
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
