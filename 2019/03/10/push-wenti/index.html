@@ -83,20 +83,20 @@
 <meta name="keywords" content="工程,技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PUSH 问题">
-<meta property="og:url" content="https://ice-thinker.github.io/2019/03/10/push-wenti/index.html">
+<meta property="og:url" content="https://zhiyu.space/2019/03/10/push-wenti/index.html">
 <meta property="og:site_name" content="知、行——人生">
 <meta property="og:description" content="PUSH 链路分析系统链路先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：  转化根因 统计口径 链路的关键点   关键点 统计数据 策略 可落地     发送失败 1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关） 针对1的解决方法1：调用批量的接口2：扩大带宽3：限流4：负载均衡式发送针对2的解决方法：1：限流2：了解相关系统的特殊">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/发送链路.png">
-<meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/Push转化率根因.png">
-<meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/Push统计口径.png">
-<meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/nat.png">
-<meta property="og:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/网络保活.png">
+<meta property="og:image" content="https://zhiyu.space/2019/03/10/push-wenti/发送链路.png">
+<meta property="og:image" content="https://zhiyu.space/2019/03/10/push-wenti/Push转化率根因.png">
+<meta property="og:image" content="https://zhiyu.space/2019/03/10/push-wenti/Push统计口径.png">
+<meta property="og:image" content="https://zhiyu.space/2019/03/10/push-wenti/nat.png">
+<meta property="og:image" content="https://zhiyu.space/2019/03/10/push-wenti/网络保活.png">
 <meta property="og:updated_time" content="2019-04-17T17:56:07.516Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PUSH 问题">
 <meta name="twitter:description" content="PUSH 链路分析系统链路先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：  转化根因 统计口径 链路的关键点   关键点 统计数据 策略 可落地     发送失败 1、连接异常(数据可获取)2、FCM/Apns 流控(异常)（数据可获取性跟调用方法有关） 针对1的解决方法1：调用批量的接口2：扩大带宽3：限流4：负载均衡式发送针对2的解决方法：1：限流2：了解相关系统的特殊">
-<meta name="twitter:image" content="https://ice-thinker.github.io/2019/03/10/push-wenti/push-wenti/发送链路.png">
+<meta name="twitter:image" content="https://zhiyu.space/2019/03/10/push-wenti/发送链路.png">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://ice-thinker.github.io/2019/03/10/push-wenti/">
+  <link rel="canonical" href="https://zhiyu.space/2019/03/10/push-wenti/">
 
 
 
@@ -279,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/03/10/push-wenti/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/03/10/push-wenti/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
@@ -369,9 +369,9 @@
 
       
         <h2 id="PUSH-链路分析"><a href="#PUSH-链路分析" class="headerlink" title="PUSH 链路分析"></a>PUSH 链路分析</h2><h3 id="系统链路"><a href="#系统链路" class="headerlink" title="系统链路"></a>系统链路</h3><p>先从PUSH 相关的链路分析， 一条消息传递到客户端，需要经过的链路：</p>
-<p><img src="push-wenti/发送链路.png" alt></p>
-<h3 id="转化根因"><a href="#转化根因" class="headerlink" title="转化根因"></a>转化根因</h3><p><img src="push-wenti/Push转化率根因.png" alt></p>
-<h3 id="统计口径"><a href="#统计口径" class="headerlink" title="统计口径"></a>统计口径</h3><p><img src="push-wenti/Push统计口径.png" alt></p>
+<p><img src="/2019/03/10/push-wenti/发送链路.png" alt></p>
+<h3 id="转化根因"><a href="#转化根因" class="headerlink" title="转化根因"></a>转化根因</h3><p><img src="/2019/03/10/push-wenti/Push转化率根因.png" alt></p>
+<h3 id="统计口径"><a href="#统计口径" class="headerlink" title="统计口径"></a>统计口径</h3><p><img src="/2019/03/10/push-wenti/Push统计口径.png" alt></p>
 <h3 id="链路的关键点"><a href="#链路的关键点" class="headerlink" title="链路的关键点"></a>链路的关键点</h3><table>
 <thead>
 <tr>
@@ -474,7 +474,7 @@
 </table>
 <p>注：该数据未经实践证明（只是看了大部分的数据）。</p>
 <p>Nat 超时机制：</p>
-<p><img src="push-wenti/nat.png" alt></p>
+<p><img src="/2019/03/10/push-wenti/nat.png" alt></p>
 <h4 id="原因三：-安卓DHCP的租期（lease-time）问题"><a href="#原因三：-安卓DHCP的租期（lease-time）问题" class="headerlink" title="原因三： 安卓DHCP的租期（lease time）问题"></a>原因三： 安卓DHCP的租期（lease time）问题</h4><p>   安卓系统对DHCP的处理有个BUG:</p>
 <ul>
 <li>DHCP租期到了不会主动续约并且继续使用过期IP。这个问题导致的问题表象是，在超过租期的某个时间点（没有规律）会导致IP过期，老的TCP连接不会正常收发数据。并且系统没有网络变化事件，只有等应用判断主动建立新的TCP连接才引起安卓设备重新向DHCP Server 申请IP租用。</li>
@@ -564,7 +564,7 @@
 </tbody>
 </table>
 <p><strong>当前值的测试，跟所属的环境有关，可能值不一样.</strong></p>
-<h5 id="可行的方案"><a href="#可行的方案" class="headerlink" title="可行的方案"></a>可行的方案</h5><p><img src="push-wenti/网络保活.png" alt></p>
+<h5 id="可行的方案"><a href="#可行的方案" class="headerlink" title="可行的方案"></a>可行的方案</h5><p><img src="/2019/03/10/push-wenti/网络保活.png" alt></p>
 <p>方案描述</p>
 <table>
 <thead>
