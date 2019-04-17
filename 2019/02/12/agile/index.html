@@ -1,105 +1,12 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '7.1.0',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    back2top: ,
-    back2top_sidebar: ,
-    fancybox: true,
-    fastclick: ,
-    lazyload: ,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
+  <meta charset="utf-8">
   
 
-
-
-
+  
+  <title>敏捷研发流程实践 | 知、行——人生</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="为什么要敏捷  敏捷诞生的历史背景   业界敏捷浪潮   敏捷更符合软件开发规律   敏捷对生产率、质量、满意度、成本有名称改进   敏捷软件开发宣言  我们一直在实践中探寻更好的软件开发方法， 身体力行的同时也帮助他人。由此我们建立了如下价值观： 个体和互动 高于 流程和工具 工作的软件 高于 详尽的文档 客户合作 高于 合同谈判 响应变化 高于 遵循计划 也就是说，尽管右项有其价值， 我们更">
 <meta name="keywords" content="软件,思想,原则">
 <meta property="og:type" content="article">
@@ -161,350 +68,81 @@
 <meta name="twitter:title" content="敏捷研发流程实践">
 <meta name="twitter:description" content="为什么要敏捷  敏捷诞生的历史背景   业界敏捷浪潮   敏捷更符合软件开发规律   敏捷对生产率、质量、满意度、成本有名称改进   敏捷软件开发宣言  我们一直在实践中探寻更好的软件开发方法， 身体力行的同时也帮助他人。由此我们建立了如下价值观： 个体和互动 高于 流程和工具 工作的软件 高于 详尽的文档 客户合作 高于 合同谈判 响应变化 高于 遵循计划 也就是说，尽管右项有其价值， 我们更">
 <meta name="twitter:image" content="https://ice-thinker.github.io/2019/02/12/agile/mjdsbj.jpg">
-
-
-
-
-
+  
+    <link rel="alternate" href="/atom.xml" title="知、行——人生" type="application/atom+xml">
   
   
-  <link rel="canonical" href="https://ice-thinker.github.io/2019/02/12/agile/">
-
-
-
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>敏捷研发流程实践 | 知、行——人生</title>
+    <link rel="icon" href="/favicon.png">
   
-
-
-
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-right page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">知、行——人生</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">知、行——人生</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">知行人生：审、慎、度、行。</a>
+        </h2>
+      
     </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ice-thinker.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-agile" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/12/agile/" class="article-date">
+  <time datetime="2019-02-12T14:29:22.000Z" itemprop="datePublished">2019-02-12</time>
+</a>
     
-      
-        <p class="site-subtitle">知行人生：审、慎、度、行。</p>
-      
-    
-    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/工程/">工程</a>
   </div>
 
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
   </div>
-</div>
-
-
-
-<nav class="site-nav">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-
-    
-
-    <a href="/" rel="section">首页</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-
-    
-
-    <a href="/categories/" rel="section">分类</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
-    
-
-    
-
-    <a href="/tags/" rel="section">标签</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-
-    
-
-    <a href="/archives/" rel="section">归档</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-commonweal">
-
-    
-    
-    
-
-    
-
-    <a href="/404/" rel="section">公益 404</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-
-    
-
-    <a href="/about/" rel="section">关于</a>
-
-  </li>
-
-      
-      
-    </ul>
+    <h1 class="article-title" itemprop="name">
+      敏捷研发流程实践
+    </h1>
   
 
-  
-    
-
-  
-
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ice-thinker.github.io/2019/02/12/agile/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="知鱼">
-      <meta itemprop="description" content="实践总结、分享他人。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="知、行——人生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">敏捷研发流程实践
-
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-12 22:29:22" itemprop="dateCreated datePublished" datetime="2019-02-12T22:29:22+08:00">2019-02-12</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/技术/工程/" itemprop="url" rel="index"><span itemprop="name">工程</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
+    <div class="article-entry" itemprop="articleBody">
       
         <h2 id="为什么要敏捷"><a class="markdownIt-Anchor" href="#为什么要敏捷"></a> 为什么要敏捷</h2>
 <h3 id="敏捷诞生的历史背景"><a class="markdownIt-Anchor" href="#敏捷诞生的历史背景"></a> 敏捷诞生的历史背景</h3>
@@ -995,380 +633,145 @@
 
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/软件/" rel="tag"># 软件</a>
-          
-            <a href="/tags/思想/" rel="tag"># 思想</a>
-          
-            <a href="/tags/原则/" rel="tag"># 原则</a>
-          
-        </div>
-      
-
+    <footer class="article-footer">
+      <a data-url="https://ice-thinker.github.io/2019/02/12/agile/" data-id="cjulfkc1x002k3tfynazdf2rp" class="article-share-link">Share</a>
       
       
-      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原则/">原则</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/思想/">思想</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/软件/">软件</a></li></ul>
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/02/10/alibbdztxqt/" rel="next" title="阿里巴巴“大中台、小前台”读后感">
-                <i class="fa fa-chevron-left"></i> 阿里巴巴“大中台、小前台”读后感
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/08/skll/" rel="prev" title="思考的力量">
-                思考的力量 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
     </footer>
   </div>
   
+    
+<nav id="article-nav">
   
-  
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-
-
-
-        </div>
+    <a href="/2019/03/08/skll/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-          
+          思考的力量
+        
+      </div>
+    </a>
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  
+    <a href="/2019/02/10/alibbdztxqt/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">阿里巴巴“大中台、小前台”读后感</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/哲思/">哲思</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/哲思/批判/">批判</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/哲思/现实/">现实</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/工程/">工程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/思想/">思想</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/工程/">工程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/知/">知</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/知/智慧/">智慧</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/管理/">管理</a></li></ul>
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
 
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">知鱼</p>
-              <div class="site-description motion-element" itemprop="description">实践总结、分享他人。</div>
-          </div>
-
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/ZhiYu2018" title="GitHub &rarr; https://github.com/ZhiYu2018" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:ice_mind@yeah.net" title="E-Mail &rarr; mailto:ice_mind@yeah.net" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-            </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要敏捷"><span class="nav-number">1.</span> <span class="nav-text"> 为什么要敏捷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#敏捷诞生的历史背景"><span class="nav-number">1.1.</span> <span class="nav-text"> 敏捷诞生的历史背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业界敏捷浪潮"><span class="nav-number">1.2.</span> <span class="nav-text"> 业界敏捷浪潮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#敏捷更符合软件开发规律"><span class="nav-number">1.3.</span> <span class="nav-text"> 敏捷更符合软件开发规律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#敏捷对生产率-质量-满意度-成本有名称改进"><span class="nav-number">1.4.</span> <span class="nav-text"> 敏捷对生产率、质量、满意度、成本有名称改进</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#敏捷软件开发宣言"><span class="nav-number">1.5.</span> <span class="nav-text"> 敏捷软件开发宣言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#敏捷宣言遵循的原则"><span class="nav-number">1.6.</span> <span class="nav-text"> 敏捷宣言遵循的原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正确理解敏捷"><span class="nav-number">1.7.</span> <span class="nav-text"> 正确理解敏捷</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#敏捷的误解"><span class="nav-number">1.7.1.</span> <span class="nav-text"> 敏捷的误解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#敏捷统一认识"><span class="nav-number">1.7.2.</span> <span class="nav-text"> 敏捷统一认识</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#统一认识"><span class="nav-number">1.7.2.1.</span> <span class="nav-text"> 统一认识</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚焦价值"><span class="nav-number">1.7.2.2.</span> <span class="nav-text"> 聚焦价值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#团队激发"><span class="nav-number">1.7.2.3.</span> <span class="nav-text"> 团队激发</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#拥抱变化"><span class="nav-number">1.7.2.4.</span> <span class="nav-text"> 拥抱变化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#优秀实践"><span class="nav-number">1.7.2.5.</span> <span class="nav-text"> 优秀实践</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#具体应用"><span class="nav-number">1.7.2.6.</span> <span class="nav-text"> 具体应用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#系统性工程"><span class="nav-number">1.7.2.7.</span> <span class="nav-text"> 系统性工程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#敏捷理念解读"><span class="nav-number">1.7.3.</span> <span class="nav-text"> 敏捷理念解读</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#深入理解敏捷理念"><span class="nav-number">1.7.3.1.</span> <span class="nav-text"> 深入理解敏捷理念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#"><span class="nav-number">1.7.3.2.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标识和消除软件开发中的浪费"><span class="nav-number">1.7.3.3.</span> <span class="nav-text"> 标识和消除软件开发中的浪费</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#交付刚刚好的系统"><span class="nav-number">1.7.3.4.</span> <span class="nav-text"> 交付刚刚好的系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#消除技术债务"><span class="nav-number">1.7.3.5.</span> <span class="nav-text"> 消除技术债务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#激发团队认清团队的基本事实"><span class="nav-number">1.7.3.6.</span> <span class="nav-text"> 激发团队，认清团队的基本事实</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#管理者转变"><span class="nav-number">1.7.3.7.</span> <span class="nav-text"> 管理者转变</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#团队成员转变"><span class="nav-number">1.7.3.8.</span> <span class="nav-text"> 团队成员转变</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调整拥抱变化"><span class="nav-number">1.7.3.9.</span> <span class="nav-text"> 调整，拥抱变化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#持续保持良好的软件架构"><span class="nav-number">1.7.3.10.</span> <span class="nav-text"> 持续保持良好的软件架构</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#敏捷实践解读"><span class="nav-number">1.7.4.</span> <span class="nav-text"> 敏捷实践解读</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷实践概览"><span class="nav-number">1.7.4.1.</span> <span class="nav-text"> 敏捷实践概览</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷软件开发典型场景"><span class="nav-number">1.7.4.2.</span> <span class="nav-text"> 敏捷软件开发典型场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷开发核心迭代开发"><span class="nav-number">1.7.4.3.</span> <span class="nav-text"> 敏捷开发核心——迭代开发</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#团队的三个核心角色"><span class="nav-number">1.7.4.4.</span> <span class="nav-text"> 团队的三个核心角色</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#角色职责"><span class="nav-number">1.7.4.5.</span> <span class="nav-text"> 角色职责</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完整团队"><span class="nav-number">1.7.4.6.</span> <span class="nav-text"> 完整团队</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷工作件产品backlog"><span class="nav-number">1.7.4.7.</span> <span class="nav-text"> 敏捷工作件：产品Backlog</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷工作件迭代backlog"><span class="nav-number">1.7.4.8.</span> <span class="nav-text"> 敏捷工作件：迭代Backlog</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷工作件完成标准"><span class="nav-number">1.7.4.9.</span> <span class="nav-text"> 敏捷工作件：完成标准</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷管理实践迭代计划会议"><span class="nav-number">1.7.4.10.</span> <span class="nav-text"> 敏捷管理实践：迭代计划会议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷管理实践每日站立会议"><span class="nav-number">1.7.4.11.</span> <span class="nav-text"> 敏捷管理实践：每日站立会议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷管理实践可视化管理"><span class="nav-number">1.7.4.12.</span> <span class="nav-text"> 敏捷管理实践：可视化管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷管理实践迭代验收"><span class="nav-number">1.7.4.13.</span> <span class="nav-text"> 敏捷管理实践：迭代验收</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷管理实践迭代回顾会议"><span class="nav-number">1.7.4.14.</span> <span class="nav-text"> 敏捷管理实践：迭代回顾会议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#敏捷工程实践用户故事"><span class="nav-number">1.7.4.15.</span> <span class="nav-text"> 敏捷工程实践：用户故事</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#研发管理流程"><span class="nav-number">2.</span> <span class="nav-text"> 研发管理流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#团队角色"><span class="nav-number">2.1.</span> <span class="nav-text"> 团队角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#研发过程"><span class="nav-number">2.2.</span> <span class="nav-text"> 研发过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#研发流程阶段"><span class="nav-number">2.2.1.</span> <span class="nav-text"> 研发流程阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#评审要素"><span class="nav-number">2.2.2.</span> <span class="nav-text"> 评审要素：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生命周期模型在版本研发项目中的应用"><span class="nav-number">2.2.3.</span> <span class="nav-text"> 生命周期模型在版本研发项目中的应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#产品开发v-模型"><span class="nav-number">2.2.4.</span> <span class="nav-text"> 产品开发V 模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#阶段责任人主题"><span class="nav-number">2.2.5.</span> <span class="nav-text"> 阶段责任人主题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#敏捷实施"><span class="nav-number">2.3.</span> <span class="nav-text"> 敏捷实施</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#华为敏捷三步走案例"><span class="nav-number">2.3.1.</span> <span class="nav-text"> 华为敏捷三步走案例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三走解读"><span class="nav-number">2.3.2.</span> <span class="nav-text"> 三走解读</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#项目级敏捷"><span class="nav-number">2.3.2.1.</span> <span class="nav-text"> 项目级敏捷</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#版本级敏捷"><span class="nav-number">2.3.2.2.</span> <span class="nav-text"> 版本级敏捷</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#产品级敏捷"><span class="nav-number">2.3.2.3.</span> <span class="nav-text"> 产品级敏捷</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#八步曲"><span class="nav-number">2.3.3.</span> <span class="nav-text"> 八步曲</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可能的角色人选"><span class="nav-number">2.3.4.</span> <span class="nav-text"> 可能的角色人选</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他敏捷相关角色在华为对应的角色"><span class="nav-number">2.3.5.</span> <span class="nav-text"> 其他敏捷相关角色在华为对应的角色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目级敏捷实施场景"><span class="nav-number">2.3.6.</span> <span class="nav-text"> 项目级敏捷实施场景</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#场景1"><span class="nav-number">2.3.6.1.</span> <span class="nav-text"> 场景1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#场景2"><span class="nav-number">2.3.6.2.</span> <span class="nav-text"> 场景2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#场景3"><span class="nav-number">2.3.6.3.</span> <span class="nav-text"> 场景3</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目级敏捷过程样例版本中项目全都实施敏捷"><span class="nav-number">2.3.7.</span> <span class="nav-text"> 项目级敏捷过程样例（版本中项目全都实施敏捷）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目级敏捷过程说明"><span class="nav-number">2.3.8.</span> <span class="nav-text"> 项目级敏捷过程说明</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/信念/">信念</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/勇气/">勇气</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原则/">原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/反思/">反思</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哲学/">哲学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工程/">工程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思想/">思想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思考/">思考</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/感悟/">感悟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/批判/">批判</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/支付/">支付</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/方法论/">方法论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/细节/">细节</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计/">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件/">软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a></li></ul>
     </div>
-  </aside>
-  
+  </div>
 
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">知鱼</span>
 
   
-
-  
-</div>
-
-
-
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
     
-
-    
-
-    
-
-    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/信念/" style="font-size: 10px;">信念</a> <a href="/tags/勇气/" style="font-size: 10px;">勇气</a> <a href="/tags/原则/" style="font-size: 13.33px;">原则</a> <a href="/tags/反思/" style="font-size: 13.33px;">反思</a> <a href="/tags/哲学/" style="font-size: 13.33px;">哲学</a> <a href="/tags/工程/" style="font-size: 13.33px;">工程</a> <a href="/tags/思想/" style="font-size: 16.67px;">思想</a> <a href="/tags/思考/" style="font-size: 16.67px;">思考</a> <a href="/tags/感悟/" style="font-size: 13.33px;">感悟</a> <a href="/tags/批判/" style="font-size: 10px;">批判</a> <a href="/tags/技术/" style="font-size: 13.33px;">技术</a> <a href="/tags/支付/" style="font-size: 10px;">支付</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/方法论/" style="font-size: 10px;">方法论</a> <a href="/tags/架构/" style="font-size: 13.33px;">架构</a> <a href="/tags/生活/" style="font-size: 16.67px;">生活</a> <a href="/tags/细节/" style="font-size: 10px;">细节</a> <a href="/tags/设计/" style="font-size: 13.33px;">设计</a> <a href="/tags/软件/" style="font-size: 20px;">软件</a> <a href="/tags/重构/" style="font-size: 10px;">重构</a>
+    </div>
   </div>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li></ul>
+    </div>
+  </div>
 
 
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.0"></script>
-
-  <script src="/js/motion.js?v=7.1.0"></script>
-
-
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/17/ywxtjk/">业务监控系统设计</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/14/yhwgcgsl/">支付银行网关重构设计</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/23/tjyzl/">统计与真理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/23/psxtsj/">推送系统设计</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/10/push-wenti/">PUSH 问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 
   
+</aside>
+        
+      </div>
+      <footer id="footer">
   
-
-
-  <script src="/js/schemes/muse.js?v=7.1.0"></script>
-
-
-
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 知鱼<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
   
-  <script src="/js/scrollspy.js?v=7.1.0"></script>
-<script src="/js/post-details.js?v=7.1.0"></script>
-
-
-
+    <a href="/" class="mobile-nav-link">Home</a>
   
-
-
-  <script src="/js/next-boot.js?v=7.1.0"></script>
-
-
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
+</nav>
+    
 
-  
-
-  
-
-  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-  
-
+<script src="/js/script.js"></script>
 
 
 
-  
-
-  
-
-  
-
-  
-
-  
-<script>
-if ($('body').find('pre.mermaid').length) {
-  $.ajax({
-    type: 'GET',
-    url: '',
-    dataType: 'script',
-    cache: true,
-    success: function() {
-      mermaid.initialize({
-        theme: 'forest',
-        logLevel: 3,
-        flowchart: { curve: 'linear' },
-        gantt: { axisFormat: '%m/%d/%Y' },
-        sequence: { actorMargin: 50 }
-      });
-    }
-  });
-}
-</script>
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+  </div>
 </body>
 </html>
