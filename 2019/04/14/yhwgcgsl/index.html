@@ -464,7 +464,51 @@
 </tr>
 </tbody>
 </table>
-<h3 id="动力视图"><a href="#动力视图" class="headerlink" title="动力视图"></a>动力视图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">     participant Trade</span><br><span class="line">     participant BankProxy</span><br><span class="line">     participant BankFront</span><br><span class="line">     participant Bank</span><br><span class="line">     participant ReactorGw</span><br><span class="line">     participant Timer</span><br><span class="line">     Trade-&gt;&gt;BankProxy:Pay Order</span><br><span class="line">     BankProxy-&gt;&gt;BankProxy:幂等性、发现路由、资损控制</span><br><span class="line">     BankProxy-&gt;&gt;BankFront: Pay Order</span><br><span class="line">     alt Normal</span><br><span class="line">         BankFront-&gt;&gt;Bank:Pay Order</span><br><span class="line">         Bank-&gt;&gt;BankFront: Status</span><br><span class="line">         BankFront-&gt;&gt;BankProxy:Status</span><br><span class="line">         BankProxy-&gt;&gt;Trade:Status</span><br><span class="line">     else Exception</span><br><span class="line">         BankFront-&gt;&gt;Bank:Pay Order</span><br><span class="line">         BankFront-&gt;BankFront:Exceptions,Unknown state</span><br><span class="line">         BankFront-&gt;&gt;ReactorGw:Timed task</span><br><span class="line">     end</span><br><span class="line">     Bank--&gt;&gt;BankFront:Call back</span><br><span class="line">     BankFront--&gt;&gt;ReactorGw:Notify</span><br><span class="line">     ReactorGw--x Trade:async notify</span><br><span class="line">     ReactorGw-&gt;ReactorGw: Handle Result</span><br><span class="line">     alt Fail</span><br><span class="line">     ReactorGw-&gt;ReactorGw:Save timer task</span><br><span class="line">     end</span><br><span class="line">     loop Loop task</span><br><span class="line">     Timer--&gt;Timer:Find task(补偿)</span><br><span class="line">     Timer--&gt;&gt;BankProxy:Compensation transaction</span><br><span class="line">     alt Success</span><br><span class="line">     BankProxy--&gt;&gt;Timer:Final state</span><br><span class="line">     Timer--&gt;&gt;Trade:async notify</span><br><span class="line">     else Fail</span><br><span class="line">     BankProxy--&gt;&gt;Timer:Non-Final state</span><br><span class="line">     alt Time Out</span><br><span class="line">     Timer--&gt;&gt;BankProxy:Rollback</span><br><span class="line">     else Non-Time Out</span><br><span class="line">     Timer-&gt;Timer:Update next time</span><br><span class="line">     end</span><br><span class="line">     end</span><br><span class="line">     end</span><br></pre></td></tr></table></figure>
+<h3 id="动力视图"><a href="#动力视图" class="headerlink" title="动力视图"></a>动力视图</h3><pre class="mermaid">sequenceDiagram
+     participant Trade
+     participant BankProxy
+     participant BankFront
+     participant Bank
+     participant ReactorGw
+     participant Timer
+     Trade->>BankProxy:Pay Order
+     BankProxy->>BankProxy:幂等性、发现路由、资损控制
+     BankProxy->>BankFront: Pay Order
+     alt Normal
+         BankFront->>Bank:Pay Order
+         Bank->>BankFront: Status
+         BankFront->>BankProxy:Status
+         BankProxy->>Trade:Status
+     else Exception
+         BankFront->>Bank:Pay Order
+         BankFront->BankFront:Exceptions,Unknown state
+         BankFront->>ReactorGw:Timed task
+     end
+     Bank-->>BankFront:Call back
+     BankFront-->>ReactorGw:Notify
+     ReactorGw--x Trade:async notify
+     ReactorGw->ReactorGw: Handle Result
+     alt Fail
+     ReactorGw->ReactorGw:Save timer task
+     end
+     loop Loop task
+     Timer-->Timer:Find task(补偿)
+     Timer-->>BankProxy:Compensation transaction
+     alt Success
+     BankProxy-->>Timer:Final state
+     Timer-->>Trade:async notify
+     else Fail
+     BankProxy-->>Timer:Non-Final state
+     alt Time Out
+     Timer-->>BankProxy:Rollback
+     else Non-Time Out
+     Timer->Timer:Update next time
+     end
+     end
+     end</pre>
+
+
+
 <p><strong>动力视图说明</strong></p>
 <ul>
 <li>简要画出子系统之间的调用。</li>
@@ -527,9 +571,27 @@
 <ul>
 <li>通过Proxy 基于银行通道的灰度</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">Trade--&gt;Nginx</span><br><span class="line">Nginx--&gt;Bank.Proxy</span><br><span class="line">Bank.Proxy--&gt;Old_BGW</span><br><span class="line">Old_BGW--&gt;A_Bank</span><br><span class="line">Bank.Proxy--&gt;Bank.Front</span><br><span class="line">Bank.Front--&gt;B_Bank</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph TD
+Trade-->Nginx
+Nginx-->Bank.Proxy
+Bank.Proxy-->Old_BGW
+Old_BGW-->A_Bank
+Bank.Proxy-->Bank.Front
+Bank.Front-->B_Bank</pre>
+
+
+
 <p><strong>通过Nginx 灰度</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">Trade--&gt;Nginx</span><br><span class="line">Nginx--&gt;Old_BGW</span><br><span class="line">Old_BGW--&gt;A_Bank</span><br><span class="line">Nginx--&gt;Bank.Proxy</span><br><span class="line">Bank.Proxy--&gt;Bank.Front</span><br><span class="line">Bank.Front--&gt;B_Bank</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph TD
+Trade-->Nginx
+Nginx-->Old_BGW
+Old_BGW-->A_Bank
+Nginx-->Bank.Proxy
+Bank.Proxy-->Bank.Front
+Bank.Front-->B_Bank</pre>
+
+
+
 <h2 id="架构优点"><a href="#架构优点" class="headerlink" title="架构优点"></a>架构优点</h2><p><strong>变化与不变的分离</strong></p>
 <ul>
 <li>反应堆系统（Reactor）：依赖于抽象，逻辑是稳定的。</li>
@@ -755,6 +817,15 @@
   <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
+
+
+
+  <script src="https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
 
 
         
