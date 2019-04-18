@@ -466,12 +466,6 @@
 </table>
 <h3 id="动力视图"><a href="#动力视图" class="headerlink" title="动力视图"></a>动力视图</h3><p><strong>系统流程图：</strong></p>
 <pre class="mermaid">sequenceDiagram
-     participant Trade
-     participant BankProxy
-     participant BankFront
-     participant Bank
-     participant ReactorGw
-     participant Timer
      Trade->>BankProxy:Pay Order
      BankProxy->>BankProxy:幂等性、发现路由、资损控制
      BankProxy->>BankFront: Pay Order
