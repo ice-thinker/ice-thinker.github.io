@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据  系统设计简要系统依赖图： 12345678graph LR   APP--&amp;gt;|TCP|GateWay   GateWay--&amp;">
+<meta name="description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据  系统设计简要系统依赖图： graph LR    APP--&amp;gt;|TCP|GateWay    GateWay--&amp;gt;|UDP|MsgF">
 <meta name="keywords" content="架构,软件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="业务监控系统设计">
 <meta property="og:url" content="https://zhiyu.space/2019/04/17/ywxtjk/index.html">
 <meta property="og:site_name" content="知、行——人生">
-<meta property="og:description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据  系统设计简要系统依赖图： 12345678graph LR   APP--&amp;gt;|TCP|GateWay   GateWay--&amp;">
+<meta property="og:description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据  系统设计简要系统依赖图： graph LR    APP--&amp;gt;|TCP|GateWay    GateWay--&amp;gt;|UDP|MsgF">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-18T11:58:18.004Z">
+<meta property="og:updated_time" content="2019-04-18T14:38:01.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="业务监控系统设计">
-<meta name="twitter:description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据  系统设计简要系统依赖图： 12345678graph LR   APP--&amp;gt;|TCP|GateWay   GateWay--&amp;">
+<meta name="twitter:description" content="为什么要？ 没有监控系统，会咋样？  没有监控系统，如果老板比你先发现问题，你会怎么样？ 没有监控系统，如果发现了问题，你怎么快速定位呢？ 没有监控系统，App 出现卡顿，你知道是什么原因么？  监控系统的作用  及时发现问题 提供全局系统视角 服务治理的数据依据  系统设计简要系统依赖图： graph LR    APP--&amp;gt;|TCP|GateWay    GateWay--&amp;gt;|UDP|MsgF">
 
 
 
@@ -382,8 +382,7 @@
    PHP-Server-->|UDP|MsgFront
    MsgFront-->|RESTFul|MsgCenter
    MsgCenter-->报表平台
-   MsgCenter-->告警平台
-</pre>
+   MsgCenter-->告警平台</pre>
 
 <p><strong>设计说明</strong></p>
 <ul>
@@ -406,8 +405,10 @@
    PHP-Server-->|UDP|MsgFront
    MsgFront-->|RESTFul|MsgCenter
    MsgCenter-->Prometheus
-   Prometheus-->Grafana
-</pre>
+   Prometheus-->Grafana</pre>
+
+
+
 <p><strong>方案说明：</strong></p>
 <ul>
 <li>Prometheus:具有可视化、告警的功能(通过配置指标、告警策略)。</li>
@@ -630,7 +631,7 @@
 
 
 
-  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
   <script>
     if (window.mermaid) {
       mermaid.initialize({theme: 'forest'});
