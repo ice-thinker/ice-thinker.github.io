@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="设计,架构,软件,">
+  <meta name="keywords" content="团队,改进,方法,">
 
 
 
@@ -79,20 +79,22 @@
 
 
 
-<meta name="description" content="系统问题域 吞吐量（瞬时高峰） 到达率 流控 可用性（与第三方推送渠道链路问题、推送系统本身的可用性） 失败重试  设计概要推送渠道选择   区域 Android IOS     中国 信鸽、极光、个推 信鸽、极光、个推、Apns   非中国 FCM Apns    针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FCM。但是在国">
-<meta name="keywords" content="设计,架构,软件">
+<meta name="description" content="序这是一篇《持续交付2.0》大型互联网团队的FT化读后感。 《持续交付2.0》 “8” 字环 基于敏捷开发、是敏捷理念、原则的实施过程。  “ 对于现代软件企业来说，持续交付2.0应该成为它的一种组织能力。”    那敏捷有哪些实践呢？    团队 工作件 管理实践 技术实践     敏捷团队角色：Product OwnerScrum Master Team 产品Backlog迭代Backlog">
+<meta name="keywords" content="团队,改进,方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="推送系统设计">
-<meta property="og:url" content="https://zhiyu.space/2019/03/23/psxtsj/index.html">
+<meta property="og:title" content="大型互联网团队的FT化">
+<meta property="og:url" content="https://zhiyu.space/2019/04/19/dtdft/index.html">
 <meta property="og:site_name" content="知、行——人生">
-<meta property="og:description" content="系统问题域 吞吐量（瞬时高峰） 到达率 流控 可用性（与第三方推送渠道链路问题、推送系统本身的可用性） 失败重试  设计概要推送渠道选择   区域 Android IOS     中国 信鸽、极光、个推 信鸽、极光、个推、Apns   非中国 FCM Apns    针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FCM。但是在国">
+<meta property="og:description" content="序这是一篇《持续交付2.0》大型互联网团队的FT化读后感。 《持续交付2.0》 “8” 字环 基于敏捷开发、是敏捷理念、原则的实施过程。  “ 对于现代软件企业来说，持续交付2.0应该成为它的一种组织能力。”    那敏捷有哪些实践呢？    团队 工作件 管理实践 技术实践     敏捷团队角色：Product OwnerScrum Master Team 产品Backlog迭代Backlog">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://zhiyu.space/2019/03/23/psxtsj/xtjiagou.png">
-<meta property="og:updated_time" content="2019-04-17T17:56:07.582Z">
+<meta property="og:image" content="https://zhiyu.space/2019/04/19/dtdft/8.png">
+<meta property="og:image" content="https://zhiyu.space/2019/04/19/dtdft/gitflow.png">
+<meta property="og:image" content="https://zhiyu.space/2019/04/19/dtdft/devops1.png">
+<meta property="og:updated_time" content="2019-04-19T12:18:45.556Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="推送系统设计">
-<meta name="twitter:description" content="系统问题域 吞吐量（瞬时高峰） 到达率 流控 可用性（与第三方推送渠道链路问题、推送系统本身的可用性） 失败重试  设计概要推送渠道选择   区域 Android IOS     中国 信鸽、极光、个推 信鸽、极光、个推、Apns   非中国 FCM Apns    针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FCM。但是在国">
-<meta name="twitter:image" content="https://zhiyu.space/2019/03/23/psxtsj/xtjiagou.png">
+<meta name="twitter:title" content="大型互联网团队的FT化">
+<meta name="twitter:description" content="序这是一篇《持续交付2.0》大型互联网团队的FT化读后感。 《持续交付2.0》 “8” 字环 基于敏捷开发、是敏捷理念、原则的实施过程。  “ 对于现代软件企业来说，持续交付2.0应该成为它的一种组织能力。”    那敏捷有哪些实践呢？    团队 工作件 管理实践 技术实践     敏捷团队角色：Product OwnerScrum Master Team 产品Backlog迭代Backlog">
+<meta name="twitter:image" content="https://zhiyu.space/2019/04/19/dtdft/8.png">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://zhiyu.space/2019/03/23/psxtsj/">
+  <link rel="canonical" href="https://zhiyu.space/2019/04/19/dtdft/">
 
 
 
 
 
-  <title>推送系统设计 | 知、行——人生</title>
+  <title>大型互联网团队的FT化 | 知、行——人生</title>
   
 
 
@@ -275,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/03/23/psxtsj/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/04/19/dtdft/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
@@ -292,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">推送系统设计</h1>
+          <h1 class="post-title" itemprop="name headline">大型互联网团队的FT化</h1>
         
 
         <div class="post-meta">
@@ -304,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-23T13:50:21+08:00">
-                2019-03-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T07:09:17+08:00">
+                2019-04-19
               </time>
             
 
@@ -364,114 +366,199 @@
       
 
       
-        <h2 id="系统问题域"><a href="#系统问题域" class="headerlink" title="系统问题域"></a>系统问题域</h2><ul>
-<li>吞吐量（瞬时高峰）</li>
-<li>到达率</li>
-<li>流控</li>
-<li>可用性（与第三方推送渠道链路问题、推送系统本身的可用性）</li>
-<li>失败重试</li>
-</ul>
-<h2 id="设计概要"><a href="#设计概要" class="headerlink" title="设计概要"></a>设计概要</h2><h3 id="推送渠道选择"><a href="#推送渠道选择" class="headerlink" title="推送渠道选择"></a>推送渠道选择</h3><table>
-<thead>
-<tr>
-<th>区域</th>
-<th>Android</th>
-<th>IOS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>中国</td>
-<td>信鸽、极光、个推</td>
-<td>信鸽、极光、个推、Apns</td>
-</tr>
-<tr>
-<td>非中国</td>
-<td>FCM</td>
-<td>Apns</td>
-</tr>
-</tbody>
-</table>
-<p>针对Android 推送由于FCM 在国内不是很稳定，而且国内手机大部分没有安装GooglePlay，所以不建议使用FCM。但是在国外则建议采用FCM（建议使用Firebase admin SDK，或者XMPP）。</p>
-<h3 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h3><p><img src="/2019/03/23/psxtsj/xtjiagou.png" alt></p>
-<h3 id="设计关键点"><a href="#设计关键点" class="headerlink" title="设计关键点"></a>设计关键点</h3><ul>
-<li><p>消息队列的作用：</p>
-<p>解决瞬时高峰的问题，尤其在推送广播消息的时候，需要对广播消息进行流控，按照固定的速率进行推送，即满足FCM 和Apns 的流控要求，同时为了不对自身系统（比如出口网络带宽、DB、下游Adapter）带来冲击。所以采用消息队列基于pipeline 模式，将实时消息流控和广播推送流控用统一的模式进行处理。</p>
-</li>
-<li><p>Adapter ：</p>
-<p>适配推送渠道，减少引入新的渠道对系统造成的变化。同时根据不同的策略进行路由。路由策略：</p>
-<p>| 策略 | 描述                                               |<br>| —- | ————————————————– |<br>| 1    | 基于设备模式（安卓或者iOS）                        |<br>| 2    | 基于手机品牌（比如有厂商通道，则优先选择厂商通道） |<br>| 3    | 基于区域（中国 或者 非中国）                       |</p>
-</li>
-<li><p>推送渠道失败尝试机制：</p>
-<p> （1）在推送过程中，如果遇到网络问题则建议采用Exponetial BackOff 进行重试。</p>
-<p> （2）对于无效Token 则放弃尝试。</p>
-<p> （3）对于推送渠道，虽然在Push-Dispatch 有流控，自己本身也要有流控策略（可以采用令牌桶）进行流</p>
-<p>​           控，如果自己本身由于网络异常，对堆积的消息进行超时丢弃，并将结果发送到消息队列中。</p>
-</li>
-<li><p>State-Job：</p>
-<p>  消息状态机任务，将消息状态扭转。</p>
-</li>
-</ul>
+        <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>这是一篇《持续交付2.0》大型互联网团队的FT化读后感。</p>
+<p>《持续交付2.0》 “8” 字环 基于敏捷开发、是敏捷理念、原则的实施过程。</p>
+<p><img src="/2019/04/19/dtdft/8.png" alt></p>
+<blockquote class="blockquote-center">“ 对于现代软件企业来说，持续交付2.0应该成为它的一种组织能力。”</blockquote>
+
+
+
+<p>那敏捷有哪些实践呢？</p>
 <table>
 <thead>
 <tr>
-<th>状态</th>
-<th>策略</th>
+<th>团队</th>
+<th>工作件</th>
+<th>管理实践</th>
+<th>技术实践</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>发送成功</td>
-<td>1: 更新消息状态</td>
+<td>敏捷团队角色：<br>Product Owner<br>Scrum Master <br>Team</td>
+<td>产品Backlog<br>迭代Backlog</td>
+<td>迭代计划会议<br>每日站立会议</td>
+<td>用户故事<br>Anatomy 系统解剖</td>
 </tr>
 <tr>
-<td>网络异常</td>
-<td>1: 基于Exponetial BackOff 机制 算出下次尝试时间，并将尝试任务写入DB。</td>
+<td>完整团队实践</td>
+<td>完成标准</td>
+<td>可视化管理</td>
+<td>结对编程<br>TDD（测试驱动开发）</td>
 </tr>
 <tr>
-<td>到达</td>
-<td>1: 更新消息状态</td>
-</tr>
-<tr>
-<td>未达</td>
-<td>1: 由于推送渠道FCM 或者Apns 具有存储消息等用户在线，再推送到功能。<br>2: 所以没有必要进行未达尝试。</td>
+<td></td>
+<td></td>
+<td>迭代验收<br>迭代回顾会议</td>
+<td>持续集成</td>
 </tr>
 </tbody>
 </table>
-<h2 id="不重复造轮子"><a href="#不重复造轮子" class="headerlink" title="不重复造轮子"></a>不重复造轮子</h2><p><a href="https://github.com/ZhiYu2018/app.push">集成推送</a></p>
-<p><strong><a href="https://github.com/ZhiYu2018/app.push">https://github.com/ZhiYu2018/app.push</a></strong></p>
-<p>使用方法：</p>
+<h1 id="FT是什么？"><a href="#FT是什么？" class="headerlink" title="FT是什么？"></a>FT是什么？</h1><p>FT的概念是什么呢？FT 的含义：FeatureTeam(特色团队)，对应的组织动作是将职能型组织重新改造，建立成业务型组织。FT在敏捷实践中，称为完整团队。</p>
+<p>FT实践对应敏捷实践中的团队实践。</p>
+<h1 id="敏捷团队"><a href="#敏捷团队" class="headerlink" title="敏捷团队"></a>敏捷团队</h1><h2 id="核心角色"><a href="#核心角色" class="headerlink" title="核心角色"></a>核心角色</h2><table>
+<thead>
+<tr>
+<th>角色名称</th>
+<th>角色定义</th>
+<th>角色职责</th>
+<th>注意事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PO</td>
+<td>确保Team 做正确的事</td>
+<td>代表利益相关人（用户，用户，管理，Marketing），对产品投资回报负责<br>确定产品发布计划<br>定义产品需求，并确定优先级<br>验收迭代结果，并根据验收结果和需求变化刷新需求清单和优先级</td>
+<td>除了客户需求之外，内部任务如重构、持续集成环境搭建等也有PO纳入统一管理</td>
+</tr>
+<tr>
+<td>Scrum 教练</td>
+<td>确保Team 正确地做事</td>
+<td>辅导团队正确地应用敏捷实践<br>引导团队建立并遵守规则<br>保护团队不受打扰<br>推动解决团队遇到的障碍<br>激励团队</td>
+<td>不命令和控制Team</td>
+</tr>
+<tr>
+<td>Team</td>
+<td>负责产品需求实现</td>
+<td>负责估计工作量并根据自身能力找出最佳方案去完成任务且保证交付质量<br>向PO和利益相关人演示工作成果<br>团队自我管理、持续改进</td>
+<td>一般由5～9名跨功能领域组成<br>坐在一起工作<br>有共同的目标、共同担责<br>团队成员严格遵守团队规则</td>
+</tr>
+</tbody>
+</table>
+<h2 id="完整团队"><a href="#完整团队" class="headerlink" title="完整团队"></a>完整团队</h2><table>
+<thead>
+<tr>
+<th>什么是完整团队</th>
+<th>关键要点</th>
+<th>好处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>敏捷开发中，以Story 为单位的持续交付要求<br>系统组、开发、测试等跨功能团队进行密切协同，<br><strong>相互独立的功能团队难以应对</strong></td>
+<td>成员来自多个功能领域：<br>拥有完成目标所需的各职能成员</td>
+<td>有助于团队成员形成共同目标和全局意识，促进个功能领域的拉通和融合</td>
+</tr>
+<tr>
+<td>完整团队是跨功能领域（需求分析师、设计师、<br>开发人员、测试人员、资料人员等）的人员组成<br>一个团队，坐在一起工作，团队成员遵循同一<br>计划，服从于同一项目经理。</td>
+<td>坐在一起办公：团队成员无障碍地沟通</td>
+<td>通过面对面沟通提升沟通效率</td>
+</tr>
+<tr>
+<td></td>
+<td>团队保持相对稳定：临时组建的团队产生效率较低，团队稳定非常关键</td>
+<td>实现团队成员的高度协同，支撑高密地、持续地、短周期的交付</td>
+</tr>
+</tbody>
+</table>
+<h2 id="理念"><a href="#理念" class="headerlink" title="理念"></a>理念</h2><blockquote class="blockquote-center">激发团队潜能，加强协作</blockquote>
+
 <ul>
-<li>自己开发Push-Server，将消息写入DB。</li>
-<li>采用定时任务（脚本）将消息推送给app.push。</li>
-<li>由于app.push 没有做消息路由，则自己要进行任务路由。</li>
-<li>对于Android 消息，建议采用fcm.xmpp 方法。</li>
+<li><p>研究表明面对面的沟通最有效。业界调查：一个50人开发团队，每人平均30%时间用于编码，70%的时间用于与其他成员交流。</p>
+</li>
+<li><p>人是软件开发的决定因素。</p>
+</li>
+<li><p>“团队” 在“敏捷宣言”中的体现： 个体和交互  <strong>胜过</strong> 过程和工具</p>
+</li>
 </ul>
-<p>Fcm.xpp关键数据：</p>
+<h2 id="转变"><a href="#转变" class="headerlink" title="转变"></a>转变</h2><p><strong>管理者转变</strong></p>
 <table>
 <thead>
 <tr>
-<th>指标</th>
-<th>数据量</th>
-<th>百分比</th>
+<th>传统方式</th>
+<th>敏捷方式</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Server-FCM 送达率</td>
-<td>66000</td>
-<td>98.2%</td>
-</tr>
-<tr>
-<td>FCM-Device（设备）到达率</td>
-<td>66000</td>
-<td>60%</td>
+<td>管理者努力”控制团队”：<br>1、指定详细的工作计划，并作出详细的工作安排<br>2、指令性工作方式<br>3、监控过程<br>4、基于负责规则的管理</td>
+<td>管理者努力”激发”团队：<br>1、通过目标牵引团队自主工作<br>2、帮助团队提供资源，排除障碍<br>3、营造团队自我管理的工作氛围<br>4、作为教练辅导团队进步<br>5、基于简单原则的管理，原则简单但必须被遵守</td>
 </tr>
 </tbody>
 </table>
-<p>数据说明：</p>
-<p>1、Server-FCM 送达率：在测试过程中，由于无效Token 占1100，所以送达率是98.2%，如果是有效Token则100%。这只要在设计中 要进行流控、失败尝试。</p>
-<p>2、FCM-Device 到达率： 这个取决于所取测试样本的用户情况。</p>
+<blockquote class="blockquote-center">敏捷方式下对管理者最大的挑战是学会放松“控制”</blockquote>
+
+
+
+<p><strong>团队成员转变</strong></p>
+<table>
+<thead>
+<tr>
+<th>传统方式</th>
+<th>敏捷方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>团队成员是”听从安排的独立贡献者”：<br>1、被动等待主管下指令安排工作<br>2、独立工作为主，协作少<br>3、以文档和邮件为主要沟通方式<br>4、只关注个体任务”做完”，不关注团队目标</td>
+<td>团队成员是”全方位的积极参与者”：<br>1、共同参与计划制定和任务安排<br>2、团队协作贯穿工作始终<br>3、面对面交流是主要沟通方式<br>4、关注团队目标，共担责任<br>5、能力要求更广，主动学习适应岗位要求</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote-center">从被动到主动的心态转变是团队成员适应敏捷开发的关键</blockquote>
+
+
+
+<h1 id="适应FT的其他变革"><a href="#适应FT的其他变革" class="headerlink" title="适应FT的其他变革"></a>适应FT的其他变革</h1><h2 id="架构解耦"><a href="#架构解耦" class="headerlink" title="架构解耦"></a>架构解耦</h2><p> 敏捷团队FT化，每个FT团队按照自己的节奏，持续交付。为了达到这个要求，必须对软件架构进行解耦。各自的FT团队尽量独立交付。</p>
+<pre class="mermaid">graph TB
+    subgraph FT1
+    界面层A1-->业务层A2
+    业务层A2-->存储层A3
+    end
+    subgraph FT2
+    界面层B1-->业务层B2
+    业务层B2-->存储层B3
+    end
+    subgraph FT3
+    界面层C1-->业务层C2
+    业务层C2-->存储层C3
+    end</pre>
+
+
+
+<p><strong>架构解耦遵从原则：</strong></p>
+<ul>
+<li>分层原则</li>
+<li>分治</li>
+<li>高内聚，低耦合</li>
+</ul>
+<h2 id="版本发布"><a href="#版本发布" class="headerlink" title="版本发布"></a>版本发布</h2><p><img src="/2019/04/19/dtdft/gitflow.png" alt></p>
+<h2 id="持续交付工具链"><a href="#持续交付工具链" class="headerlink" title="持续交付工具链"></a>持续交付工具链</h2><p><img src="/2019/04/19/dtdft/devops1.png" alt></p>
+<h1 id="FT全图"><a href="#FT全图" class="headerlink" title="FT全图"></a>FT全图</h1><p><strong>FT化可能产生的问题</strong></p>
+<ul>
+<li>系统烟囱化、孤立化。</li>
+<li>重复造轮子、浪费研发。</li>
+<li>无法快速响应变化。</li>
+<li>FT化团队<strong>偏战斗</strong>团队，需要中台团队<strong>提升战斗能力输出</strong></li>
+<li>FT团队与中台团队的关系：作战单位和航母的关系</li>
+</ul>
+<pre class="mermaid">graph TB
+  subgraph FT全图
+  FT_A-->|依赖|中台
+  FT_B-->|依赖|中台
+  FT_C-->|依赖|中台 
+  end
+  subgraph 中台
+  中台 -.->|包含| 数据
+  中台 -.->|包含| 平台
+  中台 -.->|包含| 特种
+  中台 -.->|包含| 运维
+  中台 -.->|包含| 架构
+  end</pre>
+
+
+
 
       
     </div>
@@ -489,11 +576,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/设计/" rel="tag"># 设计</a>
+            <a href="/tags/团队/" rel="tag"># 团队</a>
           
-            <a href="/tags/架构/" rel="tag"># 架构</a>
+            <a href="/tags/改进/" rel="tag"># 改进</a>
           
-            <a href="/tags/软件/" rel="tag"># 软件</a>
+            <a href="/tags/方法/" rel="tag"># 方法</a>
           
         </div>
       
@@ -506,8 +593,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/10/push-wenti/" rel="next" title="PUSH 问题">
-                <i class="fa fa-chevron-left"></i> PUSH 问题
+              <a href="/2019/04/17/ywxtjk/" rel="next" title="业务监控系统设计">
+                <i class="fa fa-chevron-left"></i> 业务监控系统设计
               </a>
             
           </div>
@@ -515,10 +602,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/23/tjyzl/" rel="prev" title="统计与真理">
-                统计与真理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -650,7 +733,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统问题域"><span class="nav-text">系统问题域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计概要"><span class="nav-text">设计概要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推送渠道选择"><span class="nav-text">推送渠道选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统架构"><span class="nav-text">系统架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计关键点"><span class="nav-text">设计关键点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不重复造轮子"><span class="nav-text">不重复造轮子</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序"><span class="nav-text">序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FT是什么？"><span class="nav-text">FT是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#敏捷团队"><span class="nav-text">敏捷团队</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心角色"><span class="nav-text">核心角色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完整团队"><span class="nav-text">完整团队</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理念"><span class="nav-text">理念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转变"><span class="nav-text">转变</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#适应FT的其他变革"><span class="nav-text">适应FT的其他变革</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构解耦"><span class="nav-text">架构解耦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本发布"><span class="nav-text">版本发布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#持续交付工具链"><span class="nav-text">持续交付工具链</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FT全图"><span class="nav-text">FT全图</span></a></li></ol></div>
             
 
           </div>
