@@ -89,7 +89,10 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://zhiyu.space/2019/04/19/xtdnx/guilv.jpg">
 <meta property="og:image" content="https://zhiyu.space/2019/04/19/xtdnx/haoc.jpg">
-<meta property="og:updated_time" content="2019-04-19T13:31:26.845Z">
+<meta property="og:image" content="https://zhiyu.space/2019/04/19/xtdnx/mjwj.jpg">
+<meta property="og:image" content="https://zhiyu.space/2019/04/19/xtdnx/sjgl.jpg">
+<meta property="og:image" content="https://zhiyu.space/2019/04/19/xtdnx/jtyy.jpg">
+<meta property="og:updated_time" content="2019-04-19T14:34:39.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小团队逆袭之旅">
 <meta name="twitter:description" content="序这是一篇《持续交付2.0》小团队逆袭之旅的读后感。 小团队如何逆袭呢？该篇文章其实是讲小团队如何进行敏捷开发。 那敏捷有哪些实践呢？    团队 工作件 管理实践 技术实践     敏捷团队角色：Product OwnerScrum Master Team 产品Backlog迭代Backlog 迭代计划会议每日站立会议 用户故事Anatomy 系统解剖   完整团队实践 完成标准 可视化管理 结">
@@ -398,6 +401,37 @@
 </tr>
 </tbody>
 </table>
+<h1 id="什么是敏捷"><a href="#什么是敏捷" class="headerlink" title="什么是敏捷"></a>什么是敏捷</h1><h2 id="敏捷"><a href="#敏捷" class="headerlink" title="敏捷"></a>敏捷</h2><p>敏捷开发以用户的需求进化为核心，采用迭代、循序渐进的方法进行软件开发。在敏捷开发中，软件项目在构建初期被切分成多个子项目，各个子项目的成果都经过测试，具备可视、可集成和可运行使用的特征。换言之，就是把一个大项目分为多个相互联系，但也可独立运行的小项目，并分别完成，在此过程中软件一直处于可使用状态。</p>
+<h2 id="宣言"><a href="#宣言" class="headerlink" title="宣言"></a>宣言</h2><table>
+<thead>
+<tr>
+<th>个体和交互</th>
+<th>胜过</th>
+<th>过程和工具</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可以工作的软件</td>
+<td>胜过</td>
+<td>面面俱到的文档</td>
+</tr>
+<tr>
+<td>“客户”合作</td>
+<td>胜过</td>
+<td>合同谈判</td>
+</tr>
+<tr>
+<td>响应变化</td>
+<td>胜过</td>
+<td>遵循计划</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote-center">“虽然右项也有价值，但是我们认为左项具有更大的价值。”</blockquote>
+
+
+
 <h1 id="为什么要敏捷"><a href="#为什么要敏捷" class="headerlink" title="为什么要敏捷"></a>为什么要敏捷</h1><h2 id="历史背景"><a href="#历史背景" class="headerlink" title="历史背景"></a>历史背景</h2><pre class="mermaid">graph TB
  subgraph 历史
  软件作坊 --> 软件危机
@@ -425,6 +459,122 @@
 </ul>
 <h2 id="软件开发规律"><a href="#软件开发规律" class="headerlink" title="软件开发规律"></a>软件开发规律</h2><p><img src="/2019/04/19/xtdnx/guilv.jpg" alt></p>
 <h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img src="/2019/04/19/xtdnx/haoc.jpg" alt></p>
+<h1 id="理解敏捷"><a href="#理解敏捷" class="headerlink" title="理解敏捷"></a>理解敏捷</h1><h2 id="敏捷的误解"><a href="#敏捷的误解" class="headerlink" title="敏捷的误解"></a>敏捷的误解</h2><p><img src="/2019/04/19/xtdnx/mjwj.jpg" alt></p>
+<h2 id="敏捷统一认识"><a href="#敏捷统一认识" class="headerlink" title="敏捷统一认识"></a>敏捷统一认识</h2><blockquote class="blockquote-center">“敏捷= 理念 + 优秀实践 + 具体应用”</blockquote>
+
+
+
+<table>
+<thead>
+<tr>
+<th>理念</th>
+<th>价值、团队、适应</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优秀实践</td>
+<td>站立会议、持续集成、单一主干、系统解剖、重构<br>TDD、结对编程、FDD、迭代</td>
+</tr>
+<tr>
+<td>具体应用</td>
+<td>产品A、产品B、产品C</td>
+</tr>
+</tbody>
+</table>
+<h2 id="敏捷理念：Value"><a href="#敏捷理念：Value" class="headerlink" title="敏捷理念：Value"></a>敏捷理念：Value</h2><table>
+<thead>
+<tr>
+<th>Value</th>
+<th>动作</th>
+<th>宣言中的体现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>聚焦客户价值，消除浪费</td>
+<td>产品商业成功为目标，聚焦客户价值、<br>围绕价值流消除浪费。</td>
+<td><strong><em>可以工作的软件</em></strong> <strong>胜过</strong> <em>面面俱到的文档</em><br> <strong><em>客户合作</em></strong> <strong>胜过</strong> <em>合同谈判</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="敏捷理念：Team"><a href="#敏捷理念：Team" class="headerlink" title="敏捷理念：Team"></a>敏捷理念：Team</h2><table>
+<thead>
+<tr>
+<th>Team</th>
+<th>动作</th>
+<th>宣言中的体现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>激发团队，加强协作</td>
+<td>团队是价值的真正创造者，应加强团队协作<br>、激发团队潜能。<br>软件开发是一种团队活动，首先应做到提升沟通<br>效率降低交流成本。</td>
+<td><strong><em>个体和交互</em></strong>  <strong>胜过</strong> <em>过程和工具</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="敏捷理念：Adapting"><a href="#敏捷理念：Adapting" class="headerlink" title="敏捷理念：Adapting"></a>敏捷理念：Adapting</h2><table>
+<thead>
+<tr>
+<th>Adapting</th>
+<th>动作</th>
+<th>宣言中的体现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不断调整以适应（Adapting）变化</td>
+<td>不断地根据经验调整，最终交付达到业务目标的产品</td>
+<td><strong><em>响应变化</em></strong> <strong>胜过</strong> <em>遵循计划</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="优秀实践"><a href="#优秀实践" class="headerlink" title="优秀实践"></a>优秀实践</h2><p><img src="/2019/04/19/xtdnx/sjgl.jpg" alt></p>
+<h2 id="具体应用"><a href="#具体应用" class="headerlink" title="具体应用"></a>具体应用</h2><p><img src="/2019/04/19/xtdnx/jtyy.jpg" alt></p>
+<h1 id="敏捷实践"><a href="#敏捷实践" class="headerlink" title="敏捷实践"></a>敏捷实践</h1><table>
+<thead>
+<tr>
+<th>团队</th>
+<th>工作件</th>
+<th>管理实践</th>
+<th>技术实践</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>敏捷团队角色：<br>Product Owner<br>Scrum Master <br>Team</td>
+<td>产品Backlog<br>迭代Backlog</td>
+<td>迭代计划会议<br>每日站立会议</td>
+<td>用户故事<br>Anatomy 系统解剖</td>
+</tr>
+<tr>
+<td>完整团队实践</td>
+<td>完成标准</td>
+<td>可视化管理</td>
+<td>结对编程<br>TDD（测试驱动开发）</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>迭代验收<br>迭代回顾会议</td>
+<td>持续集成</td>
+</tr>
+</tbody>
+</table>
+<h1 id="持续保持好的软件架构"><a href="#持续保持好的软件架构" class="headerlink" title="持续保持好的软件架构"></a>持续保持好的软件架构</h1><h2 id="良好软件架构师适应变化的基石"><a href="#良好软件架构师适应变化的基石" class="headerlink" title="良好软件架构师适应变化的基石"></a>良好软件架构师适应变化的基石</h2><ul>
+<li><p>电信软件的特点是庞大、复杂、生命周期长，因此需要良好架构来保证长期的演进，避免大规模的返工。</p>
+</li>
+<li><p>优秀的架构通过可扩展性来很好地适应需求的变化，对敏捷起到支持作用，相反拙劣的架构会阻碍敏捷。</p>
+</li>
+<li><p>良好架构使系统部件处于松耦合状态，有助于制定出合适的增量开发/集成计划，使分层分级的持续集成更加容易实施。</p>
+</li>
+</ul>
+<h2 id="软件架构需要尽早验证和持续维护"><a href="#软件架构需要尽早验证和持续维护" class="headerlink" title="软件架构需要尽早验证和持续维护"></a>软件架构需要尽早验证和持续维护</h2><ul>
+<li>新产品开发通过早期迭代来实现和验证架构，有利于架构的尽早稳定。</li>
+<li>增量开发需要识别影响架构的需求，优先实现，规避架构风险。</li>
+<li>通过重构及时维护和优化架构（偿还技术债务），是架构保持生命力。</li>
+</ul>
 
       
     </div>
@@ -599,7 +749,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序"><span class="nav-text">序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要敏捷"><span class="nav-text">为什么要敏捷</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史背景"><span class="nav-text">历史背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业界浪潮"><span class="nav-text">业界浪潮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件开发规律"><span class="nav-text">软件开发规律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果"><span class="nav-text">效果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序"><span class="nav-text">序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是敏捷"><span class="nav-text">什么是敏捷</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#敏捷"><span class="nav-text">敏捷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宣言"><span class="nav-text">宣言</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要敏捷"><span class="nav-text">为什么要敏捷</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史背景"><span class="nav-text">历史背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业界浪潮"><span class="nav-text">业界浪潮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件开发规律"><span class="nav-text">软件开发规律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果"><span class="nav-text">效果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理解敏捷"><span class="nav-text">理解敏捷</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#敏捷的误解"><span class="nav-text">敏捷的误解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#敏捷统一认识"><span class="nav-text">敏捷统一认识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#敏捷理念：Value"><span class="nav-text">敏捷理念：Value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#敏捷理念：Team"><span class="nav-text">敏捷理念：Team</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#敏捷理念：Adapting"><span class="nav-text">敏捷理念：Adapting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优秀实践"><span class="nav-text">优秀实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体应用"><span class="nav-text">具体应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#敏捷实践"><span class="nav-text">敏捷实践</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#持续保持好的软件架构"><span class="nav-text">持续保持好的软件架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#良好软件架构师适应变化的基石"><span class="nav-text">良好软件架构师适应变化的基石</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件架构需要尽早验证和持续维护"><span class="nav-text">软件架构需要尽早验证和持续维护</span></a></li></ol></li></ol></div>
             
 
           </div>
