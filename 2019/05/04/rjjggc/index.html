@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="架构 - 原则,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="支持架构的活动活动过程graph TB    定义最初的范围和情景 --&amp;gt; 引入利益相关者    引入利益相关者 --&amp;gt; 捕获粗略的关注点    捕获粗略的关注点 --&amp;gt; 定义架构    捕获粗略的关注点 -.-&amp;gt; 利益相关者的关注点    利益相关者的关注点 -.-&amp;gt; 定义架构    定义架构 -.-&amp;gt;|输出| 架构描述    定义架构 -.-&amp;gt;|输出| 指引和约束    定义最初的范围和情景">
+<meta name="keywords" content="架构 - 原则">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件架构过程">
+<meta property="og:url" content="https://zhiyu.space/2019/05/04/rjjggc/index.html">
+<meta property="og:site_name" content="知鱼">
+<meta property="og:description" content="支持架构的活动活动过程graph TB    定义最初的范围和情景 --&amp;gt; 引入利益相关者    引入利益相关者 --&amp;gt; 捕获粗略的关注点    捕获粗略的关注点 --&amp;gt; 定义架构    捕获粗略的关注点 -.-&amp;gt; 利益相关者的关注点    利益相关者的关注点 -.-&amp;gt; 定义架构    定义架构 -.-&amp;gt;|输出| 架构描述    定义架构 -.-&amp;gt;|输出| 指引和约束    定义最初的范围和情景">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://zhiyu.space/2019/05/04/rjjggc/llgzd.png">
+<meta property="og:image" content="https://zhiyu.space/2019/05/04/rjjggc/gzdxqjg.png">
+<meta property="og:updated_time" content="2019-05-04T07:24:28.653Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件架构过程">
+<meta name="twitter:description" content="支持架构的活动活动过程graph TB    定义最初的范围和情景 --&amp;gt; 引入利益相关者    引入利益相关者 --&amp;gt; 捕获粗略的关注点    捕获粗略的关注点 --&amp;gt; 定义架构    捕获粗略的关注点 -.-&amp;gt; 利益相关者的关注点    利益相关者的关注点 -.-&amp;gt; 定义架构    定义架构 -.-&amp;gt;|输出| 架构描述    定义架构 -.-&amp;gt;|输出| 指引和约束    定义最初的范围和情景">
+<meta name="twitter:image" content="https://zhiyu.space/2019/05/04/rjjggc/llgzd.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://zhiyu.space/2019/05/04/rjjggc/">
+
+
+
+
+
+  <title>软件架构过程 | 知鱼</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b3f63d0eab81d5b1dcab01a9bdf2d0f9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">知鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知、止、定、静、安、虑、得</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-about"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-categories"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archives"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commonweal"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/05/04/rjjggc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="知鱼">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">软件架构过程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-04T11:06:15+08:00">
+                2019-05-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工程/架构/" itemprop="url" rel="index">
+                    <span itemprop="name">架构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/04/rjjggc/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/04/rjjggc/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="支持架构的活动"><a href="#支持架构的活动" class="headerlink" title="支持架构的活动"></a>支持架构的活动</h1><h2 id="活动过程"><a href="#活动过程" class="headerlink" title="活动过程"></a>活动过程</h2><pre class="mermaid">graph TB
+   定义最初的范围和情景 --> 引入利益相关者
+   引入利益相关者 --> 捕获粗略的关注点
+   捕获粗略的关注点 --> 定义架构
+   捕获粗略的关注点 -.-> 利益相关者的关注点
+   利益相关者的关注点 -.-> 定义架构
+   定义架构 -.->|输出| 架构描述
+   定义架构 -.->|输出| 指引和约束
+   定义最初的范围和情景 -->|输入|范围和情景
+   范围和情景 -.-> 定义架构
+   定义架构 --> C{决策}
+   C{决策} -->|需要骨架|创建骨架系统
+   创建骨架系统 -.-> 骨架系统
+   C{决策} -->|不需要骨架|终止</pre>
+
+
+
+<h2 id="活动指导原则"><a href="#活动指导原则" class="headerlink" title="活动指导原则"></a>活动指导原则</h2><p>成功的架构定义过程，它必须遵循以下的原则：</p>
+<ul>
+<li>利益相关者的关注点驱动。过程必须有效地平衡这些关注点。</li>
+<li>它必须促进架构决定、原则和针对这些利益相关者的解决方案本身之间的有效沟通。</li>
+<li>架构决定和原则必须贯穿整个生命周期，直到最终部署。</li>
+<li>它必须是结构化的，即包括一系列的一个或多个步骤和任务，并且每个步骤都有目的、输入、和输出的清晰定义。</li>
+<li>它注重实效</li>
+<li>它必须灵活，从而它可以根据实际的情况进行裁剪。</li>
+<li>它必须技术无关。</li>
+<li>它必须和软件开发过程集成（符合良好的软件工程实践以及质量管理标准）。</li>
+</ul>
+<h2 id="过程产物"><a href="#过程产物" class="headerlink" title="过程产物"></a>过程产物</h2><p>架构定义的主要目标是创建合理的架构，并对捕获的架构描述的所有元素进行生产和维护方面的管理。</p>
+<p>在架构定义的过程，同时也会产生很多架构定义的副产品：</p>
+<ul>
+<li>对需求以及过程输入项对澄清。</li>
+<li>对利益相关者期望的管理。</li>
+<li>对架构可选方案的识别和评估</li>
+<li>对架构接受标准的描述</li>
+<li>创建一系列设计输入项。</li>
+</ul>
+<h1 id="架构定义的细节"><a href="#架构定义的细节" class="headerlink" title="架构定义的细节"></a>架构定义的细节</h1><h2 id="架构定义活动"><a href="#架构定义活动" class="headerlink" title="架构定义活动"></a>架构定义活动</h2><pre class="mermaid">graph TD
+  统一输入 --> 确定场景
+  确定场景 --> 确定相关的架构样式
+  确定相关的架构样式 --> 创建候选架构
+  创建候选架构 --> 浏览架构可选项
+  浏览架构可选项 --> 和利益相关者评估架构
+  和利益相关者评估架构 -->C{评估}
+  subgraph 架构评估
+  C{评估} -->|可接受|终止
+  C{评估} -->|不可接受|重做架构
+  重做架构 -.->重新了解需求
+  重新了解需求 -.-> 重做架构
+  C{评估} -->|不可接受|重新了解需求
+  end
+  重做架构 -->浏览架构可选项</pre>
+
+
+
+<h2 id="过程完成标准"><a href="#过程完成标准" class="headerlink" title="过程完成标准"></a>过程完成标准</h2><p><strong>原则</strong></p>
+<p>   一旦完成系统面临的重大风险已经得到缓解，我们就可以认为架构定义已经完成，这可以通过不出现重大意见或者利益相关者对架构评估后的反应来判断。</p>
+<p><strong>策略</strong></p>
+<p>​    把你自己包含在架构描述的评审人员名单中，并且直到你对架构满意，认为其中没有重大问题，才能够完成最初的架构描述。</p>
+<p><strong>策略</strong></p>
+<p>   我们的目标是创建足够好、能够满足用户需求的架构描述，而不是非要创建完美的版本，那会花费更多资源才能完成，但不会为系统的利益相关者提供任何真正的好处。</p>
+<h2 id="软件开发生命周期中的架构定义"><a href="#软件开发生命周期中的架构定义" class="headerlink" title="软件开发生命周期中的架构定义"></a>软件开发生命周期中的架构定义</h2><ul>
+<li><p>瀑布式方法</p>
+</li>
+<li><p>迭代方法</p>
+<p> 迭代方法背后的动机是通过在早期交付部分功能，从而降低风险。</p>
+</li>
+<li><p>敏捷方法</p>
+<p>敏捷开发者很少考虑到架构描述，认为它是”大量预先设计”而摒弃。所以好的软件架构师可以做很多事情来确保项目的成功：</p>
+<ul>
+<li>以递增的方式交付架构，在早期定义最基本的架构结构。</li>
+<li>与团队协同工作以达成一系列清晰的设计原则，并确保大家理解这些原则。</li>
+<li>清晰地定义组件，并编写它们的责任和接口文档。</li>
+<li>使用简单的方式分享信息，比如wiki。</li>
+<li>确保每件交付品都有用户。</li>
+<li>把目标设定为创建”足够好”的文档。</li>
+<li>如果可以实践的话，和团队一起工作来创建可工作的示例或者模型，验证想法，并指导开发工作中重要或者高风险的地方。</li>
+<li>专注于交叉的关注点，并定义合适的系统级策略和解决方案，可以使用视角来辅助。</li>
+<li>确保你与每个团队都可以紧密工作，从而促进双向的看法交流。</li>
+<li>专注于对架构重要的领域，并将更细节的设计工作留给开发者。</li>
+</ul>
+</li>
+</ul>
+<h1 id="关注点、原则和决定"><a href="#关注点、原则和决定" class="headerlink" title="关注点、原则和决定"></a>关注点、原则和决定</h1><p>   架构定义对于架构师和利益相关者来说通常都是一个发现的过程。系统的范围和需求是完成架构定义最明显、最需要的内容，但是其他方面的内容对架构定义也一样重要：</p>
+<ul>
+<li><strong>业务和IT策略</strong>：为组织设定长期的业务和技术优先级和方向，并且包括现在到”目标状态”的路线图。</li>
+<li><strong>目标和驱动力</strong>：这是促进利益相关者开始项目的最根本问题。</li>
+<li><strong>标准和政策</strong>： 会制定特定的内容，即组织如何完成业务或者内部运作。</li>
+<li><strong>现实中约束</strong>： 时间、资金、团队能力、技术的成熟度和缺陷、限制等。</li>
+</ul>
+<p><strong>架构关注点：</strong></p>
+<p>   架构的关注点是利益相关者对架构的需求、目标、约束、意图和期望。</p>
+<p>有很多关注点会形成或者影响架构定义，通常它们被归纳为两类：</p>
+<ul>
+<li><strong>专注于问题的关注点</strong></li>
+<li><strong>专注于解决方案的关注点</strong></li>
+</ul>
+<p><img src="/2019/05/04/rjjggc/llgzd.png" alt></p>
+<h2 id="专注于问题的关注点"><a href="#专注于问题的关注点" class="headerlink" title="专注于问题的关注点"></a>专注于问题的关注点</h2><p>专注于问题的关注点回答的是关于系统”为什么” 和”什么”的问题：为什么需要做某件事或者需要做什么？</p>
+<p>它们包括业务策略、业务目标和驱动力、系统范围和需求以及业务标准和政策。</p>
+<h3 id="业务策略"><a href="#业务策略" class="headerlink" title="业务策略"></a>业务策略</h3><p>业务策略从整体上或者部分定义了业务方向。它会关注以下问题：</p>
+<ul>
+<li>提供什么商品和服务，解决了什么问题。</li>
+<li>谁是它的客户，客户从中获得了什么好处。</li>
+<li>有何新颖，与众不同，如何区别自己和竞争对手。</li>
+</ul>
+<h3 id="业务目标和驱动力"><a href="#业务目标和驱动力" class="headerlink" title="业务目标和驱动力"></a>业务目标和驱动力</h3><p> 业务目标和驱动力为项目设定了业务情景，并且是它存在的根本原因。</p>
+<p><strong>定义</strong></p>
+<p>​    <strong>业务目标</strong>是组织所有的一种特定目的，而业务驱动力是作用于组织的某种力量，需要它以某种特定的方式表现，以保护业务并促进它的增长。</p>
+<h3 id="系统范围和需求"><a href="#系统范围和需求" class="headerlink" title="系统范围和需求"></a>系统范围和需求</h3><p><strong>系统范围</strong>  定义了系统的主要职责，也就是它所需要提供的重要功能。</p>
+<p><strong>需求</strong>： 功能性需求 和 质量属性</p>
+<h3 id="业务标准和政策"><a href="#业务标准和政策" class="headerlink" title="业务标准和政策"></a>业务标准和政策</h3><p>  业务标准和政策会指定组织如何开展业务或者内部运作的特定内容。它们可能是由规则、已接受的最佳实践或者组织内部的习性和做事方式驱动的。</p>
+<h2 id="专注于解决方案的关注点"><a href="#专注于解决方案的关注点" class="headerlink" title="专注于解决方案的关注点"></a>专注于解决方案的关注点</h2><p>  专注于解决方案的关注点会影响和限制专注于问题的关注点中定义的问题的解决方案。专注于解决方案的关注点会建议或者指定构建系统的特定方式，或者确定和说明如何构建系统，从而对架构产生影响。</p>
+<h3 id="技术标准和政策"><a href="#技术标准和政策" class="headerlink" title="技术标准和政策"></a>技术标准和政策</h3><ul>
+<li>开放标准，比如ISO、IEEE、W3C。</li>
+<li>专属标准，由商业化公司或者其他大型组织创建和管理的。</li>
+<li>事实标准，没有得到独立的标准实体的认可，但是得到广泛的遵守。</li>
+<li>组织标准，内部组织制定和使用。</li>
+</ul>
+<h2 id="其他现实世界中的约束"><a href="#其他现实世界中的约束" class="headerlink" title="其他现实世界中的约束"></a>其他现实世界中的约束</h2><ul>
+<li>技术约束</li>
+<li>时间</li>
+<li>成本</li>
+<li>技能</li>
+<li>运维约束</li>
+<li>物理约束</li>
+<li>组织和文化约束</li>
+</ul>
+<h2 id="好的关注点"><a href="#好的关注点" class="headerlink" title="好的关注点"></a>好的关注点</h2><ul>
+<li>它是定量和可度量，或者满足SMART 原则。</li>
+<li>它是可验收，可以通过某种方式测试，从而验证是否达到标准。</li>
+<li>它是可跟踪的，可以向后根据策略和目标来验证，也可以向前跟踪到架构或者设计特性中。</li>
+</ul>
+<h2 id="架构原则"><a href="#架构原则" class="headerlink" title="架构原则"></a>架构原则</h2><p><img src="/2019/05/04/rjjggc/gzdxqjg.png" alt>   </p>
+<p><strong>架构原则</strong></p>
+<p>​    架构原则是对信念、方法或者意图的基本声明，那些内容会指导架构的定义。它可能指的是当前的环境，或者是所需要的将来状态。</p>
+<h3 id="好的架构原则"><a href="#好的架构原则" class="headerlink" title="好的架构原则"></a>好的架构原则</h3><ul>
+<li><strong>有建设性</strong>： 有助于突出问题，驱动架构决定，并确立正确的架构框架。</li>
+<li><strong>合理的</strong>：由业务驱动力、目标和其他原则所激发的。</li>
+<li><strong>表达清晰</strong></li>
+<li><strong>可测试</strong></li>
+<li><strong>有意义</strong></li>
+</ul>
+<h3 id="定义自己的原则"><a href="#定义自己的原则" class="headerlink" title="定义自己的原则"></a>定义自己的原则</h3><p>  根据组织架构定义实践，定义符合自己、更具体的原则。</p>
+<h2 id="架构决定"><a href="#架构决定" class="headerlink" title="架构决定"></a>架构决定</h2><p>在确定一种架构决定是否是架构意义，从而需要利益相关者的参与和承认的时候，需要问自己以下问题：</p>
+<ul>
+<li>它对系统的功能或者质量属性有重大的影响吗？</li>
+<li>它会解决项目面临的重大风险吗？</li>
+<li>它对构建系统的时间或者成本有意义吗？</li>
+<li>决定或者它的基本原理或者含义是否复杂或者不可预料的吗？</li>
+<li>做出这个决定付出了大量的时间和精力吗？</li>
+<li>对于决定的重要性是有争议或者涉及政治性问题吗？可能会与企业中喜欢的方法、技术或者厂商有关吗？</li>
+</ul>
+<h2 id="使用原则关联关注点和决定"><a href="#使用原则关联关注点和决定" class="headerlink" title="使用原则关联关注点和决定"></a>使用原则关联关注点和决定</h2><p>对原则最强大的一种应用就是为你的架构决定提供可跟踪性。可跟踪性来自于使用含义和原理把原则关联在一起，可以通过如下的步骤来实现：</p>
+<ul>
+<li>首先确定架构的<strong>业务驱动力和目标</strong></li>
+<li>使用业务驱动力生成一系列<strong>业务原则</strong>。</li>
+<li>使用业务原则生成一系列<strong>技术原则</strong>。</li>
+<li>使用技术原则生成一系列<strong>架构决定</strong>。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/架构-原则/" rel="tag"># 架构 - 原则</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/30/jgjbyz/" rel="next" title="架构概念和原则">
+                <i class="fa fa-chevron-left"></i> 架构概念和原则
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">知鱼</p>
+              <p class="site-description motion-element" itemprop="description">实践总结、分享他人。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#支持架构的活动"><span class="nav-text">支持架构的活动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#活动过程"><span class="nav-text">活动过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动指导原则"><span class="nav-text">活动指导原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程产物"><span class="nav-text">过程产物</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#架构定义的细节"><span class="nav-text">架构定义的细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构定义活动"><span class="nav-text">架构定义活动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程完成标准"><span class="nav-text">过程完成标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件开发生命周期中的架构定义"><span class="nav-text">软件开发生命周期中的架构定义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关注点、原则和决定"><span class="nav-text">关注点、原则和决定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#专注于问题的关注点"><span class="nav-text">专注于问题的关注点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#业务策略"><span class="nav-text">业务策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务目标和驱动力"><span class="nav-text">业务目标和驱动力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统范围和需求"><span class="nav-text">系统范围和需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务标准和政策"><span class="nav-text">业务标准和政策</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#专注于解决方案的关注点"><span class="nav-text">专注于解决方案的关注点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术标准和政策"><span class="nav-text">技术标准和政策</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他现实世界中的约束"><span class="nav-text">其他现实世界中的约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#好的关注点"><span class="nav-text">好的关注点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构原则"><span class="nav-text">架构原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#好的架构原则"><span class="nav-text">好的架构原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义自己的原则"><span class="nav-text">定义自己的原则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构决定"><span class="nav-text">架构决定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用原则关联关注点和决定"><span class="nav-text">使用原则关联关注点和决定</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">知鱼</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+
+  <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'HtJBnJeWiiXWyYPM3p9VsIsI-gzGzoHsz',
+        appKey: 'HwAmcDkeVIa5ie4jbiWOHfjQ',
+        placeholder: '赶快留言，抢第一个沙发',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
