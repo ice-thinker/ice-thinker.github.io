@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="思考,哲学,信念,勇气,细节,">
+  <meta name="keywords" content="架构 - 原则 - 视图,">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="我们都读过孟子的”得道多助、失道寡助”的文章，而且都经常在文章中引用：”天时不如地利，地利不如人和”。  那什么天时，什么是地利，什么又是人和呢？ 天时    素书云：“贤人君子，明于盛衰之道，通乎成败之数；审乎治乱之势，达乎去就之理。故潜居抱道，以待其时”。  天时，基于对现状、未来、自身能力的判断，对形势、问题的诊断，结合现有社会、经济、政治、科技，  在恰动的时候，采取行动。  这就">
-<meta name="keywords" content="思考,哲学,信念,勇气,细节">
+<meta name="description" content="前言本篇还是继续《视图方法架构描述》，对未完成的视点进行说明：  并发 开发 部署 运维 一致性  并发   定义 描述了系统的并发结构，并且把功能元素映射到并发单元上，以清晰地识别出系统能够并发执行的部分，以及这是如何协调和控制的。     关注点 任务结构、功能元素以及任务的映射关系、进程间通信、状态管理、同步和整合、支持可伸缩性、启动和关闭、任务故障，以及重入。   模型 系统级别的并发模型">
+<meta name="keywords" content="架构 - 原则 - 视图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="天时、地利、人和">
-<meta property="og:url" content="https://zhiyu.space/2019/01/06/tsdl/index.html">
+<meta property="og:title" content="视图方法架构描述（下）">
+<meta property="og:url" content="https://zhiyu.space/2019/05/08/ystkjg2/index.html">
 <meta property="og:site_name" content="知鱼">
-<meta property="og:description" content="我们都读过孟子的”得道多助、失道寡助”的文章，而且都经常在文章中引用：”天时不如地利，地利不如人和”。  那什么天时，什么是地利，什么又是人和呢？ 天时    素书云：“贤人君子，明于盛衰之道，通乎成败之数；审乎治乱之势，达乎去就之理。故潜居抱道，以待其时”。  天时，基于对现状、未来、自身能力的判断，对形势、问题的诊断，结合现有社会、经济、政治、科技，  在恰动的时候，采取行动。  这就">
+<meta property="og:description" content="前言本篇还是继续《视图方法架构描述》，对未完成的视点进行说明：  并发 开发 部署 运维 一致性  并发   定义 描述了系统的并发结构，并且把功能元素映射到并发单元上，以清晰地识别出系统能够并发执行的部分，以及这是如何协调和控制的。     关注点 任务结构、功能元素以及任务的映射关系、进程间通信、状态管理、同步和整合、支持可伸缩性、启动和关闭、任务故障，以及重入。   模型 系统级别的并发模型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-17T17:56:07.513Z">
+<meta property="og:image" content="https://zhiyu.space/2019/05/08/ystkjg2/styz.png">
+<meta property="og:updated_time" content="2019-05-08T11:14:12.952Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="天时、地利、人和">
-<meta name="twitter:description" content="我们都读过孟子的”得道多助、失道寡助”的文章，而且都经常在文章中引用：”天时不如地利，地利不如人和”。  那什么天时，什么是地利，什么又是人和呢？ 天时    素书云：“贤人君子，明于盛衰之道，通乎成败之数；审乎治乱之势，达乎去就之理。故潜居抱道，以待其时”。  天时，基于对现状、未来、自身能力的判断，对形势、问题的诊断，结合现有社会、经济、政治、科技，  在恰动的时候，采取行动。  这就">
+<meta name="twitter:title" content="视图方法架构描述（下）">
+<meta name="twitter:description" content="前言本篇还是继续《视图方法架构描述》，对未完成的视点进行说明：  并发 开发 部署 运维 一致性  并发   定义 描述了系统的并发结构，并且把功能元素映射到并发单元上，以清晰地识别出系统能够并发执行的部分，以及这是如何协调和控制的。     关注点 任务结构、功能元素以及任务的映射关系、进程间通信、状态管理、同步和整合、支持可伸缩性、启动和关闭、任务故障，以及重入。   模型 系统级别的并发模型">
+<meta name="twitter:image" content="https://zhiyu.space/2019/05/08/ystkjg2/styz.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://zhiyu.space/2019/01/06/tsdl/">
+  <link rel="canonical" href="https://zhiyu.space/2019/05/08/ystkjg2/">
 
 
 
 
 
-  <title>天时、地利、人和 | 知鱼</title>
+  <title>视图方法架构描述（下） | 知鱼</title>
   
 
 
@@ -283,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/01/06/tsdl/">
+    <link itemprop="mainEntityOfPage" href="https://zhiyu.space/2019/05/08/ystkjg2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="知鱼">
@@ -300,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">天时、地利、人和</h1>
+          <h1 class="post-title" itemprop="name headline">视图方法架构描述（下）</h1>
         
 
         <div class="post-meta">
@@ -312,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-06T18:24:41+08:00">
-                2019-01-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-08T17:22:45+08:00">
+                2019-05-08
               </time>
             
 
@@ -335,8 +337,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/知/" itemprop="url" rel="index">
-                    <span itemprop="name">知</span>
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
                   </a>
                 </span>
 
@@ -346,8 +348,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/知/智慧/" itemprop="url" rel="index">
-                    <span itemprop="name">智慧</span>
+                  <a href="/categories/工程/架构/" itemprop="url" rel="index">
+                    <span itemprop="name">架构</span>
                   </a>
                 </span>
 
@@ -364,8 +366,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/06/tsdl/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/06/tsdl/" itemprop="commentCount"></span>
+                <a href="/2019/05/08/ystkjg2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/08/ystkjg2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -393,21 +395,201 @@
       
 
       
-        <blockquote>
-</blockquote>
-<p>  我们都读过孟子的”得道多助、失道寡助”的文章，而且都经常在文章中引用：”天时不如地利，地利不如人和”。<br>  那什么天时，什么是地利，什么又是人和呢？</p>
-<h2 id="天时"><a href="#天时" class="headerlink" title="天时"></a>天时</h2><blockquote>
-</blockquote>
-<p>  素书云：“贤人君子，明于盛衰之道，通乎成败之数；审乎治乱之势，达乎去就之理。故潜居抱道，以待其时”。<br>  天时，基于对现状、未来、自身能力的判断，对形势、问题的诊断，结合现有社会、经济、政治、科技，<br>  在恰动的时候，采取行动。<br>  这就是天时，天时是基于自己的信念、勇气，达到对时机的掌控、利用。坚信此时就是行动的天时。</p>
-<h2 id="地利"><a href="#地利" class="headerlink" title="地利"></a>地利</h2><blockquote>
-</blockquote>
-<p>  广义的地理：维持生存、发展的现金流、物资。 地利，是对现在、未来的一种战略把控。<br>  远的来说，秦赵的长平之战，双方经历过三年对峙的拉锯战。赵国由于连年战争，国内粮草消耗严重，被迫弃用偏于防守的廉颇，起用赵括，最终战败。<br>  近的来说，在抗日战争中，与日方的持久战中，八路军扛起枪子就是战斗单位，放下枪就是生产单位，开垦南泥湾，适当缓解了生存问题。<br>  地利，在当今的社会，不管是公司、还是家庭、个人， 就是要现在、未来做适当的投入。<br>  既要解决当前的问题，更要考虑未来潜在的风险、问题。<br>  长平之战，在当今的借鉴意义：如果能够处理好自身的现金流、物资，把竞争对手耗死也就是胜利。</p>
-<h2 id="人和"><a href="#人和" class="headerlink" title="人和"></a>人和</h2><blockquote>
-</blockquote>
-<p>  人和不是天天歌舞升天，或者全民刷抖音，然后空洞地笑笑。人和是对一个团体的成员、领导者、文化的体现。<br>  成员： 具有积极、奋斗不息的精神，具有追求卓越、不甘平庸的性格，愿意克服困难，追求进步的行为。<br>        并不是工作时候无精打采，刷抖音的时候兴高采烈。<br>  领导： 明道、通数、审势、达理，能够有效地规划未来，指导现状。领导，不能太急躁，把私下的成员当作炮灰。<br>        因为只有不把成员当作炮灰，才能严于律己，作出适当的规划。不把成员当作炮灰，才能关注成员的未来，适当地牵引成员的成长，提升团体的能力，更好地人和。<br>  文化： 没有纪律的队伍不是好队伍，是涣散的队伍。 没有信念的队伍，是平庸的队伍。</p>
-<h2 id="天时、地利、人和"><a href="#天时、地利、人和" class="headerlink" title="天时、地利、人和"></a>天时、地利、人和</h2><blockquote>
-</blockquote>
-<p>  没有所谓的天时，天时是因为自己的信念、勇气，判断此时是采取行动的时候。天时，是判断何时才是时候。<br>  地利，维持团体继续存在、发展的因素，直至行动的时候。在当今的社会，地利是相对有限的，在某种行动的时候还遥遥无期的形势下，必要的时候必须走点战略弯路， 适当改变行动的预期、目标，以致能够胜利，带来更多的“地利”。<br>  人和，根据当前的情况，适当地培养一定能力的团队。 不必追求太牛逼的团队，只追求能够达成目标的团队就足够。<br>  人和，随着行动的进展，会不断地进化，我们也会逐渐地了解到我们需要什么样的队伍。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本篇还是继续《视图方法架构描述》，对未完成的视点进行说明：</p>
+<ul>
+<li>并发</li>
+<li>开发</li>
+<li>部署</li>
+<li>运维</li>
+<li>一致性</li>
+</ul>
+<h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><table>
+<thead>
+<tr>
+<th>定义</th>
+<th>描述了系统的并发结构，并且把功能元素映射到并发单元上，以清晰地识别出<br>系统能够并发执行的部分，以及这是如何协调和控制的。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关注点</td>
+<td>任务结构、功能元素以及任务的映射关系、进程间通信、状态管理、同步和整合、<br>支持可伸缩性、启动和关闭、任务故障，以及重入。</td>
+</tr>
+<tr>
+<td>模型</td>
+<td>系统级别的并发模型和状态模型</td>
+</tr>
+<tr>
+<td>问题和缺陷</td>
+<td>对错误的并发建模，错误地对并发建模，过度复杂、资源争夺、死锁和竞争条件</td>
+</tr>
+<tr>
+<td>利益相关者</td>
+<td>沟通者、开发者、测试人员和某些管理员</td>
+</tr>
+<tr>
+<td>适用性</td>
+<td>所有带有大量并发执行线程的系统</td>
+</tr>
+</tbody>
+</table>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>并发视图会使用并发模型把功能元素映射到运行时的执行实体上。并发模型通常会包含以下项目：</p>
+<ul>
+<li><p>进程：操作系统进程</p>
+</li>
+<li><p>进程组</p>
+</li>
+<li><p>线程</p>
+</li>
+<li><p>进程间通信：过程调用机制（消息传递）、执行协调机制（信号量、文件、管道、互斥）、数据共享机制、消息传递机制（RPC、消息订阅）</p>
+</li>
+</ul>
+<p><strong>标记法：</strong></p>
+<ul>
+<li>UML</li>
+</ul>
+<h2 id="活动"><a href="#活动" class="headerlink" title="活动"></a>活动</h2><ul>
+<li>建立元素与任务的映射关系</li>
+<li>决定线程设计</li>
+<li>定义资源共享的机制</li>
+<li>定义要使用的IPC机制</li>
+<li>为线程和进程分配优先级</li>
+<li>分析死锁</li>
+<li>分析竞争</li>
+</ul>
+<h2 id="状态模型"><a href="#状态模型" class="headerlink" title="状态模型"></a>状态模型</h2><ul>
+<li>状态</li>
+<li>转换</li>
+<li>事件</li>
+<li>动作</li>
+</ul>
+<h1 id="开发视点"><a href="#开发视点" class="headerlink" title="开发视点"></a>开发视点</h1><table>
+<thead>
+<tr>
+<th>定义</th>
+<th>描述支持软件开发过程中的架构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关注点</td>
+<td>模块组织、通用处理、设计的标准化、测试的标准化、测试辅助<br>以及代码行组织</td>
+</tr>
+<tr>
+<td>模型</td>
+<td>模块结构模型、通用设计模型、代码行模型</td>
+</tr>
+<tr>
+<td>问题和缺陷</td>
+<td>过多细节、过载的架构描述、不平均的重点、缺少开发者关注、精度不足<br>以及特定环境的问题</td>
+</tr>
+<tr>
+<td>利益相关者</td>
+<td>生产工程师、软件开发人员和测试人员</td>
+</tr>
+<tr>
+<td>适用性</td>
+<td>所有在创建过程中涉及重要软件开发的系统</td>
+</tr>
+</tbody>
+</table>
+<p>​    </p>
+<h2 id="关注点"><a href="#关注点" class="headerlink" title="关注点"></a>关注点</h2><ul>
+<li>模块组织：模块是指由源文件组织成大型的单元。在逻辑结构中，组织代码有助于管理它们之间的依赖关系。</li>
+<li>通用处理：把通用处理识别并隔离到分离的代码模块中。</li>
+<li>设计的标准化：通过设计模式或者现成的软件元素来实现设计的标准化。</li>
+<li>测试的标准化：测试方法、技术和规范的标准化来确保测试的方法一致，并加速测试过程。关键问题包括测试工具、基础架构、标准测试数据、标准测试方法和测试自动化。</li>
+<li>测试辅助：是一种实践，它会插入特定的代码，从而记录测试步骤、系统状态、资源使用等信息的日志。</li>
+<li>代码行组织</li>
+</ul>
+<h2 id="模型-1"><a href="#模型-1" class="headerlink" title="模型"></a>模型</h2><ul>
+<li>模块结构模型</li>
+</ul>
+<p>​      活动：</p>
+<p>​      1、识别模块并对其分类</p>
+<p>​     2、识别模块的依赖关系</p>
+<p>​     3、识别分层规则</p>
+<ul>
+<li>通用设计模型</li>
+</ul>
+<p>​      为了使元素实现的通用性最大化，需要定义一系列设计约束，当设计约束的软件元素的时候就应该应用它们。</p>
+<p>​     这样的设计约束基于<strong>两种基本原因</strong>而很有<strong>价值</strong>：</p>
+<p>​     1、在解决特定类型问题的时候。</p>
+<p>​     2、系统元素之间的通用性有助于提升系统整体上的技术统一性，使得它易于理解、操作和维护。</p>
+<p>​    <strong>通用性设计模型</strong> 会拥有以下三个重要部分：</p>
+<p>​    1、对跨元素所需要通用处理的定义。</p>
+<p>​    2、对设计系统元素时所要使用的标准设计方法的定义。</p>
+<p>​    3、对应该使用何种通用软件，以及应该如何使用的定义。</p>
+<p>  <strong>例子</strong></p>
+<p>   1、记录消息日志</p>
+<p>   2、通用的错误状态流程（支付异常状态流程）</p>
+<p>   3、标准化设计（国际化、区分地域资源）</p>
+<p>   4、标准化组件：消息日志、ORM组件、缓存组件、消息队列组件</p>
+<h1 id="部署视点"><a href="#部署视点" class="headerlink" title="部署视点"></a>部署视点</h1><table>
+<thead>
+<tr>
+<th>定义</th>
+<th>描述系统将要部署的环境，以及系统与其中元素的依赖关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关注点</td>
+<td>所需的运行时平台、所需硬件或部署规格和品质、第三方软件需要、技术兼容性、<br>网络需求、所需网络能力、物理约束。</td>
+</tr>
+<tr>
+<td>模型</td>
+<td>运行时平台模型、网络模型、技术依赖关系模型、模型间关系</td>
+</tr>
+<tr>
+<td>问题和缺陷</td>
+<td>不清晰或不精确的依赖关系、未经过验证的技术、不合适或者遗漏的服务级别协议<br>缺少专家技术知识、未能及时考虑部署环境、忽略站点之间的复杂度、提供的净空<br>不合适，以及没有指定灾难恢复环境</td>
+</tr>
+<tr>
+<td>利益相关者</td>
+<td>系统管理员、开发人员、测试人员、沟通者和评估者</td>
+</tr>
+<tr>
+<td>适用性</td>
+<td>部署环境复杂或不常见的系统</td>
+</tr>
+</tbody>
+</table>
+<h1 id="运维视点"><a href="#运维视点" class="headerlink" title="运维视点"></a>运维视点</h1><table>
+<thead>
+<tr>
+<th>定义</th>
+<th>描述当系统运行在生产环境中时，如何对其进行运维、管理和支持</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关注点</td>
+<td>安装和升级、功能迁移、数据迁移、操作监控和控制、警告、配置管理、性能监控<br>支持、备份和还原、在第三方环境中的运维。</td>
+</tr>
+<tr>
+<td>模型</td>
+<td>安装模型、迁移模型、配置管理模型、管理模型、支持模型。</td>
+</tr>
+<tr>
+<td>问题和缺陷</td>
+<td>缺少运维人员的参与、缺少撤消计划、缺少迁移计划、不充分的迁移窗口<br>缺少管理工具、生产环境约束、缺少与生产环境的整合、备份模型不充分、<br>不合适的警告。</td>
+</tr>
+<tr>
+<td>利益相关者</td>
+<td>系统管理员、生产工程师、开发人员、测试人员、沟通者、评估者</td>
+</tr>
+<tr>
+<td>适用性</td>
+<td>所有部署到复杂或者重要运维环境中的系统</td>
+</tr>
+</tbody>
+</table>
+<h2 id="关注点-1"><a href="#关注点-1" class="headerlink" title="关注点"></a>关注点</h2><ul>
+<li>功能迁移： 大爆炸、并行运行、阶段迁移。</li>
+</ul>
+<h1 id="视图一致性"><a href="#视图一致性" class="headerlink" title="视图一致性"></a>视图一致性</h1><p>如下是视图间的依赖关系：</p>
+<p><img src="/2019/05/08/ystkjg2/styz.png" alt></p>
 
       
     </div>
@@ -425,15 +607,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/思考/" rel="tag"># 思考</a>
-          
-            <a href="/tags/哲学/" rel="tag"># 哲学</a>
-          
-            <a href="/tags/信念/" rel="tag"># 信念</a>
-          
-            <a href="/tags/勇气/" rel="tag"># 勇气</a>
-          
-            <a href="/tags/细节/" rel="tag"># 细节</a>
+            <a href="/tags/架构-原则-视图/" rel="tag"># 架构 - 原则 - 视图</a>
           
         </div>
       
@@ -446,8 +620,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/06/ganwu/" rel="next" title="感悟">
-                <i class="fa fa-chevron-left"></i> 感悟
+              <a href="/2019/05/08/yjsmzqgl/" rel="next" title="硬件生命周期管理">
+                <i class="fa fa-chevron-left"></i> 硬件生命周期管理
               </a>
             
           </div>
@@ -455,10 +629,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/08/rzf2019xnjh/" rel="prev" title="任正非新年致全体员工信">
-                任正非新年致全体员工信 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -593,7 +763,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#天时"><span class="nav-text">天时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地利"><span class="nav-text">地利</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人和"><span class="nav-text">人和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#天时、地利、人和"><span class="nav-text">天时、地利、人和</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#并发"><span class="nav-text">并发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-text">模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#活动"><span class="nav-text">活动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态模型"><span class="nav-text">状态模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发视点"><span class="nav-text">开发视点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关注点"><span class="nav-text">关注点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型-1"><span class="nav-text">模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署视点"><span class="nav-text">部署视点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运维视点"><span class="nav-text">运维视点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关注点-1"><span class="nav-text">关注点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图一致性"><span class="nav-text">视图一致性</span></a></li></ol></div>
             
 
           </div>
