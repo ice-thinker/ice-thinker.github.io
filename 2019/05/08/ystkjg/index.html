@@ -82,16 +82,18 @@
 <meta name="description" content="前言本篇还是继续软件架构，对前面文章提到的视图（视点进行说明），包含：  视点类型简介 情境 功能 信息 并发 开发 部署 运维 一致性  核心视点关系 情境视图   定义 描述系统与其环境（与之交互的人、系统和外部实体）之间的关系、依赖和交互     关注点 系统范围 和职责、外部实体和服务以及所用数据的标识、外部实体的本质和特征、外部接口标识与责任、外部接口的本质和特征、其他外部依赖关系、系统">
 <meta name="keywords" content="架构 - 原则 - 视图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="视图方法架构描述">
+<meta property="og:title" content="视图方法架构描述（上）">
 <meta property="og:url" content="https://zhiyu.space/2019/05/08/ystkjg/index.html">
 <meta property="og:site_name" content="知鱼">
 <meta property="og:description" content="前言本篇还是继续软件架构，对前面文章提到的视图（视点进行说明），包含：  视点类型简介 情境 功能 信息 并发 开发 部署 运维 一致性  核心视点关系 情境视图   定义 描述系统与其环境（与之交互的人、系统和外部实体）之间的关系、依赖和交互     关注点 系统范围 和职责、外部实体和服务以及所用数据的标识、外部实体的本质和特征、外部接口标识与责任、外部接口的本质和特征、其他外部依赖关系、系统">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://zhiyu.space/2019/05/08/ystkjg/stgx.png">
 <meta property="og:image" content="https://zhiyu.space/2019/05/08/ystkjg/jydsxtjg.png">
-<meta property="og:updated_time" content="2019-05-08T02:51:20.748Z">
+<meta property="og:image" content="https://zhiyu.space/2019/05/08/ystkjg/gzst.png">
+<meta property="og:image" content="https://zhiyu.space/2019/05/08/ystkjg/sys.png">
+<meta property="og:updated_time" content="2019-05-08T09:19:59.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="视图方法架构描述">
+<meta name="twitter:title" content="视图方法架构描述（上）">
 <meta name="twitter:description" content="前言本篇还是继续软件架构，对前面文章提到的视图（视点进行说明），包含：  视点类型简介 情境 功能 信息 并发 开发 部署 运维 一致性  核心视点关系 情境视图   定义 描述系统与其环境（与之交互的人、系统和外部实体）之间的关系、依赖和交互     关注点 系统范围 和职责、外部实体和服务以及所用数据的标识、外部实体的本质和特征、外部接口标识与责任、外部接口的本质和特征、其他外部依赖关系、系统">
 <meta name="twitter:image" content="https://zhiyu.space/2019/05/08/ystkjg/stgx.png">
 
@@ -129,7 +131,7 @@
 
 
 
-  <title>视图方法架构描述 | 知鱼</title>
+  <title>视图方法架构描述（上） | 知鱼</title>
   
 
 
@@ -303,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">视图方法架构描述</h1>
+          <h1 class="post-title" itemprop="name headline">视图方法架构描述（上）</h1>
         
 
         <div class="post-meta">
@@ -472,7 +474,165 @@
 <li><p>总体完成度和一致性</p>
 </li>
 </ul>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p> <strong>情境模型</strong>表示的是系统在其环境中的整体情况，并且一般会包含以下类型的内容：</p>
+<ul>
+<li>系统本身（黑盒的形式）</li>
+<li>外部实体</li>
+<li>系统和外部实体之间的<strong>接口</strong>。</li>
+</ul>
+<p><strong>标记法</strong>：</p>
+<ul>
+<li>UML </li>
+<li><p>框线图</p>
+<p><strong>如何表示</strong>情境模型：</p>
+</li>
+<li><p>UML 情境图</p>
+</li>
+<li>时序图</li>
+</ul>
+<h1 id="功能视点"><a href="#功能视点" class="headerlink" title="功能视点"></a>功能视点</h1><table>
+<thead>
+<tr>
+<th>定义</th>
+<th>描述系统的运行时功能元素，以及它们的职责、<br>接口和主要交互关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关注点</td>
+<td>功能能力、外部接口、内部结构以及功能设计哲学</td>
+</tr>
+<tr>
+<td>模型</td>
+<td>功能结构模型</td>
+</tr>
+<tr>
+<td>问题和缺陷</td>
+<td>设计很差的接口，难于理解的职责、基础架构模型作为功能性元素、<br>过载的视图、没有元素定义的图、难于调节多名利益相关者的需求、错误的详细程度<br>“神元素”、过多依赖关系</td>
+</tr>
+<tr>
+<td>利益相关者</td>
+<td>所有利益相关者</td>
+</tr>
+<tr>
+<td>适用性</td>
+<td>所有系统</td>
+</tr>
+</tbody>
+</table>
+<h2 id="关注点-1"><a href="#关注点-1" class="headerlink" title="关注点"></a>关注点</h2><p><strong>功能能力：</strong> 功能能力定义了系统所需要做的工作，并且显式或者隐式地定义它不需要做的工作。</p>
+<p><strong>外部接口：</strong> 系统和其他系统之间的数据、事件和控制流。</p>
+<p><strong>内部结构</strong>：系统的内部结构式通过它的内部元素定义的，包括它们能做什么（匹配需求），以及彼此交互。</p>
+<p>这种内部组织形式会对系统的质量属性（可用性、弹性以及安全）产生重大的影响。</p>
+<h2 id="功能设计哲学"><a href="#功能设计哲学" class="headerlink" title="功能设计哲学"></a>功能设计哲学</h2><table>
+<thead>
+<tr>
+<th>设计特征</th>
+<th>描述</th>
+<th>重要性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>连贯性</td>
+<td>架构是否拥有逻辑结构，其中的元素可以<br>相互协作形成整体吗？</td>
+<td>如果架构看起来不一致，那么可能<br>表示元素的分解是错误的，<br>这可能使得利益相关者难以理解</td>
+</tr>
+<tr>
+<td>内聚</td>
+<td>元素提供的功能相互关联的程度如何？</td>
+<td>在高内聚的系统中，相关的功能<br>汇聚成一组，从而得到更简单、<br>不易出错的设计</td>
+</tr>
+<tr>
+<td>一致性</td>
+<td>应用的机制和设计决定是否在架构中<br>始终一致？</td>
+<td>一致的设计和实现的系统要比存在<br>大量不一致情况的系统更易于构建<br>、测试、运维和改进</td>
+</tr>
+<tr>
+<td>耦合</td>
+<td>元素之间的关系有多强，一个模块中<br>的变更会对其他模块造成多大的影响？</td>
+<td>松耦合的系统通常更易于构建、<br>支持和改善，但是与整体方法<br>相比，效率要差一些。</td>
+</tr>
+<tr>
+<td>可扩展性</td>
+<td>架构是否易于扩展，从而让系统在将来<br>可以执行新的功能。</td>
+<td>可扩展性通常是其他属性<br>（连贯性、低耦合、简单、<br>一致性）的结果，但是设计时<br>要注意考虑</td>
+</tr>
+<tr>
+<td>灵活性</td>
+<td>为了支持对已有功能的修改，系统是否<br>可修改？</td>
+<td>灵活性通常难于构建，一般效率<br>会比不灵活的系统低。</td>
+</tr>
+<tr>
+<td>通用性</td>
+<td>架构中的机制和决定是否尽可能通用？</td>
+<td>如果架构方案是通用的，那么<br>架构可以针对扩展和变更进行<br>修改。然而这需要平衡。</td>
+</tr>
+<tr>
+<td>相互依赖性</td>
+<td>涉及元素之间交互的处理步骤和<br>在元素内部执行的各占多少比例？</td>
+<td>特定类型元素之间的通信会<br>更昂贵（处理时间、消耗时间）<br>，并且和在功能元素内部执行<br>相比更不可靠</td>
+</tr>
+<tr>
+<td>关注点分离</td>
+<td>每个内部元素负责系统操作特定<br>部分的程度如何？一般的处理只在<br>一个地方执行的程度如何？</td>
+<td>高度分离会让系统更加易于构建<br>支持和改善，但与整体的方法相<br>比会影响性能和可伸缩性。</td>
+</tr>
+<tr>
+<td>简单性</td>
+<td>系统中使用的设计方案是合适的方案中<br>最简单的一个吗？</td>
+<td>复杂性、简单性、系统需求之间<br>要进一步权衡。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="模型-1"><a href="#模型-1" class="headerlink" title="模型"></a>模型</h2><ul>
+<li>功能元素：功能元素是良好定义的系统运行时（相对设计时而言）部分，它拥有特定的职责，并且暴露出良好定义的接口，让它和其他元素连接。</li>
+<li>接口：接口是良好定义的一种机制，通过它其他元素可以访问该元素的功能。接口是通过输入、输出和协议来定义的。</li>
+<li>连接器：连接器是架构的一部分，它会把元素连接在一起，让他们可以彼此交互。</li>
+<li>外部实体</li>
+</ul>
+<p><strong>标记法</strong></p>
+<ul>
+<li>UML组件图</li>
+<li>其他正式的设计标记法</li>
+<li>架构描述语言</li>
+<li>框线图</li>
+<li>草图</li>
+</ul>
+<h2 id="过载的视图"><a href="#过载的视图" class="headerlink" title="过载的视图"></a>过载的视图</h2><p><img src="/2019/05/08/ystkjg/gzst.png" alt></p>
+<h2 id="“神元素”"><a href="#“神元素”" class="headerlink" title="“神元素”"></a>“神元素”</h2><p>软件设计人员会经常看到这样一种面向对象的设计，它在中央有一个庞大的对象，周围有很多小对象。这种情况通常会导致出现”神对象”问题。这种情况，可能的问题是职责和边界没有划分好。</p>
+<p><img src="/2019/05/08/ystkjg/sys.png" alt></p>
+<h1 id="信息视点"><a href="#信息视点" class="headerlink" title="信息视点"></a>信息视点</h1><table>
+<thead>
+<tr>
+<th>定义</th>
+<th>描述系统存储、操作、管理和分发信息的方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关注点</td>
+<td>信息结构和内容：信息目的和用途；信息修改所有权；企业拥有的信息；<br>标识符和映射关系；信息语义的易变性；信息存储模型；信息流；<br>信息一致性；信息质量；及时性、延迟和寿命；归档和保留信息</td>
+</tr>
+<tr>
+<td>模型</td>
+<td>静态信息结构模型、信息流模型、信息生命周期模型、信息所有权模型、<br>信息品质分析、元数据模型、容量模型。</td>
+</tr>
+<tr>
+<td>问题和缺陷</td>
+<td>信息展现不兼容，不可避免的多个更新器，键值匹配缺陷，接口复杂，<br>过载的中心数据库，不一致的分布式数据库，信息质量差，信息延迟大，容量不足</td>
+</tr>
+<tr>
+<td>利益相关者</td>
+<td>主要是：用户、开发者、测试人员和维护人员</td>
+</tr>
+<tr>
+<td>适用性</td>
+<td>所有系统，除了那些认为信息管理不重要的系统。</td>
+</tr>
+</tbody>
+</table>
+
       
     </div>
     
@@ -649,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心视点关系"><span class="nav-text">核心视点关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#情境视图"><span class="nav-text">情境视图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关注点"><span class="nav-text">关注点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-text">模型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心视点关系"><span class="nav-text">核心视点关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#情境视图"><span class="nav-text">情境视图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关注点"><span class="nav-text">关注点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-text">模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#功能视点"><span class="nav-text">功能视点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关注点-1"><span class="nav-text">关注点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能设计哲学"><span class="nav-text">功能设计哲学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型-1"><span class="nav-text">模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过载的视图"><span class="nav-text">过载的视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“神元素”"><span class="nav-text">“神元素”</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信息视点"><span class="nav-text">信息视点</span></a></li></ol></div>
             
 
           </div>
