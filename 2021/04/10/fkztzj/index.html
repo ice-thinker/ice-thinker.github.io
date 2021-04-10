@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="工程,思考,技术,">
+  <meta name="keywords" content="架构,">
 
 
 
@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="阿里巴巴“大中台、小前台”读后感为什么要 “大中台”？“中台”化，提炼各个业务条线的共性需求，然后将这些共性需求，形成能力、形成平台。 对业务进行中台化，形成会员系统、商品系统、订单系统、营销系统、支付系统、账户系统，其他基础系统。 对硬件进行中台化，硬件使用，形成IAAS，提高利用率、便于采购、易于扩容，降低硬件的维护成本。硬件生产，那就是硬件归一化，比如之前在华为看到的存储硬件归一化，华为存储">
-<meta name="keywords" content="工程,思考,技术">
+<meta name="description" content="架构感悟​        一个大型系统具有业务架构和技术架构，两种不同类型的架构体现该系统不同方面的能力。 业务架构反应了一个系统业务能力的边界，以及架构业务效率（对业务的响应效率），技术架构则反应对业务支撑的品质能力和实施效率。业务架构解决了能不能支撑业务，落地商业战略，解决能和速度的问题；技术架构解决如何更好地支撑业务，解决做得好不好，靠不靠谱的问题。架构（业务、技术）解决了不同诉求方的利益问">
+<meta name="keywords" content="架构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿里巴巴“大中台、小前台”读后感">
-<meta property="og:url" content="https://tech-insq.github.io/2019/02/10/alibbdztxqt/index.html">
+<meta property="og:title" content="风控中台建设总结">
+<meta property="og:url" content="https://tech-insq.github.io/2021/04/10/fkztzj/index.html">
 <meta property="og:site_name" content="技术.洞察">
-<meta property="og:description" content="阿里巴巴“大中台、小前台”读后感为什么要 “大中台”？“中台”化，提炼各个业务条线的共性需求，然后将这些共性需求，形成能力、形成平台。 对业务进行中台化，形成会员系统、商品系统、订单系统、营销系统、支付系统、账户系统，其他基础系统。 对硬件进行中台化，硬件使用，形成IAAS，提高利用率、便于采购、易于扩容，降低硬件的维护成本。硬件生产，那就是硬件归一化，比如之前在华为看到的存储硬件归一化，华为存储">
+<meta property="og:description" content="架构感悟​        一个大型系统具有业务架构和技术架构，两种不同类型的架构体现该系统不同方面的能力。 业务架构反应了一个系统业务能力的边界，以及架构业务效率（对业务的响应效率），技术架构则反应对业务支撑的品质能力和实施效率。业务架构解决了能不能支撑业务，落地商业战略，解决能和速度的问题；技术架构解决如何更好地支撑业务，解决做得好不好，靠不靠谱的问题。架构（业务、技术）解决了不同诉求方的利益问">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-17T17:56:07.515Z">
+<meta property="og:image" content="https://tech-insq.github.io/2021/04/10/fkztzj/品质优先.jpg">
+<meta property="og:image" content="https://tech-insq.github.io/2021/04/10/fkztzj/ywjg.jpg">
+<meta property="og:updated_time" content="2021-04-10T14:09:58.770Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿里巴巴“大中台、小前台”读后感">
-<meta name="twitter:description" content="阿里巴巴“大中台、小前台”读后感为什么要 “大中台”？“中台”化，提炼各个业务条线的共性需求，然后将这些共性需求，形成能力、形成平台。 对业务进行中台化，形成会员系统、商品系统、订单系统、营销系统、支付系统、账户系统，其他基础系统。 对硬件进行中台化，硬件使用，形成IAAS，提高利用率、便于采购、易于扩容，降低硬件的维护成本。硬件生产，那就是硬件归一化，比如之前在华为看到的存储硬件归一化，华为存储">
+<meta name="twitter:title" content="风控中台建设总结">
+<meta name="twitter:description" content="架构感悟​        一个大型系统具有业务架构和技术架构，两种不同类型的架构体现该系统不同方面的能力。 业务架构反应了一个系统业务能力的边界，以及架构业务效率（对业务的响应效率），技术架构则反应对业务支撑的品质能力和实施效率。业务架构解决了能不能支撑业务，落地商业战略，解决能和速度的问题；技术架构解决如何更好地支撑业务，解决做得好不好，靠不靠谱的问题。架构（业务、技术）解决了不同诉求方的利益问">
+<meta name="twitter:image" content="https://tech-insq.github.io/2021/04/10/fkztzj/品质优先.jpg">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://tech-insq.github.io/2019/02/10/alibbdztxqt/">
+  <link rel="canonical" href="https://tech-insq.github.io/2021/04/10/fkztzj/">
 
 
 
 
 
-  <title>阿里巴巴“大中台、小前台”读后感 | 技术.洞察</title>
+  <title>风控中台建设总结 | 技术.洞察</title>
   
 
 
@@ -283,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tech-insq.github.io/2019/02/10/alibbdztxqt/">
+    <link itemprop="mainEntityOfPage" href="https://tech-insq.github.io/2021/04/10/fkztzj/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Amos">
@@ -300,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">阿里巴巴“大中台、小前台”读后感</h1>
+          <h1 class="post-title" itemprop="name headline">风控中台建设总结</h1>
         
 
         <div class="post-meta">
@@ -312,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-10T22:54:03+08:00">
-                2019-02-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-10T20:11:00+08:00">
+                2021-04-10
               </time>
             
 
@@ -335,8 +338,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/管理/" itemprop="url" rel="index">
-                    <span itemprop="name">管理</span>
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工程/架构/" itemprop="url" rel="index">
+                    <span itemprop="name">架构</span>
                   </a>
                 </span>
 
@@ -353,8 +367,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/10/alibbdztxqt/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/10/alibbdztxqt/" itemprop="commentCount"></span>
+                <a href="/2021/04/10/fkztzj/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/04/10/fkztzj/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -382,42 +396,81 @@
       
 
       
-        <h1 id="阿里巴巴“大中台、小前台”读后感"><a href="#阿里巴巴“大中台、小前台”读后感" class="headerlink" title="阿里巴巴“大中台、小前台”读后感"></a>阿里巴巴“大中台、小前台”读后感</h1><h2 id="为什么要-“大中台”？"><a href="#为什么要-“大中台”？" class="headerlink" title="为什么要 “大中台”？"></a>为什么要 “大中台”？</h2><p>“中台”化，提炼各个业务条线的共性需求，然后将这些共性需求，形成能力、形成平台。</p>
-<p>对业务进行中台化，形成会员系统、商品系统、订单系统、营销系统、支付系统、账户系统，其他基础系统。</p>
-<p>对硬件进行中台化，硬件使用，形成IAAS，提高利用率、便于采购、易于扩容，降低硬件的维护成本。硬件生产，那就是硬件归一化，比如之前在华为看到的存储硬件归一化，华为存储采用盘古硬件平台，在盘古平台搭上不同的规格的硬盘、CPU、控制器，就形成了中、低、高端的存储产品（这里也包含相应的软件增值业务），对于归一化的硬件平台也降低了客户的学习成本、维护成本、易于客户采购。</p>
-<p>“中台”化的好处：</p>
-<ul>
-<li>提高利用率，减少重复造轮子、重复探索的成本。</li>
-<li>降低维护成本。</li>
-<li>敏捷响应新形势、新挑战。</li>
-<li>践行了以客户为中心。</li>
-</ul>
-<h2 id="“中台”化的关键"><a href="#“中台”化的关键" class="headerlink" title="“中台”化的关键"></a>“中台”化的关键</h2><ul>
-<li>归一化（标准化）：同类问题的处理方案，归一化。</li>
-<li>流程化：采用可复制、可推广、可回溯的流程步骤去解决问题。</li>
-<li>抽象化：采用领域驱动模式去抽象共性。</li>
-</ul>
-<h2 id="那怎么“中台”？"><a href="#那怎么“中台”？" class="headerlink" title="那怎么“中台”？"></a>那怎么“中台”？</h2><p>中台化，我觉得有不同的表现。</p>
-<p>1、对于问题的解决形成规范化、标准化。比如对于订单问题、支付、购买的问题，最常见的问题的是幂等性</p>
-<p>​               问题。对于跟第三方交互的规划化、标准化处理，也就是标准化的异常处理模式（实时返回终态（明确成      </p>
-<p>​               功、失败），对于非终态的采用定时机制去轮询、最近确认状态，对于在文档之外的其他状态（明确成  </p>
-<p>​               功、失败的状态之外）也当作非终态处理）。</p>
-<p>​               如有可能，可以将异常处理，形成差错处理系统，并且统一的差错处理系统（SAAS化）。</p>
-<p>2、 采用SOA服务化，解决系统间的交互（比如不建议A系统直接通过连B系统的数据库）。这里就要对业务能力</p>
-<p>​              服务化，以标准的接口对外提供调用。那怎么业务能力服务化呢？ 我觉得目前我司的业务在业界已经是很    </p>
-<p>​              成熟的业务，业界的业务模型、接口可以供我们参考，比如alipay的服务化接口、接口安全性机制。</p>
-<p>​              这里可以说业务SAAS化。</p>
-<p>3、硬件（基础IT）参数配置标准化，然后再新机器上线，一键配置，可以减少后继服务上线由于参数的问题，而</p>
-<p>​               导致的问题。对于硬件规格进行SET化，根据每个SET的硬件规格、业务承载能力，形成扩容的基本单</p>
-<p>​                位，这样便于扩容、也便于采购。这里也有可能硬件SET化，系统SET化。</p>
-<p>4、对系统（根据不同的级别系统）形成相应的DFX(Design For X ， 可靠性、可用性、性能、可测试性等)基线，</p>
-<p>​             避免形成不同的极端，所有的系统都按照最严的要求，或者所有的系统都没有要求。根据不同的基线制定</p>
-<p>​             不同的测试基线、服务等级、开发流程。这样有利于进行软件研发的实施（升级、容灾、降级）。</p>
-<p>5、基础组件化（服务框架归一化，缓存组件、业务监控组件），这里可以先服务框架归一化，其他组件可以适当</p>
-<p>​            规划。我觉得业务健康监控组件是必须规划的，现在出现了一些很尴尬的问题：一般都不是研发最先知道</p>
-<p>​            线上出现问题，而是客户最先知道问题。研发是服务提供方，用“以客户为中心”的思路来看，我们是要先用</p>
-<p>​            户知道问题，并尽可能在大量用户使用之前把问题解决。</p>
-<p>6、售卖机硬件归一化（可以借鉴华为的盘古思路），硬件归一化方便维护、采购、备件存储。</p>
+        <h2 id="架构感悟"><a href="#架构感悟" class="headerlink" title="架构感悟"></a>架构感悟</h2><p>​        一个大型系统具有业务架构和技术架构，两种不同类型的架构体现该系统不同方面的能力。 业务架构反应了一个系统业务能力的边界，以及架构业务效率（对业务的响应效率），技术架构则反应对业务支撑的品质能力和实施效率。业务架构解决了能不能支撑业务，落地商业战略，解决能和速度的问题；技术架构解决如何更好地支撑业务，解决做得好不好，靠不靠谱的问题。架构（业务、技术）解决了不同诉求方的利益问题。</p>
+<h2 id="如何规划"><a href="#如何规划" class="headerlink" title="如何规划"></a>如何规划</h2><h3 id="利益视角"><a href="#利益视角" class="headerlink" title="利益视角"></a>利益视角</h3><p>​       从上述架构感悟，架构其实是为了解决利益相关方的关注点和利益。 在规划中，我是采用利益视角来规划。 为什么要采用利益视角？很多时候，我们进行规划，都遵循一套“八股文”模式： 市场分析、竞争对手分析、里程碑。。。。。。，固然这种模式是一种标准的模式，也能解决规划问题，但是总感觉这个“八股文”模式，不够敏捷，不够贴合实际，容易迈大步子（扯了蛋）。</p>
+<p>​      从利益的诉求来看，不同业务方其诉求是不一样的：</p>
+<table>
+<thead>
+<tr>
+<th>业务问题\业务方诉求</th>
+<th>模型团队</th>
+<th>业务研发/研发</th>
+<th>风险团队</th>
+<th>产品/运营/业务负责人</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>欺诈</td>
+<td>提升<br>回归/仿真<br>效率</td>
+<td>技术</td>
+<td>效率/准确</td>
+<td>商业目标<br>成本<br>风险</td>
+</tr>
+<tr>
+<td>营销欺诈<br>支付欺诈<br>贷款欺诈<br>注册欺诈<br>登陆风险<br>账号风险</td>
+<td>集成数据与算法<br>样本回溯时间较长</td>
+<td>易用<br>高性能<br>高可用<br>弹性<br>交付一次<br>复用<br>易于掌控</td>
+<td>易用<br>功能完善<br>敏捷响应<br>运行正确<br>数据丰富</td>
+<td>业务复用<br>及时止损<br>策略ROI<br>策略质量<br>可用性及品质<br>业务风险感知</td>
+</tr>
+</tbody>
+</table>
+<p><strong>诉求归类</strong></p>
+<table>
+<thead>
+<tr>
+<th>品质</th>
+<th>效率</th>
+<th>时效</th>
+<th>洞察</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高性能<br>高可用<br>高并发<br>策略感知<br>弹性可扩<br>业务护航<br>演进</td>
+<td>易用<br>平台化<br>复用<br>一次交付<br>可自助</td>
+<td>敏于风险<br>捷于响应</td>
+<td>成本<br>人群<br>业务风险</td>
+</tr>
+</tbody>
+</table>
+<h3 id="优先级处理"><a href="#优先级处理" class="headerlink" title="优先级处理"></a>优先级处理</h3><p>​    立足当前阶段，优先级处理原则</p>
+<p><img src="/2021/04/10/fkztzj/品质优先.jpg" alt="品质优先" style="zoom:50%;"></p>
+<blockquote>
+<p> <strong>架构</strong></p>
+<p>​           坚固、效用与情趣。</p>
+</blockquote>
+<p>​    坚固，既是品质，效用即是效率与时效，情趣既是洞察。</p>
+<p> 坚固是基石，效用是目标，同时要兼顾情趣。</p>
+<h2 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h2><h3 id="业务架构"><a href="#业务架构" class="headerlink" title="业务架构"></a>业务架构</h3><p><img src="/2021/04/10/fkztzj/ywjg.jpg" alt="ywjg" style="zoom: 33%;"></p>
+<p> 由于涉及安全保密，这里只是介绍0层业务架构，该架构只是大致反应了一些业务能力。</p>
+<h3 id="不止于工具"><a href="#不止于工具" class="headerlink" title="不止于工具"></a>不止于工具</h3><p>​       风控中台 =      系统工具              +                 风险管理框架               +            连接器</p>
+<p> <strong>系统工具</strong>：</p>
+<p>  1、提供风险响应工具。</p>
+<p><strong>风险管理框架</strong>：</p>
+<p>1、全流程风险管理（事前、事中、事后）。</p>
+<p>2、风险治理（风险洞察、风险评估、风险决策）。</p>
+<p><strong>连接器</strong>：</p>
+<p>1、生态连接能力。</p>
+<h2 id="敏捷响应的思考"><a href="#敏捷响应的思考" class="headerlink" title="敏捷响应的思考"></a>敏捷响应的思考</h2><ol>
+<li>如果风险响应需要开发、测试、发布上线，那么该系统应该不具备敏捷响应的能力（策略人员配置化操作、快速测试、模拟测试）。</li>
+<li>如果不能一次交付（即策略人员自助），那么该系统应该不具备敏捷响应的能力（抽象设计，而不是简单翻译需求）。</li>
+<li>如果风险响应需惊群（同时多个职能小组响应），那么该系统应该不具备敏捷响应的能力（提前规划：全局布控、数据能力规划、统一接入）。</li>
+<li>标准化设计、抽象设计、可配置化设计、快速测试/部署 是敏捷响应的基础。</li>
+</ol>
+<h2 id="技术选型的思考"><a href="#技术选型的思考" class="headerlink" title="技术选型的思考"></a>技术选型的思考</h2><p>​        在策略执行引擎的选型上，如果可以重来，我可能不会选择当前的技术方案。因为该方案在面对未来的中台能力建设，其支撑能力有所欠缺。 选择该技术方案的历史原因，由于为了快速支撑某个业务，而做的决定，即受1.0架构的影响。在进行2.0架构上设计的时候，没有重新审视该选择。</p>
+<p>​        那么如何避免该问题？ 认知决定了选择，所以在技术方案选型之前，一定要思考业务架构能力。通过业务架构能力来检视该方案的支撑度。</p>
 
       
     </div>
@@ -435,11 +488,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/工程/" rel="tag"># 工程</a>
-          
-            <a href="/tags/思考/" rel="tag"># 思考</a>
-          
-            <a href="/tags/技术/" rel="tag"># 技术</a>
+            <a href="/tags/架构/" rel="tag"># 架构</a>
           
         </div>
       
@@ -452,8 +501,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/13/hlwxx/" rel="next" title="喧嚣的互联网">
-                <i class="fa fa-chevron-left"></i> 喧嚣的互联网
+              <a href="/2021/04/10/htha/" rel="next" title="高流量高可用应对策略">
+                <i class="fa fa-chevron-left"></i> 高流量高可用应对策略
               </a>
             
           </div>
@@ -461,10 +510,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/12/agile/" rel="prev" title="敏捷研发流程实践">
-                敏捷研发流程实践 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -599,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#阿里巴巴“大中台、小前台”读后感"><span class="nav-text">阿里巴巴“大中台、小前台”读后感</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要-“大中台”？"><span class="nav-text">为什么要 “大中台”？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“中台”化的关键"><span class="nav-text">“中台”化的关键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那怎么“中台”？"><span class="nav-text">那怎么“中台”？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构感悟"><span class="nav-text">架构感悟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何规划"><span class="nav-text">如何规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#利益视角"><span class="nav-text">利益视角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优先级处理"><span class="nav-text">优先级处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何解决"><span class="nav-text">如何解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#业务架构"><span class="nav-text">业务架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不止于工具"><span class="nav-text">不止于工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#敏捷响应的思考"><span class="nav-text">敏捷响应的思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术选型的思考"><span class="nav-text">技术选型的思考</span></a></li></ol></div>
             
 
           </div>
