@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="架构,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="诊断架构风险 如上架构示意图，描述高流量场景下的可能技术风险，以及其应对策略。 高流量场景下的技术风险  接入层带宽被耗尽（入口风险）。 大量静态文件读取（I/O 风险）。 DB 超负荷，导致业务服务成为瓶颈，引发雪崩效应。 三方依赖问题，导致依赖服务成为瓶颈，引发雪崩效应。 微服务处理线程不够。  那针对入上的技术风险，那么如何应对？ 思想及手段架构思想 风险驱动、恰如其分，未雨绸缪  风险驱动">
+<meta name="keywords" content="架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高流量高可用应对策略">
+<meta property="og:url" content="https://tech-insq.github.io/2021/04/10/htha/index.html">
+<meta property="og:site_name" content="本心">
+<meta property="og:description" content="诊断架构风险 如上架构示意图，描述高流量场景下的可能技术风险，以及其应对策略。 高流量场景下的技术风险  接入层带宽被耗尽（入口风险）。 大量静态文件读取（I/O 风险）。 DB 超负荷，导致业务服务成为瓶颈，引发雪崩效应。 三方依赖问题，导致依赖服务成为瓶颈，引发雪崩效应。 微服务处理线程不够。  那针对入上的技术风险，那么如何应对？ 思想及手段架构思想 风险驱动、恰如其分，未雨绸缪  风险驱动">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://tech-insq.github.io/2021/04/10/htha/htha.png">
+<meta property="og:image" content="https://tech-insq.github.io/2021/04/10/htha/jgys.jpg">
+<meta property="og:image" content="https://tech-insq.github.io/2021/04/10/htha/fycl.jpg">
+<meta property="og:updated_time" content="2021-04-10T06:06:54.047Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高流量高可用应对策略">
+<meta name="twitter:description" content="诊断架构风险 如上架构示意图，描述高流量场景下的可能技术风险，以及其应对策略。 高流量场景下的技术风险  接入层带宽被耗尽（入口风险）。 大量静态文件读取（I/O 风险）。 DB 超负荷，导致业务服务成为瓶颈，引发雪崩效应。 三方依赖问题，导致依赖服务成为瓶颈，引发雪崩效应。 微服务处理线程不够。  那针对入上的技术风险，那么如何应对？ 思想及手段架构思想 风险驱动、恰如其分，未雨绸缪  风险驱动">
+<meta name="twitter:image" content="https://tech-insq.github.io/2021/04/10/htha/htha.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://tech-insq.github.io/2021/04/10/htha/">
+
+
+
+
+
+  <title>高流量高可用应对策略 | 本心</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b3f63d0eab81d5b1dcab01a9bdf2d0f9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">本心</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">知、止、定、静、安、虑、得</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-about"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-categories"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archives"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-commonweal"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tech-insq.github.io/2021/04/10/htha/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Amos">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="本心">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">高流量高可用应对策略</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-10T11:37:54+08:00">
+                2021-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工程/" itemprop="url" rel="index">
+                    <span itemprop="name">工程</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工程/架构/" itemprop="url" rel="index">
+                    <span itemprop="name">架构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/04/10/htha/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/04/10/htha/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="诊断架构风险"><a href="#诊断架构风险" class="headerlink" title="诊断架构风险"></a>诊断架构风险</h2><p><img src="/2021/04/10/htha/htha.png" alt="htha" style="zoom:70%;"></p>
+<p>如上架构示意图，描述高流量场景下的可能技术风险，以及其应对策略。</p>
+<p><strong>高流量场景下的技术风险</strong></p>
+<ol>
+<li>接入层带宽被耗尽（入口风险）。</li>
+<li>大量静态文件读取（I/O 风险）。</li>
+<li>DB 超负荷，导致业务服务成为瓶颈，引发雪崩效应。</li>
+<li>三方依赖问题，导致依赖服务成为瓶颈，引发雪崩效应。</li>
+<li>微服务处理线程不够。</li>
+</ol>
+<p>那针对入上的技术风险，那么如何应对？</p>
+<h2 id="思想及手段"><a href="#思想及手段" class="headerlink" title="思想及手段"></a>思想及手段</h2><h3 id="架构思想"><a href="#架构思想" class="headerlink" title="架构思想"></a>架构思想</h3><blockquote>
+<p><strong>风险驱动、恰如其分，未雨绸缪</strong></p>
+</blockquote>
+<p>风险驱动： 基于当前方案（架构），思考 <strong>如果什么事情发生了，那么要怎么做？</strong></p>
+<p>恰如其分： 罗列的风险可能很多，但是基于<strong>客观情况、价值、底线</strong>，做出适当的决策（比如DID原则），同时保留演进的可能性。</p>
+<p>未雨绸缪： 风险的出现是基于概率，但是随着业务的发展，小概率事件会成为大概率事件，那么需要采用相应的技术手段进行应对：架构巡检、治理，混沌工程，架构标准（面对风险的服务标准），兜底策略。</p>
+<p>那如何基于该思想进行 ？</p>
+<h3 id="技术手段"><a href="#技术手段" class="headerlink" title="技术手段"></a>技术手段</h3><p>根据上述的架构思想，我们从系统上下文的架构元素，描述常见的技术手段：</p>
+<p><img src="/2021/04/10/htha/jgys.jpg" alt="jgys" style="zoom:50%;"></p>
+<p>  上图只是从架构元素来描述高流量下的高可用手段，但是从架构链路来看，如何处理 慢的链路呢？常见的处理方案是快慢隔离。快慢隔离的做法是从资源、服务上将慢接口隔离出去，避免慢接口影响快接口（比如耗尽服务线程），但是分布式架构，其链路依赖比较复杂，再加上技术实践的问题，导致快慢隔离的效果也是有限的，比如快接口和慢接口共用资源，那么如果在对资源的访问上没有隔离，快慢隔离的效果就仅仅是防止慢接口耗尽服务线程，导致快接口没有服务线程进行响应。 在这种情况下，除了快慢隔离，还要进行慢接口限流。 当然解决一个架构技术问题，不单单只是一把锤子就可以解决得了。针对不同场景下，我们可能需要如下的技术手段：</p>
+<ol>
+<li>​     读写分离，避免有些慢查询服务 耗尽资源。</li>
+<li>​     反应式（事件驱动、异步、全链路异步），避免服务线程被耗尽。其实施方案 需要响应式 REST 框架、RPC框架、Http 客户端、消息队列，这些技术组件不必全部要，比如响应式RPC框架，目前的微服务框架支撑不是很好。只能适当的组合解决某些技术问题。</li>
+<li>CQRS架构： 将查询和业务接口隔离。</li>
+<li>降级：  业务降级，必须针对特定的场景，进行特定的解决。</li>
+</ol>
+<h3 id="防御策略"><a href="#防御策略" class="headerlink" title="防御策略"></a>防御策略</h3><p>   针对有些不可降级的调用、场景，并且没有较好的应对方案，那么必须有相应的兜底策略。 或者有些场景、调用其随着业务的增长和时间的积累，必然会有技术风险，但是本着恰如其分的原则，目前却没有很大的动力去解决该风险，那么必须有未雨绸缪的策略。</p>
+<p>   总之防御策略体现 未雨绸缪的架构思想。</p>
+<p><img src="/2021/04/10/htha/fycl.jpg" alt="fycl" style="zoom:50%;"></p>
+<h3 id="架构标准"><a href="#架构标准" class="headerlink" title="架构标准"></a>架构标准</h3><p>架构标准，是指一些必须实施的技术标准，从未雨绸缪的角度，当系统出现技术风险的时候，可以进行响应，从而确保系统的高可用、鲁棒性、快速恢复。如下的标准，只是一些例子：</p>
+<table>
+<thead>
+<tr>
+<th>标准</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MySQL 慢查询告警</td>
+<td>基于目前的硬件能力和性能预告，对MySQL 查询接口进行 慢告警。比如超时&gt;=100 ms。</td>
+</tr>
+<tr>
+<td>服务监控告警</td>
+<td>1、流量激增告警，比如请求量超过2倍进行告警。<br>2、平均耗时1.5 倍告警，当速度慢下来的时候，而且比较明显，反应着请求量在涨。<br>3、成功率 &lt;= 95%</td>
+</tr>
+<tr>
+<td>接入层限流</td>
+<td>以高峰的10倍，对预估可能成为瓶颈的接口进行限流，并按周期性巡检（月度）</td>
+</tr>
+<tr>
+<td>业务网关快慢隔离</td>
+<td>将网关层慢接口（数据上报接口）隔离到固定的集群中去。</td>
+</tr>
+<tr>
+<td>请求队列标准</td>
+<td>1、将网关层请求队列长度 设置 100。<br>2、将RPC框架的请求队列长度 设置为100。<br>3、如果框架具备能够丢失大量的无效请求（在客户端已经超时），则可以不设置，但要启用该功能。</td>
+</tr>
+<tr>
+<td>RPC线程</td>
+<td>1、RPC线程 200～300。<br>2、单接口线程 100（隔离）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="架构巡检"><a href="#架构巡检" class="headerlink" title="架构巡检"></a>架构巡检</h3><p>  周期性对系统进行巡检：</p>
+<ol>
+<li>高峰流量：统计预估、限流标准。</li>
+<li>数据量：比如MySQL 单表数据量，进行分库分表决策。</li>
+<li>请求量/耗时：对请求量/接口耗时进行巡检，进行接口优化决策（缓存、异步、调整用户体验）。</li>
+<li>可观测： 对系统的属性进行可观测巡检，对于不可观察的关键点，则要进行监控埋点/上报。</li>
+</ol>
+<h3 id="混沌工程"><a href="#混沌工程" class="headerlink" title="混沌工程"></a>混沌工程</h3><p>  混沌工程的作用：</p>
+<ol>
+<li>定义系统稳态的观测度量。</li>
+<li>架构标准实施，注入验收，增强可测性。</li>
+<li>自动架构巡检的手段。</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/架构/" rel="tag"># 架构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/26/sjkjg2/" rel="next" title="用视角看架构（下）">
+                <i class="fa fa-chevron-left"></i> 用视角看架构（下）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Amos</p>
+              <p class="site-description motion-element" itemprop="description">实践总结、分享他人。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#诊断架构风险"><span class="nav-text">诊断架构风险</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思想及手段"><span class="nav-text">思想及手段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#架构思想"><span class="nav-text">架构思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技术手段"><span class="nav-text">技术手段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防御策略"><span class="nav-text">防御策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#架构标准"><span class="nav-text">架构标准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#架构巡检"><span class="nav-text">架构巡检</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混沌工程"><span class="nav-text">混沌工程</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Amos</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+
+  <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'HtJBnJeWiiXWyYPM3p9VsIsI-gzGzoHsz',
+        appKey: 'HwAmcDkeVIa5ie4jbiWOHfjQ',
+        placeholder: '赶快留言，抢第一个沙发',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
