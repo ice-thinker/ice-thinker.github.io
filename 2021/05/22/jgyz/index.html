@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://tech-insq.github.io/2021/05/22/jgyz/fc.png">
 <meta property="og:image" content="https://tech-insq.github.io/2021/05/22/jgyz/gxys.png">
 <meta property="og:image" content="https://tech-insq.github.io/2021/05/22/jgyz/fl.png">
-<meta property="og:updated_time" content="2021-05-23T15:40:43.597Z">
+<meta property="og:updated_time" content="2021-05-24T11:38:38.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="架构原则">
 <meta name="twitter:description" content="为什么​      架构设计为什么需要遵循一定的原则呢？在软件设计、研发、运行中，我们总会遇到如下的问题： 代码问题  代码结构臃肿混乱，不利于平时的阅读和维护。 循环依赖 对依赖方侵入性的伤害，比如Java 包依赖冲突。 代码风格与规范问题  版本迭代效率  特性并发开发，分支合并频率高。 特性开发，修改、测试成本高。  服务测试问题  服务可测试性差  服务运行问题  服务循环依赖 服务状态不">
@@ -383,7 +383,7 @@
 <ol>
 <li>服务可测试性差</li>
 </ol>
-<p><strong><u>服务运行问题</u></strong></p>
+<p><u><strong>服务运行问题</strong></u></p>
 <ol>
 <li>服务循环依赖</li>
 <li>服务状态不可观测，导致对线上问题不可知。</li>
@@ -394,7 +394,7 @@
 <ol>
 <li>架构演进平滑性问题</li>
 </ol>
-<p><strong><u>业务适应性问题</u></strong></p>
+<p><u><strong>业务适应性问题</strong></u></p>
 <ol>
 <li>业务增长了，架构调整的频率高，对业务增长适应性能力弱。</li>
 </ol>
@@ -414,8 +414,7 @@
 <p>总之需要经过抽象与封装，才能达到基于<strong>单一职责</strong>的<strong>模块化设计</strong>，从而实现<strong>隔离</strong>的目的。</p>
 </li>
 </ol>
-<p>###<strong><u>妥适性</u></strong></p>
-<p> 不要引入无关的东西，满足必需的功能称为妥适性。妥适性的相对面是无关性。妥适性需要对系统进行<strong>职责划分</strong>，达到<strong>职责清晰</strong>。妥适性需要：</p>
+<h3 id="妥适性"><a href="#妥适性" class="headerlink" title="妥适性"></a><u><strong>妥适性</strong></u></h3><p> 不要引入无关的东西，满足必需的功能称为妥适性。妥适性的相对面是无关性。妥适性需要对系统进行<strong>职责划分</strong>，达到<strong>职责清晰</strong>。妥适性需要：</p>
 <ol>
 <li>系统边界划分，做到职责清晰。</li>
 <li>单一职责。</li>
@@ -427,14 +426,12 @@
 <li>考虑成本优化和可扩展性来简化设计。</li>
 <li>依靠其他人的经验来简化部署。</li>
 </ol>
-<p>###<strong><u>普遍性</u></strong></p>
-<p>不要限制固有的东西，普遍性就是通过某种功能实现众多结果的能力。实现普遍性的最常见方式是开方式的收尾、完整的功能集、分解功能为正交组件以及使用组合技术，是通过对事物的本质认识，进行通用性设计，实现通过外部配置化、组合成新的功能。常见的案例：</p>
+<h3 id="普遍性"><a href="#普遍性" class="headerlink" title="普遍性"></a><u><strong>普遍性</strong></u></h3><p>不要限制固有的东西，普遍性就是通过某种功能实现众多结果的能力。实现普遍性的最常见方式是开方式的收尾、完整的功能集、分解功能为正交组件以及使用组合技术，是通过对事物的本质认识，进行通用性设计，实现通过外部配置化、组合成新的功能。常见的案例：</p>
 <ol>
 <li>用户实时指标：其他本质是基于 X 业务数据，通过维度F(w1,w2,w3,…)作为唯一特征，基于时间窗口W的统计(统计函数)变量。这里完整的功能集，唯一特征提取函数算子、统计函数算子等正交函数，利用组合技术（外部配置）实现新的用户实时指标。</li>
 <li>业务指标统计：如果基于SQL模式，那么就可以减少很多开发量，不然开发速度追不上数据需求。</li>
 </ol>
-<p>###<strong><u>分治</u></strong></p>
-<p>  避免一团大泥球的模式，可以基于不同粒度的，将大系统小做。最常见的实践方法：</p>
+<h3 id="分治"><a href="#分治" class="headerlink" title="分治"></a><u><strong>分治</strong></u></h3><p>  避免一团大泥球的模式，可以基于不同粒度的，将大系统小做。最常见的实践方法：</p>
 <ol>
 <li>将上下文界定的系统，通过领域模型驱动(DDD)方法，进行领域建模。</li>
 <li>将相应的子领域进行模块化（早期模式）。</li>
@@ -442,8 +439,7 @@
 </ol>
 <p>分治的本质是将按领域模型，将业务系统分治成不同的子系统；将系统的层次按接入层、业务聚合层、业务领域层划分成不同的子系统（子模块）。</p>
 <p>   <img src="/2021/05/22/jgyz/fz.png" alt="fz"></p>
-<p>###<strong><u>分层(等级化)</u></strong></p>
-<p>在现实中，我们要将服务（模块）等级化与分层，则必须消除循环依赖。我们如何解决非循环依赖，循环依赖造成的影响：</p>
+<h3 id="分层-等级化"><a href="#分层-等级化" class="headerlink" title="分层(等级化)"></a><u><strong>分层(等级化)</strong></u></h3><p>在现实中，我们要将服务（模块）等级化与分层，则必须消除循环依赖。我们如何解决非循环依赖，循环依赖造成的影响：</p>
 <ol>
 <li>架构依赖混乱、不清晰（服务不能等级化与分层）。</li>
 <li><p>系统运行可能，由于某个子系统的问题，导致整个集群业务不可用。</p>
@@ -466,8 +462,7 @@
 <p><img src="/2021/05/22/jgyz/fc.png" alt="fc"></p>
 <p><strong>服务（模块）关系不应该违反概念上的分层</strong>：</p>
 <p><img src="/2021/05/22/jgyz/gxys.png" alt="gxys"></p>
-<p>###<strong><u>抽象与实现分离</u></strong></p>
-<p>将抽象与实现它们的类放在各自独立的模块（项目）中：</p>
+<h3 id="抽象与实现分离"><a href="#抽象与实现分离" class="headerlink" title="抽象与实现分离"></a><u><strong>抽象与实现分离</strong></u></h3><p>将抽象与实现它们的类放在各自独立的模块（项目）中：</p>
 <p>如果依赖抽象体的所有类位于多个服务（模块）中，那么就应该将抽象体放在一个单独的模块（项目）中，这个模块（项目）与依赖抽象体的实现实现了分离。</p>
 <p>比如RPC服务声明的抽象体，建议RPC服务的实现进行分离：</p>
 <ol>
@@ -476,13 +471,12 @@
 <li>服务多版本化实现。</li>
 </ol>
 <p><img src="/2021/05/22/jgyz/fl.png" alt="fl"></p>
-<h3 id="接口隔离"><a href="#接口隔离" class="headerlink" title="接口隔离"></a><strong><u>接口隔离</u></strong></h3><p>众多的接口要优于单一、通用性的接口：</p>
+<h3 id="接口隔离"><a href="#接口隔离" class="headerlink" title="接口隔离"></a><u><strong>接口隔离</strong></u></h3><p>众多的接口要优于单一、通用性的接口：</p>
 <ol>
 <li>面向业务功能单一职责的接口。</li>
 <li>避免提供万能接口。</li>
 </ol>
-<p>###<strong><u>高可用</u></strong></p>
-<ol>
+<h3 id="高可用"><a href="#高可用" class="headerlink" title="高可用"></a><u><strong>高可用</strong></u></h3><ol>
 <li>隔离： 快、慢隔离， 数据总线（网关）与业务总线（网关）隔离，渠道隔离，业务系统与产品系统隔离，产品智能与数据库系统隔离。防止级联影响。</li>
 <li>异步化：基于接收-执行-通知的模式。</li>
 <li>熔断与降级：防止雪崩</li>
@@ -490,8 +484,8 @@
 <li>最终一致性：差错处理、中间态处理。</li>
 <li>分类处理不同的负载：需要隔离</li>
 </ol>
-<h3 id="可测试性"><a href="#可测试性" class="headerlink" title="可测试性"></a><strong><u>可测试性</u></strong></h3><p>   系统是可测试，建议从可测性的角度，进行系统架构设计。</p>
-<h3 id="可观测性"><a href="#可观测性" class="headerlink" title="可观测性"></a><strong><u>可观测性</u></strong></h3><p>定义系统可观测性指标，进行监控、告警，比如基于四大黄金指标：</p>
+<h3 id="可测试性"><a href="#可测试性" class="headerlink" title="可测试性"></a><u><strong>可测试性</strong></u></h3><p>   系统是可测试，建议从可测性的角度，进行系统架构设计。</p>
+<h3 id="可观测性"><a href="#可观测性" class="headerlink" title="可观测性"></a><u><strong>可观测性</strong></u></h3><p>定义系统可观测性指标，进行监控、告警，比如基于四大黄金指标：</p>
 <ol>
 <li>时延（耗时）</li>
 <li>请求量</li>
@@ -504,14 +498,13 @@
 <li>数据安全机制：数据签名机制，敏感数字加密存储。</li>
 <li>物理隔离机制：通过分层的机制，将访问基础IT的服务隔离到外部不可访问的物理机上。</li>
 </ol>
-<h3 id="业务适应性"><a href="#业务适应性" class="headerlink" title="业务适应性"></a><strong><u>业务适应性</u></strong></h3><p>  基于未来1～2年的业务发展量，来进行架构设计，比如&lt;&lt;架构真经&gt;&gt;中提到的DID原则：</p>
+<h3 id="业务适应性"><a href="#业务适应性" class="headerlink" title="业务适应性"></a><u><strong>业务适应性</strong></u></h3><p>  基于未来1～2年的业务发展量，来进行架构设计，比如&lt;&lt;架构真经&gt;&gt;中提到的DID原则：</p>
 <ol>
 <li>D（设计）：设计20倍的容量。</li>
 <li>I（实现）实现3倍的容量。</li>
 <li>D（实施）实施1.5倍的容量。</li>
 </ol>
-<p>###<strong><u>开放-封闭</u></strong></p>
-<p>  系统应该对扩展开放，对修改关闭。开闭原则带来的好处：</p>
+<h3 id="开放-封闭"><a href="#开放-封闭" class="headerlink" title="开放-封闭"></a><u><strong>开放-封闭</strong></u></h3><p>  系统应该对扩展开放，对修改关闭。开闭原则带来的好处：</p>
 <ol>
 <li>降低测试成本</li>
 <li>提高可复用性</li>
@@ -522,7 +515,7 @@
 <li>接口版本化</li>
 <li>数据版本化</li>
 </ol>
-<h3 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a><strong><u>一致性</u></strong></h3><ol>
+<h3 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a><u><strong>一致性</strong></u></h3><ol>
 <li>命名规则（形式上一致）</li>
 <li>基于概念上的分层（形式上一致）</li>
 <li>统一门面（形式、解决方案上一致）</li>
@@ -716,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么"><span class="nav-text">为什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何做"><span class="nav-text">如何做</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正交性"><span class="nav-text">正交性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口隔离"><span class="nav-text">接口隔离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可测试性"><span class="nav-text">可测试性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可观测性"><span class="nav-text">可观测性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性"><span class="nav-text">安全性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务适应性"><span class="nav-text">业务适应性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本化"><span class="nav-text">版本化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一致性"><span class="nav-text">一致性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么"><span class="nav-text">为什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何做"><span class="nav-text">如何做</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正交性"><span class="nav-text">正交性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#妥适性"><span class="nav-text">妥适性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#普遍性"><span class="nav-text">普遍性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治"><span class="nav-text">分治</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分层-等级化"><span class="nav-text">分层(等级化)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象与实现分离"><span class="nav-text">抽象与实现分离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口隔离"><span class="nav-text">接口隔离</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高可用"><span class="nav-text">高可用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可测试性"><span class="nav-text">可测试性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可观测性"><span class="nav-text">可观测性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性"><span class="nav-text">安全性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务适应性"><span class="nav-text">业务适应性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开放-封闭"><span class="nav-text">开放-封闭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本化"><span class="nav-text">版本化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一致性"><span class="nav-text">一致性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
